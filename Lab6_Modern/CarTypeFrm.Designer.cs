@@ -1,6 +1,6 @@
 ﻿namespace Lab6_Modern
 {
-    partial class QueryFrm
+    partial class CarTypeFrm
     {
         /// <summary>
         /// Required designer variable.

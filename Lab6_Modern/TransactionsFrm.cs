@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lab6_Modern
 {
-    public partial class HomeFrm : Form
+    public partial class TransactionsFrm : Form
     {
-        public HomeFrm()
+        public TransactionsFrm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Lab6_Modern
 {
-    partial class InsertFrm
+    partial class BranchFrm
     {
         /// <summary>
         /// Required designer variable.

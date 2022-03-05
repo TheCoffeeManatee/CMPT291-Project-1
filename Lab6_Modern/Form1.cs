@@ -53,7 +53,7 @@ namespace Lab6_Modern
             }
 
             this.HomePnl.Controls.Clear();
-            HomeFrm HomeFrm_Vrb = new HomeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransactionsFrm HomeFrm_Vrb = new TransactionsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             HomeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(HomeFrm_Vrb);
             HomeFrm_Vrb.Show();
@@ -72,7 +72,7 @@ namespace Lab6_Modern
         private void HomeBtn_Click(object sender, EventArgs e)
         {
             this.HomePnl.Controls.Clear();
-            HomeFrm HomeFrm_Vrb = new HomeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransactionsFrm HomeFrm_Vrb = new TransactionsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             HomeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(HomeFrm_Vrb);
             HomeFrm_Vrb.Show();
@@ -81,7 +81,7 @@ namespace Lab6_Modern
         private void button1_Click(object sender, EventArgs e)
         {
             this.HomePnl.Controls.Clear();
-            InsertFrm InsertFrm_Vrb = new InsertFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            BranchFrm InsertFrm_Vrb = new BranchFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             InsertFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(InsertFrm_Vrb);
             InsertFrm_Vrb.Show();
@@ -90,7 +90,7 @@ namespace Lab6_Modern
         private void button2_Click(object sender, EventArgs e)
         {
             this.HomePnl.Controls.Clear();
-            DeleteFrm DeleteFrm_Vrb = new DeleteFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            CarsFrm DeleteFrm_Vrb = new CarsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             DeleteFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(DeleteFrm_Vrb);
             DeleteFrm_Vrb.Show();
@@ -191,10 +191,28 @@ namespace Lab6_Modern
         private void QueryBtn_Click(object sender, EventArgs e)
         {
             this.HomePnl.Controls.Clear();
-            QueryFrm QueryFrm_Vrb = new QueryFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            CarTypeFrm QueryFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             QueryFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(QueryFrm_Vrb);
             QueryFrm_Vrb.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.HomePnl.Controls.Clear();
+            CustomersFrm Customers_Vrb = new CustomersFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Customers_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.HomePnl.Controls.Add(Customers_Vrb);
+            Customers_Vrb.Show();
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            this.HomePnl.Controls.Clear();
+            ReportsFrm ReportsFrm_Vrb = new ReportsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ReportsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.HomePnl.Controls.Add(ReportsFrm_Vrb);
+            ReportsFrm_Vrb.Show();
         }
     }
 }
