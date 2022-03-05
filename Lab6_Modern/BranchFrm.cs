@@ -11,22 +11,16 @@ using System.Data.SqlClient;
 
 namespace Lab6_Modern
 {
-    public partial class QueryFrm : Form
+    
+    public partial class BranchFrm : Form
     {
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
-        public QueryFrm()
+        public BranchFrm()
         {
             InitializeComponent();
-            ///////////////////////////////
-            operation.Items.Clear();
-            operation.Items.Add("Show all");
-            operation.Items.Add("Show with starting grade: ");
-            //////////////////////////////////
-
             String connectionString = "Server = DESKTOP-L3H29R4; Database = ConnectTutorial; Trusted_Connection = yes;";
-
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
             try
@@ -42,33 +36,29 @@ namespace Lab6_Modern
             }
         }
 
-        private void QueryFrm_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void QueryBtn_Click(object sender, EventArgs e)
+        private void HomeFormPanel1_Paint(object sender, PaintEventArgs e)
         {
-            myCommand.CommandText = "select * from student";
-            if (operation.Text == "Show with starting grade: ")
-                myCommand.CommandText += " where grade >= " + SGrade.Text;
 
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
             try
             {
+                myCommand.CommandText = "insert into student values (" + ID.Text +
+                    ",'" + Name.Text + "'," + Grade.Text + ")";
                 MessageBox.Show(myCommand.CommandText);
-                myReader = myCommand.ExecuteReader();
 
-                student.Rows.Clear();
-                while (myReader.Read())
-                {
-                    student.Rows.Add(myReader["id"].ToString(), myReader["name"].ToString(), myReader["grade"].ToString());
-                }
-
-                myReader.Close();
+                myCommand.ExecuteNonQuery();
             }
-            catch (Exception e3)
+            catch (Exception e2)
             {
-                MessageBox.Show(e3.ToString(), "Error");
+                MessageBox.Show(e2.ToString(), "Error");
             }
         }
     }

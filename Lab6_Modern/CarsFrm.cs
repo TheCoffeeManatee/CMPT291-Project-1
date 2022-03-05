@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lab6_Modern
 {
-    public partial class DeleteFrm : Form
+    public partial class CarsFrm : Form
     {
-        public DeleteFrm()
+        public CarsFrm()
         {
             InitializeComponent();
         }

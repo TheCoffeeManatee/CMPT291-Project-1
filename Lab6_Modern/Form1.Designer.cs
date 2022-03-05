@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.CustomerBtn = new System.Windows.Forms.Button();
             this.SettingsBtn = new System.Windows.Forms.Button();
             this.QueryBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
@@ -53,6 +55,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.CustomerBtn);
             this.panel1.Controls.Add(this.SettingsBtn);
             this.panel1.Controls.Add(this.QueryBtn);
             this.panel1.Controls.Add(this.DeleteBtn);
@@ -65,6 +69,36 @@
             this.panel1.Size = new System.Drawing.Size(193, 521);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button2.Location = new System.Drawing.Point(0, 376);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(193, 42);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Reports";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            // 
+            // CustomerBtn
+            // 
+            this.CustomerBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CustomerBtn.FlatAppearance.BorderSize = 0;
+            this.CustomerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CustomerBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustomerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.CustomerBtn.Location = new System.Drawing.Point(0, 334);
+            this.CustomerBtn.Name = "CustomerBtn";
+            this.CustomerBtn.Size = new System.Drawing.Size(193, 42);
+            this.CustomerBtn.TabIndex = 6;
+            this.CustomerBtn.Text = "Customers";
+            this.CustomerBtn.UseVisualStyleBackColor = true;
+            this.CustomerBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // SettingsBtn
             // 
@@ -91,7 +125,7 @@
             this.QueryBtn.Name = "QueryBtn";
             this.QueryBtn.Size = new System.Drawing.Size(193, 42);
             this.QueryBtn.TabIndex = 4;
-            this.QueryBtn.Text = "Query";
+            this.QueryBtn.Text = "Car Type";
             this.QueryBtn.UseVisualStyleBackColor = true;
             this.QueryBtn.Click += new System.EventHandler(this.QueryBtn_Click);
             // 
@@ -106,7 +140,7 @@
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(193, 42);
             this.DeleteBtn.TabIndex = 3;
-            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.Text = "Cars";
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -121,7 +155,7 @@
             this.Insertbtn.Name = "Insertbtn";
             this.Insertbtn.Size = new System.Drawing.Size(193, 42);
             this.Insertbtn.TabIndex = 2;
-            this.Insertbtn.Text = "Insert";
+            this.Insertbtn.Text = "Branch";
             this.Insertbtn.UseVisualStyleBackColor = true;
             this.Insertbtn.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -136,7 +170,7 @@
             this.HomeBtn.Name = "HomeBtn";
             this.HomeBtn.Size = new System.Drawing.Size(193, 42);
             this.HomeBtn.TabIndex = 1;
-            this.HomeBtn.Text = "Home";
+            this.HomeBtn.Text = "Transactions";
             this.HomeBtn.UseVisualStyleBackColor = true;
             this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
             // 
@@ -284,5 +318,7 @@
         private Button ResizeBtn;
         private Button MinBtn;
         private Panel HomePnl;
+        private Button button2;
+        private Button CustomerBtn;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Lab6_Modern
 {
-    partial class DeleteFrm
+    partial class CarsFrm
     {
         /// <summary>
         /// Required designer variable.

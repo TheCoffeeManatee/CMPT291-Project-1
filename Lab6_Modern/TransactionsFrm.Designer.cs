@@ -1,6 +1,6 @@
 ﻿namespace Lab6_Modern
 {
-    partial class HomeFrm
+    partial class TransactionsFrm
     {
         /// <summary>
         /// Required designer variable.
