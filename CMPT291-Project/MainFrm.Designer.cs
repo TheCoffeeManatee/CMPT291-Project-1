@@ -1,6 +1,6 @@
 ﻿namespace Lab6_Modern
 {
-    partial class Form1
+    partial class MainFrm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ReportsBtn = new System.Windows.Forms.Button();
             this.CustomerBtn = new System.Windows.Forms.Button();
             this.SettingsBtn = new System.Windows.Forms.Button();
-            this.QueryBtn = new System.Windows.Forms.Button();
-            this.DeleteBtn = new System.Windows.Forms.Button();
-            this.Insertbtn = new System.Windows.Forms.Button();
-            this.HomeBtn = new System.Windows.Forms.Button();
+            this.CarTypeBtn = new System.Windows.Forms.Button();
+            this.CarsBtn = new System.Windows.Forms.Button();
+            this.BranchBtn = new System.Windows.Forms.Button();
+            this.TransactionsBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Profile = new System.Windows.Forms.PictureBox();
-            this.UserName = new System.Windows.Forms.Label();
+            this.ProfilePicture = new System.Windows.Forms.PictureBox();
+            this.UserNameLbl = new System.Windows.Forms.Label();
             this.MenuBar = new System.Windows.Forms.Panel();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.ResizeBtn = new System.Windows.Forms.Button();
@@ -48,20 +48,20 @@
             this.HomePnl = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Profile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.ReportsBtn);
             this.panel1.Controls.Add(this.CustomerBtn);
             this.panel1.Controls.Add(this.SettingsBtn);
-            this.panel1.Controls.Add(this.QueryBtn);
-            this.panel1.Controls.Add(this.DeleteBtn);
-            this.panel1.Controls.Add(this.Insertbtn);
-            this.panel1.Controls.Add(this.HomeBtn);
+            this.panel1.Controls.Add(this.CarTypeBtn);
+            this.panel1.Controls.Add(this.CarsBtn);
+            this.panel1.Controls.Add(this.BranchBtn);
+            this.panel1.Controls.Add(this.TransactionsBtn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -70,20 +70,20 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button2
+            // ReportsBtn
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button2.Location = new System.Drawing.Point(0, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 42);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Reports";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            this.ReportsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ReportsBtn.FlatAppearance.BorderSize = 0;
+            this.ReportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReportsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ReportsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.ReportsBtn.Location = new System.Drawing.Point(0, 376);
+            this.ReportsBtn.Name = "ReportsBtn";
+            this.ReportsBtn.Size = new System.Drawing.Size(193, 42);
+            this.ReportsBtn.TabIndex = 7;
+            this.ReportsBtn.Text = "Reports";
+            this.ReportsBtn.UseVisualStyleBackColor = true;
+            this.ReportsBtn.Click += new System.EventHandler(this.ReportsBtn_Click);
             // 
             // CustomerBtn
             // 
@@ -98,7 +98,7 @@
             this.CustomerBtn.TabIndex = 6;
             this.CustomerBtn.Text = "Customers";
             this.CustomerBtn.UseVisualStyleBackColor = true;
-            this.CustomerBtn.Click += new System.EventHandler(this.button1_Click_1);
+            this.CustomerBtn.Click += new System.EventHandler(this.CustomerBtn_Click);
             // 
             // SettingsBtn
             // 
@@ -114,70 +114,70 @@
             this.SettingsBtn.Text = "Settings";
             this.SettingsBtn.UseVisualStyleBackColor = true;
             // 
-            // QueryBtn
+            // CarTypeBtn
             // 
-            this.QueryBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.QueryBtn.FlatAppearance.BorderSize = 0;
-            this.QueryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QueryBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.QueryBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.QueryBtn.Location = new System.Drawing.Point(0, 292);
-            this.QueryBtn.Name = "QueryBtn";
-            this.QueryBtn.Size = new System.Drawing.Size(193, 42);
-            this.QueryBtn.TabIndex = 4;
-            this.QueryBtn.Text = "Car Type";
-            this.QueryBtn.UseVisualStyleBackColor = true;
-            this.QueryBtn.Click += new System.EventHandler(this.QueryBtn_Click);
+            this.CarTypeBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CarTypeBtn.FlatAppearance.BorderSize = 0;
+            this.CarTypeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CarTypeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CarTypeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.CarTypeBtn.Location = new System.Drawing.Point(0, 292);
+            this.CarTypeBtn.Name = "CarTypeBtn";
+            this.CarTypeBtn.Size = new System.Drawing.Size(193, 42);
+            this.CarTypeBtn.TabIndex = 4;
+            this.CarTypeBtn.Text = "Car Type";
+            this.CarTypeBtn.UseVisualStyleBackColor = true;
+            this.CarTypeBtn.Click += new System.EventHandler(this.CarTypeBtn_Click);
             // 
-            // DeleteBtn
+            // CarsBtn
             // 
-            this.DeleteBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DeleteBtn.FlatAppearance.BorderSize = 0;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DeleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.DeleteBtn.Location = new System.Drawing.Point(0, 250);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(193, 42);
-            this.DeleteBtn.TabIndex = 3;
-            this.DeleteBtn.Text = "Cars";
-            this.DeleteBtn.UseVisualStyleBackColor = true;
-            this.DeleteBtn.Click += new System.EventHandler(this.button2_Click);
+            this.CarsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CarsBtn.FlatAppearance.BorderSize = 0;
+            this.CarsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CarsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CarsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.CarsBtn.Location = new System.Drawing.Point(0, 250);
+            this.CarsBtn.Name = "CarsBtn";
+            this.CarsBtn.Size = new System.Drawing.Size(193, 42);
+            this.CarsBtn.TabIndex = 3;
+            this.CarsBtn.Text = "Cars";
+            this.CarsBtn.UseVisualStyleBackColor = true;
+            this.CarsBtn.Click += new System.EventHandler(this.CarsBtn_Click);
             // 
-            // Insertbtn
+            // BranchBtn
             // 
-            this.Insertbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Insertbtn.FlatAppearance.BorderSize = 0;
-            this.Insertbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Insertbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Insertbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.Insertbtn.Location = new System.Drawing.Point(0, 208);
-            this.Insertbtn.Name = "Insertbtn";
-            this.Insertbtn.Size = new System.Drawing.Size(193, 42);
-            this.Insertbtn.TabIndex = 2;
-            this.Insertbtn.Text = "Branch";
-            this.Insertbtn.UseVisualStyleBackColor = true;
-            this.Insertbtn.Click += new System.EventHandler(this.button1_Click);
+            this.BranchBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BranchBtn.FlatAppearance.BorderSize = 0;
+            this.BranchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BranchBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BranchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.BranchBtn.Location = new System.Drawing.Point(0, 208);
+            this.BranchBtn.Name = "BranchBtn";
+            this.BranchBtn.Size = new System.Drawing.Size(193, 42);
+            this.BranchBtn.TabIndex = 2;
+            this.BranchBtn.Text = "Branch";
+            this.BranchBtn.UseVisualStyleBackColor = true;
+            this.BranchBtn.Click += new System.EventHandler(this.BranchBtn_Click);
             // 
-            // HomeBtn
+            // TransactionsBtn
             // 
-            this.HomeBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HomeBtn.FlatAppearance.BorderSize = 0;
-            this.HomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HomeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.HomeBtn.Location = new System.Drawing.Point(0, 166);
-            this.HomeBtn.Name = "HomeBtn";
-            this.HomeBtn.Size = new System.Drawing.Size(193, 42);
-            this.HomeBtn.TabIndex = 1;
-            this.HomeBtn.Text = "Transactions";
-            this.HomeBtn.UseVisualStyleBackColor = true;
-            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
+            this.TransactionsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TransactionsBtn.FlatAppearance.BorderSize = 0;
+            this.TransactionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TransactionsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransactionsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.TransactionsBtn.Location = new System.Drawing.Point(0, 166);
+            this.TransactionsBtn.Name = "TransactionsBtn";
+            this.TransactionsBtn.Size = new System.Drawing.Size(193, 42);
+            this.TransactionsBtn.TabIndex = 1;
+            this.TransactionsBtn.Text = "Transactions";
+            this.TransactionsBtn.UseVisualStyleBackColor = true;
+            this.TransactionsBtn.Click += new System.EventHandler(this.TransactionBtn_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Profile);
-            this.panel2.Controls.Add(this.UserName);
+            this.panel2.Controls.Add(this.ProfilePicture);
+            this.panel2.Controls.Add(this.UserNameLbl);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -185,27 +185,30 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // Profile
+            // ProfilePicture
             // 
-            this.Profile.Image = ((System.Drawing.Image)(resources.GetObject("Profile.Image")));
-            this.Profile.Location = new System.Drawing.Point(66, 31);
-            this.Profile.Name = "Profile";
-            this.Profile.Size = new System.Drawing.Size(50, 50);
-            this.Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Profile.TabIndex = 0;
-            this.Profile.TabStop = false;
+            this.ProfilePicture.Image = ((System.Drawing.Image)(resources.GetObject("ProfilePicture.Image")));
+            this.ProfilePicture.Location = new System.Drawing.Point(66, 31);
+            this.ProfilePicture.Name = "ProfilePicture";
+            this.ProfilePicture.Size = new System.Drawing.Size(50, 50);
+            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProfilePicture.TabIndex = 0;
+            this.ProfilePicture.TabStop = false;
             // 
-            // UserName
+            // UserNameLbl
             // 
-            this.UserName.AutoSize = true;
-            this.UserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.UserName.Location = new System.Drawing.Point(47, 83);
-            this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(88, 21);
-            this.UserName.TabIndex = 1;
-            this.UserName.Text = "User Name";
-            this.UserName.Click += new System.EventHandler(this.label1_Click);
+            this.UserNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserNameLbl.AutoSize = true;
+            this.UserNameLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserNameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.UserNameLbl.Location = new System.Drawing.Point(47, 83);
+            this.UserNameLbl.Name = "UserNameLbl";
+            this.UserNameLbl.Size = new System.Drawing.Size(88, 21);
+            this.UserNameLbl.TabIndex = 1;
+            this.UserNameLbl.Text = "User Name";
+            this.UserNameLbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // MenuBar
             // 
@@ -263,7 +266,7 @@
             this.MinBtn.Size = new System.Drawing.Size(20, 20);
             this.MinBtn.TabIndex = 3;
             this.MinBtn.UseVisualStyleBackColor = true;
-            this.MinBtn.Click += new System.EventHandler(this.button2_Click_1);
+            this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
             // 
             // backgroundWorker1
             // 
@@ -277,7 +280,7 @@
             this.HomePnl.Size = new System.Drawing.Size(664, 492);
             this.HomePnl.TabIndex = 2;
             // 
-            // Form1
+            // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,13 +290,14 @@
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MainFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "`";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.MenuBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -304,21 +308,21 @@
         private bool mouseDown;
         private Point lastLocation;
         private Panel panel1;
-        private Label UserName;
+        private Label UserNameLbl;
         private Panel panel2;
-        private PictureBox Profile;
-        private Button HomeBtn;
-        private Button DeleteBtn;
-        private Button Insertbtn;
+        private PictureBox ProfilePicture;
+        private Button TransactionsBtn;
+        private Button CarsBtn;
+        private Button BranchBtn;
         private Button SettingsBtn;
-        private Button QueryBtn;
+        private Button CarTypeBtn;
         private Panel MenuBar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button ExitBtn;
         private Button ResizeBtn;
         private Button MinBtn;
         private Panel HomePnl;
-        private Button button2;
+        private Button ReportsBtn;
         private Button CustomerBtn;
     }
 }
