@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DeleteLbl = new System.Windows.Forms.Label();
+            this.CarsFrmLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // DeleteLbl
+            // CarsFrmLbl
             // 
-            this.DeleteLbl.AutoSize = true;
-            this.DeleteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DeleteLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.DeleteLbl.Location = new System.Drawing.Point(20, 21);
-            this.DeleteLbl.Name = "DeleteLbl";
-            this.DeleteLbl.Size = new System.Drawing.Size(105, 33);
-            this.DeleteLbl.TabIndex = 8;
-            this.DeleteLbl.Text = "Delete";
+            this.CarsFrmLbl.AutoSize = true;
+            this.CarsFrmLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CarsFrmLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.CarsFrmLbl.Location = new System.Drawing.Point(20, 21);
+            this.CarsFrmLbl.Name = "CarsFrmLbl";
+            this.CarsFrmLbl.Size = new System.Drawing.Size(81, 33);
+            this.CarsFrmLbl.TabIndex = 8;
+            this.CarsFrmLbl.Text = "Cars";
             // 
-            // DeleteFrm
+            // CarsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
-            this.Controls.Add(this.DeleteLbl);
+            this.Controls.Add(this.CarsFrmLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DeleteFrm";
+            this.Name = "CarsFrm";
             this.Text = "DeleteFrm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -59,6 +59,6 @@
 
         #endregion
 
-        private Label DeleteLbl;
+        private Label CarsFrmLbl;
     }
 }

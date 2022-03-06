@@ -22,26 +22,5 @@ namespace Lab6_Modern
 
         }
 
-        private void CalcBtn_Click(object sender, EventArgs e)
-        {
-            int Res = 0;
-            if (AddBtn.Checked == true)
-            {
-                Res = Int32.Parse(FirstNum.Text) + Int32.Parse(SecondNum.Text);
-            }
-
-            if (SubBtn.Checked == true)
-            {
-                Res = Int32.Parse(FirstNum.Text) - Int32.Parse(SecondNum.Text);
-            }
-
-            if (MulBtn.Checked == true)
-            {
-                Res = Int32.Parse(FirstNum.Text) * Int32.Parse(SecondNum.Text);
-            }
-
-            Answer.Text = Res.ToString();
-            Answer.Visible = true;
-        }
     }
 }
