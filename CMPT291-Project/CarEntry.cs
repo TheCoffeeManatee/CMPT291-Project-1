@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lab6_Modern
 {
-    public partial class CustomersFrm : Form
+    public partial class CarEntry : Form
     {
-        public CustomersFrm()
+        public CarEntry()
         {
             InitializeComponent();
+        }
+
+        private void CarEntryTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
