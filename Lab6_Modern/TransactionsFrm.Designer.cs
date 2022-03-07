@@ -28,151 +28,223 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Answer = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransactionsFrm));
             this.HomeFormLabel = new System.Windows.Forms.Label();
-            this.HomeFormPanel1 = new System.Windows.Forms.Panel();
-            this.CalcBtn = new System.Windows.Forms.Button();
-            this.MulBtn = new System.Windows.Forms.RadioButton();
-            this.SubBtn = new System.Windows.Forms.RadioButton();
-            this.AddBtn = new System.Windows.Forms.RadioButton();
+            this.AddTransPnl = new System.Windows.Forms.Panel();
+            this.DisplayCustID = new System.Windows.Forms.Label();
+            this.DisplayName = new System.Windows.Forms.Label();
+            this.ChooseCustBtn = new System.Windows.Forms.Button();
+            this.CarTypePicker = new System.Windows.Forms.ComboBox();
+            this.CarTypelbl = new System.Windows.Forms.Label();
+            this.RtnDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.RtnDateTimelbl = new System.Windows.Forms.Label();
+            this.RtnBPicker = new System.Windows.Forms.ComboBox();
+            this.RtnBlbl = new System.Windows.Forms.Label();
+            this.PickDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.PickDateTimelbl = new System.Windows.Forms.Label();
+            this.PickBPicker = new System.Windows.Forms.ComboBox();
+            this.PickBlbl = new System.Windows.Forms.Label();
             this.SecondNum = new System.Windows.Forms.TextBox();
-            this.FirstNum = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CalcLabel = new System.Windows.Forms.Label();
-            this.panel3.SuspendLayout();
-            this.HomeFormPanel1.SuspendLayout();
+            this.QueryBtn = new System.Windows.Forms.Button();
+            this.NewBtn = new System.Windows.Forms.Button();
+            this.TransIDNum = new System.Windows.Forms.Label();
+            this.AddTransPnl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(393, 95);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(248, 376);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.Answer);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(43, 349);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(327, 122);
-            this.panel3.TabIndex = 7;
-            // 
-            // Answer
-            // 
-            this.Answer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Answer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Answer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.Answer.Location = new System.Drawing.Point(0, 54);
-            this.Answer.Name = "Answer";
-            this.Answer.Size = new System.Drawing.Size(327, 68);
-            this.Answer.TabIndex = 3;
-            this.Answer.Text = "Answer";
-            this.Answer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Answer.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 54);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Result";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HomeFormLabel
             // 
             this.HomeFormLabel.AutoSize = true;
             this.HomeFormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HomeFormLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.HomeFormLabel.Location = new System.Drawing.Point(20, 21);
+            this.HomeFormLabel.Location = new System.Drawing.Point(37, 45);
+            this.HomeFormLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.HomeFormLabel.Name = "HomeFormLabel";
-            this.HomeFormLabel.Size = new System.Drawing.Size(97, 33);
+            this.HomeFormLabel.Size = new System.Drawing.Size(371, 67);
             this.HomeFormLabel.TabIndex = 5;
-            this.HomeFormLabel.Text = "Home";
+            this.HomeFormLabel.Text = "Transactions";
+            this.HomeFormLabel.Click += new System.EventHandler(this.HomeFormLabel_Click);
             // 
-            // HomeFormPanel1
+            // AddTransPnl
             // 
-            this.HomeFormPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.HomeFormPanel1.Controls.Add(this.CalcBtn);
-            this.HomeFormPanel1.Controls.Add(this.MulBtn);
-            this.HomeFormPanel1.Controls.Add(this.SubBtn);
-            this.HomeFormPanel1.Controls.Add(this.AddBtn);
-            this.HomeFormPanel1.Controls.Add(this.SecondNum);
-            this.HomeFormPanel1.Controls.Add(this.FirstNum);
-            this.HomeFormPanel1.Controls.Add(this.label2);
-            this.HomeFormPanel1.Controls.Add(this.label1);
-            this.HomeFormPanel1.Controls.Add(this.CalcLabel);
-            this.HomeFormPanel1.Location = new System.Drawing.Point(43, 95);
-            this.HomeFormPanel1.Name = "HomeFormPanel1";
-            this.HomeFormPanel1.Size = new System.Drawing.Size(327, 231);
-            this.HomeFormPanel1.TabIndex = 6;
+            this.AddTransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.AddTransPnl.Controls.Add(this.TransIDNum);
+            this.AddTransPnl.Controls.Add(this.DisplayCustID);
+            this.AddTransPnl.Controls.Add(this.DisplayName);
+            this.AddTransPnl.Controls.Add(this.ChooseCustBtn);
+            this.AddTransPnl.Controls.Add(this.CarTypePicker);
+            this.AddTransPnl.Controls.Add(this.CarTypelbl);
+            this.AddTransPnl.Controls.Add(this.RtnDateTimePicker);
+            this.AddTransPnl.Controls.Add(this.RtnDateTimelbl);
+            this.AddTransPnl.Controls.Add(this.RtnBPicker);
+            this.AddTransPnl.Controls.Add(this.RtnBlbl);
+            this.AddTransPnl.Controls.Add(this.PickDateTimePicker);
+            this.AddTransPnl.Controls.Add(this.PickDateTimelbl);
+            this.AddTransPnl.Controls.Add(this.PickBPicker);
+            this.AddTransPnl.Controls.Add(this.PickBlbl);
+            this.AddTransPnl.Controls.Add(this.SecondNum);
+            this.AddTransPnl.Location = new System.Drawing.Point(0, 150);
+            this.AddTransPnl.Margin = new System.Windows.Forms.Padding(6);
+            this.AddTransPnl.Name = "AddTransPnl";
+            this.AddTransPnl.Size = new System.Drawing.Size(1233, 900);
+            this.AddTransPnl.TabIndex = 6;
             // 
-            // CalcBtn
+            // DisplayCustID
             // 
-            this.CalcBtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.CalcBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CalcBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CalcBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.CalcBtn.Location = new System.Drawing.Point(84, 180);
-            this.CalcBtn.Name = "CalcBtn";
-            this.CalcBtn.Size = new System.Drawing.Size(148, 38);
-            this.CalcBtn.TabIndex = 8;
-            this.CalcBtn.Text = "Calculate";
-            this.CalcBtn.UseVisualStyleBackColor = true;
-            this.CalcBtn.Click += new System.EventHandler(this.CalcBtn_Click);
+            this.DisplayCustID.AutoSize = true;
+            this.DisplayCustID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.DisplayCustID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DisplayCustID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.DisplayCustID.Location = new System.Drawing.Point(408, 41);
+            this.DisplayCustID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.DisplayCustID.Name = "DisplayCustID";
+            this.DisplayCustID.Size = new System.Drawing.Size(225, 42);
+            this.DisplayCustID.TabIndex = 30;
+            this.DisplayCustID.Text = "Customer ID";
             // 
-            // MulBtn
+            // DisplayName
             // 
-            this.MulBtn.AutoSize = true;
-            this.MulBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MulBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.MulBtn.Location = new System.Drawing.Point(203, 143);
-            this.MulBtn.Name = "MulBtn";
-            this.MulBtn.Size = new System.Drawing.Size(77, 23);
-            this.MulBtn.TabIndex = 7;
-            this.MulBtn.Text = "Multiply";
-            this.MulBtn.UseVisualStyleBackColor = true;
+            this.DisplayName.AutoSize = true;
+            this.DisplayName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.DisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DisplayName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.DisplayName.Location = new System.Drawing.Point(107, 39);
+            this.DisplayName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.DisplayName.Name = "DisplayName";
+            this.DisplayName.Size = new System.Drawing.Size(288, 42);
+            this.DisplayName.TabIndex = 28;
+            this.DisplayName.Text = "Customer Name";
             // 
-            // SubBtn
+            // ChooseCustBtn
             // 
-            this.SubBtn.AutoSize = true;
-            this.SubBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SubBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.SubBtn.Location = new System.Drawing.Point(103, 143);
-            this.SubBtn.Name = "SubBtn";
-            this.SubBtn.Size = new System.Drawing.Size(78, 23);
-            this.SubBtn.TabIndex = 6;
-            this.SubBtn.Text = "Subtract";
-            this.SubBtn.UseVisualStyleBackColor = true;
+            this.ChooseCustBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChooseCustBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChooseCustBtn.BackgroundImage")));
+            this.ChooseCustBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ChooseCustBtn.FlatAppearance.BorderSize = 0;
+            this.ChooseCustBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseCustBtn.Location = new System.Drawing.Point(53, 39);
+            this.ChooseCustBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.ChooseCustBtn.Name = "ChooseCustBtn";
+            this.ChooseCustBtn.Size = new System.Drawing.Size(42, 42);
+            this.ChooseCustBtn.TabIndex = 11;
+            this.ChooseCustBtn.UseVisualStyleBackColor = true;
+            this.ChooseCustBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // AddBtn
+            // CarTypePicker
             // 
-            this.AddBtn.AutoSize = true;
-            this.AddBtn.Checked = true;
-            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.AddBtn.Location = new System.Drawing.Point(27, 143);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(52, 23);
-            this.AddBtn.TabIndex = 3;
-            this.AddBtn.TabStop = true;
-            this.AddBtn.Text = "Add";
-            this.AddBtn.UseVisualStyleBackColor = true;
+            this.CarTypePicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.CarTypePicker.FormattingEnabled = true;
+            this.CarTypePicker.Items.AddRange(new object[] {
+            "SUV",
+            "Luxery",
+            "Sport"});
+            this.CarTypePicker.Location = new System.Drawing.Point(408, 252);
+            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(6);
+            this.CarTypePicker.Name = "CarTypePicker";
+            this.CarTypePicker.Size = new System.Drawing.Size(268, 40);
+            this.CarTypePicker.TabIndex = 26;
+            // 
+            // CarTypelbl
+            // 
+            this.CarTypelbl.AutoSize = true;
+            this.CarTypelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CarTypelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.CarTypelbl.Location = new System.Drawing.Point(196, 250);
+            this.CarTypelbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CarTypelbl.Name = "CarTypelbl";
+            this.CarTypelbl.Size = new System.Drawing.Size(182, 42);
+            this.CarTypelbl.TabIndex = 25;
+            this.CarTypelbl.Text = "Car Type:";
+            // 
+            // RtnDateTimePicker
+            // 
+            this.RtnDateTimePicker.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.RtnDateTimePicker.Location = new System.Drawing.Point(408, 605);
+            this.RtnDateTimePicker.Name = "RtnDateTimePicker";
+            this.RtnDateTimePicker.Size = new System.Drawing.Size(268, 39);
+            this.RtnDateTimePicker.TabIndex = 24;
+            // 
+            // RtnDateTimelbl
+            // 
+            this.RtnDateTimelbl.AutoSize = true;
+            this.RtnDateTimelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RtnDateTimelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.RtnDateTimelbl.Location = new System.Drawing.Point(73, 603);
+            this.RtnDateTimelbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.RtnDateTimelbl.Name = "RtnDateTimelbl";
+            this.RtnDateTimelbl.Size = new System.Drawing.Size(321, 42);
+            this.RtnDateTimelbl.TabIndex = 23;
+            this.RtnDateTimelbl.Text = "Return Date/Time:";
+            // 
+            // RtnBPicker
+            // 
+            this.RtnBPicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.RtnBPicker.FormattingEnabled = true;
+            this.RtnBPicker.Items.AddRange(new object[] {
+            "Branch 1 - Name",
+            "Branch 2 - Name"});
+            this.RtnBPicker.Location = new System.Drawing.Point(408, 548);
+            this.RtnBPicker.Margin = new System.Windows.Forms.Padding(6);
+            this.RtnBPicker.Name = "RtnBPicker";
+            this.RtnBPicker.Size = new System.Drawing.Size(268, 40);
+            this.RtnBPicker.TabIndex = 21;
+            // 
+            // RtnBlbl
+            // 
+            this.RtnBlbl.AutoSize = true;
+            this.RtnBlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RtnBlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.RtnBlbl.Location = new System.Drawing.Point(126, 546);
+            this.RtnBlbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.RtnBlbl.Name = "RtnBlbl";
+            this.RtnBlbl.Size = new System.Drawing.Size(269, 42);
+            this.RtnBlbl.TabIndex = 22;
+            this.RtnBlbl.Text = "Return Branch:";
+            // 
+            // PickDateTimePicker
+            // 
+            this.PickDateTimePicker.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.PickDateTimePicker.Location = new System.Drawing.Point(408, 464);
+            this.PickDateTimePicker.Name = "PickDateTimePicker";
+            this.PickDateTimePicker.Size = new System.Drawing.Size(268, 39);
+            this.PickDateTimePicker.TabIndex = 20;
+            // 
+            // PickDateTimelbl
+            // 
+            this.PickDateTimelbl.AutoSize = true;
+            this.PickDateTimelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PickDateTimelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.PickDateTimelbl.Location = new System.Drawing.Point(72, 464);
+            this.PickDateTimelbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PickDateTimelbl.Name = "PickDateTimelbl";
+            this.PickDateTimelbl.Size = new System.Drawing.Size(322, 42);
+            this.PickDateTimelbl.TabIndex = 19;
+            this.PickDateTimelbl.Text = "Pickup Date/Time:";
+            // 
+            // PickBPicker
+            // 
+            this.PickBPicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.PickBPicker.FormattingEnabled = true;
+            this.PickBPicker.Items.AddRange(new object[] {
+            "Branch 1 - Name",
+            "Branch 2 - Name"});
+            this.PickBPicker.Location = new System.Drawing.Point(408, 406);
+            this.PickBPicker.Margin = new System.Windows.Forms.Padding(6);
+            this.PickBPicker.Name = "PickBPicker";
+            this.PickBPicker.Size = new System.Drawing.Size(268, 40);
+            this.PickBPicker.TabIndex = 12;
+            // 
+            // PickBlbl
+            // 
+            this.PickBlbl.AutoSize = true;
+            this.PickBlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PickBlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.PickBlbl.Location = new System.Drawing.Point(125, 406);
+            this.PickBlbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PickBlbl.Name = "PickBlbl";
+            this.PickBlbl.Size = new System.Drawing.Size(270, 42);
+            this.PickBlbl.TabIndex = 16;
+            this.PickBlbl.Text = "Pickup Branch:";
+            this.PickBlbl.Click += new System.EventHandler(this.PickBID_Click);
             // 
             // SecondNum
             // 
@@ -180,95 +252,97 @@
             this.SecondNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SecondNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SecondNum.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SecondNum.Location = new System.Drawing.Point(192, 104);
+            this.SecondNum.Location = new System.Drawing.Point(541, 709);
+            this.SecondNum.Margin = new System.Windows.Forms.Padding(6);
             this.SecondNum.Name = "SecondNum";
-            this.SecondNum.Size = new System.Drawing.Size(115, 22);
+            this.SecondNum.Size = new System.Drawing.Size(247, 43);
             this.SecondNum.TabIndex = 5;
             this.SecondNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // FirstNum
+            // QueryBtn
             // 
-            this.FirstNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.FirstNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FirstNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FirstNum.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.FirstNum.Location = new System.Drawing.Point(192, 67);
-            this.FirstNum.Name = "FirstNum";
-            this.FirstNum.Size = new System.Drawing.Size(115, 22);
-            this.FirstNum.TabIndex = 4;
-            this.FirstNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.QueryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QueryBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("QueryBtn.BackgroundImage")));
+            this.QueryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.QueryBtn.FlatAppearance.BorderSize = 0;
+            this.QueryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QueryBtn.Location = new System.Drawing.Point(465, 56);
+            this.QueryBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.QueryBtn.Name = "QueryBtn";
+            this.QueryBtn.Size = new System.Drawing.Size(45, 48);
+            this.QueryBtn.TabIndex = 10;
+            this.QueryBtn.UseVisualStyleBackColor = true;
+            this.QueryBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // NewBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(14, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Second Number:";
+            this.NewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NewBtn.BackgroundImage")));
+            this.NewBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NewBtn.FlatAppearance.BorderSize = 0;
+            this.NewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewBtn.Location = new System.Drawing.Point(408, 56);
+            this.NewBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.NewBtn.Name = "NewBtn";
+            this.NewBtn.Size = new System.Drawing.Size(45, 48);
+            this.NewBtn.TabIndex = 9;
+            this.NewBtn.UseVisualStyleBackColor = true;
+            this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
-            // label1
+            // TransIDNum
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label1.Location = new System.Drawing.Point(14, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "First Number:";
+            this.TransIDNum.AutoSize = true;
+            this.TransIDNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.TransIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransIDNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.TransIDNum.Location = new System.Drawing.Point(937, 35);
+            this.TransIDNum.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TransIDNum.Name = "TransIDNum";
+            this.TransIDNum.Size = new System.Drawing.Size(248, 42);
+            this.TransIDNum.TabIndex = 30;
+            this.TransIDNum.Text = "Trans ID Num";
             // 
-            // CalcLabel
+            // TransactionsFrm
             // 
-            this.CalcLabel.AutoSize = true;
-            this.CalcLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CalcLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.CalcLabel.Location = new System.Drawing.Point(87, 12);
-            this.CalcLabel.Name = "CalcLabel";
-            this.CalcLabel.Size = new System.Drawing.Size(157, 33);
-            this.CalcLabel.TabIndex = 1;
-            this.CalcLabel.Text = "Calculator";
-            // 
-            // HomeFrm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(664, 492);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1233, 1050);
+            this.Controls.Add(this.QueryBtn);
+            this.Controls.Add(this.NewBtn);
             this.Controls.Add(this.HomeFormLabel);
-            this.Controls.Add(this.HomeFormPanel1);
+            this.Controls.Add(this.AddTransPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomeFrm";
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "TransactionsFrm";
             this.Text = "HomeFrm";
             this.Load += new System.EventHandler(this.HomeFrm_Load);
-            this.panel3.ResumeLayout(false);
-            this.HomeFormPanel1.ResumeLayout(false);
-            this.HomeFormPanel1.PerformLayout();
+            this.AddTransPnl.ResumeLayout(false);
+            this.AddTransPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel3;
-        private Label Answer;
-        private Label label3;
         private Label HomeFormLabel;
-        private Panel HomeFormPanel1;
-        private Button CalcBtn;
-        private RadioButton MulBtn;
-        private RadioButton SubBtn;
-        private RadioButton AddBtn;
+        private Panel AddTransPnl;
         private TextBox SecondNum;
-        private TextBox FirstNum;
-        private Label label2;
-        private Label label1;
-        private Label CalcLabel;
+        private Button QueryBtn;
+        private Button NewBtn;
+        private Label PickBlbl;
+        private ComboBox PickBPicker;
+        private DateTimePicker PickDateTimePicker;
+        private Label PickDateTimelbl;
+        private DateTimePicker RtnDateTimePicker;
+        private Label RtnDateTimelbl;
+        private ComboBox RtnBPicker;
+        private Label RtnBlbl;
+        private Button ChooseCustBtn;
+        private ComboBox CarTypePicker;
+        private Label CarTypelbl;
+        private Label DisplayName;
+        private Label TransIDNum;
+        private Label DisplayCustID;
     }
 }

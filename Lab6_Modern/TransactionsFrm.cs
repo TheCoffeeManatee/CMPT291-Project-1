@@ -22,26 +22,49 @@ namespace Lab6_Modern
 
         }
 
-        private void CalcBtn_Click(object sender, EventArgs e)
+        private void HomeFormLabel_Click(object sender, EventArgs e)
         {
-            int Res = 0;
-            if (AddBtn.Checked == true)
-            {
-                Res = Int32.Parse(FirstNum.Text) + Int32.Parse(SecondNum.Text);
-            }
 
-            if (SubBtn.Checked == true)
-            {
-                Res = Int32.Parse(FirstNum.Text) - Int32.Parse(SecondNum.Text);
-            }
+        }
 
-            if (MulBtn.Checked == true)
-            {
-                Res = Int32.Parse(FirstNum.Text) * Int32.Parse(SecondNum.Text);
-            }
+        private void NewBtn_Click(object sender, EventArgs e)
+        {
+            //makes bottom form viewable to fill out
+        }
 
-            Answer.Text = Res.ToString();
-            Answer.Visible = true;
+        private void TID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PickBID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //opens the search screen w/dropdown menu for what to search by
+        }
+
+        private void PickupBranch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //goes to customer screen search screen to get customer or add customer
+        }
+
+        private void TransIDNum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CarTypelbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
