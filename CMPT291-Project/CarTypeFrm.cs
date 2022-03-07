@@ -28,5 +28,14 @@ namespace Lab6_Modern
         {
 
         }
+
+        private void CarTypeAdd_Click(object sender, EventArgs e)
+        {
+            this.CarTypePanel.Controls.Clear();
+            CarTypeEntry CarTypeEntry_Vrb = new CarTypeEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            CarTypeEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.CarTypePanel.Controls.Add(CarTypeEntry_Vrb);
+            CarTypeEntry_Vrb.Show();
+        }
     }
 }
