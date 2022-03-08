@@ -1,4 +1,4 @@
-﻿namespace Lab6_Modern
+﻿namespace CMPT291_Project
 {
     partial class TransactionsFrm
     {
@@ -28,64 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransactionsFrm));
             this.TransactionsFrmLbl = new System.Windows.Forms.Label();
-            this.HomeFormPanel1 = new System.Windows.Forms.Panel();
+            this.TransPnl = new System.Windows.Forms.Panel();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.NewTransBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(393, 95);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(248, 376);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel3.Location = new System.Drawing.Point(43, 349);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(327, 122);
-            this.panel3.TabIndex = 7;
             // 
             // TransactionsFrmLbl
             // 
             this.TransactionsFrmLbl.AutoSize = true;
+            this.TransactionsFrmLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.TransactionsFrmLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TransactionsFrmLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.TransactionsFrmLbl.Location = new System.Drawing.Point(20, 21);
+            this.TransactionsFrmLbl.Location = new System.Drawing.Point(32, 38);
+            this.TransactionsFrmLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TransactionsFrmLbl.Name = "TransactionsFrmLbl";
-            this.TransactionsFrmLbl.Size = new System.Drawing.Size(195, 33);
+            this.TransactionsFrmLbl.Size = new System.Drawing.Size(328, 59);
             this.TransactionsFrmLbl.TabIndex = 5;
             this.TransactionsFrmLbl.Text = "Transactions";
             // 
-            // HomeFormPanel1
+            // TransPnl
             // 
-            this.HomeFormPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.HomeFormPanel1.Location = new System.Drawing.Point(43, 95);
-            this.HomeFormPanel1.Name = "HomeFormPanel1";
-            this.HomeFormPanel1.Size = new System.Drawing.Size(327, 231);
-            this.HomeFormPanel1.TabIndex = 6;
+            this.TransPnl.Location = new System.Drawing.Point(0, 140);
+            this.TransPnl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.TransPnl.Name = "TransPnl";
+            this.TransPnl.Size = new System.Drawing.Size(1138, 844);
+            this.TransPnl.TabIndex = 6;
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchBtn.BackgroundImage")));
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SearchBtn.FlatAppearance.BorderSize = 0;
+            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBtn.Location = new System.Drawing.Point(436, 50);
+            this.SearchBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(38, 38);
+            this.SearchBtn.TabIndex = 33;
+            this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // NewTransBtn
+            // 
+            this.NewTransBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewTransBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NewTransBtn.BackgroundImage")));
+            this.NewTransBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NewTransBtn.FlatAppearance.BorderSize = 0;
+            this.NewTransBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewTransBtn.Location = new System.Drawing.Point(388, 50);
+            this.NewTransBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.NewTransBtn.Name = "NewTransBtn";
+            this.NewTransBtn.Size = new System.Drawing.Size(38, 38);
+            this.NewTransBtn.TabIndex = 32;
+            this.NewTransBtn.UseVisualStyleBackColor = true;
+            this.NewTransBtn.Click += new System.EventHandler(this.NewTransBtn_Click);
             // 
             // TransactionsFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(664, 492);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1138, 984);
+            this.Controls.Add(this.SearchBtn);
+            this.Controls.Add(this.NewTransBtn);
+            this.Controls.Add(this.TransPnl);
             this.Controls.Add(this.TransactionsFrmLbl);
-            this.Controls.Add(this.HomeFormPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "TransactionsFrm";
-            this.Text = "HomeFrm";
+            this.Text = "TransactionsFrm";
             this.Load += new System.EventHandler(this.HomeFrm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -93,10 +107,9 @@
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel3;
         private Label TransactionsFrmLbl;
-        private Panel HomeFormPanel1;
+        private Panel TransPnl;
+        private Button SearchBtn;
+        private Button NewTransBtn;
     }
 }
