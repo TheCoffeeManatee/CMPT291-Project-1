@@ -120,12 +120,12 @@ namespace Lab6_Modern
             if (this.WindowState == FormWindowState.Normal)
             { 
                 this.WindowState = FormWindowState.Maximized;
-                ResizeBtn.BackgroundImage = new Bitmap (@"C:\Users\tpete\source\repos\Lab6_Modern\Lab6_Modern\Properties\MIN.png");
+                ResizeBtn.BackgroundImage = new Bitmap (CMPT291_Project.Properties.Resources.MIN);
             }
             else if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
-                ResizeBtn.BackgroundImage = new Bitmap (@"C:\Users\tpete\source\repos\Lab6_Modern\Lab6_Modern\Properties\MAX.png");
+                ResizeBtn.BackgroundImage = new Bitmap (CMPT291_Project.Properties.Resources.MAX);
             }
         }
 
