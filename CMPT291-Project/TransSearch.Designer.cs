@@ -32,16 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PickBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PickupDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.SearchBy = new System.Windows.Forms.TextBox();
             this.SearchParam = new System.Windows.Forms.ComboBox();
-            this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickupDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +93,55 @@
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // TransID
+            // 
+            this.TransID.HeaderText = "Transaction ID";
+            this.TransID.MinimumWidth = 9;
+            this.TransID.Name = "TransID";
+            this.TransID.Width = 190;
+            // 
+            // PickBranch
+            // 
+            this.PickBranch.HeaderText = "Pickup Branch";
+            this.PickBranch.MinimumWidth = 9;
+            this.PickBranch.Name = "PickBranch";
+            this.PickBranch.Width = 130;
+            // 
+            // PickupDate
+            // 
+            this.PickupDate.HeaderText = "Pickup Date";
+            this.PickupDate.MinimumWidth = 9;
+            this.PickupDate.Name = "PickupDate";
+            this.PickupDate.Width = 150;
+            // 
+            // ReturnBranch
+            // 
+            this.ReturnBranch.HeaderText = "Return Branch";
+            this.ReturnBranch.MinimumWidth = 9;
+            this.ReturnBranch.Name = "ReturnBranch";
+            this.ReturnBranch.Width = 130;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.HeaderText = "Return Date";
+            this.ReturnDate.MinimumWidth = 9;
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.Width = 150;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.HeaderText = "Customer ID";
+            this.CustomerID.MinimumWidth = 9;
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Width = 130;
+            // 
+            // VIN
+            // 
+            this.VIN.HeaderText = "VIN";
+            this.VIN.MinimumWidth = 9;
+            this.VIN.Name = "VIN";
+            this.VIN.Width = 175;
+            // 
             // SearchBtn
             // 
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -123,73 +172,18 @@
             this.SearchParam.ForeColor = System.Drawing.SystemColors.Window;
             this.SearchParam.FormattingEnabled = true;
             this.SearchParam.Items.AddRange(new object[] {
-            "CID",
-            "FName",
-            "MName",
-            "LName",
-            "Address",
-            "City",
-            "Province",
-            "Postal",
-            "DOB",
-            "Phone",
-            "Ins",
-            "Drivers",
-            "Member"});
+            "Transaction ID",
+            "Pickup Branch",
+            "Pickup Date",
+            "Return Branch",
+            "Return Date",
+            "Customer ID",
+            "VIN"});
             this.SearchParam.Location = new System.Drawing.Point(36, 79);
             this.SearchParam.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.SearchParam.Name = "SearchParam";
             this.SearchParam.Size = new System.Drawing.Size(182, 38);
             this.SearchParam.TabIndex = 19;
-            // 
-            // VIN
-            // 
-            this.VIN.HeaderText = "VIN";
-            this.VIN.MinimumWidth = 9;
-            this.VIN.Name = "VIN";
-            this.VIN.Width = 175;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.HeaderText = "Customer ID";
-            this.CustomerID.MinimumWidth = 9;
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.Width = 130;
-            // 
-            // ReturnDate
-            // 
-            this.ReturnDate.HeaderText = "Return Date";
-            this.ReturnDate.MinimumWidth = 9;
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.Width = 150;
-            // 
-            // ReturnBranch
-            // 
-            this.ReturnBranch.HeaderText = "Return Branch";
-            this.ReturnBranch.MinimumWidth = 9;
-            this.ReturnBranch.Name = "ReturnBranch";
-            this.ReturnBranch.Width = 130;
-            // 
-            // PickupDate
-            // 
-            this.PickupDate.HeaderText = "Pickup Date";
-            this.PickupDate.MinimumWidth = 9;
-            this.PickupDate.Name = "PickupDate";
-            this.PickupDate.Width = 150;
-            // 
-            // PickBranch
-            // 
-            this.PickBranch.HeaderText = "Pickup Branch";
-            this.PickBranch.MinimumWidth = 9;
-            this.PickBranch.Name = "PickBranch";
-            this.PickBranch.Width = 130;
-            // 
-            // TransID
-            // 
-            this.TransID.HeaderText = "Transaction ID";
-            this.TransID.MinimumWidth = 9;
-            this.TransID.Name = "TransID";
-            this.TransID.Width = 190;
             // 
             // TransSearch
             // 
