@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CMPT291_Project
 {
-    public partial class ReportsFrm : Form
+    public partial class TransSearch : Form
     {
-        public ReportsFrm()
+        public TransSearch()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

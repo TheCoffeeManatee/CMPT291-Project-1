@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace Lab6_Modern
+namespace CMPT291_Project
 {
     public partial class MainFrm : Form
     {

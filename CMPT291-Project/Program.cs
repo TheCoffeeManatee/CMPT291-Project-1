@@ -1,6 +1,6 @@
 using CMPT291_Project;
 
-namespace Lab6_Modern
+namespace CMPT291_Project
 {
     internal static class Program
     {

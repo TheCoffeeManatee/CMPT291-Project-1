@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab6_Modern
+namespace CMPT291_Project
 {
     public partial class TransactionsFrm : Form
     {
@@ -22,5 +22,22 @@ namespace Lab6_Modern
 
         }
 
+        private void NewTransBtn_Click(object sender, EventArgs e)
+        {
+            this.TransPnl.Controls.Clear();
+            TransNew TransNew_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransNew_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.TransPnl.Controls.Add(TransNew_Vrb);
+            TransNew_Vrb.Show();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            this.TransPnl.Controls.Clear();
+            TransSearch TransSearch_Vrb = new TransSearch() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransSearch_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.TransPnl.Controls.Add(TransSearch_Vrb);
+            TransSearch_Vrb.Show();
+        }
     }
 }
