@@ -229,7 +229,7 @@
             // ExitBtn
             // 
             this.ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ExitBtn.BackgroundImage")));
+            this.ExitBtn.BackgroundImage = global::CMPT291_Project.Properties.Resources.Cross3;
             this.ExitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -243,7 +243,7 @@
             // ResizeBtn
             // 
             this.ResizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ResizeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ResizeBtn.BackgroundImage")));
+            this.ResizeBtn.BackgroundImage = global::CMPT291_Project.Properties.Resources.MAX;
             this.ResizeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ResizeBtn.FlatAppearance.BorderSize = 0;
             this.ResizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -257,7 +257,7 @@
             // MinBtn
             // 
             this.MinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MinBtn.BackgroundImage")));
+            this.MinBtn.BackgroundImage = global::CMPT291_Project.Properties.Resources.Minus2;
             this.MinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MinBtn.FlatAppearance.BorderSize = 0;
             this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
