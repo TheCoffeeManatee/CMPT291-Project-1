@@ -21,5 +21,15 @@ namespace CMPT291_Project
         {
 
         }
+
+
+        private void carentrycancel_Click_1(object sender, EventArgs e)
+        {
+            this.CarEntryPanel.Controls.Clear();
+            CarsFrm CarsFrm_Vrb = new CarsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            CarsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.CarEntryPanel.Controls.Add(CarsFrm_Vrb);
+            CarsFrm_Vrb.Show();
+        }
     }
 }
