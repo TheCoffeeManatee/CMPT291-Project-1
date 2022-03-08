@@ -1,1 +1,1 @@
-CMPT291 Project
+Lab6_Modern
