@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CMPT291_Project
+namespace Lab6_Modern
 {
-    public partial class Form1 : Form
+    public partial class TransSearch : Form
     {
-        public Form1()
+        public TransSearch()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

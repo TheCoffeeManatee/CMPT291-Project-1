@@ -1,6 +1,6 @@
-﻿namespace CMPT291_Project
+﻿namespace Lab6_Modern
 {
-    partial class Form1
+    partial class TransSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SearchFor = new System.Windows.Forms.TextBox();
-            this.TSearchBy = new System.Windows.Forms.ComboBox();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchBy = new System.Windows.Forms.TextBox();
+            this.SearchParam = new System.Windows.Forms.ComboBox();
             this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PickupDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PickBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,13 +59,13 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TransactionID,
+            this.TransID,
             this.PickBranch,
-            this.PickDate,
+            this.PickupDate,
             this.ReturnBranch,
             this.ReturnDate,
-            this.VIN,
-            this.CustomerID});
+            this.CustomerID,
+            this.VIN});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -75,7 +75,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dataGridView1.Location = new System.Drawing.Point(33, 134);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 137);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -91,44 +91,13 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1066, 628);
             this.dataGridView1.TabIndex = 22;
-            // 
-            // SearchFor
-            // 
-            this.SearchFor.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.SearchFor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchFor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SearchFor.Location = new System.Drawing.Point(228, 78);
-            this.SearchFor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.SearchFor.Name = "SearchFor";
-            this.SearchFor.Size = new System.Drawing.Size(732, 38);
-            this.SearchFor.TabIndex = 20;
-            // 
-            // TSearchBy
-            // 
-            this.TSearchBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.TSearchBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TSearchBy.ForeColor = System.Drawing.SystemColors.Window;
-            this.TSearchBy.FormattingEnabled = true;
-            this.TSearchBy.Items.AddRange(new object[] {
-            "Transaction ID",
-            "PickUp Branch",
-            "PickUp Date",
-            "Return Branch",
-            "Return Date",
-            "VIN",
-            "Customer ID"});
-            this.TSearchBy.Location = new System.Drawing.Point(33, 76);
-            this.TSearchBy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.TSearchBy.Name = "TSearchBy";
-            this.TSearchBy.Size = new System.Drawing.Size(182, 38);
-            this.TSearchBy.TabIndex = 19;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SearchBtn
             // 
-            this.SearchBtn.AllowDrop = true;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(971, 76);
+            this.SearchBtn.Location = new System.Drawing.Point(974, 79);
             this.SearchBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(129, 46);
@@ -136,40 +105,42 @@
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = true;
             // 
-            // TransactionID
+            // SearchBy
             // 
-            this.TransactionID.HeaderText = "Transaction ID";
-            this.TransactionID.MinimumWidth = 9;
-            this.TransactionID.Name = "TransactionID";
-            this.TransactionID.Width = 175;
+            this.SearchBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.SearchBy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SearchBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchBy.Location = new System.Drawing.Point(231, 81);
+            this.SearchBy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.SearchBy.Name = "SearchBy";
+            this.SearchBy.Size = new System.Drawing.Size(732, 38);
+            this.SearchBy.TabIndex = 20;
             // 
-            // PickBranch
+            // SearchParam
             // 
-            this.PickBranch.HeaderText = "Pickup Branch";
-            this.PickBranch.MinimumWidth = 9;
-            this.PickBranch.Name = "PickBranch";
-            this.PickBranch.Width = 175;
-            // 
-            // PickDate
-            // 
-            this.PickDate.HeaderText = "Pickup Date";
-            this.PickDate.MinimumWidth = 9;
-            this.PickDate.Name = "PickDate";
-            this.PickDate.Width = 175;
-            // 
-            // ReturnBranch
-            // 
-            this.ReturnBranch.HeaderText = "Return Branch";
-            this.ReturnBranch.MinimumWidth = 9;
-            this.ReturnBranch.Name = "ReturnBranch";
-            this.ReturnBranch.Width = 175;
-            // 
-            // ReturnDate
-            // 
-            this.ReturnDate.HeaderText = "Return Date";
-            this.ReturnDate.MinimumWidth = 9;
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.Width = 175;
+            this.SearchParam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.SearchParam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchParam.ForeColor = System.Drawing.SystemColors.Window;
+            this.SearchParam.FormattingEnabled = true;
+            this.SearchParam.Items.AddRange(new object[] {
+            "CID",
+            "FName",
+            "MName",
+            "LName",
+            "Address",
+            "City",
+            "Province",
+            "Postal",
+            "DOB",
+            "Phone",
+            "Ins",
+            "Drivers",
+            "Member"});
+            this.SearchParam.Location = new System.Drawing.Point(36, 79);
+            this.SearchParam.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.SearchParam.Name = "SearchParam";
+            this.SearchParam.Size = new System.Drawing.Size(182, 38);
+            this.SearchParam.TabIndex = 19;
             // 
             // VIN
             // 
@@ -183,9 +154,44 @@
             this.CustomerID.HeaderText = "Customer ID";
             this.CustomerID.MinimumWidth = 9;
             this.CustomerID.Name = "CustomerID";
-            this.CustomerID.Width = 175;
+            this.CustomerID.Width = 130;
             // 
-            // Form1
+            // ReturnDate
+            // 
+            this.ReturnDate.HeaderText = "Return Date";
+            this.ReturnDate.MinimumWidth = 9;
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.Width = 150;
+            // 
+            // ReturnBranch
+            // 
+            this.ReturnBranch.HeaderText = "Return Branch";
+            this.ReturnBranch.MinimumWidth = 9;
+            this.ReturnBranch.Name = "ReturnBranch";
+            this.ReturnBranch.Width = 130;
+            // 
+            // PickupDate
+            // 
+            this.PickupDate.HeaderText = "Pickup Date";
+            this.PickupDate.MinimumWidth = 9;
+            this.PickupDate.Name = "PickupDate";
+            this.PickupDate.Width = 150;
+            // 
+            // PickBranch
+            // 
+            this.PickBranch.HeaderText = "Pickup Branch";
+            this.PickBranch.MinimumWidth = 9;
+            this.PickBranch.Name = "PickBranch";
+            this.PickBranch.Width = 130;
+            // 
+            // TransID
+            // 
+            this.TransID.HeaderText = "Transaction ID";
+            this.TransID.MinimumWidth = 9;
+            this.TransID.Name = "TransID";
+            this.TransID.Width = 190;
+            // 
+            // TransSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,10 +199,10 @@
             this.ClientSize = new System.Drawing.Size(1138, 844);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SearchBtn);
-            this.Controls.Add(this.SearchFor);
-            this.Controls.Add(this.TSearchBy);
+            this.Controls.Add(this.SearchBy);
+            this.Controls.Add(this.SearchParam);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "TransSearch";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -207,15 +213,15 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private TextBox SearchFor;
-        private ComboBox TSearchBy;
         private Button SearchBtn;
-        private DataGridViewTextBoxColumn TransactionID;
+        private TextBox SearchBy;
+        private ComboBox SearchParam;
+        private DataGridViewTextBoxColumn TransID;
         private DataGridViewTextBoxColumn PickBranch;
-        private DataGridViewTextBoxColumn PickDate;
+        private DataGridViewTextBoxColumn PickupDate;
         private DataGridViewTextBoxColumn ReturnBranch;
         private DataGridViewTextBoxColumn ReturnDate;
-        private DataGridViewTextBoxColumn VIN;
         private DataGridViewTextBoxColumn CustomerID;
+        private DataGridViewTextBoxColumn VIN;
     }
 }
