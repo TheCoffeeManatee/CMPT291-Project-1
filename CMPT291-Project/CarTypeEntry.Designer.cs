@@ -1,4 +1,4 @@
-﻿namespace Lab6_Modern
+﻿namespace CMPT291_Project
 {
     partial class CarTypeEntry
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.CTEntryPanel = new System.Windows.Forms.Panel();
             this.ctentrycancel = new System.Windows.Forms.Button();
             this.ctentryacc = new System.Windows.Forms.Button();
             this.mrateentry = new System.Windows.Forms.TextBox();
@@ -39,7 +40,26 @@
             this.drateL = new System.Windows.Forms.Label();
             this.descriptionL = new System.Windows.Forms.Label();
             this.cartypeentrytitle = new System.Windows.Forms.Label();
+            this.CTEntryPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // CTEntryPanel
+            // 
+            this.CTEntryPanel.Controls.Add(this.ctentrycancel);
+            this.CTEntryPanel.Controls.Add(this.ctentryacc);
+            this.CTEntryPanel.Controls.Add(this.mrateentry);
+            this.CTEntryPanel.Controls.Add(this.wrateentry);
+            this.CTEntryPanel.Controls.Add(this.drateentry);
+            this.CTEntryPanel.Controls.Add(this.descentry);
+            this.CTEntryPanel.Controls.Add(this.mrateL);
+            this.CTEntryPanel.Controls.Add(this.wrateL);
+            this.CTEntryPanel.Controls.Add(this.drateL);
+            this.CTEntryPanel.Controls.Add(this.descriptionL);
+            this.CTEntryPanel.Controls.Add(this.cartypeentrytitle);
+            this.CTEntryPanel.Location = new System.Drawing.Point(0, 0);
+            this.CTEntryPanel.Name = "CTEntryPanel";
+            this.CTEntryPanel.Size = new System.Drawing.Size(664, 492);
+            this.CTEntryPanel.TabIndex = 0;
             // 
             // ctentrycancel
             // 
@@ -51,9 +71,10 @@
             this.ctentrycancel.Location = new System.Drawing.Point(464, 242);
             this.ctentrycancel.Name = "ctentrycancel";
             this.ctentrycancel.Size = new System.Drawing.Size(99, 50);
-            this.ctentrycancel.TabIndex = 86;
+            this.ctentrycancel.TabIndex = 97;
             this.ctentrycancel.Text = "Cancel";
             this.ctentrycancel.UseVisualStyleBackColor = false;
+            this.ctentrycancel.Click += new System.EventHandler(this.ctentrycancel_Click);
             // 
             // ctentryacc
             // 
@@ -65,7 +86,7 @@
             this.ctentryacc.Location = new System.Drawing.Point(337, 242);
             this.ctentryacc.Name = "ctentryacc";
             this.ctentryacc.Size = new System.Drawing.Size(99, 50);
-            this.ctentryacc.TabIndex = 85;
+            this.ctentryacc.TabIndex = 96;
             this.ctentryacc.Text = "Accept";
             this.ctentryacc.UseVisualStyleBackColor = false;
             // 
@@ -74,40 +95,44 @@
             this.mrateentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.mrateentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mrateentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mrateentry.ForeColor = System.Drawing.SystemColors.Window;
             this.mrateentry.Location = new System.Drawing.Point(108, 126);
             this.mrateentry.Name = "mrateentry";
             this.mrateentry.Size = new System.Drawing.Size(181, 22);
-            this.mrateentry.TabIndex = 66;
+            this.mrateentry.TabIndex = 95;
             // 
             // wrateentry
             // 
             this.wrateentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.wrateentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.wrateentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.wrateentry.ForeColor = System.Drawing.SystemColors.Window;
             this.wrateentry.Location = new System.Drawing.Point(108, 97);
             this.wrateentry.Name = "wrateentry";
             this.wrateentry.Size = new System.Drawing.Size(181, 22);
-            this.wrateentry.TabIndex = 65;
+            this.wrateentry.TabIndex = 94;
             // 
             // drateentry
             // 
             this.drateentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.drateentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.drateentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.drateentry.ForeColor = System.Drawing.SystemColors.Window;
             this.drateentry.Location = new System.Drawing.Point(108, 68);
             this.drateentry.Name = "drateentry";
             this.drateentry.Size = new System.Drawing.Size(181, 22);
-            this.drateentry.TabIndex = 64;
+            this.drateentry.TabIndex = 93;
             // 
             // descentry
             // 
             this.descentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.descentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.descentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.descentry.ForeColor = System.Drawing.SystemColors.Window;
             this.descentry.Location = new System.Drawing.Point(108, 39);
             this.descentry.Name = "descentry";
             this.descentry.Size = new System.Drawing.Size(181, 22);
-            this.descentry.TabIndex = 63;
+            this.descentry.TabIndex = 92;
             // 
             // mrateL
             // 
@@ -116,7 +141,7 @@
             this.mrateL.Location = new System.Drawing.Point(16, 129);
             this.mrateL.Name = "mrateL";
             this.mrateL.Size = new System.Drawing.Size(78, 15);
-            this.mrateL.TabIndex = 62;
+            this.mrateL.TabIndex = 91;
             this.mrateL.Text = "Monthly Rate";
             // 
             // wrateL
@@ -126,7 +151,7 @@
             this.wrateL.Location = new System.Drawing.Point(16, 100);
             this.wrateL.Name = "wrateL";
             this.wrateL.Size = new System.Drawing.Size(71, 15);
-            this.wrateL.TabIndex = 61;
+            this.wrateL.TabIndex = 90;
             this.wrateL.Text = "Weekly Rate";
             // 
             // drateL
@@ -136,7 +161,7 @@
             this.drateL.Location = new System.Drawing.Point(16, 71);
             this.drateL.Name = "drateL";
             this.drateL.Size = new System.Drawing.Size(59, 15);
-            this.drateL.TabIndex = 60;
+            this.drateL.TabIndex = 89;
             this.drateL.Text = "Daily Rate";
             // 
             // descriptionL
@@ -146,7 +171,7 @@
             this.descriptionL.Location = new System.Drawing.Point(16, 42);
             this.descriptionL.Name = "descriptionL";
             this.descriptionL.Size = new System.Drawing.Size(67, 15);
-            this.descriptionL.TabIndex = 59;
+            this.descriptionL.TabIndex = 88;
             this.descriptionL.Text = "Description";
             // 
             // cartypeentrytitle
@@ -157,7 +182,7 @@
             this.cartypeentrytitle.Location = new System.Drawing.Point(12, 9);
             this.cartypeentrytitle.Name = "cartypeentrytitle";
             this.cartypeentrytitle.Size = new System.Drawing.Size(238, 25);
-            this.cartypeentrytitle.TabIndex = 58;
+            this.cartypeentrytitle.TabIndex = 87;
             this.cartypeentrytitle.Text = "Enter Car Type Information";
             // 
             // CarTypeEntry
@@ -166,27 +191,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
-            this.Controls.Add(this.ctentrycancel);
-            this.Controls.Add(this.ctentryacc);
-            this.Controls.Add(this.mrateentry);
-            this.Controls.Add(this.wrateentry);
-            this.Controls.Add(this.drateentry);
-            this.Controls.Add(this.descentry);
-            this.Controls.Add(this.mrateL);
-            this.Controls.Add(this.wrateL);
-            this.Controls.Add(this.drateL);
-            this.Controls.Add(this.descriptionL);
-            this.Controls.Add(this.cartypeentrytitle);
+            this.Controls.Add(this.CTEntryPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CarTypeEntry";
             this.Text = "CarTypeEntry";
+            this.CTEntryPanel.ResumeLayout(false);
+            this.CTEntryPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private Panel CTEntryPanel;
         private Button ctentrycancel;
         private Button ctentryacc;
         private TextBox mrateentry;

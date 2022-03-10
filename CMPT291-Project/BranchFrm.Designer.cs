@@ -1,4 +1,4 @@
-﻿namespace Lab6_Modern
+﻿namespace CMPT291_Project
 {
     partial class BranchFrm
     {

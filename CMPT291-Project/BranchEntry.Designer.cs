@@ -1,4 +1,4 @@
-﻿namespace Lab6_Modern
+﻿namespace CMPT291_Project
 {
     partial class BranchEntry
     {
@@ -137,6 +137,7 @@
             this.phoneentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.phoneentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.phoneentry.ForeColor = System.Drawing.SystemColors.Window;
             this.phoneentry.Location = new System.Drawing.Point(108, 213);
             this.phoneentry.Name = "phoneentry";
             this.phoneentry.Size = new System.Drawing.Size(181, 22);
@@ -147,6 +148,7 @@
             this.postalentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.postalentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.postalentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.postalentry.ForeColor = System.Drawing.SystemColors.Window;
             this.postalentry.Location = new System.Drawing.Point(108, 184);
             this.postalentry.Name = "postalentry";
             this.postalentry.Size = new System.Drawing.Size(181, 22);
@@ -157,6 +159,7 @@
             this.proventry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.proventry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.proventry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.proventry.ForeColor = System.Drawing.SystemColors.Window;
             this.proventry.Location = new System.Drawing.Point(108, 155);
             this.proventry.Name = "proventry";
             this.proventry.Size = new System.Drawing.Size(181, 22);
@@ -167,6 +170,7 @@
             this.cityentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.cityentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cityentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cityentry.ForeColor = System.Drawing.SystemColors.Window;
             this.cityentry.Location = new System.Drawing.Point(108, 126);
             this.cityentry.Name = "cityentry";
             this.cityentry.Size = new System.Drawing.Size(181, 22);
@@ -177,6 +181,7 @@
             this.addL2Entry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.addL2Entry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addL2Entry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addL2Entry.ForeColor = System.Drawing.SystemColors.Window;
             this.addL2Entry.Location = new System.Drawing.Point(108, 97);
             this.addL2Entry.Name = "addL2Entry";
             this.addL2Entry.Size = new System.Drawing.Size(181, 22);
@@ -187,6 +192,7 @@
             this.addL1entry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.addL1entry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addL1entry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addL1entry.ForeColor = System.Drawing.SystemColors.Window;
             this.addL1entry.Location = new System.Drawing.Point(108, 68);
             this.addL1entry.Name = "addL1entry";
             this.addL1entry.Size = new System.Drawing.Size(181, 22);
@@ -197,6 +203,7 @@
             this.descentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.descentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.descentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.descentry.ForeColor = System.Drawing.SystemColors.Window;
             this.descentry.Location = new System.Drawing.Point(108, 39);
             this.descentry.Name = "descentry";
             this.descentry.Size = new System.Drawing.Size(181, 22);

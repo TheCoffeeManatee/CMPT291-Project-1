@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab6_Modern
+namespace CMPT291_Project
 {
     public partial class TransactionsFrm : Form
     {
