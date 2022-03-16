@@ -13,7 +13,7 @@ namespace CMPT291_Project
 {
     public partial class MainFrm : Form
     {
-
+        
         public MainFrm()
         {
             InitializeComponent();
@@ -23,6 +23,7 @@ namespace CMPT291_Project
             TransactionsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(TransactionsFrm_Vrb);
             TransactionsFrm_Vrb.Show();
+            
 
         }
 

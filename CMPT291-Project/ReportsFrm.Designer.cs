@@ -31,12 +31,15 @@
             this.ReportsLbl = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabControl();
             this.Report1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Date2 = new System.Windows.Forms.Label();
             this.Date1 = new System.Windows.Forms.Label();
             this.ReportUpdate1 = new System.Windows.Forms.Button();
             this.DatePick1 = new System.Windows.Forms.DateTimePicker();
             this.DatePick2 = new System.Windows.Forms.DateTimePicker();
             this.Report2 = new System.Windows.Forms.TabPage();
+            this.Date4 = new System.Windows.Forms.Label();
+            this.Date3 = new System.Windows.Forms.Label();
             this.UpdateReport2 = new System.Windows.Forms.Button();
             this.DatePick4 = new System.Windows.Forms.DateTimePicker();
             this.DatePick3 = new System.Windows.Forms.DateTimePicker();
@@ -45,10 +48,14 @@
             this.BranchBox3 = new System.Windows.Forms.ComboBox();
             this.Report4 = new System.Windows.Forms.TabPage();
             this.Report5 = new System.Windows.Forms.TabPage();
-            this.Date3 = new System.Windows.Forms.Label();
-            this.Date4 = new System.Windows.Forms.Label();
+            this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DailyRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonthlyRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reports.SuspendLayout();
             this.Report1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Report2.SuspendLayout();
             this.Report3.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +89,7 @@
             // 
             this.Report1.BackColor = System.Drawing.Color.DimGray;
             this.Report1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Report1.Controls.Add(this.dataGridView1);
             this.Report1.Controls.Add(this.Date2);
             this.Report1.Controls.Add(this.Date1);
             this.Report1.Controls.Add(this.ReportUpdate1);
@@ -94,6 +102,22 @@
             this.Report1.Size = new System.Drawing.Size(624, 394);
             this.Report1.TabIndex = 0;
             this.Report1.Text = "Report 1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VIN,
+            this.Description,
+            this.DailyRate,
+            this.MonthlyRate,
+            this.Price});
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(614, 335);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Date2
             // 
@@ -159,6 +183,30 @@
             this.Report2.Size = new System.Drawing.Size(624, 394);
             this.Report2.TabIndex = 1;
             this.Report2.Text = "Report 2";
+            // 
+            // Date4
+            // 
+            this.Date4.AutoSize = true;
+            this.Date4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Date4.ForeColor = System.Drawing.Color.Red;
+            this.Date4.Location = new System.Drawing.Point(270, 332);
+            this.Date4.Name = "Date4";
+            this.Date4.Size = new System.Drawing.Size(70, 25);
+            this.Date4.TabIndex = 4;
+            this.Date4.Text = "label2";
+            this.Date4.Visible = false;
+            // 
+            // Date3
+            // 
+            this.Date3.AutoSize = true;
+            this.Date3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Date3.ForeColor = System.Drawing.Color.Red;
+            this.Date3.Location = new System.Drawing.Point(50, 332);
+            this.Date3.Name = "Date3";
+            this.Date3.Size = new System.Drawing.Size(70, 25);
+            this.Date3.TabIndex = 3;
+            this.Date3.Text = "label1";
+            this.Date3.Visible = false;
             // 
             // UpdateReport2
             // 
@@ -240,29 +288,30 @@
             this.Report5.TabIndex = 4;
             this.Report5.Text = "Report 5";
             // 
-            // Date3
+            // VIN
             // 
-            this.Date3.AutoSize = true;
-            this.Date3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Date3.ForeColor = System.Drawing.Color.Red;
-            this.Date3.Location = new System.Drawing.Point(50, 332);
-            this.Date3.Name = "Date3";
-            this.Date3.Size = new System.Drawing.Size(70, 25);
-            this.Date3.TabIndex = 3;
-            this.Date3.Text = "label1";
-            this.Date3.Visible = false;
+            this.VIN.HeaderText = "VIN";
+            this.VIN.Name = "VIN";
             // 
-            // Date4
+            // Description
             // 
-            this.Date4.AutoSize = true;
-            this.Date4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Date4.ForeColor = System.Drawing.Color.Red;
-            this.Date4.Location = new System.Drawing.Point(270, 332);
-            this.Date4.Name = "Date4";
-            this.Date4.Size = new System.Drawing.Size(70, 25);
-            this.Date4.TabIndex = 4;
-            this.Date4.Text = "label2";
-            this.Date4.Visible = false;
+            this.Description.HeaderText = "CarType";
+            this.Description.Name = "Description";
+            // 
+            // DailyRate
+            // 
+            this.DailyRate.HeaderText = "PricePerDay";
+            this.DailyRate.Name = "DailyRate";
+            // 
+            // MonthlyRate
+            // 
+            this.MonthlyRate.HeaderText = "PricePerMonth";
+            this.MonthlyRate.Name = "MonthlyRate";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "TotalAmount";
+            this.Price.Name = "Price";
             // 
             // ReportsFrm
             // 
@@ -278,6 +327,7 @@
             this.Reports.ResumeLayout(false);
             this.Report1.ResumeLayout(false);
             this.Report1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Report2.ResumeLayout(false);
             this.Report2.PerformLayout();
             this.Report3.ResumeLayout(false);
@@ -307,5 +357,11 @@
         private Label Date1;
         private Label Date4;
         private Label Date3;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn VIN;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn DailyRate;
+        private DataGridViewTextBoxColumn MonthlyRate;
+        private DataGridViewTextBoxColumn Price;
     }
 }
