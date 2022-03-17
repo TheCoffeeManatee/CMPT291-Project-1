@@ -44,7 +44,7 @@
             this.colourentry = new System.Windows.Forms.TextBox();
             this.seatsentry = new System.Windows.Forms.TextBox();
             this.yearentry = new System.Windows.Forms.TextBox();
-            this.modelEntry = new System.Windows.Forms.TextBox();
+            this.modelentry = new System.Windows.Forms.TextBox();
             this.makeentry = new System.Windows.Forms.TextBox();
             this.vinentry = new System.Windows.Forms.TextBox();
             this.yearL = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.CarEntryPanel.Controls.Add(this.colourentry);
             this.CarEntryPanel.Controls.Add(this.seatsentry);
             this.CarEntryPanel.Controls.Add(this.yearentry);
-            this.CarEntryPanel.Controls.Add(this.modelEntry);
+            this.CarEntryPanel.Controls.Add(this.modelentry);
             this.CarEntryPanel.Controls.Add(this.makeentry);
             this.CarEntryPanel.Controls.Add(this.vinentry);
             this.CarEntryPanel.Controls.Add(this.yearL);
@@ -113,6 +113,7 @@
             this.carentrryaccept.TabIndex = 108;
             this.carentrryaccept.Text = "Accept";
             this.carentrryaccept.UseVisualStyleBackColor = false;
+            this.carentrryaccept.Click += new System.EventHandler(this.carentrryaccept_Click);
             // 
             // cartypeL
             // 
@@ -251,16 +252,16 @@
             this.yearentry.Size = new System.Drawing.Size(181, 22);
             this.yearentry.TabIndex = 95;
             // 
-            // modelEntry
+            // modelentry
             // 
-            this.modelEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.modelEntry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.modelEntry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.modelEntry.ForeColor = System.Drawing.SystemColors.Window;
-            this.modelEntry.Location = new System.Drawing.Point(108, 97);
-            this.modelEntry.Name = "modelEntry";
-            this.modelEntry.Size = new System.Drawing.Size(181, 22);
-            this.modelEntry.TabIndex = 94;
+            this.modelentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.modelentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.modelentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.modelentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.modelentry.Location = new System.Drawing.Point(108, 97);
+            this.modelentry.Name = "modelentry";
+            this.modelentry.Size = new System.Drawing.Size(181, 22);
+            this.modelentry.TabIndex = 94;
             // 
             // makeentry
             // 
@@ -369,7 +370,7 @@
         private TextBox colourentry;
         private TextBox seatsentry;
         private TextBox yearentry;
-        private TextBox modelEntry;
+        private TextBox modelentry;
         private TextBox makeentry;
         private TextBox vinentry;
         private Label yearL;
