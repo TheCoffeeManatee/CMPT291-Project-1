@@ -14,6 +14,10 @@ namespace CMPT291_Project
 {
     public partial class CarTypeFrm : Form
     {
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
+
         public CarTypeFrm()
         {
             InitializeComponent();

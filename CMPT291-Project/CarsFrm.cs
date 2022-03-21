@@ -14,9 +14,29 @@ namespace CMPT291_Project
 {
     public partial class CarsFrm : Form
     {
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
+
         public CarsFrm()
         {
             InitializeComponent();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open(); // Open connection
+                myCommand = new SqlCommand();
+                myCommand.Connection = myConnection; // Link the command stream to the connection
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error");
+                this.Close();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

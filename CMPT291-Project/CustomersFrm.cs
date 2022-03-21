@@ -14,6 +14,10 @@ namespace CMPT291_Project
 {
     public partial class CustomersFrm : Form
     {
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
+
         public CustomersFrm()
         {
             InitializeComponent();

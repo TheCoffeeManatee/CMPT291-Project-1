@@ -14,6 +14,10 @@ namespace CMPT291_Project
 {
     public partial class TransNew : Form
     {
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
+
         public TransNew()
         {
             InitializeComponent();
