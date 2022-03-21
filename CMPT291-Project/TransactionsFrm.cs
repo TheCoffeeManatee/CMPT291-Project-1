@@ -44,7 +44,7 @@ namespace CMPT291_Project
 
         }
 
-        private void NewTransBtn_Click(object sender, EventArgs e)
+        private void AddTransBtn_Click(object sender, EventArgs e)
         {
             this.TransPnl.Controls.Clear();
             TransNew TransNew_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -53,7 +53,7 @@ namespace CMPT291_Project
             TransNew_Vrb.Show();
         }
 
-        private void SearchBtn_Click(object sender, EventArgs e)
+        private void SearchBtn_Click_1(object sender, EventArgs e)
         {
             this.TransPnl.Controls.Clear();
             TransSearch TransSearch_Vrb = new TransSearch() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };

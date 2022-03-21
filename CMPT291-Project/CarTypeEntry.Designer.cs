@@ -57,7 +57,7 @@
             this.CTEntryPanel.Controls.Add(this.descriptionL);
             this.CTEntryPanel.Controls.Add(this.cartypeentrytitle);
             this.CTEntryPanel.Location = new System.Drawing.Point(0, 0);
-            this.CTEntryPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CTEntryPanel.Margin = new System.Windows.Forms.Padding(6);
             this.CTEntryPanel.Name = "CTEntryPanel";
             this.CTEntryPanel.Size = new System.Drawing.Size(1233, 1050);
             this.CTEntryPanel.TabIndex = 0;
@@ -67,10 +67,10 @@
             this.ctentrycancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.ctentrycancel.FlatAppearance.BorderSize = 0;
             this.ctentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ctentrycancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ctentrycancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.ctentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ctentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.ctentrycancel.Location = new System.Drawing.Point(862, 516);
-            this.ctentrycancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ctentrycancel.Margin = new System.Windows.Forms.Padding(6);
             this.ctentrycancel.Name = "ctentrycancel";
             this.ctentrycancel.Size = new System.Drawing.Size(184, 107);
             this.ctentrycancel.TabIndex = 97;
@@ -83,10 +83,10 @@
             this.ctentryacc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.ctentryacc.FlatAppearance.BorderSize = 0;
             this.ctentryacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ctentryacc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ctentryacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.ctentryacc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ctentryacc.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.ctentryacc.Location = new System.Drawing.Point(626, 516);
-            this.ctentryacc.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ctentryacc.Margin = new System.Windows.Forms.Padding(6);
             this.ctentryacc.Name = "ctentryacc";
             this.ctentryacc.Size = new System.Drawing.Size(184, 107);
             this.ctentryacc.TabIndex = 96;
@@ -101,7 +101,7 @@
             this.mrateentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mrateentry.ForeColor = System.Drawing.SystemColors.Window;
             this.mrateentry.Location = new System.Drawing.Point(201, 269);
-            this.mrateentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mrateentry.Margin = new System.Windows.Forms.Padding(6);
             this.mrateentry.Name = "mrateentry";
             this.mrateentry.Size = new System.Drawing.Size(336, 43);
             this.mrateentry.TabIndex = 95;
@@ -113,7 +113,7 @@
             this.wrateentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.wrateentry.ForeColor = System.Drawing.SystemColors.Window;
             this.wrateentry.Location = new System.Drawing.Point(201, 207);
-            this.wrateentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.wrateentry.Margin = new System.Windows.Forms.Padding(6);
             this.wrateentry.Name = "wrateentry";
             this.wrateentry.Size = new System.Drawing.Size(336, 43);
             this.wrateentry.TabIndex = 94;
@@ -125,7 +125,7 @@
             this.drateentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.drateentry.ForeColor = System.Drawing.SystemColors.Window;
             this.drateentry.Location = new System.Drawing.Point(201, 145);
-            this.drateentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.drateentry.Margin = new System.Windows.Forms.Padding(6);
             this.drateentry.Name = "drateentry";
             this.drateentry.Size = new System.Drawing.Size(336, 43);
             this.drateentry.TabIndex = 93;
@@ -137,7 +137,7 @@
             this.descentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.descentry.ForeColor = System.Drawing.SystemColors.Window;
             this.descentry.Location = new System.Drawing.Point(201, 83);
-            this.descentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.descentry.Margin = new System.Windows.Forms.Padding(6);
             this.descentry.Name = "descentry";
             this.descentry.Size = new System.Drawing.Size(336, 43);
             this.descentry.TabIndex = 92;
@@ -145,7 +145,7 @@
             // mrateL
             // 
             this.mrateL.AutoSize = true;
-            this.mrateL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.mrateL.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.mrateL.Location = new System.Drawing.Point(30, 275);
             this.mrateL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.mrateL.Name = "mrateL";
@@ -156,7 +156,7 @@
             // wrateL
             // 
             this.wrateL.AutoSize = true;
-            this.wrateL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.wrateL.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.wrateL.Location = new System.Drawing.Point(30, 213);
             this.wrateL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wrateL.Name = "wrateL";
@@ -167,7 +167,7 @@
             // drateL
             // 
             this.drateL.AutoSize = true;
-            this.drateL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.drateL.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.drateL.Location = new System.Drawing.Point(30, 151);
             this.drateL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.drateL.Name = "drateL";
@@ -178,7 +178,7 @@
             // descriptionL
             // 
             this.descriptionL.AutoSize = true;
-            this.descriptionL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.descriptionL.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.descriptionL.Location = new System.Drawing.Point(30, 90);
             this.descriptionL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.descriptionL.Name = "descriptionL";
@@ -190,7 +190,7 @@
             // 
             this.cartypeentrytitle.AutoSize = true;
             this.cartypeentrytitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cartypeentrytitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.cartypeentrytitle.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.cartypeentrytitle.Location = new System.Drawing.Point(22, 19);
             this.cartypeentrytitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.cartypeentrytitle.Name = "cartypeentrytitle";
@@ -206,7 +206,7 @@
             this.ClientSize = new System.Drawing.Size(1233, 1050);
             this.Controls.Add(this.CTEntryPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CarTypeEntry";
             this.Text = "CarTypeEntry";
             this.CTEntryPanel.ResumeLayout(false);
