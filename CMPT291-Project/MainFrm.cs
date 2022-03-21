@@ -10,19 +10,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace CMPT291_Project
-{
+{ 
     public partial class MainFrm : Form
-    {
-
+    {  
         public MainFrm()
         {
             InitializeComponent();
-
-            this.HomePnl.Controls.Clear();
-            TransactionsFrm TransactionsFrm_Vrb = new TransactionsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            TransactionsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.HomePnl.Controls.Add(TransactionsFrm_Vrb);
-            TransactionsFrm_Vrb.Show();
 
         }
 
