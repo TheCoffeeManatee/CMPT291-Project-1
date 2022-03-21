@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CMPT291_Project
 {
@@ -15,6 +17,22 @@ namespace CMPT291_Project
         public LoginScreen()
         {
             InitializeComponent();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open(); // Open connection
+                myCommand = new SqlCommand();
+                myCommand.Connection = myConnection; // Link the command stream to the connection
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error");
+                this.Close();
+            }
         }
 
         private void LoginMenuBar_Paint(object sender, PaintEventArgs e)
