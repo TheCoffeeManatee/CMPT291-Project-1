@@ -109,7 +109,7 @@
             this.SettingsBtn.FlatAppearance.BorderSize = 0;
             this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SettingsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.SettingsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.SettingsBtn.Location = new System.Drawing.Point(0, 1021);
             this.SettingsBtn.Margin = new System.Windows.Forms.Padding(6);
             this.SettingsBtn.Name = "SettingsBtn";

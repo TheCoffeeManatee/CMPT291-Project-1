@@ -37,7 +37,7 @@
             // TransactionsFrmLbl
             // 
             this.TransactionsFrmLbl.AutoSize = true;
-            this.TransactionsFrmLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.TransactionsFrmLbl.BackColor = System.Drawing.Color.Transparent;
             this.TransactionsFrmLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TransactionsFrmLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TransactionsFrmLbl.Location = new System.Drawing.Point(35, 41);
@@ -49,10 +49,11 @@
             // 
             // TransPnl
             // 
-            this.TransPnl.Location = new System.Drawing.Point(0, 149);
+            this.TransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.TransPnl.Location = new System.Drawing.Point(35, 342);
             this.TransPnl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TransPnl.Name = "TransPnl";
-            this.TransPnl.Size = new System.Drawing.Size(1233, 900);
+            this.TransPnl.Size = new System.Drawing.Size(1155, 670);
             this.TransPnl.TabIndex = 6;
             // 
             // AddTransBtn
@@ -62,7 +63,7 @@
             this.AddTransBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddTransBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddTransBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddTransBtn.Location = new System.Drawing.Point(418, 41);
+            this.AddTransBtn.Location = new System.Drawing.Point(39, 173);
             this.AddTransBtn.Margin = new System.Windows.Forms.Padding(6);
             this.AddTransBtn.Name = "AddTransBtn";
             this.AddTransBtn.Size = new System.Drawing.Size(169, 64);
@@ -78,7 +79,7 @@
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SearchBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SearchBtn.Location = new System.Drawing.Point(599, 41);
+            this.SearchBtn.Location = new System.Drawing.Point(251, 173);
             this.SearchBtn.Margin = new System.Windows.Forms.Padding(6);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(169, 64);
@@ -91,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1233, 1050);
             this.Controls.Add(this.AddTransBtn);
             this.Controls.Add(this.SearchBtn);

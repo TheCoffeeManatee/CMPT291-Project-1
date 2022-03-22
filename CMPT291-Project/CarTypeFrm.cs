@@ -18,35 +18,19 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
 
+        public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+
         public CarTypeFrm()
         {
             InitializeComponent();
+            fillTable(); //fills datatable upon loading screen
 
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
-            {
-                myConnection.Open(); // Open connection
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection; // Link the command stream to the connection
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
-            }
         }
 
         private void QueryFrm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        
-        private void QueryLbl_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -58,5 +42,21 @@ namespace CMPT291_Project
             this.CarTypePanel.Controls.Add(CarTypeEntry_Vrb);
             CarTypeEntry_Vrb.Show();
         }
+
+        private void fillTable()
+        {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand = new SqlCommand("select * from CarType");
+            myCommand.Connection = myConnection;
+            myCommand.CommandType = CommandType.Text;
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
+            CarTypeData.DataSource = dt;
+            myConnection.Close();
+        }
     }
 }
+
+

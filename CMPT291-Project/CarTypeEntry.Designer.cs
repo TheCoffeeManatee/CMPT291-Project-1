@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.CTEntryPanel = new System.Windows.Forms.Panel();
+            this.FindID = new System.Windows.Forms.Button();
+            this.RemoveRBtn = new System.Windows.Forms.RadioButton();
+            this.EditRBtn = new System.Windows.Forms.RadioButton();
+            this.AddRBtn = new System.Windows.Forms.RadioButton();
+            this.CarTypeIdBx = new System.Windows.Forms.TextBox();
             this.ctentrycancel = new System.Windows.Forms.Button();
             this.ctentryacc = new System.Windows.Forms.Button();
             this.mrateentry = new System.Windows.Forms.TextBox();
@@ -45,6 +50,11 @@
             // 
             // CTEntryPanel
             // 
+            this.CTEntryPanel.Controls.Add(this.FindID);
+            this.CTEntryPanel.Controls.Add(this.RemoveRBtn);
+            this.CTEntryPanel.Controls.Add(this.EditRBtn);
+            this.CTEntryPanel.Controls.Add(this.AddRBtn);
+            this.CTEntryPanel.Controls.Add(this.CarTypeIdBx);
             this.CTEntryPanel.Controls.Add(this.ctentrycancel);
             this.CTEntryPanel.Controls.Add(this.ctentryacc);
             this.CTEntryPanel.Controls.Add(this.mrateentry);
@@ -62,6 +72,72 @@
             this.CTEntryPanel.Size = new System.Drawing.Size(1233, 1050);
             this.CTEntryPanel.TabIndex = 0;
             // 
+            // FindID
+            // 
+            this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindID.ForeColor = System.Drawing.Color.White;
+            this.FindID.Location = new System.Drawing.Point(303, 19);
+            this.FindID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindID.Name = "FindID";
+            this.FindID.Size = new System.Drawing.Size(140, 49);
+            this.FindID.TabIndex = 104;
+            this.FindID.Text = "Find ID";
+            this.FindID.UseVisualStyleBackColor = true;
+            this.FindID.Visible = false;
+            this.FindID.Click += new System.EventHandler(this.FindID_Click);
+            // 
+            // RemoveRBtn
+            // 
+            this.RemoveRBtn.AutoSize = true;
+            this.RemoveRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RemoveRBtn.Location = new System.Drawing.Point(664, 215);
+            this.RemoveRBtn.Name = "RemoveRBtn";
+            this.RemoveRBtn.Size = new System.Drawing.Size(131, 36);
+            this.RemoveRBtn.TabIndex = 103;
+            this.RemoveRBtn.TabStop = true;
+            this.RemoveRBtn.Text = "Remove";
+            this.RemoveRBtn.UseVisualStyleBackColor = true;
+            this.RemoveRBtn.CheckedChanged += new System.EventHandler(this.RemoveRBtn_CheckedChanged);
+            // 
+            // EditRBtn
+            // 
+            this.EditRBtn.AutoSize = true;
+            this.EditRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.EditRBtn.Location = new System.Drawing.Point(664, 153);
+            this.EditRBtn.Name = "EditRBtn";
+            this.EditRBtn.Size = new System.Drawing.Size(85, 36);
+            this.EditRBtn.TabIndex = 102;
+            this.EditRBtn.TabStop = true;
+            this.EditRBtn.Text = "Edit";
+            this.EditRBtn.UseVisualStyleBackColor = true;
+            this.EditRBtn.CheckedChanged += new System.EventHandler(this.EditRBtn_CheckedChanged);
+            // 
+            // AddRBtn
+            // 
+            this.AddRBtn.AutoSize = true;
+            this.AddRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddRBtn.Location = new System.Drawing.Point(664, 86);
+            this.AddRBtn.Name = "AddRBtn";
+            this.AddRBtn.Size = new System.Drawing.Size(88, 36);
+            this.AddRBtn.TabIndex = 101;
+            this.AddRBtn.TabStop = true;
+            this.AddRBtn.Text = "Add";
+            this.AddRBtn.UseVisualStyleBackColor = true;
+            this.AddRBtn.CheckedChanged += new System.EventHandler(this.AddRBtn_CheckedChanged);
+            // 
+            // CarTypeIdBx
+            // 
+            this.CarTypeIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.CarTypeIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CarTypeIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CarTypeIdBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.CarTypeIdBx.Location = new System.Drawing.Point(454, 23);
+            this.CarTypeIdBx.Margin = new System.Windows.Forms.Padding(6);
+            this.CarTypeIdBx.Name = "CarTypeIdBx";
+            this.CarTypeIdBx.Size = new System.Drawing.Size(83, 43);
+            this.CarTypeIdBx.TabIndex = 100;
+            this.CarTypeIdBx.Visible = false;
+            // 
             // ctentrycancel
             // 
             this.ctentrycancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -69,7 +145,7 @@
             this.ctentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ctentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ctentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.ctentrycancel.Location = new System.Drawing.Point(862, 516);
+            this.ctentrycancel.Location = new System.Drawing.Point(916, 200);
             this.ctentrycancel.Margin = new System.Windows.Forms.Padding(6);
             this.ctentrycancel.Name = "ctentrycancel";
             this.ctentrycancel.Size = new System.Drawing.Size(184, 107);
@@ -85,7 +161,7 @@
             this.ctentryacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ctentryacc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ctentryacc.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.ctentryacc.Location = new System.Drawing.Point(626, 516);
+            this.ctentryacc.Location = new System.Drawing.Point(916, 76);
             this.ctentryacc.Margin = new System.Windows.Forms.Padding(6);
             this.ctentryacc.Name = "ctentryacc";
             this.ctentryacc.Size = new System.Drawing.Size(184, 107);
@@ -194,9 +270,9 @@
             this.cartypeentrytitle.Location = new System.Drawing.Point(22, 19);
             this.cartypeentrytitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.cartypeentrytitle.Name = "cartypeentrytitle";
-            this.cartypeentrytitle.Size = new System.Drawing.Size(470, 51);
+            this.cartypeentrytitle.Size = new System.Drawing.Size(166, 51);
             this.cartypeentrytitle.TabIndex = 87;
-            this.cartypeentrytitle.Text = "Enter Car Type Information";
+            this.cartypeentrytitle.Text = "Car Type";
             // 
             // CarTypeEntry
             // 
@@ -229,5 +305,10 @@
         private Label drateL;
         private Label descriptionL;
         private Label cartypeentrytitle;
+        private TextBox CarTypeIdBx;
+        private RadioButton RemoveRBtn;
+        private RadioButton EditRBtn;
+        private RadioButton AddRBtn;
+        private Button FindID;
     }
 }
