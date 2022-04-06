@@ -125,6 +125,7 @@
             this.custentryacc.TabIndex = 85;
             this.custentryacc.Text = "Accept";
             this.custentryacc.UseVisualStyleBackColor = false;
+            this.custentryacc.Click += new System.EventHandler(this.custentryacc_Click);
             // 
             // cmemL
             // 

@@ -101,6 +101,7 @@
             this.carentrryaccept.TabIndex = 125;
             this.carentrryaccept.Text = "Accept";
             this.carentrryaccept.UseVisualStyleBackColor = false;
+            this.carentrryaccept.Click += new System.EventHandler(this.carentrryaccept_Click);
             // 
             // phoneL
             // 
