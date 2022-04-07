@@ -21,6 +21,11 @@ namespace CMPT291_Project
         {
             InitializeComponent();
 
+            this.HomePnl.Controls.Clear();
+            TransactionsFrm TransactionsFrm_Vrb = new TransactionsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransactionsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.HomePnl.Controls.Add(TransactionsFrm_Vrb);
+            TransactionsFrm_Vrb.Show();
             string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
             SqlConnection myConnection = new SqlConnection(connectionString);

@@ -93,6 +93,7 @@ namespace CMPT291_Project
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+
         }
     }
 }
