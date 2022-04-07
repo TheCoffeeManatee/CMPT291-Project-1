@@ -20,7 +20,7 @@ namespace CMPT291_Project
         public ReportsFrm()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString; //connect to database
+            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString; //connect to databas
 
             SqlConnection myConnection = new SqlConnection(connectionString);
 
@@ -115,6 +115,7 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e3.ToString(), "Error");
             }
+
         }
 
         private void UpdateButton3_Click(object sender, EventArgs e) //Report number 3

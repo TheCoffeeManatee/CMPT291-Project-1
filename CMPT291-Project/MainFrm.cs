@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CMPT291_Project
 { 
     public partial class MainFrm : Form
     {
-
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
         public MainFrm()
         {
             InitializeComponent();
@@ -23,6 +26,21 @@ namespace CMPT291_Project
             TransactionsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.HomePnl.Controls.Add(TransactionsFrm_Vrb);
             TransactionsFrm_Vrb.Show();
+            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open(); // Open connection
+                myCommand = new SqlCommand();
+                myCommand.Connection = myConnection; // Link the command stream to the connection
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error");
+                this.Close();
+            }
 
         }
 
