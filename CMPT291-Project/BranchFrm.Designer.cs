@@ -62,8 +62,9 @@
             this.BranchPanel.Controls.Add(this.BranchDD);
             this.BranchPanel.Controls.Add(this.CustomersLbl);
             this.BranchPanel.Location = new System.Drawing.Point(0, 0);
+            this.BranchPanel.Margin = new System.Windows.Forms.Padding(6);
             this.BranchPanel.Name = "BranchPanel";
-            this.BranchPanel.Size = new System.Drawing.Size(664, 492);
+            this.BranchPanel.Size = new System.Drawing.Size(1233, 1050);
             this.BranchPanel.TabIndex = 13;
             this.BranchPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.HomeFormPanel1_Paint);
             // 
@@ -72,11 +73,12 @@
             this.BranchAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.BranchAdd.FlatAppearance.BorderSize = 0;
             this.BranchAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BranchAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BranchAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BranchAdd.Location = new System.Drawing.Point(21, 81);
+            this.BranchAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BranchAdd.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.BranchAdd.Location = new System.Drawing.Point(39, 173);
+            this.BranchAdd.Margin = new System.Windows.Forms.Padding(6);
             this.BranchAdd.Name = "BranchAdd";
-            this.BranchAdd.Size = new System.Drawing.Size(91, 30);
+            this.BranchAdd.Size = new System.Drawing.Size(169, 64);
             this.BranchAdd.TabIndex = 41;
             this.BranchAdd.Text = "Add";
             this.BranchAdd.UseVisualStyleBackColor = false;
@@ -87,11 +89,12 @@
             this.BranchRm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.BranchRm.FlatAppearance.BorderSize = 0;
             this.BranchRm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BranchRm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BranchRm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BranchRm.Location = new System.Drawing.Point(135, 81);
+            this.BranchRm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BranchRm.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.BranchRm.Location = new System.Drawing.Point(251, 173);
+            this.BranchRm.Margin = new System.Windows.Forms.Padding(6);
             this.BranchRm.Name = "BranchRm";
-            this.BranchRm.Size = new System.Drawing.Size(91, 30);
+            this.BranchRm.Size = new System.Drawing.Size(169, 64);
             this.BranchRm.TabIndex = 40;
             this.BranchRm.Text = "Remove";
             this.BranchRm.UseVisualStyleBackColor = false;
@@ -127,7 +130,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.BranchTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.BranchTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.BranchTable.Location = new System.Drawing.Point(21, 155);
+            this.BranchTable.Location = new System.Drawing.Point(39, 331);
+            this.BranchTable.Margin = new System.Windows.Forms.Padding(6);
             this.BranchTable.Name = "BranchTable";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -138,59 +142,75 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.BranchTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.BranchTable.RowHeadersVisible = false;
+            this.BranchTable.RowHeadersWidth = 82;
             this.BranchTable.RowTemplate.Height = 25;
-            this.BranchTable.Size = new System.Drawing.Size(622, 314);
+            this.BranchTable.Size = new System.Drawing.Size(1155, 670);
             this.BranchTable.TabIndex = 39;
             // 
             // BID
             // 
             this.BID.HeaderText = "BID";
+            this.BID.MinimumWidth = 10;
             this.BID.Name = "BID";
+            this.BID.Width = 200;
             // 
             // Desc
             // 
             this.Desc.HeaderText = "Desc";
+            this.Desc.MinimumWidth = 10;
             this.Desc.Name = "Desc";
+            this.Desc.Width = 200;
             // 
             // AddL1
             // 
             this.AddL1.HeaderText = "Address Line 1";
+            this.AddL1.MinimumWidth = 10;
             this.AddL1.Name = "AddL1";
             this.AddL1.Width = 110;
             // 
             // AddL2
             // 
             this.AddL2.HeaderText = "Address Line 2";
+            this.AddL2.MinimumWidth = 10;
             this.AddL2.Name = "AddL2";
             this.AddL2.Width = 110;
             // 
             // City
             // 
             this.City.HeaderText = "City";
+            this.City.MinimumWidth = 10;
             this.City.Name = "City";
+            this.City.Width = 200;
             // 
             // Province
             // 
             this.Province.HeaderText = "Province";
+            this.Province.MinimumWidth = 10;
             this.Province.Name = "Province";
+            this.Province.Width = 200;
             // 
             // Postal
             // 
             this.Postal.HeaderText = "Postal Code";
+            this.Postal.MinimumWidth = 10;
             this.Postal.Name = "Postal";
+            this.Postal.Width = 200;
             // 
             // Phone
             // 
             this.Phone.HeaderText = "Phone";
+            this.Phone.MinimumWidth = 10;
             this.Phone.Name = "Phone";
+            this.Phone.Width = 200;
             // 
             // BranchSearchButt
             // 
             this.BranchSearchButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BranchSearchButt.ForeColor = System.Drawing.Color.White;
-            this.BranchSearchButt.Location = new System.Drawing.Point(568, 126);
+            this.BranchSearchButt.Location = new System.Drawing.Point(1055, 269);
+            this.BranchSearchButt.Margin = new System.Windows.Forms.Padding(6);
             this.BranchSearchButt.Name = "BranchSearchButt";
-            this.BranchSearchButt.Size = new System.Drawing.Size(75, 23);
+            this.BranchSearchButt.Size = new System.Drawing.Size(139, 49);
             this.BranchSearchButt.TabIndex = 38;
             this.BranchSearchButt.Text = "Search";
             this.BranchSearchButt.UseVisualStyleBackColor = true;
@@ -200,9 +220,10 @@
             this.BranchSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BranchSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BranchSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BranchSearch.Location = new System.Drawing.Point(135, 127);
+            this.BranchSearch.Location = new System.Drawing.Point(251, 271);
+            this.BranchSearch.Margin = new System.Windows.Forms.Padding(6);
             this.BranchSearch.Name = "BranchSearch";
-            this.BranchSearch.Size = new System.Drawing.Size(427, 22);
+            this.BranchSearch.Size = new System.Drawing.Size(793, 43);
             this.BranchSearch.TabIndex = 37;
             // 
             // BranchDD
@@ -219,31 +240,34 @@
             "Province",
             "Postal",
             "Phone"});
-            this.BranchDD.Location = new System.Drawing.Point(21, 126);
+            this.BranchDD.Location = new System.Drawing.Point(39, 269);
+            this.BranchDD.Margin = new System.Windows.Forms.Padding(6);
             this.BranchDD.Name = "BranchDD";
-            this.BranchDD.Size = new System.Drawing.Size(108, 23);
+            this.BranchDD.Size = new System.Drawing.Size(197, 40);
             this.BranchDD.TabIndex = 36;
             // 
             // CustomersLbl
             // 
             this.CustomersLbl.AutoSize = true;
             this.CustomersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CustomersLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.CustomersLbl.Location = new System.Drawing.Point(21, 23);
+            this.CustomersLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.CustomersLbl.Location = new System.Drawing.Point(39, 49);
+            this.CustomersLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CustomersLbl.Name = "CustomersLbl";
-            this.CustomersLbl.Size = new System.Drawing.Size(113, 33);
+            this.CustomersLbl.Size = new System.Drawing.Size(218, 67);
             this.CustomersLbl.TabIndex = 35;
             this.CustomersLbl.Text = "Branch";
             this.CustomersLbl.Click += new System.EventHandler(this.CustomersLbl_Click);
             // 
             // BranchFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(664, 492);
+            this.ClientSize = new System.Drawing.Size(1233, 1050);
             this.Controls.Add(this.BranchPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BranchFrm";
             this.BranchPanel.ResumeLayout(false);
             this.BranchPanel.PerformLayout();
