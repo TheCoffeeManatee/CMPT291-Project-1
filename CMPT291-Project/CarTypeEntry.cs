@@ -21,6 +21,7 @@ namespace CMPT291_Project
         public CarTypeEntry()
         {
             InitializeComponent();
+            AddRBtn.Checked = true;
 
             string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
@@ -92,7 +93,7 @@ namespace CMPT291_Project
                 CarTypeFrm_Vrb.Show();
             }
 
-            else if (RemoveRBtn.Checked == true) //edits car type entry
+            else if (RemoveRBtn.Checked == true) //deletes car type entry
             {
                 try
                 {
