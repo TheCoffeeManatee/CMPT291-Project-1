@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.CTEntryPanel = new System.Windows.Forms.Panel();
+            this.LevelBx = new System.Windows.Forms.TextBox();
+            this.LevelLbl = new System.Windows.Forms.Label();
             this.FindID = new System.Windows.Forms.Button();
             this.RemoveRBtn = new System.Windows.Forms.RadioButton();
             this.EditRBtn = new System.Windows.Forms.RadioButton();
@@ -50,6 +52,8 @@
             // 
             // CTEntryPanel
             // 
+            this.CTEntryPanel.Controls.Add(this.LevelBx);
+            this.CTEntryPanel.Controls.Add(this.LevelLbl);
             this.CTEntryPanel.Controls.Add(this.FindID);
             this.CTEntryPanel.Controls.Add(this.RemoveRBtn);
             this.CTEntryPanel.Controls.Add(this.EditRBtn);
@@ -71,6 +75,29 @@
             this.CTEntryPanel.Name = "CTEntryPanel";
             this.CTEntryPanel.Size = new System.Drawing.Size(1233, 1050);
             this.CTEntryPanel.TabIndex = 0;
+            // 
+            // LevelBx
+            // 
+            this.LevelBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LevelBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LevelBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LevelBx.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.LevelBx.Location = new System.Drawing.Point(201, 329);
+            this.LevelBx.Margin = new System.Windows.Forms.Padding(6);
+            this.LevelBx.Name = "LevelBx";
+            this.LevelBx.Size = new System.Drawing.Size(336, 43);
+            this.LevelBx.TabIndex = 106;
+            // 
+            // LevelLbl
+            // 
+            this.LevelLbl.AutoSize = true;
+            this.LevelLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.LevelLbl.Location = new System.Drawing.Point(30, 335);
+            this.LevelLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LevelLbl.Name = "LevelLbl";
+            this.LevelLbl.Size = new System.Drawing.Size(69, 32);
+            this.LevelLbl.TabIndex = 105;
+            this.LevelLbl.Text = "Level";
             // 
             // FindID
             // 
@@ -310,5 +337,7 @@
         private RadioButton EditRBtn;
         private RadioButton AddRBtn;
         private Button FindID;
+        private TextBox LevelBx;
+        private Label LevelLbl;
     }
 }

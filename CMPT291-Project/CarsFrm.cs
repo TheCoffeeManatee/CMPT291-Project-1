@@ -45,6 +45,11 @@ namespace CMPT291_Project
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             DataTable dt = new DataTable();
             myAdapter.Fill(dt);
+
+            //change column names
+            dt.Columns["CarTypeId"].ColumnName = "Type ID";
+            dt.Columns["BranchId"].ColumnName = "Branch ID";
+
             carData.DataSource = dt;
             myConnection.Close();
         }

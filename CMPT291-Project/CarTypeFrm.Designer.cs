@@ -125,6 +125,7 @@
             this.CarTypeData.RowTemplate.Height = 50;
             this.CarTypeData.Size = new System.Drawing.Size(1155, 690);
             this.CarTypeData.TabIndex = 25;
+
             // 
             // CarTypeLbl
             // 
