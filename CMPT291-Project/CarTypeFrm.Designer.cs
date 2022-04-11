@@ -85,6 +85,8 @@
             // 
             // CarTypeData
             // 
+            this.CarTypeData.AllowUserToAddRows = false;
+            this.CarTypeData.AllowUserToDeleteRows = false;
             this.CarTypeData.AllowUserToOrderColumns = true;
             this.CarTypeData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.CarTypeData.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -109,6 +111,7 @@
             this.CarTypeData.Location = new System.Drawing.Point(39, 312);
             this.CarTypeData.Margin = new System.Windows.Forms.Padding(6);
             this.CarTypeData.Name = "CarTypeData";
+            this.CarTypeData.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

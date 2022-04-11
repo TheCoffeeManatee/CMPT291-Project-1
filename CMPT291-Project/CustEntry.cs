@@ -201,66 +201,76 @@ namespace CMPT291_Project
                     myCommand.CommandText = "select * from Customer where CustomerId  = " + displayID;
                     myReader = myCommand.ExecuteReader();
 
-                    //saves variables read and displays them in the appropriate fields
-                    while (myReader.Read())
+                    if (myReader.HasRows)
                     {
-
-                        string fname = (string)myReader["FirstName"];
-                        string mname = (string)myReader["MiddleName"];
-                        string lname = (string)myReader["LastName"];
-                        string add1 = (string)myReader["StreetAddress1"];
-                        string add2 = (string)myReader["StreetAddress2"];
-                        string city = (string)myReader["City"];
-                        string prov = (string)myReader["Province"];
-                        string post = (string)myReader["PostalCode"];
-                        var dob = myReader["DOB"];
-                        string phone = (string)myReader["Phone"];
-                        string ins = (string)myReader["Insurance"];
-                        string dl = (string)myReader["DrivingLicense"];
-                        int mem = (int)myReader["Membership"];
-
-
-                        
-
-                        fnameentry.Visible = true;
-                        mnameentry.Visible = true;
-                        lnameentry.Visible = true;
-                        add1entry.Visible = true;
-                        add2entry.Visible = true;
-                        cityentry.Visible = true;
-                        proventry.Visible = true;
-                        postalentry.Visible = true;
-                        DOBEntry.Visible = true;
-                        phoneentry.Visible = true;
-                        cinsentry.Visible = true;
-                        dlentry.Visible = true;
-
-                        fnameentry.Text = fname;
-                        mnameentry.Text = mname;
-                        lnameentry.Text = lname;
-                        add1entry.Text = add1;
-                        add2entry.Text = add2;
-                        cityentry.Text = city;
-                        proventry.Text = prov;
-                        postalentry.Text = post;
-                        DOBEntry.Value = Convert.ToDateTime(dob);
-                        phoneentry.Text = phone;
-                        cinsentry.Text = ins;
-                        dlentry.Text = dl;
-
-                        mementry.Visible = true;
-                        if (mem == 1)
+                        //saves variables read and displays them in the appropriate fields
+                        while (myReader.Read())
                         {
-                            mementry.Checked = true;
-                        }
-                        else
-                        {
-                            mementry.Checked = false;
+
+                            string fname = (string)myReader["FirstName"];
+                            string mname = (string)myReader["MiddleName"];
+                            string lname = (string)myReader["LastName"];
+                            string add1 = (string)myReader["StreetAddress1"];
+                            string add2 = (string)myReader["StreetAddress2"];
+                            string city = (string)myReader["City"];
+                            string prov = (string)myReader["Province"];
+                            string post = (string)myReader["PostalCode"];
+                            var dob = myReader["DOB"];
+                            string phone = (string)myReader["Phone"];
+                            string ins = (string)myReader["Insurance"];
+                            string dl = (string)myReader["DrivingLicense"];
+                            int mem = (int)myReader["Membership"];
+
+
+
+
+                            fnameentry.Visible = true;
+                            mnameentry.Visible = true;
+                            lnameentry.Visible = true;
+                            add1entry.Visible = true;
+                            add2entry.Visible = true;
+                            cityentry.Visible = true;
+                            proventry.Visible = true;
+                            postalentry.Visible = true;
+                            DOBEntry.Visible = true;
+                            phoneentry.Visible = true;
+                            cinsentry.Visible = true;
+                            dlentry.Visible = true;
+
+                            fnameentry.Text = fname;
+                            mnameentry.Text = mname;
+                            lnameentry.Text = lname;
+                            add1entry.Text = add1;
+                            add2entry.Text = add2;
+                            cityentry.Text = city;
+                            proventry.Text = prov;
+                            postalentry.Text = post;
+                            DOBEntry.Value = Convert.ToDateTime(dob);
+                            phoneentry.Text = phone;
+                            cinsentry.Text = ins;
+                            dlentry.Text = dl;
+
+                            mementry.Visible = true;
+                            if (mem == 1)
+                            {
+                                mementry.Checked = true;
+                            }
+                            else
+                            {
+                                mementry.Checked = false;
+                            }
+
                         }
 
+                        myReader.Close();
                     }
 
-                    myReader.Close();
+                    else
+                    {
+                        CustIdBx.Text = string.Empty;
+
+                        MessageBox.Show("Invalid Customer ID", "Error");
+                    }
 
                 }
                 catch (Exception e2)

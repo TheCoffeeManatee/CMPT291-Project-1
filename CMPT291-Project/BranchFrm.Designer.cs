@@ -87,6 +87,8 @@
             // 
             // BranchTable
             // 
+            this.BranchTable.AllowUserToAddRows = false;
+            this.BranchTable.AllowUserToDeleteRows = false;
             this.BranchTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BranchTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -110,6 +112,7 @@
             this.BranchTable.Location = new System.Drawing.Point(39, 312);
             this.BranchTable.Margin = new System.Windows.Forms.Padding(6);
             this.BranchTable.Name = "BranchTable";
+            this.BranchTable.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

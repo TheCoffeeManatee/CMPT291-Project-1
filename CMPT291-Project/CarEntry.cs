@@ -17,6 +17,7 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int carTypeId, branchId;
        
         public CarEntry()
         {
@@ -38,6 +39,44 @@ namespace CMPT291_Project
                 MessageBox.Show(e.ToString(), "Error");
                 this.Close();
             }
+
+            //fill carType combo box
+            myCommand.CommandText = "select Description from CarType";
+            myReader = myCommand.ExecuteReader();
+
+            if (myReader.HasRows)
+            {
+                while (myReader.Read())
+                {
+                    CarTypePicker.Items.Add(myReader[0]);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Error Loading Car Types", "Error");
+            }
+
+            myReader.Close();
+
+            //fill branch Id combo box
+            myCommand.CommandText = "select Description from Branch";
+            myReader = myCommand.ExecuteReader();
+
+            if (myReader.HasRows)
+            {
+                while (myReader.Read())
+                {
+                    BranchPicker.Items.Add(myReader[0]);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Error Loading Branches", "Error");
+            }
+
+            myReader.Close();
         }
 
 
@@ -57,9 +96,9 @@ namespace CMPT291_Project
                 try
                 {
                     myCommand.CommandText = "insert into Car values ('" + vinentry.Text +
-                        "'," + typeentry.Text + ",'" + makeentry.Text + "','" + modelentry.Text + "'," + yearentry.Text + ","
+                        "'," + carTypeId + ",'" + makeentry.Text + "','" + modelentry.Text + "'," + yearentry.Text + ","
                         + seatsentry.Text + ",'" + colourentry.Text + "','" + insentry.Text + "'," + mileentry.Text + ","
-                        + branchentry.Text + ")";
+                        + branchId + ")";
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -78,10 +117,9 @@ namespace CMPT291_Project
             {
                 try
                 {
-                    myCommand.CommandText = "update Car set VIN = '" + vinentry.Text +
-                        "', CarTypeId = " + typeentry.Text + ", Make = " + makeentry.Text + ", Model = " + modelentry.Text + ", Year = " + yearentry.Text + ", Seats = "
-                        + seatsentry.Text + ", Colour = " + colourentry.Text + ", Insurance = " + insentry.Text + ", Odometer = " + mileentry.Text + ", BranchId = "
-                        + branchentry.Text;
+                    myCommand.CommandText = "update Car set CarTypeId = " + carTypeId + ", Make = '" + makeentry.Text + "', Model = '" + modelentry.Text + "', Year = "
+                        + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + colourentry.Text + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
+                        + branchId + "where VIN = " + vinentry.Text;
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -121,7 +159,7 @@ namespace CMPT291_Project
             FindID.Visible = false;
 
             vinentry.Visible = true;
-            typeentry.Visible = true;
+            CarTypePicker.Visible = true;
             makeentry.Visible = true;
             modelentry.Visible = true;
             yearentry.Visible = true;
@@ -129,10 +167,9 @@ namespace CMPT291_Project
             colourentry.Visible = true;
             insentry.Visible = true;
             mileentry.Visible = true;
-            branchentry.Visible = true;
+            BranchPicker.Visible = true;
 
             vinentry.Text = String.Empty;
-            typeentry.Text = String.Empty;
             makeentry.Text = String.Empty;
             modelentry.Text = String.Empty;
             yearentry.Text = String.Empty;
@@ -140,7 +177,6 @@ namespace CMPT291_Project
             colourentry.Text = String.Empty;
             insentry.Text = String.Empty;
             mileentry.Text = String.Empty;
-            branchentry.Text = String.Empty;
         }
 
         private void resetEditRemove()
@@ -149,7 +185,7 @@ namespace CMPT291_Project
             vinentry.Text = String.Empty;
 
             vinentry.Visible = true;
-            typeentry.Visible = false;
+            CarTypePicker.Visible = false;
             makeentry.Visible = false;
             modelentry.Visible = false;
             yearentry.Visible = false;
@@ -157,7 +193,7 @@ namespace CMPT291_Project
             colourentry.Visible = false;
             insentry.Visible = false;
             mileentry.Visible = false;
-            branchentry.Visible = false;
+            BranchPicker.Visible = false;
         }
         private void EditRBtn_CheckedChanged(object sender, EventArgs e)
         {
@@ -169,14 +205,15 @@ namespace CMPT291_Project
             resetEditRemove();
         }
 
-
         private void FindID_Click(object sender, EventArgs e)
         {
-                try
+            try
                 {
                     myCommand.CommandText = "select * from Car where VIN = '" + vinentry.Text + "'";
                     myReader = myCommand.ExecuteReader();
-
+                    
+                    if (myReader.HasRows)
+                    { 
                     //saves variables read and displays them in the appropriate fields
                     while (myReader.Read())
                     {
@@ -190,9 +227,11 @@ namespace CMPT291_Project
                         string clr = (string)myReader["Colour"];
                         string ins = (string)myReader["Insurance"];
                         int miles = (int)myReader["Odometer"];
-                        int bId = (int)myReader["BranchId"];
+                        carTypeId = (int)myReader["CarTypeId"];
+                        branchId = (int)myReader["BranchId"];
 
-                        typeentry.Visible = true;
+
+                        CarTypePicker.Visible = true;
                         makeentry.Visible = true;
                         modelentry.Visible = true;
                         yearentry.Visible = true;
@@ -200,10 +239,9 @@ namespace CMPT291_Project
                         colourentry.Visible = true;
                         insentry.Visible = true;
                         mileentry.Visible = true;
-                        branchentry.Visible = true;
+                        BranchPicker.Visible = true;
 
                         vinentry.Text = vin;
-                        typeentry.Text = type.ToString();
                         makeentry.Text = mk;
                         modelentry.Text = mdl;
                         yearentry.Text = year.ToString();
@@ -211,17 +249,137 @@ namespace CMPT291_Project
                         colourentry.Text = clr;
                         insentry.Text = ins.ToString();
                         mileentry.Text = miles.ToString();
-                        branchentry.Text = bId.ToString();
+
                     }
-
-                    myReader.Close();
-
                 }
-                catch (Exception e2)
+
+                else
+                {
+                    vinentry.Text = string.Empty;
+
+                    MessageBox.Show("Invalid VIN", "Error");
+                }
+                myReader.Close();
+
+                try
+            {
+                myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    currBranch.Text = "Current: " + (string)myReader["Description"];
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+            myReader.Close();
+                getBranch();
+                getCarType();
+
+            }
+            catch (Exception e2)
                 {
                     MessageBox.Show(e2.ToString(), "Error");
-        
-}        
+                }        
+        }
+
+        void getCarType()
+        {
+            try
+            {
+                myCommand.CommandText = "select Description from CarType where CarTypeId = " + carTypeId;
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    if (myReader.HasRows)
+                    {
+                        currCarType.Text = "Current: " + (string)myReader["Description"];
+                    }
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+            
+            myReader.Close();
+
+               
+        }
+
+        void getBranch()
+        {
+            try
+            {
+                myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    currBranch.Text = "Current: " + (string)myReader["Description"];
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+            myReader.Close();
+
+        }
+
+        private void CarTypePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                myCommand.CommandText = "select CarTypeId from CarType where Description = '" + CarTypePicker.Text + "'";
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    if (myReader.HasRows)
+                    {
+                        carTypeId = (int)myReader["CarTypeId"];
+                    }
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            myReader.Close();
+        }
+
+        private void BranchPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                myCommand.CommandText = "select BranchId from Branch where Description = '" + BranchPicker.Text + "'";
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    if (myReader.HasRows)
+                    {
+                        branchId = (int)myReader["BranchId"];
+                    }
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            myReader.Close();
         }
     }
 }

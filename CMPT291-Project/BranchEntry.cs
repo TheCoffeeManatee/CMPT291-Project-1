@@ -171,6 +171,9 @@ namespace CMPT291_Project
                         myCommand.CommandText = "select * from Branch where BranchId = " + displayID;
                         myReader = myCommand.ExecuteReader();
 
+
+                        if (myReader.HasRows)
+                        { 
                         //saves variables read and displays them in the appropriate fields
                         while (myReader.Read())
                         {
@@ -201,12 +204,20 @@ namespace CMPT291_Project
                         }
 
                         myReader.Close();
+                        }
 
+                        else
+                        {
+                            BranchIdBx.Text = string.Empty;
+
+                            MessageBox.Show("Invalid Branch ID", "Error");
+                        }
                     }
                     catch (Exception e2)
                     {
                         MessageBox.Show(e2.ToString(), "Error");
                     }
+                    myReader.Close();
 
                 }
             }
