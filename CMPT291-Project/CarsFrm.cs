@@ -18,25 +18,12 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
 
+        public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
         public CarsFrm()
         {
             InitializeComponent();
-
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
-            {
-                myConnection.Open(); // Open connection
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection; // Link the command stream to the connection
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
-            }
+            fillTable();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -46,6 +33,20 @@ namespace CMPT291_Project
             CarEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.CarsPanel.Controls.Add(CarEntry_Vrb);
             CarEntry_Vrb.Show();
+        }
+
+        private void fillTable()
+        {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand = new SqlCommand("select * from Car");
+            myCommand.Connection = myConnection;
+            myCommand.CommandType = CommandType.Text;
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
+            carData.DataSource = dt;
+            myConnection.Close();
         }
     }
 }

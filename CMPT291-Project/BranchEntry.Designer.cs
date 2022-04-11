@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.BranchEPanel = new System.Windows.Forms.Panel();
+            this.RemoveRBtn = new System.Windows.Forms.RadioButton();
+            this.EditRBtn = new System.Windows.Forms.RadioButton();
+            this.AddRBtn = new System.Windows.Forms.RadioButton();
+            this.FindID = new System.Windows.Forms.Button();
+            this.BranchIdBx = new System.Windows.Forms.TextBox();
             this.branchcancel = new System.Windows.Forms.Button();
-            this.carentrryaccept = new System.Windows.Forms.Button();
+            this.Branchaccept = new System.Windows.Forms.Button();
             this.phoneL = new System.Windows.Forms.Label();
             this.postalL = new System.Windows.Forms.Label();
             this.provL = new System.Windows.Forms.Label();
@@ -51,8 +56,13 @@
             // 
             // BranchEPanel
             // 
+            this.BranchEPanel.Controls.Add(this.RemoveRBtn);
+            this.BranchEPanel.Controls.Add(this.EditRBtn);
+            this.BranchEPanel.Controls.Add(this.AddRBtn);
+            this.BranchEPanel.Controls.Add(this.FindID);
+            this.BranchEPanel.Controls.Add(this.BranchIdBx);
             this.BranchEPanel.Controls.Add(this.branchcancel);
-            this.BranchEPanel.Controls.Add(this.carentrryaccept);
+            this.BranchEPanel.Controls.Add(this.Branchaccept);
             this.BranchEPanel.Controls.Add(this.phoneL);
             this.BranchEPanel.Controls.Add(this.postalL);
             this.BranchEPanel.Controls.Add(this.provL);
@@ -74,6 +84,72 @@
             this.BranchEPanel.Size = new System.Drawing.Size(1233, 1050);
             this.BranchEPanel.TabIndex = 0;
             // 
+            // RemoveRBtn
+            // 
+            this.RemoveRBtn.AutoSize = true;
+            this.RemoveRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RemoveRBtn.Location = new System.Drawing.Point(626, 215);
+            this.RemoveRBtn.Name = "RemoveRBtn";
+            this.RemoveRBtn.Size = new System.Drawing.Size(131, 36);
+            this.RemoveRBtn.TabIndex = 131;
+            this.RemoveRBtn.TabStop = true;
+            this.RemoveRBtn.Text = "Remove";
+            this.RemoveRBtn.UseVisualStyleBackColor = true;
+            this.RemoveRBtn.CheckedChanged += new System.EventHandler(this.RemoveRBtn_CheckedChanged_1);
+            // 
+            // EditRBtn
+            // 
+            this.EditRBtn.AutoSize = true;
+            this.EditRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.EditRBtn.Location = new System.Drawing.Point(626, 153);
+            this.EditRBtn.Name = "EditRBtn";
+            this.EditRBtn.Size = new System.Drawing.Size(85, 36);
+            this.EditRBtn.TabIndex = 130;
+            this.EditRBtn.TabStop = true;
+            this.EditRBtn.Text = "Edit";
+            this.EditRBtn.UseVisualStyleBackColor = true;
+            this.EditRBtn.CheckedChanged += new System.EventHandler(this.EditRBtn_CheckedChanged);
+            // 
+            // AddRBtn
+            // 
+            this.AddRBtn.AutoSize = true;
+            this.AddRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddRBtn.Location = new System.Drawing.Point(626, 86);
+            this.AddRBtn.Name = "AddRBtn";
+            this.AddRBtn.Size = new System.Drawing.Size(88, 36);
+            this.AddRBtn.TabIndex = 129;
+            this.AddRBtn.TabStop = true;
+            this.AddRBtn.Text = "Add";
+            this.AddRBtn.UseVisualStyleBackColor = true;
+            this.AddRBtn.CheckedChanged += new System.EventHandler(this.AddRBtn_CheckedChanged_1);
+            // 
+            // FindID
+            // 
+            this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindID.ForeColor = System.Drawing.Color.White;
+            this.FindID.Location = new System.Drawing.Point(302, 19);
+            this.FindID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindID.Name = "FindID";
+            this.FindID.Size = new System.Drawing.Size(140, 49);
+            this.FindID.TabIndex = 128;
+            this.FindID.Text = "Find ID";
+            this.FindID.UseVisualStyleBackColor = true;
+            this.FindID.Visible = false;
+            this.FindID.Click += new System.EventHandler(this.FindID_Click_1);
+            // 
+            // BranchIdBx
+            // 
+            this.BranchIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BranchIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BranchIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BranchIdBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.BranchIdBx.Location = new System.Drawing.Point(453, 23);
+            this.BranchIdBx.Margin = new System.Windows.Forms.Padding(6);
+            this.BranchIdBx.Name = "BranchIdBx";
+            this.BranchIdBx.Size = new System.Drawing.Size(83, 43);
+            this.BranchIdBx.TabIndex = 127;
+            this.BranchIdBx.Visible = false;
+            // 
             // branchcancel
             // 
             this.branchcancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -81,7 +157,7 @@
             this.branchcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.branchcancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.branchcancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.branchcancel.Location = new System.Drawing.Point(862, 516);
+            this.branchcancel.Location = new System.Drawing.Point(850, 215);
             this.branchcancel.Margin = new System.Windows.Forms.Padding(6);
             this.branchcancel.Name = "branchcancel";
             this.branchcancel.Size = new System.Drawing.Size(184, 107);
@@ -90,21 +166,21 @@
             this.branchcancel.UseVisualStyleBackColor = false;
             this.branchcancel.Click += new System.EventHandler(this.branchcancel_Click);
             // 
-            // carentrryaccept
+            // Branchaccept
             // 
-            this.carentrryaccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.carentrryaccept.FlatAppearance.BorderSize = 0;
-            this.carentrryaccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.carentrryaccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.carentrryaccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrryaccept.Location = new System.Drawing.Point(626, 516);
-            this.carentrryaccept.Margin = new System.Windows.Forms.Padding(6);
-            this.carentrryaccept.Name = "carentrryaccept";
-            this.carentrryaccept.Size = new System.Drawing.Size(184, 107);
-            this.carentrryaccept.TabIndex = 125;
-            this.carentrryaccept.Text = "Accept";
-            this.carentrryaccept.UseVisualStyleBackColor = false;
-            this.carentrryaccept.Click += new System.EventHandler(this.carentrryaccept_Click);
+            this.Branchaccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.Branchaccept.FlatAppearance.BorderSize = 0;
+            this.Branchaccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Branchaccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Branchaccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Branchaccept.Location = new System.Drawing.Point(850, 76);
+            this.Branchaccept.Margin = new System.Windows.Forms.Padding(6);
+            this.Branchaccept.Name = "Branchaccept";
+            this.Branchaccept.Size = new System.Drawing.Size(184, 107);
+            this.Branchaccept.TabIndex = 125;
+            this.Branchaccept.Text = "Accept";
+            this.Branchaccept.UseVisualStyleBackColor = false;
+            this.Branchaccept.Click += new System.EventHandler(this.carentrryaccept_Click);
             // 
             // phoneL
             // 
@@ -275,9 +351,9 @@
             this.CarEntryTitle.Location = new System.Drawing.Point(22, 19);
             this.CarEntryTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CarEntryTitle.Name = "CarEntryTitle";
-            this.CarEntryTitle.Size = new System.Drawing.Size(442, 51);
+            this.CarEntryTitle.Size = new System.Drawing.Size(138, 51);
             this.CarEntryTitle.TabIndex = 110;
-            this.CarEntryTitle.Text = "Enter Branch Information";
+            this.CarEntryTitle.Text = "Branch";
             // 
             // BranchEntry
             // 
@@ -300,7 +376,7 @@
 
         private Panel BranchEPanel;
         private Button branchcancel;
-        private Button carentrryaccept;
+        private Button Branchaccept;
         private Label phoneL;
         private Label postalL;
         private Label provL;
@@ -316,5 +392,10 @@
         private Label addL1L;
         private Label descL;
         private Label CarEntryTitle;
+        private Button FindID;
+        private TextBox BranchIdBx;
+        private RadioButton RemoveRBtn;
+        private RadioButton EditRBtn;
+        private RadioButton AddRBtn;
     }
 }

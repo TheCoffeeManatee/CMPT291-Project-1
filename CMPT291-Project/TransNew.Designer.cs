@@ -28,250 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransNew));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.MemStatus = new System.Windows.Forms.Label();
-            this.CID = new System.Windows.Forms.Label();
-            this.CustPhone = new System.Windows.Forms.Label();
-            this.Province = new System.Windows.Forms.Label();
-            this.CustCity = new System.Windows.Forms.Label();
-            this.CustAdd2 = new System.Windows.Forms.Label();
-            this.CustAdd1 = new System.Windows.Forms.Label();
-            this.CustName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.FindCars = new System.Windows.Forms.Button();
-            this.PriceLbl = new System.Windows.Forms.Label();
             this.CarTypePicker = new System.Windows.Forms.ComboBox();
-            this.AddCustBtn = new System.Windows.Forms.Button();
             this.CarTable = new System.Windows.Forms.DataGridView();
-            this.CarType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seats = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RtnDateTime = new System.Windows.Forms.DateTimePicker();
-            this.RtnBranchLbl = new System.Windows.Forms.ComboBox();
+            this.RtnDate = new System.Windows.Forms.DateTimePicker();
+            this.RtnBranch = new System.Windows.Forms.ComboBox();
             this.RtnLbl = new System.Windows.Forms.Label();
-            this.PickDateTime = new System.Windows.Forms.DateTimePicker();
+            this.PickDate = new System.Windows.Forms.DateTimePicker();
             this.PickupBranchID = new System.Windows.Forms.ComboBox();
             this.PickupLbl = new System.Windows.Forms.Label();
+            this.FindID = new System.Windows.Forms.Button();
+            this.CustIdBx = new System.Windows.Forms.TextBox();
+            this.CustLbl = new System.Windows.Forms.Label();
+            this.FullName = new System.Windows.Forms.Label();
+            this.Add1 = new System.Windows.Forms.Label();
+            this.Add2 = new System.Windows.Forms.Label();
+            this.CP = new System.Windows.Forms.Label();
+            this.Phone = new System.Windows.Forms.Label();
+            this.Mbrship = new System.Windows.Forms.Label();
+            this.Postal = new System.Windows.Forms.Label();
+            this.FindCarsBtn = new System.Windows.Forms.Button();
+            this.carentrycancel = new System.Windows.Forms.Button();
+            this.carentrryaccept = new System.Windows.Forms.Button();
+            this.priceBx = new System.Windows.Forms.Label();
+            this.NewTransPnl = new System.Windows.Forms.Panel();
+            this.calcPriceBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarTable)).BeginInit();
+            this.NewTransPnl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // MemStatus
-            // 
-            this.MemStatus.AutoSize = true;
-            this.MemStatus.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MemStatus.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.MemStatus.Location = new System.Drawing.Point(960, 298);
-            this.MemStatus.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.MemStatus.Name = "MemStatus";
-            this.MemStatus.Size = new System.Drawing.Size(233, 51);
-            this.MemStatus.TabIndex = 115;
-            this.MemStatus.Text = "Membership";
-            this.MemStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.MemStatus.Visible = false;
-            // 
-            // CID
-            // 
-            this.CID.AutoSize = true;
-            this.CID.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CID.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CID.Location = new System.Drawing.Point(598, 298);
-            this.CID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CID.Name = "CID";
-            this.CID.Size = new System.Drawing.Size(59, 51);
-            this.CID.TabIndex = 114;
-            this.CID.Text = "ID";
-            this.CID.Visible = false;
-            // 
-            // CustPhone
-            // 
-            this.CustPhone.AutoSize = true;
-            this.CustPhone.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CustPhone.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustPhone.Location = new System.Drawing.Point(598, 250);
-            this.CustPhone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustPhone.Name = "CustPhone";
-            this.CustPhone.Size = new System.Drawing.Size(239, 51);
-            this.CustPhone.TabIndex = 113;
-            this.CustPhone.Text = "(xxx) xxx-xxxx";
-            this.CustPhone.Visible = false;
-            // 
-            // Province
-            // 
-            this.Province.AutoSize = true;
-            this.Province.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Province.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Province.Location = new System.Drawing.Point(960, 196);
-            this.Province.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.Province.Name = "Province";
-            this.Province.Size = new System.Drawing.Size(165, 51);
-            this.Province.TabIndex = 112;
-            this.Province.Text = "Province";
-            this.Province.Visible = false;
-            // 
-            // CustCity
-            // 
-            this.CustCity.AutoSize = true;
-            this.CustCity.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CustCity.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustCity.Location = new System.Drawing.Point(598, 196);
-            this.CustCity.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustCity.Name = "CustCity";
-            this.CustCity.Size = new System.Drawing.Size(86, 51);
-            this.CustCity.TabIndex = 111;
-            this.CustCity.Text = "City";
-            this.CustCity.Visible = false;
-            // 
-            // CustAdd2
-            // 
-            this.CustAdd2.AutoSize = true;
-            this.CustAdd2.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CustAdd2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustAdd2.Location = new System.Drawing.Point(598, 148);
-            this.CustAdd2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustAdd2.Name = "CustAdd2";
-            this.CustAdd2.Size = new System.Drawing.Size(265, 51);
-            this.CustAdd2.TabIndex = 110;
-            this.CustAdd2.Text = "Address Line 2";
-            this.CustAdd2.Visible = false;
-            // 
-            // CustAdd1
-            // 
-            this.CustAdd1.AutoSize = true;
-            this.CustAdd1.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CustAdd1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustAdd1.Location = new System.Drawing.Point(598, 100);
-            this.CustAdd1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustAdd1.Name = "CustAdd1";
-            this.CustAdd1.Size = new System.Drawing.Size(265, 51);
-            this.CustAdd1.TabIndex = 109;
-            this.CustAdd1.Text = "Address Line 1";
-            this.CustAdd1.Visible = false;
-            // 
-            // CustName
-            // 
-            this.CustName.AutoSize = true;
-            this.CustName.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CustName.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustName.Location = new System.Drawing.Point(598, 43);
-            this.CustName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustName.Name = "CustName";
-            this.CustName.Size = new System.Drawing.Size(295, 51);
-            this.CustName.TabIndex = 108;
-            this.CustName.Text = "Customer Name";
-            this.CustName.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(1018, 800);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 81);
-            this.button1.TabIndex = 107;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // FindCars
-            // 
-            this.FindCars.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.FindCars.FlatAppearance.BorderSize = 0;
-            this.FindCars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindCars.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FindCars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.FindCars.Location = new System.Drawing.Point(1030, 390);
-            this.FindCars.Margin = new System.Windows.Forms.Padding(6);
-            this.FindCars.Name = "FindCars";
-            this.FindCars.Size = new System.Drawing.Size(148, 43);
-            this.FindCars.TabIndex = 106;
-            this.FindCars.Text = "Find Cars";
-            this.FindCars.UseVisualStyleBackColor = false;
-            this.FindCars.Click += new System.EventHandler(this.FindCars_Click);
-            // 
-            // PriceLbl
-            // 
-            this.PriceLbl.AutoSize = true;
-            this.PriceLbl.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PriceLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PriceLbl.Location = new System.Drawing.Point(23, 822);
-            this.PriceLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.PriceLbl.Name = "PriceLbl";
-            this.PriceLbl.Size = new System.Drawing.Size(116, 59);
-            this.PriceLbl.TabIndex = 105;
-            this.PriceLbl.Text = "Price";
-            this.PriceLbl.Visible = false;
             // 
             // CarTypePicker
             // 
             this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CarTypePicker.FormattingEnabled = true;
             this.CarTypePicker.Items.AddRange(new object[] {
-            "SUV",
-            "Luxery",
-            "Sport"});
-            this.CarTypePicker.Location = new System.Drawing.Point(598, 389);
+            "All Car Types"});
+            this.CarTypePicker.Location = new System.Drawing.Point(624, 387);
             this.CarTypePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CarTypePicker.Name = "CarTypePicker";
             this.CarTypePicker.Size = new System.Drawing.Size(400, 40);
             this.CarTypePicker.TabIndex = 104;
-            this.CarTypePicker.Text = "Car Type";
-            // 
-            // AddCustBtn
-            // 
-            this.AddCustBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddCustBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddCustBtn.BackgroundImage")));
-            this.AddCustBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AddCustBtn.FlatAppearance.BorderSize = 0;
-            this.AddCustBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddCustBtn.Location = new System.Drawing.Point(1162, 43);
-            this.AddCustBtn.Margin = new System.Windows.Forms.Padding(6);
-            this.AddCustBtn.Name = "AddCustBtn";
-            this.AddCustBtn.Size = new System.Drawing.Size(41, 41);
-            this.AddCustBtn.TabIndex = 96;
-            this.AddCustBtn.UseVisualStyleBackColor = true;
-            this.AddCustBtn.Click += new System.EventHandler(this.AddCustBtn_Click);
+            this.CarTypePicker.SelectedIndexChanged += new System.EventHandler(this.CarTypePicker_SelectedIndexChanged);
             // 
             // CarTable
             // 
+            this.CarTable.AllowUserToAddRows = false;
+            this.CarTable.AllowUserToDeleteRows = false;
             this.CarTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.CarTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.CarTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.CarTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CarTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CarType,
-            this.Make,
-            this.Model,
-            this.Year,
-            this.Seats,
-            this.VIN});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CarTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.CarTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.CarTable.Location = new System.Drawing.Point(23, 465);
+            this.CarTable.Location = new System.Drawing.Point(44, 463);
             this.CarTable.Margin = new System.Windows.Forms.Padding(6);
             this.CarTable.Name = "CarTable";
+            this.CarTable.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -282,188 +111,352 @@
             this.CarTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.CarTable.RowHeadersVisible = false;
             this.CarTable.RowHeadersWidth = 82;
-            this.CarTable.RowTemplate.Height = 25;
-            this.CarTable.Size = new System.Drawing.Size(1155, 311);
+            this.CarTable.RowTemplate.Height = 50;
+            this.CarTable.Size = new System.Drawing.Size(1155, 450);
             this.CarTable.TabIndex = 103;
             // 
-            // CarType
+            // RtnDate
             // 
-            this.CarType.HeaderText = "CarType";
-            this.CarType.MinimumWidth = 10;
-            this.CarType.Name = "CarType";
-            this.CarType.Width = 200;
+            this.RtnDate.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.RtnDate.Location = new System.Drawing.Point(44, 388);
+            this.RtnDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RtnDate.Name = "RtnDate";
+            this.RtnDate.Size = new System.Drawing.Size(400, 39);
+            this.RtnDate.TabIndex = 102;
+            this.RtnDate.ValueChanged += new System.EventHandler(this.RtnDate_ValueChanged);
             // 
-            // Make
+            // RtnBranch
             // 
-            this.Make.HeaderText = "Make";
-            this.Make.MinimumWidth = 10;
-            this.Make.Name = "Make";
-            this.Make.Width = 200;
-            // 
-            // Model
-            // 
-            this.Model.HeaderText = "Model";
-            this.Model.MinimumWidth = 10;
-            this.Model.Name = "Model";
-            this.Model.Width = 200;
-            // 
-            // Year
-            // 
-            this.Year.HeaderText = "Year";
-            this.Year.MinimumWidth = 10;
-            this.Year.Name = "Year";
-            this.Year.Width = 200;
-            // 
-            // Seats
-            // 
-            this.Seats.HeaderText = "Seats";
-            this.Seats.MinimumWidth = 10;
-            this.Seats.Name = "Seats";
-            this.Seats.Width = 200;
-            // 
-            // VIN
-            // 
-            this.VIN.HeaderText = "VIN";
-            this.VIN.MinimumWidth = 10;
-            this.VIN.Name = "VIN";
-            this.VIN.Width = 200;
-            // 
-            // RtnDateTime
-            // 
-            this.RtnDateTime.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.RtnDateTime.Location = new System.Drawing.Point(23, 390);
-            this.RtnDateTime.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.RtnDateTime.Name = "RtnDateTime";
-            this.RtnDateTime.Size = new System.Drawing.Size(400, 39);
-            this.RtnDateTime.TabIndex = 102;
-            // 
-            // RtnBranchLbl
-            // 
-            this.RtnBranchLbl.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.RtnBranchLbl.FormattingEnabled = true;
-            this.RtnBranchLbl.Items.AddRange(new object[] {
-            "Branch 1",
-            "Branch 2",
-            "Branch 3",
-            "Branch 4"});
-            this.RtnBranchLbl.Location = new System.Drawing.Point(23, 322);
-            this.RtnBranchLbl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.RtnBranchLbl.Name = "RtnBranchLbl";
-            this.RtnBranchLbl.Size = new System.Drawing.Size(400, 40);
-            this.RtnBranchLbl.TabIndex = 101;
-            this.RtnBranchLbl.Text = "Branch 1";
+            this.RtnBranch.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.RtnBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RtnBranch.FormattingEnabled = true;
+            this.RtnBranch.Location = new System.Drawing.Point(44, 320);
+            this.RtnBranch.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RtnBranch.Name = "RtnBranch";
+            this.RtnBranch.Size = new System.Drawing.Size(400, 40);
+            this.RtnBranch.TabIndex = 101;
+            this.RtnBranch.SelectedIndexChanged += new System.EventHandler(this.RtnBranch_SelectedIndexChanged);
             // 
             // RtnLbl
             // 
             this.RtnLbl.AutoSize = true;
             this.RtnLbl.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RtnLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RtnLbl.Location = new System.Drawing.Point(147, 243);
+            this.RtnLbl.Location = new System.Drawing.Point(168, 241);
             this.RtnLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.RtnLbl.Name = "RtnLbl";
             this.RtnLbl.Size = new System.Drawing.Size(150, 59);
             this.RtnLbl.TabIndex = 100;
             this.RtnLbl.Text = "Return";
             // 
-            // PickDateTime
+            // PickDate
             // 
-            this.PickDateTime.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.PickDateTime.Location = new System.Drawing.Point(23, 176);
-            this.PickDateTime.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.PickDateTime.Name = "PickDateTime";
-            this.PickDateTime.Size = new System.Drawing.Size(400, 39);
-            this.PickDateTime.TabIndex = 99;
+            this.PickDate.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.PickDate.Location = new System.Drawing.Point(44, 174);
+            this.PickDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.PickDate.Name = "PickDate";
+            this.PickDate.Size = new System.Drawing.Size(400, 39);
+            this.PickDate.TabIndex = 99;
+            this.PickDate.ValueChanged += new System.EventHandler(this.PickDate_ValueChanged);
             // 
             // PickupBranchID
             // 
             this.PickupBranchID.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.PickupBranchID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PickupBranchID.FormattingEnabled = true;
-            this.PickupBranchID.Items.AddRange(new object[] {
-            "Branch 1",
-            "Branch 2",
-            "Branch 3",
-            "Branch 4"});
-            this.PickupBranchID.Location = new System.Drawing.Point(23, 108);
+            this.PickupBranchID.Location = new System.Drawing.Point(44, 106);
             this.PickupBranchID.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PickupBranchID.Name = "PickupBranchID";
             this.PickupBranchID.Size = new System.Drawing.Size(400, 40);
             this.PickupBranchID.TabIndex = 98;
-            this.PickupBranchID.Text = "Branch 1";
+            this.PickupBranchID.SelectedIndexChanged += new System.EventHandler(this.PickupBranchID_SelectedIndexChanged);
             // 
             // PickupLbl
             // 
             this.PickupLbl.AutoSize = true;
             this.PickupLbl.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PickupLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PickupLbl.Location = new System.Drawing.Point(136, 29);
+            this.PickupLbl.Location = new System.Drawing.Point(157, 27);
             this.PickupLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PickupLbl.Name = "PickupLbl";
             this.PickupLbl.Size = new System.Drawing.Size(149, 59);
             this.PickupLbl.TabIndex = 97;
             this.PickupLbl.Text = "Pickup";
             // 
+            // FindID
+            // 
+            this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindID.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.FindID.Location = new System.Drawing.Point(965, 33);
+            this.FindID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindID.Name = "FindID";
+            this.FindID.Size = new System.Drawing.Size(140, 49);
+            this.FindID.TabIndex = 117;
+            this.FindID.Text = "Find ID";
+            this.FindID.UseVisualStyleBackColor = true;
+            this.FindID.Click += new System.EventHandler(this.FindID_Click);
+            // 
+            // CustIdBx
+            // 
+            this.CustIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.CustIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CustIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustIdBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.CustIdBx.Location = new System.Drawing.Point(1116, 38);
+            this.CustIdBx.Margin = new System.Windows.Forms.Padding(6);
+            this.CustIdBx.Name = "CustIdBx";
+            this.CustIdBx.Size = new System.Drawing.Size(83, 43);
+            this.CustIdBx.TabIndex = 116;
+            // 
+            // CustLbl
+            // 
+            this.CustLbl.AutoSize = true;
+            this.CustLbl.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.CustLbl.Location = new System.Drawing.Point(619, 31);
+            this.CustLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CustLbl.Name = "CustLbl";
+            this.CustLbl.Size = new System.Drawing.Size(185, 51);
+            this.CustLbl.TabIndex = 119;
+            this.CustLbl.Text = "Customer";
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSize = true;
+            this.FullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FullName.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.FullName.Location = new System.Drawing.Point(624, 106);
+            this.FullName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FullName.Name = "FullName";
+            this.FullName.Size = new System.Drawing.Size(105, 45);
+            this.FullName.TabIndex = 126;
+            this.FullName.Text = "Name";
+            this.FullName.Visible = false;
+            // 
+            // Add1
+            // 
+            this.Add1.AutoSize = true;
+            this.Add1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Add1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Add1.Location = new System.Drawing.Point(624, 151);
+            this.Add1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Add1.Name = "Add1";
+            this.Add1.Size = new System.Drawing.Size(228, 45);
+            this.Add1.TabIndex = 127;
+            this.Add1.Text = "Address Line 1";
+            this.Add1.Visible = false;
+            // 
+            // Add2
+            // 
+            this.Add2.AutoSize = true;
+            this.Add2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Add2.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Add2.Location = new System.Drawing.Point(624, 196);
+            this.Add2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Add2.Name = "Add2";
+            this.Add2.Size = new System.Drawing.Size(228, 45);
+            this.Add2.TabIndex = 128;
+            this.Add2.Text = "Address Line 2";
+            this.Add2.Visible = false;
+            // 
+            // CP
+            // 
+            this.CP.AutoSize = true;
+            this.CP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CP.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.CP.Location = new System.Drawing.Point(624, 241);
+            this.CP.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CP.Name = "CP";
+            this.CP.Size = new System.Drawing.Size(204, 45);
+            this.CP.TabIndex = 129;
+            this.CP.Text = "City Province";
+            this.CP.Visible = false;
+            // 
+            // Phone
+            // 
+            this.Phone.AutoSize = true;
+            this.Phone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Phone.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Phone.Location = new System.Drawing.Point(624, 331);
+            this.Phone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(110, 45);
+            this.Phone.TabIndex = 130;
+            this.Phone.Text = "Phone";
+            this.Phone.Visible = false;
+            // 
+            // Mbrship
+            // 
+            this.Mbrship.AutoSize = true;
+            this.Mbrship.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Mbrship.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Mbrship.Location = new System.Drawing.Point(999, 331);
+            this.Mbrship.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Mbrship.Name = "Mbrship";
+            this.Mbrship.Size = new System.Drawing.Size(200, 45);
+            this.Mbrship.TabIndex = 131;
+            this.Mbrship.Text = "Membership";
+            this.Mbrship.Visible = false;
+            // 
+            // Postal
+            // 
+            this.Postal.AutoSize = true;
+            this.Postal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Postal.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Postal.Location = new System.Drawing.Point(624, 286);
+            this.Postal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Postal.Name = "Postal";
+            this.Postal.Size = new System.Drawing.Size(189, 45);
+            this.Postal.TabIndex = 132;
+            this.Postal.Text = "Postal Code";
+            this.Postal.Visible = false;
+            // 
+            // FindCarsBtn
+            // 
+            this.FindCarsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindCarsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.FindCarsBtn.Location = new System.Drawing.Point(1045, 382);
+            this.FindCarsBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindCarsBtn.Name = "FindCarsBtn";
+            this.FindCarsBtn.Size = new System.Drawing.Size(140, 49);
+            this.FindCarsBtn.TabIndex = 134;
+            this.FindCarsBtn.Text = "Find Cars";
+            this.FindCarsBtn.UseVisualStyleBackColor = true;
+            this.FindCarsBtn.Click += new System.EventHandler(this.FindCarsBtn_Click);
+            // 
+            // carentrycancel
+            // 
+            this.carentrycancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.carentrycancel.FlatAppearance.BorderSize = 0;
+            this.carentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.carentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.carentrycancel.Location = new System.Drawing.Point(44, 926);
+            this.carentrycancel.Margin = new System.Windows.Forms.Padding(6);
+            this.carentrycancel.Name = "carentrycancel";
+            this.carentrycancel.Size = new System.Drawing.Size(184, 107);
+            this.carentrycancel.TabIndex = 135;
+            this.carentrycancel.Text = "Cancel";
+            this.carentrycancel.UseVisualStyleBackColor = false;
+            this.carentrycancel.Click += new System.EventHandler(this.carentrycancel_Click);
+            // 
+            // carentrryaccept
+            // 
+            this.carentrryaccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.carentrryaccept.FlatAppearance.BorderSize = 0;
+            this.carentrryaccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carentrryaccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.carentrryaccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.carentrryaccept.Location = new System.Drawing.Point(1015, 926);
+            this.carentrryaccept.Margin = new System.Windows.Forms.Padding(6);
+            this.carentrryaccept.Name = "carentrryaccept";
+            this.carentrryaccept.Size = new System.Drawing.Size(184, 107);
+            this.carentrryaccept.TabIndex = 136;
+            this.carentrryaccept.Text = "Accept";
+            this.carentrryaccept.UseVisualStyleBackColor = false;
+            this.carentrryaccept.Click += new System.EventHandler(this.carentrryaccept_Click);
+            // 
+            // priceBx
+            // 
+            this.priceBx.AutoSize = true;
+            this.priceBx.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceBx.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.priceBx.Location = new System.Drawing.Point(697, 949);
+            this.priceBx.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.priceBx.Name = "priceBx";
+            this.priceBx.Size = new System.Drawing.Size(48, 59);
+            this.priceBx.TabIndex = 137;
+            this.priceBx.Text = "0";
+            this.priceBx.Visible = false;
+            // 
+            // NewTransPnl
+            // 
+            this.NewTransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.NewTransPnl.Controls.Add(this.calcPriceBtn);
+            this.NewTransPnl.Controls.Add(this.priceBx);
+            this.NewTransPnl.Controls.Add(this.PickupLbl);
+            this.NewTransPnl.Controls.Add(this.carentrryaccept);
+            this.NewTransPnl.Controls.Add(this.PickupBranchID);
+            this.NewTransPnl.Controls.Add(this.carentrycancel);
+            this.NewTransPnl.Controls.Add(this.PickDate);
+            this.NewTransPnl.Controls.Add(this.FindCarsBtn);
+            this.NewTransPnl.Controls.Add(this.RtnLbl);
+            this.NewTransPnl.Controls.Add(this.Postal);
+            this.NewTransPnl.Controls.Add(this.RtnBranch);
+            this.NewTransPnl.Controls.Add(this.Mbrship);
+            this.NewTransPnl.Controls.Add(this.RtnDate);
+            this.NewTransPnl.Controls.Add(this.Phone);
+            this.NewTransPnl.Controls.Add(this.CarTable);
+            this.NewTransPnl.Controls.Add(this.CP);
+            this.NewTransPnl.Controls.Add(this.CarTypePicker);
+            this.NewTransPnl.Controls.Add(this.Add2);
+            this.NewTransPnl.Controls.Add(this.CustIdBx);
+            this.NewTransPnl.Controls.Add(this.Add1);
+            this.NewTransPnl.Controls.Add(this.FindID);
+            this.NewTransPnl.Controls.Add(this.FullName);
+            this.NewTransPnl.Controls.Add(this.CustLbl);
+            this.NewTransPnl.Location = new System.Drawing.Point(0, 0);
+            this.NewTransPnl.Margin = new System.Windows.Forms.Padding(6);
+            this.NewTransPnl.Name = "NewTransPnl";
+            this.NewTransPnl.Size = new System.Drawing.Size(1233, 1050);
+            this.NewTransPnl.TabIndex = 138;
+            // 
+            // calcPriceBtn
+            // 
+            this.calcPriceBtn.AutoSize = true;
+            this.calcPriceBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.calcPriceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calcPriceBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.calcPriceBtn.Location = new System.Drawing.Point(420, 959);
+            this.calcPriceBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.calcPriceBtn.Name = "calcPriceBtn";
+            this.calcPriceBtn.Size = new System.Drawing.Size(123, 44);
+            this.calcPriceBtn.TabIndex = 138;
+            this.calcPriceBtn.Text = "Caluclate";
+            this.calcPriceBtn.UseVisualStyleBackColor = true;
+            this.calcPriceBtn.Click += new System.EventHandler(this.calcPriceBtn_Click);
+            // 
             // TransNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1233, 900);
-            this.Controls.Add(this.MemStatus);
-            this.Controls.Add(this.CID);
-            this.Controls.Add(this.CustPhone);
-            this.Controls.Add(this.Province);
-            this.Controls.Add(this.CustCity);
-            this.Controls.Add(this.CustAdd2);
-            this.Controls.Add(this.CustAdd1);
-            this.Controls.Add(this.CustName);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.FindCars);
-            this.Controls.Add(this.PriceLbl);
-            this.Controls.Add(this.CarTypePicker);
-            this.Controls.Add(this.AddCustBtn);
-            this.Controls.Add(this.CarTable);
-            this.Controls.Add(this.RtnDateTime);
-            this.Controls.Add(this.RtnBranchLbl);
-            this.Controls.Add(this.RtnLbl);
-            this.Controls.Add(this.PickDateTime);
-            this.Controls.Add(this.PickupBranchID);
-            this.Controls.Add(this.PickupLbl);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(1233, 1050);
+            this.Controls.Add(this.NewTransPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TransNew";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.CarTable)).EndInit();
+            this.NewTransPnl.ResumeLayout(false);
+            this.NewTransPnl.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Label MemStatus;
-        private Label CID;
-        private Label CustPhone;
-        private Label Province;
-        private Label CustCity;
-        private Label CustAdd2;
-        private Label CustAdd1;
-        private Label CustName;
-        private Button button1;
-        private Button FindCars;
-        public Label PriceLbl;
         private ComboBox CarTypePicker;
-        private Button AddCustBtn;
         private DataGridView CarTable;
-        private DataGridViewTextBoxColumn CarType;
-        private DataGridViewTextBoxColumn Make;
-        private DataGridViewTextBoxColumn Model;
-        private DataGridViewTextBoxColumn Year;
-        private DataGridViewTextBoxColumn Seats;
-        private DataGridViewTextBoxColumn VIN;
-        private DateTimePicker RtnDateTime;
-        private ComboBox RtnBranchLbl;
+        private DateTimePicker RtnDate;
+        private ComboBox RtnBranch;
         private Label RtnLbl;
-        private DateTimePicker PickDateTime;
+        private DateTimePicker PickDate;
         private ComboBox PickupBranchID;
         private Label PickupLbl;
+        private Button FindID;
+        private TextBox CustIdBx;
+        private Label CustLbl;
+        public Label FullName;
+        public Label Add1;
+        public Label Add2;
+        public Label CP;
+        public Label Phone;
+        public Label Mbrship;
+        public Label Postal;
+        private Button FindCarsBtn;
+        private Button carentrycancel;
+        private Button carentrryaccept;
+        public Label priceBx;
+        private Panel NewTransPnl;
+        private Button calcPriceBtn;
     }
 }

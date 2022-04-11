@@ -21,6 +21,7 @@ namespace CMPT291_Project
         public CarTypeEntry()
         {
             InitializeComponent();
+            AddRBtn.Checked = true;
 
             string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
@@ -92,7 +93,7 @@ namespace CMPT291_Project
                 CarTypeFrm_Vrb.Show();
             }
 
-            else if (RemoveRBtn.Checked == true) //edits car type entry
+            else if (RemoveRBtn.Checked == true) //deletes car type entry
             {
                 try
                 {
@@ -168,34 +169,44 @@ namespace CMPT291_Project
                 {
                     myCommand.CommandText = "select * from CarType where CarTypeId = " + displayID;
                     myReader = myCommand.ExecuteReader();
-                    
-                    //saves variables read and displays them in the appropriate fields
-                    while(myReader.Read())
+
+                    if (myReader.HasRows)
                     {
+                        //saves variables read and displays them in the appropriate fields
+                        while (myReader.Read())
+                        {
 
-                        string des = (string)myReader["Description"];
-                        decimal dr = (decimal)myReader["DailyRate"];
-                        decimal wr = (decimal)myReader["WeeklyRate"];
-                        decimal mr = (decimal)myReader["MonthlyRate"];
+                            string des = (string)myReader["Description"];
+                            decimal dr = (decimal)myReader["DailyRate"];
+                            decimal wr = (decimal)myReader["WeeklyRate"];
+                            decimal mr = (decimal)myReader["MonthlyRate"];
 
-                        descentry.Visible = true;
-                        drateentry.Visible = true;
-                        wrateentry.Visible = true;
-                        mrateentry.Visible = true;
+                            descentry.Visible = true;
+                            drateentry.Visible = true;
+                            wrateentry.Visible = true;
+                            mrateentry.Visible = true;
 
-                        descentry.Text = des;
-                        drateentry.Text = dr.ToString();
-                        wrateentry.Text = wr.ToString();
-                        mrateentry.Text = mr.ToString();
+                            descentry.Text = des;
+                            drateentry.Text = dr.ToString();
+                            wrateentry.Text = wr.ToString();
+                            mrateentry.Text = mr.ToString();
+                        }
+
+                        
                     }
 
-                    myReader.Close();
+                    else
+                    {
+                        CarTypeIdBx.Text = string.Empty;
 
+                        MessageBox.Show("Invalid Car Type ID", "Error");
+                    }
                 }
                 catch (Exception e2)
                 {
                     MessageBox.Show(e2.ToString(), "Error");
                 }
+                myReader.Close();
 
             }
 

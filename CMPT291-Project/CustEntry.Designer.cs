@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             this.CustEntryPanel = new System.Windows.Forms.Panel();
+            this.DOBEntry = new System.Windows.Forms.DateTimePicker();
+            this.FindID = new System.Windows.Forms.Button();
+            this.CustIdBx = new System.Windows.Forms.TextBox();
+            this.RemoveRBtn = new System.Windows.Forms.RadioButton();
+            this.EditRBtn = new System.Windows.Forms.RadioButton();
+            this.AddRBtn = new System.Windows.Forms.RadioButton();
             this.custentrycancel = new System.Windows.Forms.Button();
             this.custentryacc = new System.Windows.Forms.Button();
             this.cmemL = new System.Windows.Forms.Label();
             this.dlL = new System.Windows.Forms.Label();
             this.cinsL = new System.Windows.Forms.Label();
             this.phoneL = new System.Windows.Forms.Label();
-            this.mementry = new System.Windows.Forms.TextBox();
             this.dlentry = new System.Windows.Forms.TextBox();
             this.cinsentry = new System.Windows.Forms.TextBox();
             this.phoneentry = new System.Windows.Forms.TextBox();
@@ -44,7 +49,6 @@
             this.provL = new System.Windows.Forms.Label();
             this.cityL = new System.Windows.Forms.Label();
             this.add2L = new System.Windows.Forms.Label();
-            this.dobentry = new System.Windows.Forms.TextBox();
             this.postalentry = new System.Windows.Forms.TextBox();
             this.proventry = new System.Windows.Forms.TextBox();
             this.cityentry = new System.Windows.Forms.TextBox();
@@ -58,18 +62,26 @@
             this.mnameL = new System.Windows.Forms.Label();
             this.fnameL = new System.Windows.Forms.Label();
             this.custentrytitle = new System.Windows.Forms.Label();
+            this.mementry = new System.Windows.Forms.CheckBox();
             this.CustEntryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CustEntryPanel
             // 
+            this.CustEntryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.CustEntryPanel.Controls.Add(this.mementry);
+            this.CustEntryPanel.Controls.Add(this.DOBEntry);
+            this.CustEntryPanel.Controls.Add(this.FindID);
+            this.CustEntryPanel.Controls.Add(this.CustIdBx);
+            this.CustEntryPanel.Controls.Add(this.RemoveRBtn);
+            this.CustEntryPanel.Controls.Add(this.EditRBtn);
+            this.CustEntryPanel.Controls.Add(this.AddRBtn);
             this.CustEntryPanel.Controls.Add(this.custentrycancel);
             this.CustEntryPanel.Controls.Add(this.custentryacc);
             this.CustEntryPanel.Controls.Add(this.cmemL);
             this.CustEntryPanel.Controls.Add(this.dlL);
             this.CustEntryPanel.Controls.Add(this.cinsL);
             this.CustEntryPanel.Controls.Add(this.phoneL);
-            this.CustEntryPanel.Controls.Add(this.mementry);
             this.CustEntryPanel.Controls.Add(this.dlentry);
             this.CustEntryPanel.Controls.Add(this.cinsentry);
             this.CustEntryPanel.Controls.Add(this.phoneentry);
@@ -78,7 +90,6 @@
             this.CustEntryPanel.Controls.Add(this.provL);
             this.CustEntryPanel.Controls.Add(this.cityL);
             this.CustEntryPanel.Controls.Add(this.add2L);
-            this.CustEntryPanel.Controls.Add(this.dobentry);
             this.CustEntryPanel.Controls.Add(this.postalentry);
             this.CustEntryPanel.Controls.Add(this.proventry);
             this.CustEntryPanel.Controls.Add(this.cityentry);
@@ -98,6 +109,80 @@
             this.CustEntryPanel.Size = new System.Drawing.Size(1233, 1050);
             this.CustEntryPanel.TabIndex = 0;
             // 
+            // DOBEntry
+            // 
+            this.DOBEntry.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.DOBEntry.Location = new System.Drawing.Point(201, 580);
+            this.DOBEntry.Name = "DOBEntry";
+            this.DOBEntry.Size = new System.Drawing.Size(337, 39);
+            this.DOBEntry.TabIndex = 109;
+            // 
+            // FindID
+            // 
+            this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindID.ForeColor = System.Drawing.Color.White;
+            this.FindID.Location = new System.Drawing.Point(304, 19);
+            this.FindID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindID.Name = "FindID";
+            this.FindID.Size = new System.Drawing.Size(140, 49);
+            this.FindID.TabIndex = 108;
+            this.FindID.Text = "Find ID";
+            this.FindID.UseVisualStyleBackColor = true;
+            this.FindID.Visible = false;
+            this.FindID.Click += new System.EventHandler(this.FindID_Click);
+            // 
+            // CustIdBx
+            // 
+            this.CustIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.CustIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CustIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CustIdBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.CustIdBx.Location = new System.Drawing.Point(455, 23);
+            this.CustIdBx.Margin = new System.Windows.Forms.Padding(6);
+            this.CustIdBx.Name = "CustIdBx";
+            this.CustIdBx.Size = new System.Drawing.Size(83, 43);
+            this.CustIdBx.TabIndex = 107;
+            this.CustIdBx.Visible = false;
+            // 
+            // RemoveRBtn
+            // 
+            this.RemoveRBtn.AutoSize = true;
+            this.RemoveRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RemoveRBtn.Location = new System.Drawing.Point(626, 526);
+            this.RemoveRBtn.Name = "RemoveRBtn";
+            this.RemoveRBtn.Size = new System.Drawing.Size(131, 36);
+            this.RemoveRBtn.TabIndex = 106;
+            this.RemoveRBtn.TabStop = true;
+            this.RemoveRBtn.Text = "Remove";
+            this.RemoveRBtn.UseVisualStyleBackColor = true;
+            this.RemoveRBtn.CheckedChanged += new System.EventHandler(this.RemoveRBtn_CheckedChanged);
+            // 
+            // EditRBtn
+            // 
+            this.EditRBtn.AutoSize = true;
+            this.EditRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.EditRBtn.Location = new System.Drawing.Point(626, 464);
+            this.EditRBtn.Name = "EditRBtn";
+            this.EditRBtn.Size = new System.Drawing.Size(85, 36);
+            this.EditRBtn.TabIndex = 105;
+            this.EditRBtn.TabStop = true;
+            this.EditRBtn.Text = "Edit";
+            this.EditRBtn.UseVisualStyleBackColor = true;
+            this.EditRBtn.CheckedChanged += new System.EventHandler(this.EditRBtn_CheckedChanged);
+            // 
+            // AddRBtn
+            // 
+            this.AddRBtn.AutoSize = true;
+            this.AddRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddRBtn.Location = new System.Drawing.Point(626, 397);
+            this.AddRBtn.Name = "AddRBtn";
+            this.AddRBtn.Size = new System.Drawing.Size(88, 36);
+            this.AddRBtn.TabIndex = 104;
+            this.AddRBtn.TabStop = true;
+            this.AddRBtn.Text = "Add";
+            this.AddRBtn.UseVisualStyleBackColor = true;
+            this.AddRBtn.CheckedChanged += new System.EventHandler(this.AddRBtn_CheckedChanged);
+            // 
             // custentrycancel
             // 
             this.custentrycancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -105,7 +190,7 @@
             this.custentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.custentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.custentrycancel.Location = new System.Drawing.Point(862, 516);
+            this.custentrycancel.Location = new System.Drawing.Point(862, 495);
             this.custentrycancel.Margin = new System.Windows.Forms.Padding(6);
             this.custentrycancel.Name = "custentrycancel";
             this.custentrycancel.Size = new System.Drawing.Size(184, 107);
@@ -121,7 +206,7 @@
             this.custentryacc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custentryacc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.custentryacc.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.custentryacc.Location = new System.Drawing.Point(626, 516);
+            this.custentryacc.Location = new System.Drawing.Point(862, 376);
             this.custentryacc.Margin = new System.Windows.Forms.Padding(6);
             this.custentryacc.Name = "custentryacc";
             this.custentryacc.Size = new System.Drawing.Size(184, 107);
@@ -173,18 +258,6 @@
             this.phoneL.Size = new System.Drawing.Size(177, 32);
             this.phoneL.TabIndex = 81;
             this.phoneL.Text = "Phone Number";
-            // 
-            // mementry
-            // 
-            this.mementry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.mementry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mementry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mementry.ForeColor = System.Drawing.SystemColors.Window;
-            this.mementry.Location = new System.Drawing.Point(776, 269);
-            this.mementry.Margin = new System.Windows.Forms.Padding(6);
-            this.mementry.Name = "mementry";
-            this.mementry.Size = new System.Drawing.Size(338, 43);
-            this.mementry.TabIndex = 80;
             // 
             // dlentry
             // 
@@ -276,18 +349,6 @@
             this.add2L.Size = new System.Drawing.Size(169, 32);
             this.add2L.TabIndex = 72;
             this.add2L.Text = "Address Line 2";
-            // 
-            // dobentry
-            // 
-            this.dobentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dobentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dobentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dobentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.dobentry.Location = new System.Drawing.Point(201, 578);
-            this.dobentry.Margin = new System.Windows.Forms.Padding(6);
-            this.dobentry.Name = "dobentry";
-            this.dobentry.Size = new System.Drawing.Size(336, 43);
-            this.dobentry.TabIndex = 71;
             // 
             // postalentry
             // 
@@ -437,9 +498,21 @@
             this.custentrytitle.Location = new System.Drawing.Point(22, 19);
             this.custentrytitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.custentrytitle.Name = "custentrytitle";
-            this.custentrytitle.Size = new System.Drawing.Size(489, 51);
+            this.custentrytitle.Size = new System.Drawing.Size(185, 51);
             this.custentrytitle.TabIndex = 58;
-            this.custentrytitle.Text = "Enter Customer Information";
+            this.custentrytitle.Text = "Customer";
+            // 
+            // mementry
+            // 
+            this.mementry.AutoSize = true;
+            this.mementry.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mementry.Location = new System.Drawing.Point(776, 278);
+            this.mementry.Name = "mementry";
+            this.mementry.Size = new System.Drawing.Size(96, 36);
+            this.mementry.TabIndex = 111;
+            this.mementry.Text = "Gold";
+            this.mementry.UseVisualStyleBackColor = true;
+            this.mementry.CheckedChanged += new System.EventHandler(this.mementry_CheckedChanged);
             // 
             // CustEntry
             // 
@@ -467,7 +540,6 @@
         private Label dlL;
         private Label cinsL;
         private Label phoneL;
-        private TextBox mementry;
         private TextBox dlentry;
         private TextBox cinsentry;
         private TextBox phoneentry;
@@ -476,7 +548,6 @@
         private Label provL;
         private Label cityL;
         private Label add2L;
-        private TextBox dobentry;
         private TextBox postalentry;
         private TextBox proventry;
         private TextBox cityentry;
@@ -490,5 +561,12 @@
         private Label mnameL;
         private Label fnameL;
         private Label custentrytitle;
+        private RadioButton RemoveRBtn;
+        private RadioButton EditRBtn;
+        private RadioButton AddRBtn;
+        private Button FindID;
+        private TextBox CustIdBx;
+        private DateTimePicker DOBEntry;
+        private CheckBox mementry;
     }
 }
