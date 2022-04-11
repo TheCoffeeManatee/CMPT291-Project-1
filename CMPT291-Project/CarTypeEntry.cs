@@ -52,12 +52,19 @@ namespace CMPT291_Project
 
         private void ctentryacc_Click(object sender, EventArgs e)
         {
+            
             if (AddRBtn.Checked == true) //adds car type to the database
             {
+                if (!checkLevel())
+                {
+                    MessageBox.Show("Level must be a number.", "Error");
+                    return;
+                }
+
                 try
                 {
                     myCommand.CommandText = "insert into CarType values ('" + descentry.Text +
-                        "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ")";
+                        "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", Level = " + LevelBx.Text + ")";
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -74,11 +81,17 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true) //edits car type entry
             {
+                if (!checkLevel())
+                {
+                    MessageBox.Show("Level must be a number.", "Error");
+                    return;
+                }
+
                 try
                 {
                     myCommand.CommandText = "update CarType Set Description = '" + descentry.Text +
-                        "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text + 
-                        ", MonthlyRate = " + mrateentry.Text + " where CarTypeID = " + CarTypeIdBx.Text;
+                        "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
+                        ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -125,11 +138,13 @@ namespace CMPT291_Project
             drateentry.Visible = true;
             wrateentry.Visible = true;
             mrateentry.Visible = true;
+            LevelBx.Visible = true;
 
             descentry.Text = String.Empty;
             drateentry.Text = String.Empty;
             wrateentry.Text = String.Empty;
             mrateentry.Text = String.Empty;
+            LevelBx.Text = String.Empty;
         }
 
         //resets form for editing
@@ -155,6 +170,7 @@ namespace CMPT291_Project
             drateentry.Visible = false;
             wrateentry.Visible = false;
             mrateentry.Visible = false;
+            LevelBx.Visible = false;
         }
 
         private void FindID_Click(object sender, EventArgs e) //find the ID entered and display the information
@@ -180,19 +196,20 @@ namespace CMPT291_Project
                             decimal dr = (decimal)myReader["DailyRate"];
                             decimal wr = (decimal)myReader["WeeklyRate"];
                             decimal mr = (decimal)myReader["MonthlyRate"];
+                            int lvl = (int)myReader["Level"];
 
                             descentry.Visible = true;
                             drateentry.Visible = true;
                             wrateentry.Visible = true;
                             mrateentry.Visible = true;
+                            LevelBx.Visible = true;
 
                             descentry.Text = des;
                             drateentry.Text = dr.ToString();
                             wrateentry.Text = wr.ToString();
                             mrateentry.Text = mr.ToString();
+                            LevelBx.Text = lvl.ToString();
                         }
-
-                        
                     }
 
                     else
@@ -202,18 +219,26 @@ namespace CMPT291_Project
                         MessageBox.Show("Invalid Car Type ID", "Error");
                     }
                 }
+
                 catch (Exception e2)
                 {
                     MessageBox.Show(e2.ToString(), "Error");
                 }
                 myReader.Close();
-
             }
 
             else
-            {
                 resetEditRemove();
-            }
         }
+        bool checkLevel()
+        {
+            //converts string to integer 
+            int level;
+            bool success = int.TryParse(LevelBx.Text, out level);
+
+            return success;
+        }
+
+
     }
 }

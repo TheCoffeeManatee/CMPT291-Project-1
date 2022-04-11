@@ -119,7 +119,7 @@ namespace CMPT291_Project
                 {
                     myCommand.CommandText = "update Car set CarTypeId = " + carTypeId + ", Make = '" + makeentry.Text + "', Model = '" + modelentry.Text + "', Year = "
                         + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + colourentry.Text + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
-                        + branchId + "where VIN = " + vinentry.Text;
+                        + branchId + "where VIN = '" + vinentry.Text + "'";
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -138,7 +138,7 @@ namespace CMPT291_Project
             {
                 try
                 {
-                    myCommand.CommandText = "delete from Car where VIN = " + vinentry.Text;
+                    myCommand.CommandText = "delete from Car where VIN = '" + vinentry.Text + "'";
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)

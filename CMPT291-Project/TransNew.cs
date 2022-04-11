@@ -18,12 +18,12 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         public int carTypeId, pickbranchId, rtnBranchId;
+        public int goldFlag = 0, upgradeCTId = 0; //used to mark if requested carType was not availible for free upgrade on gold members
         public string vin;
         public decimal diffBranchCost = 10;
         public decimal price = 0;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
 
         public TransNew()
         {
@@ -162,10 +162,25 @@ namespace CMPT291_Project
                 SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
                 DataTable dt = new DataTable();
                 myAdapter.Fill(dt);
+
+                //rename columns
+                dt.Columns["CarTypeId"].ColumnName = "Type ID";
+                dt.Columns["BranchId"].ColumnName = "Branch ID";
+
                 CarTable.DataSource = dt;
 
-                if (dt.Rows.Count == 0)
-                    MessageBox.Show("No cars available in this date range.", "Error");
+                if (CarTable.Rows.Count == 0)
+                {
+                    if (Mbrship.Text == "Gold") //current carTypeId is saved to be used in calculating price
+                    {
+                        goldFlag = 1;
+                        MessageBox.Show("No cars available in this date range.\n\nFree upgrade applied", "Error");
+                    }
+
+                    else
+                        MessageBox.Show("No cars available in this date range.", "Error");
+
+                }
             }
 
             catch (Exception e2)
@@ -224,10 +239,7 @@ namespace CMPT291_Project
                     return;
             }
 
-            else if (!VINSuccess || !carTypeOkay || !datesOkay || !custOkay || !branchesOkay)
-            {
-                MessageBox.Show("Please ensure all fields are filled correctly.", "Error");
-            }
+            return;
         }
 
         private void PickupBranchID_SelectedIndexChanged(object sender, EventArgs e)
@@ -287,14 +299,24 @@ namespace CMPT291_Project
         {
             try
             {
-                myCommand.CommandText = "select CarTypeId from CarType where Description = '" + CarTypePicker.Text + "'";
+                myCommand.CommandText = "select CarTypeId, Level from CarType where Description = '" + CarTypePicker.Text + "'";
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
                     if (myReader.HasRows)
                     {
-                        carTypeId = (int)myReader["CarTypeId"];
+                        if (goldFlag == 0) //ensure upgradeCarID stays the same as carTypeID until flag is thrown
+                        {
+                            carTypeId = (int)myReader["CarTypeId"];
+                            upgradeCTId = carTypeId;
+                        }
+
+                        else
+                            carTypeId = (int)myReader["CarTypeId"];
+
+                        int lvl = (int)myReader["Level"];
+                        level.Text = lvl.ToString();
                     }
                 }
             }
@@ -305,7 +327,7 @@ namespace CMPT291_Project
             }
             myReader.Close();
 
-            if (price != 0)
+            if (price != 0) //price has been previously calculated
             {
                 calcPriceBtn.Text = "Re-Calculate";
             }
@@ -365,6 +387,7 @@ namespace CMPT291_Project
                 return true;
             }
 
+            MessageBox.Show("Please choose only one VIN", "Error");
             return false;
         }
 
@@ -405,7 +428,10 @@ namespace CMPT291_Project
         bool checkCarType()
         {
             if (CarTypePicker.Text.Length == 0)
+            {
+                MessageBox.Show("Invalid CarType", "Error");
                 return false;
+            }
             else
                 return true;
         }
@@ -413,31 +439,46 @@ namespace CMPT291_Project
         bool checkBranches()
         {
 
-            if ((PickupBranchID.Text.Length == 0) || (RtnBranch.Text.Length == 0) || (RtnDate.Value.Date < PickDate.Value.Date))
+            if ((PickupBranchID.Text.Length == 0) || (RtnBranch.Text.Length == 0))
+            {
+                MessageBox.Show("Invalid Branch", "Error");
                 return false;
+            }
 
-            else 
+            else
                 return true;
         }
 
         bool checkDates()
         {
-            if (RtnDate.Value.Date < PickDate.Value.Date)
+            if (RtnDate.Value.Date < PickDate.Value.Date || PickDate.Value.Date < DateTime.Today.Date)
+            {
+                MessageBox.Show("Invalid Pickup Date", "Error");
                 return false;
+            }
             else
                 return true;
         }
 
         private void calcPriceBtn_Click(object sender, EventArgs e)
         {
+            int totalDays;
             bool carTypeOkay = checkCarType();
             bool datesOkay = checkDates();
             bool branchesOkay = checkBranches();
             bool custOkay = checkCust();
 
+            if (PickDate.Value.Date == RtnDate.Value.Date)
+            {
+                totalDays = 1;
+            }
+
+            else
+                totalDays = (RtnDate.Value.Date - PickDate.Value.Date).Days;
+
             if (carTypeOkay && datesOkay && branchesOkay && custOkay)
             {
-                calculatePrice((RtnDate.Value.Date - PickDate.Value.Date).Days);
+                calculatePrice(totalDays);
                 priceBx.Visible = true;
                 priceBx.Text = price.ToString("N2");
                 calcPriceBtn.Text = "Calculate";
@@ -473,8 +514,9 @@ namespace CMPT291_Project
 
             if (cust > 0)
                 return true;
-            else
-                return false;
+
+            MessageBox.Show("Invalid Customer", "Error");
+            return false;
                 
         }
 
@@ -483,16 +525,23 @@ namespace CMPT291_Project
             decimal monthly = 0, weekly = 0, daily = 0;
 
             int months = totalDays/30;
-            totalDays -= months;
+            totalDays -= months*30;
 
             int weeks = (totalDays/7);
-            totalDays -= weeks;
+            totalDays -= weeks*7;
 
             int days = totalDays;
 
             try
             {
-                myCommand.CommandText = "select * from CarType where CarTypeId = " + carTypeId;
+                if (goldFlag == 0)
+                    myCommand.CommandText = "select * from CarType where CarTypeId = " + carTypeId;
+
+                else if (goldFlag == 1)
+                {
+                    MessageBox.Show(upgradeCTId.ToString(), "Error");
+                    myCommand.CommandText = "select * from CarType where CarTypeId = " + upgradeCTId;
+                }
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
@@ -522,15 +571,5 @@ namespace CMPT291_Project
             return;
         }
 
-        string parsePhone(string phone)
-        {
-            string newPhone = "";
-
-            for (int i = 0; i < phone.Length; i++)
-                if (Char.IsDigit(phone[i]))
-                    newPhone += phone[i];
-
-            return newPhone;
-        }
     }
 }
