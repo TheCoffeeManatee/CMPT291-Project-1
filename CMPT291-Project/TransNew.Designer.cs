@@ -54,7 +54,6 @@
             this.carentrryaccept = new System.Windows.Forms.Button();
             this.priceBx = new System.Windows.Forms.Label();
             this.NewTransPnl = new System.Windows.Forms.Panel();
-            this.PriceLbl = new System.Windows.Forms.Label();
             this.calcPriceBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarTable)).BeginInit();
             this.NewTransPnl.SuspendLayout();
@@ -124,6 +123,7 @@
             this.RtnDate.Name = "RtnDate";
             this.RtnDate.Size = new System.Drawing.Size(400, 39);
             this.RtnDate.TabIndex = 102;
+            this.RtnDate.ValueChanged += new System.EventHandler(this.RtnDate_ValueChanged);
             // 
             // RtnBranch
             // 
@@ -157,6 +157,7 @@
             this.PickDate.Name = "PickDate";
             this.PickDate.Size = new System.Drawing.Size(400, 39);
             this.PickDate.TabIndex = 99;
+            this.PickDate.ValueChanged += new System.EventHandler(this.PickDate_ValueChanged);
             // 
             // PickupBranchID
             // 
@@ -360,7 +361,7 @@
             this.priceBx.AutoSize = true;
             this.priceBx.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceBx.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.priceBx.Location = new System.Drawing.Point(938, 946);
+            this.priceBx.Location = new System.Drawing.Point(697, 949);
             this.priceBx.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.priceBx.Name = "priceBx";
             this.priceBx.Size = new System.Drawing.Size(48, 59);
@@ -394,33 +395,22 @@
             this.NewTransPnl.Controls.Add(this.FindID);
             this.NewTransPnl.Controls.Add(this.FullName);
             this.NewTransPnl.Controls.Add(this.CustLbl);
-            this.NewTransPnl.Controls.Add(this.PriceLbl);
             this.NewTransPnl.Location = new System.Drawing.Point(0, 0);
             this.NewTransPnl.Margin = new System.Windows.Forms.Padding(6);
             this.NewTransPnl.Name = "NewTransPnl";
             this.NewTransPnl.Size = new System.Drawing.Size(1233, 1050);
             this.NewTransPnl.TabIndex = 138;
             // 
-            // PriceLbl
-            // 
-            this.PriceLbl.AutoSize = true;
-            this.PriceLbl.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PriceLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PriceLbl.Location = new System.Drawing.Point(727, 946);
-            this.PriceLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.PriceLbl.Name = "PriceLbl";
-            this.PriceLbl.Size = new System.Drawing.Size(125, 59);
-            this.PriceLbl.TabIndex = 125;
-            this.PriceLbl.Text = "Price:";
-            // 
             // calcPriceBtn
             // 
+            this.calcPriceBtn.AutoSize = true;
+            this.calcPriceBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.calcPriceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.calcPriceBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.calcPriceBtn.Location = new System.Drawing.Point(546, 956);
+            this.calcPriceBtn.Location = new System.Drawing.Point(420, 959);
             this.calcPriceBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.calcPriceBtn.Name = "calcPriceBtn";
-            this.calcPriceBtn.Size = new System.Drawing.Size(140, 49);
+            this.calcPriceBtn.Size = new System.Drawing.Size(123, 44);
             this.calcPriceBtn.TabIndex = 138;
             this.calcPriceBtn.Text = "Caluclate";
             this.calcPriceBtn.UseVisualStyleBackColor = true;
@@ -468,6 +458,5 @@
         public Label priceBx;
         private Panel NewTransPnl;
         private Button calcPriceBtn;
-        public Label PriceLbl;
     }
 }

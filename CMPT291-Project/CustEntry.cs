@@ -56,6 +56,8 @@ namespace CMPT291_Project
         {
             if (AddRBtn.Checked == true)
             {
+                string phoneNumber = parsePhone(phoneentry.Text);
+
                 try
                 {
                     dobStr = DOBEntry.Value.ToString();
@@ -63,7 +65,7 @@ namespace CMPT291_Project
                     myCommand.CommandText = "insert into Customer values ('" + fnameentry.Text +
                         "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
                         "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
-                        postalentry.Text + "','" + dobStr + "'," + phoneentry.Text + ",'" + cinsentry.Text
+                        postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
                         + "','" + dlentry.Text + "'," + mbr + ")";
                     myCommand.ExecuteNonQuery();
                 }
@@ -83,13 +85,14 @@ namespace CMPT291_Project
             {
                 try
                 {
+                    string phoneNumber = parsePhone(phoneentry.Text);
                     dobStr = DOBEntry.Value.ToString();
 
                     myCommand.CommandText = "update Customer set FirstName = '" + fnameentry.Text +
                         "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
                         "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
-                        postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneentry.Text + "', Insurance = '" + cinsentry.Text
-                        + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr;
+                        postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
+                        + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -246,9 +249,15 @@ namespace CMPT291_Project
                             proventry.Text = prov;
                             postalentry.Text = post;
                             DOBEntry.Value = Convert.ToDateTime(dob);
-                            phoneentry.Text = phone;
                             cinsentry.Text = ins;
                             dlentry.Text = dl;
+
+                            if (phone.Length == 10)
+                                phoneentry.Text = "(" + phone[0] + phone[1] + phone[2] + ") " + phone[3] + phone[4] + phone[5] + "-" + phone[6] + phone[7] + phone[8] + phone[9];
+
+                            else if (phone.Length == 11)
+                                phoneentry.Text = phone[0] + "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" + phone[7] + phone[8] + phone[9] + phone[10];
+
 
                             mementry.Visible = true;
                             if (mem == 1)
@@ -292,6 +301,17 @@ namespace CMPT291_Project
                 mbr = 1;
             else
                 mbr = 0;
+        }
+
+        string parsePhone(string phone)
+        {
+            string newPhone = "";
+
+            for (int i = 0; i < phone.Length; i++)
+                if (Char.IsDigit(phone[i]))
+                    newPhone += phone[i];
+
+            return newPhone;
         }
     }
 }

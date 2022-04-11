@@ -53,11 +53,13 @@ namespace CMPT291_Project
         {
             if (AddRBtn.Checked == true) //adds branch
             {
+                string phoneNumber = parsePhone(phoneentry.Text);
+
                 try
                 {
                     myCommand.CommandText = "insert into Branch values ('" + descentry.Text +
                         "','" + addL1entry.Text + "','" + addL2Entry.Text + "','" + cityentry.Text + "','"
-                        + proventry.Text + "','" + postalentry.Text + "'," + phoneentry.Text + ")";
+                        + proventry.Text + "','" + postalentry.Text + "'," + phoneNumber + ")";
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -74,12 +76,14 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true) //edits branch
             {
+                string phoneNumber = parsePhone(phoneentry.Text);
+
                 try
                 {
                     myCommand.CommandText = "update Branch set Description = " + descentry.Text +
                         ", StreetAddress1 = " + addL1entry.Text + ", StreetAddress2 = " + addL2Entry.Text +
                         ", City = " + cityentry.Text + ", Province = " + proventry.Text + ", PostalCode = " + postalentry.Text +
-                        ", Phone = " + phoneentry.Text + " where BranchID = " + BranchIdBx.Text;
+                        ", Phone = " + phoneNumber + " where BranchID = " + BranchIdBx.Text;
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
@@ -200,10 +204,16 @@ namespace CMPT291_Project
                             cityentry.Text = city.ToString();
                             proventry.Text = prov.ToString();
                             postalentry.Text = postal.ToString();
-                            phoneentry.Text = phone.ToString();
-                        }
 
-                        myReader.Close();
+                            if (phone.Length == 10)
+                                phoneentry.Text = "(" + phone[0] + phone[1] + phone[2] + ") " + phone[3] + phone[4] + phone[5] + "-" + phone[6] + phone[7] + phone[8] + phone[9];
+
+                            else if (phone.Length == 11)
+                                phoneentry.Text = phone[0] + "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" + phone[7] + phone[8] + phone[9] + phone[10];
+
+                            }
+
+                            myReader.Close();
                         }
 
                         else
@@ -226,6 +236,17 @@ namespace CMPT291_Project
         private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetRemoveEdit();
+        }
+
+        string parsePhone(string phone)
+        {
+            string newPhone = "";
+
+            for (int i = 0; i < phone.Length; i++)
+                if (Char.IsDigit(phone[i]))
+                    newPhone += phone[i];
+
+            return newPhone;
         }
     }
 }

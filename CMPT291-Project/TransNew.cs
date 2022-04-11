@@ -59,88 +59,90 @@ namespace CMPT291_Project
 
         private void FindID_Click(object sender, EventArgs e)
         {
+            //converts string to integer 
+            int displayID;
+            bool success = int.TryParse(CustIdBx.Text, out displayID);
+
+            if (success)
             {
-                //converts string to integer 
-                int displayID;
-                bool success = int.TryParse(CustIdBx.Text, out displayID);
-
-                if (success)
+                try
                 {
-                    try
+                    myCommand.CommandText = "select * from Customer where CustomerId  = " + displayID;
+                    myReader = myCommand.ExecuteReader();
+
+                    if (myReader.HasRows)
                     {
-                        myCommand.CommandText = "select * from Customer where CustomerId  = " + displayID;
-                        myReader = myCommand.ExecuteReader();
-
-                        if (myReader.HasRows)
+                        //saves variables read and displays them in the appropriate fields
+                        while (myReader.Read())
                         {
-                            //saves variables read and displays them in the appropriate fields
-                            while (myReader.Read())
+
+                            string fname = (string)myReader["FirstName"];
+                            string mname = (string)myReader["MiddleName"];
+                            string lname = (string)myReader["LastName"];
+                            string add1 = (string)myReader["StreetAddress1"];
+                            string add2 = (string)myReader["StreetAddress2"];
+                            string city = (string)myReader["City"];
+                            string prov = (string)myReader["Province"];
+                            string post = (string)myReader["PostalCode"];
+                            string phone = (string)myReader["Phone"];
+                            int mem = (int)myReader["Membership"];
+
+                            FullName.Visible = true;
+                            Add1.Visible = true;
+                            Add2.Visible = true;
+                            CP.Visible = true;
+                            Postal.Visible = true;
+                            Phone.Visible = true;
+                            Mbrship.Visible = true;
+
+                            FullName.Text = fname.Trim() + ' ' + mname.Trim() + ' ' + lname.Trim();
+                            Add1.Text = add1.Trim();
+                            Add2.Text = add2.Trim();
+                            CP.Text = city.Trim() + " " + prov.Trim();
+                            Postal.Text = post.Trim();
+
+                            if (phone.Length == 10)
+                                Phone.Text = "(" + phone[0] + phone[1] + phone[2] + ") " + phone[3] + phone[4] + phone[5] + "-" + phone[6] + phone[7] + phone[8] + phone[9];
+
+                            else if (phone.Length == 11)
+                                Phone.Text = phone[0] + "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" + phone[7] + phone[8] + phone[9] + phone[10];
+
+                            if (mem == 1)
                             {
-
-                                string fname = (string)myReader["FirstName"];
-                                string mname = (string)myReader["MiddleName"];
-                                string lname = (string)myReader["LastName"];
-                                string add1 = (string)myReader["StreetAddress1"];
-                                string add2 = (string)myReader["StreetAddress2"];
-                                string city = (string)myReader["City"];
-                                string prov = (string)myReader["Province"];
-                                string post = (string)myReader["PostalCode"];
-                                string phone = (string)myReader["Phone"];
-                                int mem = (int)myReader["Membership"];
-
-                                FullName.Visible = true;
-                                Add1.Visible = true;
-                                Add2.Visible = true;
-                                CP.Visible = true;
-                                Postal.Visible = true;
-                                Phone.Visible = true;
-                                Mbrship.Visible = true;
-
-                                FullName.Text = fname.Trim() + ' ' + mname.Trim() + ' ' + lname.Trim();
-                                Add1.Text = add1.Trim();
-                                Add2.Text = add2.Trim();
-                                CP.Text = city.Trim() + " " + prov.Trim();
-                                Postal.Text = post.Trim();
-
-                                if (phone.Length == 10)
-                                    Phone.Text = "(" + phone[0] + phone[1] + phone[2] + ") " + phone[3] + phone[4] + phone[5] + "-" + phone[6] + phone[7] + phone[8] + phone[9];
-
-                                else if (phone.Length == 11)
-                                    Phone.Text = phone[0] + "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" + phone[7] + phone[8] + phone[9] + phone[10];
-
-                                if (mem == 1)
-                                {
-                                    Mbrship.Text = "Gold";
-                                    Mbrship.ForeColor = Color.Gold;
-                                }
-
-                                else
-                                    Mbrship.Text = "Standard";
-
+                                Mbrship.Text = "Gold";
+                                Mbrship.ForeColor = Color.Gold;
                             }
 
-                            myReader.Close();
+                            else
+                                Mbrship.Text = "Standard";
+
                         }
 
-                        else
-                        {
-                            CustIdBx.Text = string.Empty;
-
-                            MessageBox.Show("Invalid Customer ID", "Error");
-                        }
-                            
+                        myReader.Close();
                     }
-                    catch (Exception e2)
+
+                    else
                     {
-                        MessageBox.Show(e2.ToString(), "Error");
-                    }
+                        CustIdBx.Text = string.Empty;
 
-                    myReader.Close();
+                        MessageBox.Show("Invalid Customer ID", "Error");
+                    }
 
                 }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+
+                myReader.Close();
 
             }
-        
+
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
+
         }
 
         private void FindCarsBtn_Click(object sender, EventArgs e)
@@ -192,26 +194,34 @@ namespace CMPT291_Project
 
             if (VINSuccess && carTypeOkay && datesOkay && branchesOkay && custOkay)
             {
-                try
+                DialogResult priceCheck = MessageBox.Show("Is the price up to date?", "Price Check", MessageBoxButtons.YesNo);
+
+                if (priceCheck == DialogResult.Yes)
                 {
-                    myCommand.CommandText = "insert into Rentals values (" + pickbranchId + ",'" + PickDate.Value.ToShortDateString() + "',"
-                        + rtnBranchId + ",'" + RtnDate.Value.Date.ToShortDateString() + "'," + carTypeId + "," + CustIdBx.Text + "," + vin + "," +
-                        price + ")";
-                    myCommand.ExecuteNonQuery();
+
+                    try
+                    {
+                        myCommand.CommandText = "insert into Rentals values (" + pickbranchId + ",'" + PickDate.Value.ToShortDateString() + "',"
+                            + rtnBranchId + ",'" + RtnDate.Value.Date.ToShortDateString() + "'," + carTypeId + "," + CustIdBx.Text + "," + vin + "," +
+                            price + ")";
+                        myCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception e2)
+                    {
+                        MessageBox.Show(e2.ToString(), "Error");
+                    }
+
+                    updateMbr();
+
+                    this.NewTransPnl.Controls.Clear();
+                    TransNew NewTrans_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    NewTrans_Vrb.FormBorderStyle = FormBorderStyle.None;
+                    this.NewTransPnl.Controls.Add(NewTrans_Vrb);
+                    NewTrans_Vrb.Show();
                 }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
 
-                updateMbr();
-
-                this.NewTransPnl.Controls.Clear();
-                TransNew NewTrans_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                NewTrans_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.NewTransPnl.Controls.Add(NewTrans_Vrb);
-                NewTrans_Vrb.Show();
-
+                else if (priceCheck == DialogResult.No)
+                    return;
             }
 
             else if (!VINSuccess || !carTypeOkay || !datesOkay || !custOkay || !branchesOkay)
@@ -223,11 +233,21 @@ namespace CMPT291_Project
         private void PickupBranchID_SelectedIndexChanged(object sender, EventArgs e)
         {
             getBranchId(0);
+
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
         }
 
         private void RtnBranch_SelectedIndexChanged(object sender, EventArgs e)
         {
             getBranchId(1);
+
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
         }
 
         //update branchIds based on choice in dropdowns; 0 for pickup, 1 for return
@@ -283,8 +303,12 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e2.ToString(), "Error");
             }
-
             myReader.Close();
+
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
         }
 
         //fill cartype dropdown
@@ -354,6 +378,7 @@ namespace CMPT291_Project
                 myReader.Read();
 
                 int count = (int)myReader["Count"];
+                myReader.Close();
 
                 if (count > 3)
                 {
@@ -374,7 +399,7 @@ namespace CMPT291_Project
                 MessageBox.Show(e2.ToString(), "Error");
             }
 
-            myReader.Close();
+
         }
 
         bool checkCarType()
@@ -403,18 +428,19 @@ namespace CMPT291_Project
                 return true;
         }
 
-        private void calcPriceBtn_Click(object sender, EventArgs e) //not working
+        private void calcPriceBtn_Click(object sender, EventArgs e)
         {
             bool carTypeOkay = checkCarType();
             bool datesOkay = checkDates();
             bool branchesOkay = checkBranches();
-            bool VINSuccess = updateVIN();
             bool custOkay = checkCust();
 
-            if (VINSuccess && carTypeOkay && datesOkay && branchesOkay && custOkay)
+            if (carTypeOkay && datesOkay && branchesOkay && custOkay)
             {
                 calculatePrice((RtnDate.Value.Date - PickDate.Value.Date).Days);
-                priceBx.Text = price.ToString();
+                priceBx.Visible = true;
+                priceBx.Text = price.ToString("N2");
+                calcPriceBtn.Text = "Calculate";
             }
 
             else
@@ -422,6 +448,22 @@ namespace CMPT291_Project
                 MessageBox.Show("Please ensure all fields are filled correctly.", "Error");
             }
 
+        }
+
+        private void PickDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
+        }
+
+        private void RtnDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
         }
 
         bool checkCust()
@@ -436,9 +478,9 @@ namespace CMPT291_Project
                 
         }
 
-        decimal calculatePrice(int totalDays)
+        void calculatePrice(int totalDays)
         {
-            decimal price = 0, monthly = 0, weekly = 0, daily = 0;
+            decimal monthly = 0, weekly = 0, daily = 0;
 
             int months = totalDays/30;
             totalDays -= months;
@@ -473,7 +515,22 @@ namespace CMPT291_Project
 
             price = (months * monthly) + (weeks * weekly) + (days * daily);
 
-            return price;
+            //add diffBranchCost if membership is standard
+            if ((PickupBranchID.Text != RtnBranch.Text) && (Mbrship.Text == "Standard"))
+                price += diffBranchCost;
+
+            return;
+        }
+
+        string parsePhone(string phone)
+        {
+            string newPhone = "";
+
+            for (int i = 0; i < phone.Length; i++)
+                if (Char.IsDigit(phone[i]))
+                    newPhone += phone[i];
+
+            return newPhone;
         }
     }
 }
