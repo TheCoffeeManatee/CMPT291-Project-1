@@ -17,26 +17,17 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
         public TransactionsFrm()
         {
             InitializeComponent();
-
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
-            {
-                myConnection.Open(); // Open connection
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection; // Link the command stream to the connection
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
-            }
+            myCommand = new SqlCommand("select * from Rentals");
+            state = 1;
+            execute();
+            state = 0;
         }
 
         private void HomeFrm_Load(object sender, EventArgs e)
@@ -58,11 +49,32 @@ namespace CMPT291_Project
 
         private void SearchBtn_Click_1(object sender, EventArgs e)
         {
-            this.TransPnl.Controls.Clear();
-            TransSearch TransSearch_Vrb = new TransSearch() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransSearch TransSearch_Vrb = new TransSearch() {TopLevel = true, TopMost = true };
             TransSearch_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.TransPnl.Controls.Add(TransSearch_Vrb);
-            TransSearch_Vrb.Show();
+            TransSearch_Vrb.ShowDialog();
+            myCommand.CommandText = TransSearch_Vrb.newCommand;
+            state = TransSearch_Vrb.state;
+            execute();
+        }
+
+        private void execute()
+        {
+            if (state == 1)
+            {
+                myConnection = new SqlConnection(connectionString);
+                myConnection.Open();
+                myCommand.Connection = myConnection;
+                fillTable();
+                myConnection.Close();
+            }
+        }
+        private void fillTable()
+        {
+            myCommand.CommandType = CommandType.Text;
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
+            TransData.DataSource = dt;
         }
     }
 }

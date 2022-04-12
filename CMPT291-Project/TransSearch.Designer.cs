@@ -28,177 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickupDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SearchBtn = new System.Windows.Forms.Button();
-            this.SearchBy = new System.Windows.Forms.TextBox();
-            this.SearchParam = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.VINL = new System.Windows.Forms.Label();
+            this.custidL = new System.Windows.Forms.Label();
+            this.CTIDL = new System.Windows.Forms.Label();
+            this.RDL = new System.Windows.Forms.Label();
+            this.vinentry = new System.Windows.Forms.TextBox();
+            this.cidentry = new System.Windows.Forms.TextBox();
+            this.priceentry = new System.Windows.Forms.TextBox();
+            this.rdentry = new System.Windows.Forms.TextBox();
+            this.pdentry = new System.Windows.Forms.TextBox();
+            this.ridentry = new System.Windows.Forms.TextBox();
+            this.RBL = new System.Windows.Forms.Label();
+            this.PDL = new System.Windows.Forms.Label();
+            this.PBL = new System.Windows.Forms.Label();
+            this.RIDL = new System.Windows.Forms.Label();
+            this.CarTypePicker = new System.Windows.Forms.ComboBox();
+            this.RBranchPicker = new System.Windows.Forms.ComboBox();
+            this.PBranchPicker = new System.Windows.Forms.ComboBox();
+            this.PriceL = new System.Windows.Forms.Label();
+            this.latecheck = new System.Windows.Forms.CheckBox();
+            this.TSearchCancel = new System.Windows.Forms.Button();
+            this.TSearchAccept = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // VINL
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TransID,
-            this.PickBranch,
-            this.PickupDate,
-            this.ReturnBranch,
-            this.ReturnDate,
-            this.CustomerID,
-            this.VIN});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dataGridView1.Location = new System.Drawing.Point(36, 137);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 72;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1066, 628);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.VINL.AutoSize = true;
+            this.VINL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.VINL.Location = new System.Drawing.Point(30, 242);
+            this.VINL.Name = "VINL";
+            this.VINL.Size = new System.Drawing.Size(26, 15);
+            this.VINL.TabIndex = 151;
+            this.VINL.Text = "VIN";
             // 
-            // TransID
+            // custidL
             // 
-            this.TransID.HeaderText = "Transaction ID";
-            this.TransID.MinimumWidth = 9;
-            this.TransID.Name = "TransID";
-            this.TransID.Width = 190;
+            this.custidL.AutoSize = true;
+            this.custidL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.custidL.Location = new System.Drawing.Point(30, 213);
+            this.custidL.Name = "custidL";
+            this.custidL.Size = new System.Drawing.Size(73, 15);
+            this.custidL.TabIndex = 150;
+            this.custidL.Text = "Customer ID";
             // 
-            // PickBranch
+            // CTIDL
             // 
-            this.PickBranch.HeaderText = "Pickup Branch";
-            this.PickBranch.MinimumWidth = 9;
-            this.PickBranch.Name = "PickBranch";
-            this.PickBranch.Width = 130;
+            this.CTIDL.AutoSize = true;
+            this.CTIDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.CTIDL.Location = new System.Drawing.Point(30, 184);
+            this.CTIDL.Name = "CTIDL";
+            this.CTIDL.Size = new System.Drawing.Size(66, 15);
+            this.CTIDL.TabIndex = 149;
+            this.CTIDL.Text = "Car Type ID";
             // 
-            // PickupDate
+            // RDL
             // 
-            this.PickupDate.HeaderText = "Pickup Date";
-            this.PickupDate.MinimumWidth = 9;
-            this.PickupDate.Name = "PickupDate";
-            this.PickupDate.Width = 150;
+            this.RDL.AutoSize = true;
+            this.RDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RDL.Location = new System.Drawing.Point(30, 155);
+            this.RDL.Name = "RDL";
+            this.RDL.Size = new System.Drawing.Size(69, 15);
+            this.RDL.TabIndex = 148;
+            this.RDL.Text = "Return Date";
             // 
-            // ReturnBranch
+            // vinentry
             // 
-            this.ReturnBranch.HeaderText = "Return Branch";
-            this.ReturnBranch.MinimumWidth = 9;
-            this.ReturnBranch.Name = "ReturnBranch";
-            this.ReturnBranch.Width = 130;
+            this.vinentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.vinentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vinentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vinentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.vinentry.Location = new System.Drawing.Point(122, 237);
+            this.vinentry.Name = "vinentry";
+            this.vinentry.Size = new System.Drawing.Size(181, 22);
+            this.vinentry.TabIndex = 147;
             // 
-            // ReturnDate
+            // cidentry
             // 
-            this.ReturnDate.HeaderText = "Return Date";
-            this.ReturnDate.MinimumWidth = 9;
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.Width = 150;
+            this.cidentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.cidentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cidentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cidentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.cidentry.Location = new System.Drawing.Point(122, 208);
+            this.cidentry.Name = "cidentry";
+            this.cidentry.Size = new System.Drawing.Size(181, 22);
+            this.cidentry.TabIndex = 146;
             // 
-            // CustomerID
+            // priceentry
             // 
-            this.CustomerID.HeaderText = "Customer ID";
-            this.CustomerID.MinimumWidth = 9;
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.Width = 130;
+            this.priceentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.priceentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.priceentry.Location = new System.Drawing.Point(122, 265);
+            this.priceentry.Name = "priceentry";
+            this.priceentry.Size = new System.Drawing.Size(181, 22);
+            this.priceentry.TabIndex = 145;
             // 
-            // VIN
+            // rdentry
             // 
-            this.VIN.HeaderText = "VIN";
-            this.VIN.MinimumWidth = 9;
-            this.VIN.Name = "VIN";
-            this.VIN.Width = 175;
+            this.rdentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.rdentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rdentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rdentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.rdentry.Location = new System.Drawing.Point(122, 152);
+            this.rdentry.Name = "rdentry";
+            this.rdentry.Size = new System.Drawing.Size(181, 22);
+            this.rdentry.TabIndex = 144;
             // 
-            // SearchBtn
+            // pdentry
             // 
-            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(974, 79);
-            this.SearchBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(129, 46);
-            this.SearchBtn.TabIndex = 21;
-            this.SearchBtn.Text = "Search";
-            this.SearchBtn.UseVisualStyleBackColor = true;
+            this.pdentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pdentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pdentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pdentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.pdentry.Location = new System.Drawing.Point(122, 94);
+            this.pdentry.Name = "pdentry";
+            this.pdentry.Size = new System.Drawing.Size(181, 22);
+            this.pdentry.TabIndex = 142;
             // 
-            // SearchBy
+            // ridentry
             // 
-            this.SearchBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.SearchBy.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SearchBy.Location = new System.Drawing.Point(231, 81);
-            this.SearchBy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.SearchBy.Name = "SearchBy";
-            this.SearchBy.Size = new System.Drawing.Size(732, 38);
-            this.SearchBy.TabIndex = 20;
+            this.ridentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.ridentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ridentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ridentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.ridentry.Location = new System.Drawing.Point(122, 38);
+            this.ridentry.Name = "ridentry";
+            this.ridentry.Size = new System.Drawing.Size(181, 22);
+            this.ridentry.TabIndex = 140;
             // 
-            // SearchParam
+            // RBL
             // 
-            this.SearchParam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.SearchParam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchParam.ForeColor = System.Drawing.SystemColors.Window;
-            this.SearchParam.FormattingEnabled = true;
-            this.SearchParam.Items.AddRange(new object[] {
-            "Transaction ID",
-            "Pickup Branch",
-            "Pickup Date",
-            "Return Branch",
-            "Return Date",
-            "Customer ID",
-            "VIN"});
-            this.SearchParam.Location = new System.Drawing.Point(36, 79);
-            this.SearchParam.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.SearchParam.Name = "SearchParam";
-            this.SearchParam.Size = new System.Drawing.Size(182, 38);
-            this.SearchParam.TabIndex = 19;
+            this.RBL.AutoSize = true;
+            this.RBL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RBL.Location = new System.Drawing.Point(30, 126);
+            this.RBL.Name = "RBL";
+            this.RBL.Size = new System.Drawing.Size(82, 15);
+            this.RBL.TabIndex = 139;
+            this.RBL.Text = "Return Branch";
+            // 
+            // PDL
+            // 
+            this.PDL.AutoSize = true;
+            this.PDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.PDL.Location = new System.Drawing.Point(30, 97);
+            this.PDL.Name = "PDL";
+            this.PDL.Size = new System.Drawing.Size(70, 15);
+            this.PDL.TabIndex = 138;
+            this.PDL.Text = "Pickup Date";
+            // 
+            // PBL
+            // 
+            this.PBL.AutoSize = true;
+            this.PBL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.PBL.Location = new System.Drawing.Point(30, 67);
+            this.PBL.Name = "PBL";
+            this.PBL.Size = new System.Drawing.Size(83, 15);
+            this.PBL.TabIndex = 137;
+            this.PBL.Text = "Pickup Branch";
+            // 
+            // RIDL
+            // 
+            this.RIDL.AutoSize = true;
+            this.RIDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RIDL.Location = new System.Drawing.Point(30, 41);
+            this.RIDL.Name = "RIDL";
+            this.RIDL.Size = new System.Drawing.Size(54, 15);
+            this.RIDL.TabIndex = 136;
+            this.RIDL.Text = "Rental ID";
+            // 
+            // CarTypePicker
+            // 
+            this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CarTypePicker.FormattingEnabled = true;
+            this.CarTypePicker.Location = new System.Drawing.Point(122, 181);
+            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.CarTypePicker.Name = "CarTypePicker";
+            this.CarTypePicker.Size = new System.Drawing.Size(184, 23);
+            this.CarTypePicker.TabIndex = 152;
+            // 
+            // RBranchPicker
+            // 
+            this.RBranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.RBranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RBranchPicker.FormattingEnabled = true;
+            this.RBranchPicker.Location = new System.Drawing.Point(122, 123);
+            this.RBranchPicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RBranchPicker.Name = "RBranchPicker";
+            this.RBranchPicker.Size = new System.Drawing.Size(184, 23);
+            this.RBranchPicker.TabIndex = 153;
+            // 
+            // PBranchPicker
+            // 
+            this.PBranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.PBranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PBranchPicker.FormattingEnabled = true;
+            this.PBranchPicker.Location = new System.Drawing.Point(122, 64);
+            this.PBranchPicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.PBranchPicker.Name = "PBranchPicker";
+            this.PBranchPicker.Size = new System.Drawing.Size(184, 23);
+            this.PBranchPicker.TabIndex = 154;
+            // 
+            // PriceL
+            // 
+            this.PriceL.AutoSize = true;
+            this.PriceL.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.PriceL.Location = new System.Drawing.Point(30, 270);
+            this.PriceL.Name = "PriceL";
+            this.PriceL.Size = new System.Drawing.Size(33, 15);
+            this.PriceL.TabIndex = 155;
+            this.PriceL.Text = "Price";
+            // 
+            // latecheck
+            // 
+            this.latecheck.AutoSize = true;
+            this.latecheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.latecheck.Location = new System.Drawing.Point(365, 40);
+            this.latecheck.Name = "latecheck";
+            this.latecheck.Size = new System.Drawing.Size(86, 19);
+            this.latecheck.TabIndex = 156;
+            this.latecheck.Text = "Late Return";
+            this.latecheck.UseVisualStyleBackColor = true;
+            // 
+            // TSearchCancel
+            // 
+            this.TSearchCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.TSearchCancel.FlatAppearance.BorderSize = 0;
+            this.TSearchCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TSearchCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TSearchCancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TSearchCancel.Location = new System.Drawing.Point(496, 97);
+            this.TSearchCancel.Name = "TSearchCancel";
+            this.TSearchCancel.Size = new System.Drawing.Size(99, 50);
+            this.TSearchCancel.TabIndex = 158;
+            this.TSearchCancel.Text = "Cancel";
+            this.TSearchCancel.UseVisualStyleBackColor = false;
+            this.TSearchCancel.Click += new System.EventHandler(this.TSearchCancel_Click);
+            // 
+            // TSearchAccept
+            // 
+            this.TSearchAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.TSearchAccept.FlatAppearance.BorderSize = 0;
+            this.TSearchAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TSearchAccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TSearchAccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TSearchAccept.Location = new System.Drawing.Point(496, 35);
+            this.TSearchAccept.Name = "TSearchAccept";
+            this.TSearchAccept.Size = new System.Drawing.Size(99, 50);
+            this.TSearchAccept.TabIndex = 157;
+            this.TSearchAccept.Text = "Accept";
+            this.TSearchAccept.UseVisualStyleBackColor = false;
+            this.TSearchAccept.Click += new System.EventHandler(this.TSearchAccept_Click);
             // 
             // TransSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1138, 844);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.SearchBtn);
-            this.Controls.Add(this.SearchBy);
-            this.Controls.Add(this.SearchParam);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(664, 422);
+            this.Controls.Add(this.TSearchCancel);
+            this.Controls.Add(this.TSearchAccept);
+            this.Controls.Add(this.latecheck);
+            this.Controls.Add(this.PriceL);
+            this.Controls.Add(this.PBranchPicker);
+            this.Controls.Add(this.RBranchPicker);
+            this.Controls.Add(this.CarTypePicker);
+            this.Controls.Add(this.VINL);
+            this.Controls.Add(this.custidL);
+            this.Controls.Add(this.CTIDL);
+            this.Controls.Add(this.RDL);
+            this.Controls.Add(this.vinentry);
+            this.Controls.Add(this.cidentry);
+            this.Controls.Add(this.priceentry);
+            this.Controls.Add(this.rdentry);
+            this.Controls.Add(this.pdentry);
+            this.Controls.Add(this.ridentry);
+            this.Controls.Add(this.RBL);
+            this.Controls.Add(this.PDL);
+            this.Controls.Add(this.PBL);
+            this.Controls.Add(this.RIDL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TransSearch";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,16 +319,26 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button SearchBtn;
-        private TextBox SearchBy;
-        private ComboBox SearchParam;
-        private DataGridViewTextBoxColumn TransID;
-        private DataGridViewTextBoxColumn PickBranch;
-        private DataGridViewTextBoxColumn PickupDate;
-        private DataGridViewTextBoxColumn ReturnBranch;
-        private DataGridViewTextBoxColumn ReturnDate;
-        private DataGridViewTextBoxColumn CustomerID;
-        private DataGridViewTextBoxColumn VIN;
+        private Label VINL;
+        private Label custidL;
+        private Label CTIDL;
+        private Label RDL;
+        private TextBox vinentry;
+        private TextBox cidentry;
+        private TextBox priceentry;
+        private TextBox rdentry;
+        private TextBox pdentry;
+        private TextBox ridentry;
+        private Label RBL;
+        private Label PDL;
+        private Label PBL;
+        private Label RIDL;
+        private ComboBox CarTypePicker;
+        private ComboBox RBranchPicker;
+        private ComboBox PBranchPicker;
+        private Label PriceL;
+        private CheckBox latecheck;
+        private Button TSearchCancel;
+        private Button TSearchAccept;
     }
 }
