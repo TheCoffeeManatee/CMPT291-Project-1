@@ -17,6 +17,8 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
+        public string newCommand;
 
         public CarTypeEntry()
         {
@@ -41,94 +43,20 @@ namespace CMPT291_Project
 
         }
 
-        private void ctentrycancel_Click(object sender, EventArgs e)
+        private void resetEditRemove()
         {
-            this.CTEntryPanel.Controls.Clear();
-            CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-            CarTypeFrm_Vrb.Show();
+            FindID.Visible = true;
+            CarTypeIdBx.Visible = true;
+            CarTypeIdBx.Text = String.Empty;
+
+            descentry.Visible = false;
+            drateentry.Visible = false;
+            wrateentry.Visible = false;
+            mrateentry.Visible = false;
+            LevelBx.Visible = false;
         }
 
-        private void ctentryacc_Click(object sender, EventArgs e)
-        {
-            
-            if (AddRBtn.Checked == true) //adds car type to the database
-            {
-                if (!checkLevel())
-                {
-                    MessageBox.Show("Level must be a number.", "Error");
-                    return;
-                }
-
-                try
-                {
-                    myCommand.CommandText = "insert into CarType values ('" + descentry.Text +
-                        "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", Level = " + LevelBx.Text + ")";
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CTEntryPanel.Controls.Clear();
-                CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-                CarTypeFrm_Vrb.Show();
-            }
-
-            else if (EditRBtn.Checked == true) //edits car type entry
-            {
-                if (!checkLevel())
-                {
-                    MessageBox.Show("Level must be a number.", "Error");
-                    return;
-                }
-
-                try
-                {
-                    myCommand.CommandText = "update CarType Set Description = '" + descentry.Text +
-                        "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
-                        ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CTEntryPanel.Controls.Clear();
-                CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-                CarTypeFrm_Vrb.Show();
-            }
-
-            else if (RemoveRBtn.Checked == true) //deletes car type entry
-            {
-                try
-                {
-                    myCommand.CommandText = "delete from CarType where CarTypeId = " + CarTypeIdBx.Text;
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CTEntryPanel.Controls.Clear();
-                CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-                CarTypeFrm_Vrb.Show();
-            }
-
-        }
-
-        //resets form for adding
-        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
+        private void resetAddSearch()
         {
             FindID.Visible = false;
             CarTypeIdBx.Visible = false;
@@ -147,33 +75,111 @@ namespace CMPT291_Project
             LevelBx.Text = String.Empty;
         }
 
-        //resets form for editing
-        private void EditRBtn_CheckedChanged(object sender, EventArgs e)
+        private void ctentrycancel_Click_1(object sender, EventArgs e)
+        {
+            state = 0;
+            this.Close();
+        }
+
+        private void ctentryacc_Click_1(object sender, EventArgs e)
+        {
+            
+            if (AddRBtn.Checked == true) //adds car type to the database
+            {
+                if (!checkLevel())
+                {
+                    MessageBox.Show("Level must be a number.", "Error");
+                    return;
+                }
+                state = 1;
+                newCommand = "insert into CarType values ('" + descentry.Text +
+                    "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", " + LevelBx.Text + ")";
+                this.Close();
+            }
+
+            else if (EditRBtn.Checked == true) //edits car type entry
+            {
+                if (!checkLevel())
+                {
+                    MessageBox.Show("Level must be a number.", "Error");
+                    return;
+                }
+                state = 1;
+                newCommand = "update CarType Set Description = '" + descentry.Text +
+                    "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
+                    ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
+                this.Close();
+            }
+
+            else if (RemoveRBtn.Checked == true) //deletes car type entry
+            {
+                state = 1;
+                newCommand = "delete from CarType where CarTypeId = " + CarTypeIdBx.Text;
+                this.Close();
+            }
+
+            else if (SearchRBtn.Checked == true)
+            {
+                int first = 1;
+                state = 2;
+                newCommand = "select * from CarType where ";
+                if (descentry.Text != "")
+                {
+                    first = 0;
+                    newCommand += "(Description like '%" + descentry.Text + "' or description like '" + descentry.Text + "%')";
+                }
+                if (drateentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "DailyRate <= " + drateentry.Text;
+                }
+                if (wrateentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "WeeklyRate <= "+ wrateentry.Text;
+                }
+                if (mrateentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "MonthlyRate <= " + mrateentry.Text;
+                }
+                if (first == 1)
+                    newCommand = "select * from CarType";
+                this.Close();
+                
+            }
+        }
+
+        private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            resetAddSearch();
+        }
+
+        private void EditRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetEditRemove();
-
         }
 
-        //resets form for removing
-        private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
+        private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetEditRemove();
         }
 
-        private void resetEditRemove()
+        private void SearchRBtn_CheckedChanged(object sender, EventArgs e)
         {
-            FindID.Visible = true;
-            CarTypeIdBx.Visible = true;
-            CarTypeIdBx.Text = String.Empty;
-
-            descentry.Visible = false;
-            drateentry.Visible = false;
-            wrateentry.Visible = false;
-            mrateentry.Visible = false;
-            LevelBx.Visible = false;
+            resetAddSearch();
         }
 
-        private void FindID_Click(object sender, EventArgs e) //find the ID entered and display the information
+        private void FindID_Click_1(object sender, EventArgs e)
         {
             //converts string to integer 
             int displayID;
@@ -210,6 +216,7 @@ namespace CMPT291_Project
                             mrateentry.Text = mr.ToString();
                             LevelBx.Text = lvl.ToString();
                         }
+
                     }
 
                     else
@@ -229,6 +236,7 @@ namespace CMPT291_Project
 
             else
                 resetEditRemove();
+
         }
         bool checkLevel()
         {
@@ -238,7 +246,6 @@ namespace CMPT291_Project
 
             return success;
         }
-
 
     }
 }

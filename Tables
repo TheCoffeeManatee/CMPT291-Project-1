@@ -1,0 +1,93 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Branch](
+	[BranchId] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Description] [varchar](50) NULL,
+	[StreetAddress1] [varchar](100) NULL,
+	[StreetAddress2] [varchar](100) NULL,
+	[City] [varchar](50) NULL,
+	[Province] [varchar](50) NULL,
+	[PostalCode] [varchar](50) NULL,
+	[Phone] [varchar](50) NULL)
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CarType](
+	[CarTypeId] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Description] [varchar](100) NULL,
+	[DailyRate] [smallmoney] NULL,
+	[WeeklyRate] [smallmoney] NULL,
+	[MonthlyRate] [smallmoney] NULL,
+[Level][int] default 0)
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Car](
+	[VIN] [varchar](20) NOT NULL,
+[CarTypeId][int],
+	[Make] [varchar](50) NULL,
+	[Model] [varchar](50) NULL,
+	[Year] [int] NULL,
+	[Seats] [int] NULL,
+	[Colour] [varchar](50) NULL,
+	[Insurance] [varchar](50) NULL,
+	[Odometer] [int] NULL,
+	[BranchId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[VIN] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Car]  WITH CHECK ADD FOREIGN KEY([BranchId])
+REFERENCES [dbo].[Branch] ([BranchId])
+GO
+GO
+ALTER TABLE [dbo].[Car]  WITH CHECK ADD FOREIGN KEY([CarTypeId])
+REFERENCES [dbo].[CarType] ([CarTypeId])
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[CustomerId] [int] IDENTITY(1,1) PRIMARY KEY,
+	[FirstName] [varchar](50) NULL,
+	[MiddleName] [varchar](50) NULL,
+	[LastName] [varchar](50) NULL,
+	[StreetAddress1] [varchar](100) NULL,
+	[StreetAddress2] [varchar](100) NULL,
+	[City] [varchar](50) NULL,
+	[Province] [varchar](50) NULL,
+	[PostalCode] [varchar](50) NULL,
+	[DOB] [date] NULL,
+	[Phone] [varchar](50) NULL,
+	[Insurance] [varchar](50) NULL,
+	[DrivingLicense] [varchar](50) NULL,
+	[Membership] [int] NULL)
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rentals](
+	[RentalId] [int] IDENTITY(1,1) PRIMARY KEY,
+	[PickupBranch] [int] NULL Foreign KEY references Branch,
+	[PickupDate] [date] NULL,
+	[ReturnBranch] [int] NULL Foreign KEY references Branch,
+	[ReturnDate] [date] NULL,
+	[CarTypeId] [int] NULL Foreign KEY references CarType,
+	[CustomerId] [int] NULL Foreign KEY references Customer,
+	[VIN] [varchar](20) NULL,
+	[Price] [smallmoney] NULL
+[Late][int]NULL)

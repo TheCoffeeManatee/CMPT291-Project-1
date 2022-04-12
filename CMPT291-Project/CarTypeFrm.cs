@@ -17,6 +17,7 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
@@ -24,7 +25,34 @@ namespace CMPT291_Project
         public CarTypeFrm()
         {
             InitializeComponent();
-            fillTable(); //fills datatable upon loading screen
+            myCommand = new SqlCommand("select * from CarType");
+            state = 2;
+            execute(); //fills datatable upon loading screen
+            state = 0;
+
+        }
+
+        private void execute()
+        {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand.Connection = myConnection;
+            if (state == 1)
+            {
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else if (state == 2)
+            {
+                fillTable();
+            }
+            myConnection.Close();
 
         }
 
@@ -34,25 +62,13 @@ namespace CMPT291_Project
 
         }
 
-        private void CarTypeAdd_Click(object sender, EventArgs e)
-        {
-            this.CarTypePanel.Controls.Clear();
-            CarTypeEntry CarTypeEntry_Vrb = new CarTypeEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            CarTypeEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CarTypePanel.Controls.Add(CarTypeEntry_Vrb);
-            CarTypeEntry_Vrb.Show();
-        }
-
         private void fillTable()
         {
-            myConnection = new SqlConnection(connectionString);
-            myConnection.Open();
-            myCommand = new SqlCommand("select * from CarType");
-            myCommand.Connection = myConnection;
             myCommand.CommandType = CommandType.Text;
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             DataTable dt = new DataTable();
             myAdapter.Fill(dt);
+
 
             //change column names
             dt.Columns["CarTypeId"].ColumnName = "ID";
@@ -61,13 +77,23 @@ namespace CMPT291_Project
             dt.Columns["MonthlyRate"].ColumnName = "Monthly Rate";
 
             CarTypeData.DataSource = dt;
-            myConnection.Close();
-
 
             //formats cells
             CarTypeData.Columns["Daily Rate"].DefaultCellStyle.Format = "N2";
             CarTypeData.Columns["Weekly Rate"].DefaultCellStyle.Format = "N2";
             CarTypeData.Columns["Monthly Rate"].DefaultCellStyle.Format = "N2";
+
+        }
+
+        private void CarTypeAdd_Click_1(object sender, EventArgs e)
+        {
+            CarTypeEntry CarTypeEntry_Vrb = new CarTypeEntry() { TopLevel = true, TopMost = true };
+            CarTypeEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
+            CarTypeEntry_Vrb.ShowDialog();
+            myCommand.CommandText = CarTypeEntry_Vrb.newCommand;
+            state = CarTypeEntry_Vrb.state;
+            execute();
+
         }
     }
 }

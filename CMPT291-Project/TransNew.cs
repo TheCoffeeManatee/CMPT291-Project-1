@@ -289,6 +289,7 @@ namespace CMPT291_Project
             {
                 DialogResult removeCheck = MessageBox.Show("Are you sure you want to delete?", "Delete", MessageBoxButtons.YesNo);
 
+
                 if (removeCheck == DialogResult.Yes)
                 {
 
@@ -422,6 +423,7 @@ namespace CMPT291_Project
 
             myReader.Close();
         }
+
 
         private void CarTypePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -615,7 +617,13 @@ namespace CMPT291_Project
             FindTransBtn.Visible = false;
             TransIdBx.Visible = false;
         }
-
+        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            LateCheck.Visible = false;
+            FindTransBtn.Visible = false;
+            TransIdBx.Visible = false;
+        }
+            
         private void EditRBtn_CheckedChanged(object sender, EventArgs e)
         {
             LateCheck.Visible = false;
@@ -623,6 +631,7 @@ namespace CMPT291_Project
             FindTransBtn.Visible = true;
             TransIdBx.Visible = true;
         }
+
 
         private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
         {
@@ -663,7 +672,6 @@ namespace CMPT291_Project
                         //saves variables read and displays them in the appropriate fields
                         while (myReader.Read())
                         {
-                            
                             pickbranchId = (int)myReader["PickupBranch"];
                             DateTime pB = (DateTime)myReader["PickupDate"];
                             rtnBranchId = (int)myReader["ReturnBranch"];
@@ -678,12 +686,12 @@ namespace CMPT291_Project
                             RtnDate.Value = rB;
                             CustIdBx.Text = custID.ToString();
                             priceBx.Text = pr.ToString();  
+
                         }
 
                         myReader.Close();
 
                         FindID_Click(sender, e);
-                        
                         //change comboboxes to the correct descriptions
                         getBranchDes(0);
                         PickupBranchID.SelectedIndex = PickupBranchID.FindString(pBranchDes);
@@ -851,6 +859,7 @@ namespace CMPT291_Project
                         }
                     }
                 }
+
 
                 catch (Exception e2)
                 {

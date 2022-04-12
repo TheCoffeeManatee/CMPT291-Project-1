@@ -18,6 +18,7 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
@@ -25,39 +26,38 @@ namespace CMPT291_Project
         public BranchFrm()
         {
             InitializeComponent();
-            fillTable(); //fills datatable upon loading screen
+            myCommand = new SqlCommand("select * from Branch");
+            state = 2;
+            execute(); //fills datatable upon loading screen
+            state = 0;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void execute()
         {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand.Connection = myConnection;
+            if (state == 1)
+            {
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else if (state == 2)
+            {
+                fillTable();
+            }
+            myConnection.Close();
 
-        }
-
-        private void HomeFormPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void CustomersLbl_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void BranchAdd_Click(object sender, EventArgs e)
-        {
-            this.BranchPanel.Controls.Clear();
-            BranchEntry BranchEntry_Vrb = new BranchEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            BranchEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.BranchPanel.Controls.Add(BranchEntry_Vrb);
-            BranchEntry_Vrb.Show();
         }
 
         private void fillTable()
         {
-            myConnection = new SqlConnection(connectionString);
-            myConnection.Open();
-            myCommand = new SqlCommand("select * from Branch");
-            myCommand.Connection = myConnection;
             myCommand.CommandType = CommandType.Text;
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             DataTable dt = new DataTable();
@@ -70,12 +70,16 @@ namespace CMPT291_Project
             dt.Columns["PostalCode"].ColumnName = "Postal Code";
 
             BranchTable.DataSource = dt;
-            myConnection.Close();
         }
 
-        private void BranchTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BranchManage_Click(object sender, EventArgs e)
         {
-
+            BranchEntry BranchEntry_Vrb = new BranchEntry() { TopLevel = true, TopMost = true };
+            BranchEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
+            BranchEntry_Vrb.ShowDialog();
+            myCommand.CommandText = BranchEntry_Vrb.newCommand;
+            state = BranchEntry_Vrb.state;
+            execute();
         }
     }
 }

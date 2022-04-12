@@ -17,13 +17,15 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
-        public int carTypeId, branchId;
+        public int carTypeId, branchId, state = 0;
+        public string newCommand;
+
+        
        
         public CarEntry()
         {
             InitializeComponent();
             AddRBtn.Checked = true;
-
             string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
             SqlConnection myConnection = new SqlConnection(connectionString);
@@ -80,105 +82,6 @@ namespace CMPT291_Project
         }
 
 
-        private void carentrycancel_Click_1(object sender, EventArgs e)
-        {
-            this.CarEntryPanel.Controls.Clear();
-            CarsFrm CarsFrm_Vrb = new CarsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            CarsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CarEntryPanel.Controls.Add(CarsFrm_Vrb);
-            CarsFrm_Vrb.Show();
-        }
-
-        private void carentrryaccept_Click(object sender, EventArgs e)
-        {
-            if (AddRBtn.Checked == true)
-            {
-                try
-                {
-                    myCommand.CommandText = "insert into Car values ('" + vinentry.Text +
-                        "'," + carTypeId + ",'" + makeentry.Text + "','" + modelentry.Text + "'," + yearentry.Text + ","
-                        + seatsentry.Text + ",'" + colourentry.Text + "','" + insentry.Text + "'," + mileentry.Text + ","
-                        + branchId + ")";
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CarEntryPanel.Controls.Clear();
-                CarsFrm CarsFrm_Vrb = new CarsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CarEntryPanel.Controls.Add(CarsFrm_Vrb);
-                CarsFrm_Vrb.Show();
-            }
-
-            else if (EditRBtn.Checked == true)
-            {
-                try
-                {
-                    myCommand.CommandText = "update Car set CarTypeId = " + carTypeId + ", Make = '" + makeentry.Text + "', Model = '" + modelentry.Text + "', Year = "
-                        + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + colourentry.Text + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
-                        + branchId + "where VIN = '" + vinentry.Text + "'";
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CarEntryPanel.Controls.Clear();
-                CarsFrm CarsFrm_Vrb = new CarsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CarEntryPanel.Controls.Add(CarsFrm_Vrb);
-                CarsFrm_Vrb.Show();
-            }
-            
-            else if (RemoveRBtn.Checked == true)
-            {
-                try
-                {
-                    myCommand.CommandText = "delete from Car where VIN = '" + vinentry.Text + "'";
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CarEntryPanel.Controls.Clear();
-                CarsFrm CarsFrm_Vrb = new CarsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CarEntryPanel.Controls.Add(CarsFrm_Vrb);
-                CarsFrm_Vrb.Show();
-            }
-        }
-
-        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            FindID.Visible = false;
-
-            vinentry.Visible = true;
-            CarTypePicker.Visible = true;
-            makeentry.Visible = true;
-            modelentry.Visible = true;
-            yearentry.Visible = true;
-            seatsentry.Visible = true; 
-            colourentry.Visible = true;
-            insentry.Visible = true;
-            mileentry.Visible = true;
-            BranchPicker.Visible = true;
-
-            vinentry.Text = String.Empty;
-            makeentry.Text = String.Empty;
-            modelentry.Text = String.Empty;
-            yearentry.Text = String.Empty;
-            seatsentry.Text = String.Empty;
-            colourentry.Text = String.Empty;
-            insentry.Text = String.Empty;
-            mileentry.Text = String.Empty;
-        }
-
         private void resetEditRemove()
         {
             FindID.Visible = true;
@@ -195,25 +98,210 @@ namespace CMPT291_Project
             mileentry.Visible = false;
             BranchPicker.Visible = false;
         }
-        private void EditRBtn_CheckedChanged(object sender, EventArgs e)
+
+        private void resetAddSearch()
         {
-            resetEditRemove();
+            FindID.Visible = false;
+
+            vinentry.Visible = true;
+            CarTypePicker.Visible = true;
+            makeentry.Visible = true;
+            modelentry.Visible = true;
+            yearentry.Visible = true;
+            seatsentry.Visible = true;
+            colourentry.Visible = true;
+            insentry.Visible = true;
+            mileentry.Visible = true;
+            BranchPicker.Visible = true;
+
+            vinentry.Text = String.Empty;
+            makeentry.Text = String.Empty;
+            modelentry.Text = String.Empty;
+            yearentry.Text = String.Empty;
+            seatsentry.Text = String.Empty;
+            colourentry.Text = String.Empty;
+            insentry.Text = String.Empty;
+            mileentry.Text = String.Empty;
         }
 
-        private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            resetEditRemove();
-        }
-
-        private void FindID_Click(object sender, EventArgs e)
+        void getCarType()
         {
             try
+            {
+                myCommand.CommandText = "select Description from CarType where CarTypeId = " + carTypeId;
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
                 {
-                    myCommand.CommandText = "select * from Car where VIN = '" + vinentry.Text + "'";
-                    myReader = myCommand.ExecuteReader();
-                    
                     if (myReader.HasRows)
-                    { 
+                    {
+                        currCarType.Text = "Current: " + (string)myReader["Description"];
+                    }
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+            
+            myReader.Close();
+
+               
+        }
+
+        private void carentrycancel_Click(object sender, EventArgs e)
+        {
+            state = 0;
+            this.Close();
+        }
+
+        private void carentrryaccept_Click_1(object sender, EventArgs e)
+        {
+            if (AddRBtn.Checked == true)
+            {
+                state = 1;
+                newCommand = "insert into Car values ('" + vinentry.Text +
+                    "'," + carTypeId + ",'" + makeentry.Text + "','" + modelentry.Text + "'," + yearentry.Text + ","
+                    + seatsentry.Text + ",'" + colourentry.Text + "','" + insentry.Text + "'," + mileentry.Text + ","
+                    + branchId + ")";
+                this.Close();
+            }
+
+            else if (EditRBtn.Checked == true)
+            {
+                state = 1;
+                newCommand = "update Car set CarTypeId = " + carTypeId + ", Make = '" + makeentry.Text + "', Model = '" + modelentry.Text + "', Year = "
+                    + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + colourentry.Text + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
+                    + branchId + "where VIN = '" + vinentry.Text + "'";
+                this.Close();
+            }
+
+            else if (RemoveRBtn.Checked == true)
+            {
+                state = 1;
+                newCommand = "delete from Car where VIN = '" + vinentry.Text + "'";
+                this.Close();
+            }
+
+            else if (SearchRBtn.Checked == true)
+            {
+                int first = 1;
+                state = 2;
+                newCommand = "select * from Car where ";
+                if(vinentry.Text != "")
+                {
+                    first = 0;
+                    newCommand += "(VIN like '%" + vinentry.Text + "' or VIN like '" + vinentry.Text + "%')";
+                }
+                if(makeentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Make like '%" + makeentry.Text + "' or Make like '" + makeentry.Text + "%')";
+                }
+                if (modelentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Model like '%" + modelentry.Text + "' or Model like '" + modelentry.Text + "%')";
+                }
+                if (yearentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Year = " + yearentry.Text;
+                }
+                if (seatsentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Seats = " + seatsentry.Text;
+                }
+                if (colourentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Colour like '%" + colourentry.Text + "' or Colour like '" + colourentry.Text + "%')";
+                }
+                if (insentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Insurance like '%" + insentry.Text + "' or Insurance like '" + insentry.Text + "%')";
+                }
+                if (mileentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Odometer = " + mileentry.Text;
+                }
+                if (BranchPicker.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "BranchId = " + BranchPicker.Text;
+                }
+                if (CarTypePicker.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "CarTypeId = " + CarTypePicker.Text;
+                }
+                if (first == 1)
+                    newCommand = "select * from Car";
+                this.Close();
+            }
+        }
+
+        private void EditRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            resetEditRemove();
+        }
+
+        private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            resetEditRemove();
+        }
+
+
+        private void SearchRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            resetAddSearch();
+        }
+
+        private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            resetAddSearch();
+        }
+
+        private void FindID_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                myCommand.CommandText = "select * from Car where VIN = '" + vinentry.Text + "'";
+                myReader = myCommand.ExecuteReader();
+
+                if (myReader.HasRows)
+                {
                     //saves variables read and displays them in the appropriate fields
                     while (myReader.Read())
                     {
@@ -262,43 +350,43 @@ namespace CMPT291_Project
                 myReader.Close();
 
                 try
-            {
-                myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
-                myReader = myCommand.ExecuteReader();
-
-                while (myReader.Read())
                 {
-                    currBranch.Text = "Current: " + (string)myReader["Description"];
-                }
-            }
+                    myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
+                    myReader = myCommand.ExecuteReader();
 
-            catch (Exception e2)
-            {
-                MessageBox.Show(e2.ToString(), "Error");
-            }
-            myReader.Close();
+                    while (myReader.Read())
+                    {
+                        currBranch.Text = "Current: " + (string)myReader["Description"];
+                    }
+                }
+
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+                myReader.Close();
                 getBranch();
                 getCarType();
 
             }
             catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }        
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
         }
 
-        void getCarType()
+        private void BranchPicker_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
             {
-                myCommand.CommandText = "select Description from CarType where CarTypeId = " + carTypeId;
+                myCommand.CommandText = "select BranchId from Branch where Description = '" + BranchPicker.Text + "'";
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
                     if (myReader.HasRows)
                     {
-                        currCarType.Text = "Current: " + (string)myReader["Description"];
+                        branchId = (int)myReader["BranchId"];
                     }
                 }
             }
@@ -307,34 +395,12 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e2.ToString(), "Error");
             }
-            
-            myReader.Close();
 
-               
+            myReader.Close();
         }
 
-        void getBranch()
-        {
-            try
-            {
-                myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
-                myReader = myCommand.ExecuteReader();
 
-                while (myReader.Read())
-                {
-                    currBranch.Text = "Current: " + (string)myReader["Description"];
-                }
-            }
-
-            catch (Exception e2)
-            {
-                MessageBox.Show(e2.ToString(), "Error");
-            }
-            myReader.Close();
-
-        }
-
-        private void CarTypePicker_SelectedIndexChanged(object sender, EventArgs e)
+        private void CarTypePicker_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
             {
@@ -358,19 +424,16 @@ namespace CMPT291_Project
             myReader.Close();
         }
 
-        private void BranchPicker_SelectedIndexChanged(object sender, EventArgs e)
+        void getBranch()
         {
             try
             {
-                myCommand.CommandText = "select BranchId from Branch where Description = '" + BranchPicker.Text + "'";
+                myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    if (myReader.HasRows)
-                    {
-                        branchId = (int)myReader["BranchId"];
-                    }
+                    currBranch.Text = "Current: " + (string)myReader["Description"];
                 }
             }
 
@@ -378,8 +441,8 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e2.ToString(), "Error");
             }
-
             myReader.Close();
+
         }
     }
 }
