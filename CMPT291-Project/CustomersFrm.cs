@@ -17,8 +17,12 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+        //used to identify membership column to change ints to strings according to value
+        //changes if the order of columns in customers changes
+        public int mbrRow = 13;
 
         //used to identify membership column to change ints to strings according to value
         //changes if the order of columns in customers changes
@@ -27,15 +31,37 @@ namespace CMPT291_Project
         public CustomersFrm()
         {
             InitializeComponent();
-            fillTable();
+            myCommand = new SqlCommand("select * from Customer");
+            state = 2;
+            execute();
+            state = 0;
+        }
+        private void execute()
+        {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand.Connection = myConnection;
+            if (state == 1)
+            {
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else if (state == 2)
+            {
+                fillTable();
+            }
+            myConnection.Close();
+
         }
 
         private void fillTable()
         {
-            myConnection = new SqlConnection(connectionString);
-            myConnection.Open();
-            myCommand = new SqlCommand("select * from Customer");
-            myCommand.Connection = myConnection;
             myCommand.CommandType = CommandType.Text;
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             DataTable dt = new DataTable();
@@ -57,6 +83,7 @@ namespace CMPT291_Project
             dtCloned.Columns[mbrRow].DataType = typeof(string);
 
             for (int i=0; i<dt.Rows.Count; i ++)
+
             {
                 dtCloned.ImportRow(dt.Rows[i]);
             }
@@ -70,16 +97,17 @@ namespace CMPT291_Project
             }
 
             CustData.DataSource = dtCloned;
-            myConnection.Close();
+
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.CustomerPanel.Controls.Clear();
-            CustEntry CustEntry_Vrb = new CustEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            CustEntry CustEntry_Vrb = new CustEntry() { TopLevel = true, TopMost = true };
             CustEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CustomerPanel.Controls.Add(CustEntry_Vrb);
-            CustEntry_Vrb.Show();
+            CustEntry_Vrb.ShowDialog();
+            myCommand.CommandText = CustEntry_Vrb.newCommand;
+            state = CustEntry_Vrb.state;
+            execute();
         }
     }
 }

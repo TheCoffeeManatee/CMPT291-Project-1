@@ -20,7 +20,7 @@ namespace CMPT291_Project
         public MainFrm()
         {
             InitializeComponent();
-
+             
             this.HomePnl.Controls.Clear();
             TransactionsFrm TransactionsFrm_Vrb = new TransactionsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             TransactionsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;

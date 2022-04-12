@@ -18,7 +18,8 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         int mbr = 0;
-        public string dobStr;
+        public int state = 0;
+        public string dobStr, newCommand;
 
         public CustEntry()
         {
@@ -43,134 +44,6 @@ namespace CMPT291_Project
             }
         }
 
-        private void custentrycancel_Click(object sender, EventArgs e)
-        {
-            this.CustEntryPanel.Controls.Clear();
-            CustomersFrm CustomersFrm_Vrb = new CustomersFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            CustomersFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CustEntryPanel.Controls.Add(CustomersFrm_Vrb);
-            CustomersFrm_Vrb.Show();
-        }
-
-        private void custentryacc_Click(object sender, EventArgs e)
-        {
-            if (AddRBtn.Checked == true)
-            {
-                string phoneNumber = parsePhone(phoneentry.Text);
-
-                try
-                {
-                    dobStr = DOBEntry.Value.ToString();
-
-                    myCommand.CommandText = "insert into Customer values ('" + fnameentry.Text +
-                        "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
-                        "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
-                        postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
-                        + "','" + dlentry.Text + "'," + mbr + ")";
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CustEntryPanel.Controls.Clear();
-                CustomersFrm CustomersFrm_Vrb = new CustomersFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CustomersFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CustEntryPanel.Controls.Add(CustomersFrm_Vrb);
-                CustomersFrm_Vrb.Show();
-            }
-
-            else if (EditRBtn.Checked == true)
-            {
-                try
-                {
-                    string phoneNumber = parsePhone(phoneentry.Text);
-                    dobStr = DOBEntry.Value.ToString();
-
-                    myCommand.CommandText = "update Customer set FirstName = '" + fnameentry.Text +
-                        "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
-                        "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
-                        postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
-                        + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CustEntryPanel.Controls.Clear();
-                CustomersFrm CustomersFrm_Vrb = new CustomersFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CustomersFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CustEntryPanel.Controls.Add(CustomersFrm_Vrb);
-                CustomersFrm_Vrb.Show();
-            }
-
-            else if (RemoveRBtn.Checked == true)
-            {
-                try
-                {
-                    myCommand.CommandText = "delete from Customer where CustomerId = " + CustIdBx.Text;
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.CustEntryPanel.Controls.Clear();
-                CustomersFrm CustomersFrm_Vrb = new CustomersFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CustomersFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CustEntryPanel.Controls.Add(CustomersFrm_Vrb);
-                CustomersFrm_Vrb.Show();
-            }
-        }
-
-        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            FindID.Visible = false;
-            CustIdBx.Visible = false;
-
-            //ensures the text boxes are visible and empty
-            fnameentry.Visible = true;
-            mnameentry.Visible = true;
-            lnameentry.Visible = true;
-            add1entry.Visible = true;
-            add2entry.Visible = true;
-            cityentry.Visible = true;
-            proventry.Visible = true;
-            postalentry.Visible = true;
-            DOBEntry.Visible = true;
-            phoneentry.Visible = true;
-            cinsentry.Visible = true;
-            dlentry.Visible = true;
-            mementry.Visible = true;
-
-            fnameentry.Text = String.Empty;
-            mnameentry.Text = String.Empty;
-            lnameentry.Text = String.Empty;
-            add1entry.Text = String.Empty;
-            add2entry.Text = String.Empty;
-            cityentry.Text = String.Empty;
-            proventry.Text = String.Empty;
-            postalentry.Text = String.Empty;
-            phoneentry.Text = String.Empty;
-            cinsentry.Text = String.Empty;
-            dlentry.Text = String.Empty;
-            mementry.Checked = false;
-        }
-
-        private void EditRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            resetEditRemove();
-        }
-
-        private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            resetEditRemove();
-        }
-
         private void resetEditRemove()
         {
             FindID.Visible = true;
@@ -191,7 +64,16 @@ namespace CMPT291_Project
             mementry.Visible = false;
         }
 
-        private void FindID_Click(object sender, EventArgs e)
+
+        private void mementry_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (mementry.Checked)
+                mbr = 1;
+            else
+                mbr = 0;
+        }
+
+        private void FindID_Click_1(object sender, EventArgs e)
         {
             //converts string to integer 
             int displayID;
@@ -295,12 +177,114 @@ namespace CMPT291_Project
             }
         }
 
-        private void mementry_CheckedChanged(object sender, EventArgs e)
+        private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (mementry.Checked)
-                mbr = 1;
-            else
-                mbr = 0;
+            resetEditRemove();
+        }
+
+        private void EditRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            resetEditRemove();
+        }
+
+        private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            FindID.Visible = false;
+            CustIdBx.Visible = false;
+
+            //ensures the text boxes are visible and empty
+            fnameentry.Visible = true;
+            mnameentry.Visible = true;
+            lnameentry.Visible = true;
+            add1entry.Visible = true;
+            add2entry.Visible = true;
+            cityentry.Visible = true;
+            proventry.Visible = true;
+            postalentry.Visible = true;
+            DOBEntry.Visible = true;
+            phoneentry.Visible = true;
+            cinsentry.Visible = true;
+            dlentry.Visible = true;
+            mementry.Visible = true;
+
+            fnameentry.Text = String.Empty;
+            mnameentry.Text = String.Empty;
+            lnameentry.Text = String.Empty;
+            add1entry.Text = String.Empty;
+            add2entry.Text = String.Empty;
+            cityentry.Text = String.Empty;
+            proventry.Text = String.Empty;
+            postalentry.Text = String.Empty;
+            phoneentry.Text = String.Empty;
+            cinsentry.Text = String.Empty;
+            dlentry.Text = String.Empty;
+            mementry.Checked = false;
+        }
+
+        private void custentryacc_Click_1(object sender, EventArgs e)
+        {
+            if (AddRBtn.Checked == true)
+            {
+                string phoneNumber = parsePhone(phoneentry.Text);
+
+                try
+                {
+                    dobStr = DOBEntry.Value.ToString();
+
+                    newCommand = "insert into Customer values ('" + fnameentry.Text +
+                        "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
+                        "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
+                        postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
+                        + "','" + dlentry.Text + "'," + mbr + ")";
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+
+                this.Close();
+            }
+
+            else if (EditRBtn.Checked == true)
+            {
+                try
+                {
+                    string phoneNumber = parsePhone(phoneentry.Text);
+                    dobStr = DOBEntry.Value.ToString();
+
+                    newCommand = "update Customer set FirstName = '" + fnameentry.Text +
+                        "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
+                        "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
+                        postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
+                        + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+
+                this.Close();
+            }
+
+            else if (RemoveRBtn.Checked == true)
+            {
+                try
+                {
+                    newCommand = "delete from Customer where CustomerId = " + CustIdBx.Text;
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+
+                this.Close();
+            }
+        }
+
+        private void custentrycancel_Click_1(object sender, EventArgs e)
+        {
+            state = 0;
+            this.Close();
         }
 
         string parsePhone(string phone)
