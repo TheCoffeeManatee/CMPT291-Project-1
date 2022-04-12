@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.currCarType = new System.Windows.Forms.Label();
-            this.currBranch = new System.Windows.Forms.Label();
             this.BranchPicker = new System.Windows.Forms.ComboBox();
             this.CarTypePicker = new System.Windows.Forms.ComboBox();
             this.RemoveRBtn = new System.Windows.Forms.RadioButton();
@@ -60,35 +58,15 @@
             this.SearchRBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // currCarType
-            // 
-            this.currCarType.AutoSize = true;
-            this.currCarType.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.currCarType.Location = new System.Drawing.Point(318, 307);
-            this.currCarType.Name = "currCarType";
-            this.currCarType.Size = new System.Drawing.Size(50, 15);
-            this.currCarType.TabIndex = 147;
-            this.currCarType.Text = "Current:";
-            // 
-            // currBranch
-            // 
-            this.currBranch.AutoSize = true;
-            this.currBranch.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.currBranch.Location = new System.Drawing.Point(318, 283);
-            this.currBranch.Name = "currBranch";
-            this.currBranch.Size = new System.Drawing.Size(50, 15);
-            this.currBranch.TabIndex = 146;
-            this.currBranch.Text = "Current:";
-            // 
             // BranchPicker
             // 
             this.BranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BranchPicker.FormattingEnabled = true;
-            this.BranchPicker.Location = new System.Drawing.Point(114, 279);
-            this.BranchPicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.BranchPicker.Location = new System.Drawing.Point(212, 595);
+            this.BranchPicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.BranchPicker.Name = "BranchPicker";
-            this.BranchPicker.Size = new System.Drawing.Size(184, 23);
+            this.BranchPicker.Size = new System.Drawing.Size(338, 40);
             this.BranchPicker.TabIndex = 145;
             this.BranchPicker.SelectedIndexChanged += new System.EventHandler(this.BranchPicker_SelectedIndexChanged_1);
             // 
@@ -97,10 +75,10 @@
             this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CarTypePicker.FormattingEnabled = true;
-            this.CarTypePicker.Location = new System.Drawing.Point(115, 307);
-            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.CarTypePicker.Location = new System.Drawing.Point(214, 655);
+            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CarTypePicker.Name = "CarTypePicker";
-            this.CarTypePicker.Size = new System.Drawing.Size(184, 23);
+            this.CarTypePicker.Size = new System.Drawing.Size(338, 40);
             this.CarTypePicker.TabIndex = 144;
             this.CarTypePicker.SelectedIndexChanged += new System.EventHandler(this.CarTypePicker_SelectedIndexChanged_1);
             // 
@@ -108,10 +86,10 @@
             // 
             this.RemoveRBtn.AutoSize = true;
             this.RemoveRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RemoveRBtn.Location = new System.Drawing.Point(354, 112);
-            this.RemoveRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RemoveRBtn.Location = new System.Drawing.Point(657, 239);
+            this.RemoveRBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RemoveRBtn.Name = "RemoveRBtn";
-            this.RemoveRBtn.Size = new System.Drawing.Size(68, 19);
+            this.RemoveRBtn.Size = new System.Drawing.Size(131, 36);
             this.RemoveRBtn.TabIndex = 143;
             this.RemoveRBtn.TabStop = true;
             this.RemoveRBtn.Text = "Remove";
@@ -122,10 +100,10 @@
             // 
             this.EditRBtn.AutoSize = true;
             this.EditRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.EditRBtn.Location = new System.Drawing.Point(354, 83);
-            this.EditRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.EditRBtn.Location = new System.Drawing.Point(657, 177);
+            this.EditRBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.EditRBtn.Name = "EditRBtn";
-            this.EditRBtn.Size = new System.Drawing.Size(45, 19);
+            this.EditRBtn.Size = new System.Drawing.Size(85, 36);
             this.EditRBtn.TabIndex = 142;
             this.EditRBtn.TabStop = true;
             this.EditRBtn.Text = "Edit";
@@ -136,10 +114,10 @@
             // 
             this.AddRBtn.AutoSize = true;
             this.AddRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddRBtn.Location = new System.Drawing.Point(354, 52);
-            this.AddRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.AddRBtn.Location = new System.Drawing.Point(657, 111);
+            this.AddRBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddRBtn.Name = "AddRBtn";
-            this.AddRBtn.Size = new System.Drawing.Size(47, 19);
+            this.AddRBtn.Size = new System.Drawing.Size(88, 36);
             this.AddRBtn.TabIndex = 141;
             this.AddRBtn.TabStop = true;
             this.AddRBtn.Text = "Add";
@@ -150,9 +128,10 @@
             // 
             this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FindID.ForeColor = System.Drawing.Color.White;
-            this.FindID.Location = new System.Drawing.Point(222, 17);
+            this.FindID.Location = new System.Drawing.Point(412, 36);
+            this.FindID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.FindID.Name = "FindID";
-            this.FindID.Size = new System.Drawing.Size(75, 23);
+            this.FindID.Size = new System.Drawing.Size(139, 49);
             this.FindID.TabIndex = 140;
             this.FindID.Text = "Find Car";
             this.FindID.UseVisualStyleBackColor = true;
@@ -166,9 +145,10 @@
             this.carentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.carentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrycancel.Location = new System.Drawing.Point(491, 105);
+            this.carentrycancel.Location = new System.Drawing.Point(912, 224);
+            this.carentrycancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.carentrycancel.Name = "carentrycancel";
-            this.carentrycancel.Size = new System.Drawing.Size(99, 50);
+            this.carentrycancel.Size = new System.Drawing.Size(184, 107);
             this.carentrycancel.TabIndex = 139;
             this.carentrycancel.Text = "Cancel";
             this.carentrycancel.UseVisualStyleBackColor = false;
@@ -181,9 +161,10 @@
             this.carentrryaccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carentrryaccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.carentrryaccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrryaccept.Location = new System.Drawing.Point(491, 43);
+            this.carentrryaccept.Location = new System.Drawing.Point(912, 92);
+            this.carentrryaccept.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.carentrryaccept.Name = "carentrryaccept";
-            this.carentrryaccept.Size = new System.Drawing.Size(99, 50);
+            this.carentrryaccept.Size = new System.Drawing.Size(184, 107);
             this.carentrryaccept.TabIndex = 138;
             this.carentrryaccept.Text = "Accept";
             this.carentrryaccept.UseVisualStyleBackColor = false;
@@ -193,9 +174,10 @@
             // 
             this.cartypeL.AutoSize = true;
             this.cartypeL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.cartypeL.Location = new System.Drawing.Point(23, 307);
+            this.cartypeL.Location = new System.Drawing.Point(43, 655);
+            this.cartypeL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.cartypeL.Name = "cartypeL";
-            this.cartypeL.Size = new System.Drawing.Size(52, 15);
+            this.cartypeL.Size = new System.Drawing.Size(107, 32);
             this.cartypeL.TabIndex = 137;
             this.cartypeL.Text = "Car Type";
             // 
@@ -203,9 +185,10 @@
             // 
             this.branchL.AutoSize = true;
             this.branchL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.branchL.Location = new System.Drawing.Point(23, 279);
+            this.branchL.Location = new System.Drawing.Point(43, 595);
+            this.branchL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.branchL.Name = "branchL";
-            this.branchL.Size = new System.Drawing.Size(58, 15);
+            this.branchL.Size = new System.Drawing.Size(117, 32);
             this.branchL.TabIndex = 136;
             this.branchL.Text = "Branch ID";
             // 
@@ -213,9 +196,10 @@
             // 
             this.MileageL.AutoSize = true;
             this.MileageL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.MileageL.Location = new System.Drawing.Point(23, 250);
+            this.MileageL.Location = new System.Drawing.Point(43, 533);
+            this.MileageL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MileageL.Name = "MileageL";
-            this.MileageL.Size = new System.Drawing.Size(49, 15);
+            this.MileageL.Size = new System.Drawing.Size(100, 32);
             this.MileageL.TabIndex = 135;
             this.MileageL.Text = "Mileage";
             // 
@@ -223,9 +207,10 @@
             // 
             this.InsuranceL.AutoSize = true;
             this.InsuranceL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.InsuranceL.Location = new System.Drawing.Point(23, 221);
+            this.InsuranceL.Location = new System.Drawing.Point(43, 471);
+            this.InsuranceL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.InsuranceL.Name = "InsuranceL";
-            this.InsuranceL.Size = new System.Drawing.Size(58, 15);
+            this.InsuranceL.Size = new System.Drawing.Size(116, 32);
             this.InsuranceL.TabIndex = 134;
             this.InsuranceL.Text = "Insurance";
             // 
@@ -233,9 +218,10 @@
             // 
             this.colourL.AutoSize = true;
             this.colourL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.colourL.Location = new System.Drawing.Point(23, 192);
+            this.colourL.Location = new System.Drawing.Point(43, 410);
+            this.colourL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.colourL.Name = "colourL";
-            this.colourL.Size = new System.Drawing.Size(43, 15);
+            this.colourL.Size = new System.Drawing.Size(85, 32);
             this.colourL.TabIndex = 133;
             this.colourL.Text = "Colour";
             // 
@@ -243,9 +229,10 @@
             // 
             this.SeatsL.AutoSize = true;
             this.SeatsL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SeatsL.Location = new System.Drawing.Point(23, 163);
+            this.SeatsL.Location = new System.Drawing.Point(43, 348);
+            this.SeatsL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SeatsL.Name = "SeatsL";
-            this.SeatsL.Size = new System.Drawing.Size(34, 15);
+            this.SeatsL.Size = new System.Drawing.Size(70, 32);
             this.SeatsL.TabIndex = 132;
             this.SeatsL.Text = "Seats";
             // 
@@ -255,9 +242,10 @@
             this.mileentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mileentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mileentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.mileentry.Location = new System.Drawing.Point(115, 247);
+            this.mileentry.Location = new System.Drawing.Point(214, 527);
+            this.mileentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mileentry.Name = "mileentry";
-            this.mileentry.Size = new System.Drawing.Size(181, 22);
+            this.mileentry.Size = new System.Drawing.Size(336, 43);
             this.mileentry.TabIndex = 131;
             // 
             // insentry
@@ -266,9 +254,10 @@
             this.insentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.insentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.insentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.insentry.Location = new System.Drawing.Point(115, 217);
+            this.insentry.Location = new System.Drawing.Point(214, 463);
+            this.insentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.insentry.Name = "insentry";
-            this.insentry.Size = new System.Drawing.Size(181, 22);
+            this.insentry.Size = new System.Drawing.Size(336, 43);
             this.insentry.TabIndex = 130;
             // 
             // colourentry
@@ -277,9 +266,10 @@
             this.colourentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.colourentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.colourentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.colourentry.Location = new System.Drawing.Point(115, 189);
+            this.colourentry.Location = new System.Drawing.Point(214, 403);
+            this.colourentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.colourentry.Name = "colourentry";
-            this.colourentry.Size = new System.Drawing.Size(181, 22);
+            this.colourentry.Size = new System.Drawing.Size(336, 43);
             this.colourentry.TabIndex = 129;
             // 
             // seatsentry
@@ -288,9 +278,10 @@
             this.seatsentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.seatsentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.seatsentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.seatsentry.Location = new System.Drawing.Point(115, 160);
+            this.seatsentry.Location = new System.Drawing.Point(214, 341);
+            this.seatsentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.seatsentry.Name = "seatsentry";
-            this.seatsentry.Size = new System.Drawing.Size(181, 22);
+            this.seatsentry.Size = new System.Drawing.Size(336, 43);
             this.seatsentry.TabIndex = 128;
             // 
             // yearentry
@@ -299,9 +290,10 @@
             this.yearentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.yearentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.yearentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.yearentry.Location = new System.Drawing.Point(115, 131);
+            this.yearentry.Location = new System.Drawing.Point(214, 279);
+            this.yearentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.yearentry.Name = "yearentry";
-            this.yearentry.Size = new System.Drawing.Size(181, 22);
+            this.yearentry.Size = new System.Drawing.Size(336, 43);
             this.yearentry.TabIndex = 127;
             // 
             // modelentry
@@ -310,9 +302,10 @@
             this.modelentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.modelentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.modelentry.Location = new System.Drawing.Point(115, 102);
+            this.modelentry.Location = new System.Drawing.Point(214, 218);
+            this.modelentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.modelentry.Name = "modelentry";
-            this.modelentry.Size = new System.Drawing.Size(181, 22);
+            this.modelentry.Size = new System.Drawing.Size(336, 43);
             this.modelentry.TabIndex = 126;
             // 
             // makeentry
@@ -321,9 +314,10 @@
             this.makeentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.makeentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.makeentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.makeentry.Location = new System.Drawing.Point(115, 73);
+            this.makeentry.Location = new System.Drawing.Point(214, 156);
+            this.makeentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.makeentry.Name = "makeentry";
-            this.makeentry.Size = new System.Drawing.Size(181, 22);
+            this.makeentry.Size = new System.Drawing.Size(336, 43);
             this.makeentry.TabIndex = 125;
             // 
             // vinentry
@@ -332,18 +326,20 @@
             this.vinentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vinentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.vinentry.ForeColor = System.Drawing.SystemColors.Window;
-            this.vinentry.Location = new System.Drawing.Point(115, 46);
+            this.vinentry.Location = new System.Drawing.Point(214, 98);
+            this.vinentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.vinentry.Name = "vinentry";
-            this.vinentry.Size = new System.Drawing.Size(181, 22);
+            this.vinentry.Size = new System.Drawing.Size(336, 43);
             this.vinentry.TabIndex = 124;
             // 
             // yearL
             // 
             this.yearL.AutoSize = true;
             this.yearL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.yearL.Location = new System.Drawing.Point(23, 134);
+            this.yearL.Location = new System.Drawing.Point(43, 286);
+            this.yearL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.yearL.Name = "yearL";
-            this.yearL.Size = new System.Drawing.Size(29, 15);
+            this.yearL.Size = new System.Drawing.Size(58, 32);
             this.yearL.TabIndex = 123;
             this.yearL.Text = "Year";
             // 
@@ -351,9 +347,10 @@
             // 
             this.modelL.AutoSize = true;
             this.modelL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.modelL.Location = new System.Drawing.Point(23, 105);
+            this.modelL.Location = new System.Drawing.Point(43, 224);
+            this.modelL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.modelL.Name = "modelL";
-            this.modelL.Size = new System.Drawing.Size(41, 15);
+            this.modelL.Size = new System.Drawing.Size(83, 32);
             this.modelL.TabIndex = 122;
             this.modelL.Text = "Model";
             // 
@@ -361,9 +358,10 @@
             // 
             this.MakeL.AutoSize = true;
             this.MakeL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.MakeL.Location = new System.Drawing.Point(23, 75);
+            this.MakeL.Location = new System.Drawing.Point(43, 160);
+            this.MakeL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MakeL.Name = "MakeL";
-            this.MakeL.Size = new System.Drawing.Size(36, 15);
+            this.MakeL.Size = new System.Drawing.Size(73, 32);
             this.MakeL.TabIndex = 121;
             this.MakeL.Text = "Make";
             // 
@@ -371,9 +369,10 @@
             // 
             this.VINL.AutoSize = true;
             this.VINL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.VINL.Location = new System.Drawing.Point(23, 49);
+            this.VINL.Location = new System.Drawing.Point(43, 105);
+            this.VINL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.VINL.Name = "VINL";
-            this.VINL.Size = new System.Drawing.Size(26, 15);
+            this.VINL.Size = new System.Drawing.Size(53, 32);
             this.VINL.TabIndex = 120;
             this.VINL.Text = "VIN";
             // 
@@ -382,9 +381,10 @@
             this.CarEntryTitle.AutoSize = true;
             this.CarEntryTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CarEntryTitle.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarEntryTitle.Location = new System.Drawing.Point(19, 16);
+            this.CarEntryTitle.Location = new System.Drawing.Point(35, 34);
+            this.CarEntryTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CarEntryTitle.Name = "CarEntryTitle";
-            this.CarEntryTitle.Size = new System.Drawing.Size(49, 25);
+            this.CarEntryTitle.Size = new System.Drawing.Size(94, 51);
             this.CarEntryTitle.TabIndex = 119;
             this.CarEntryTitle.Text = "Cars";
             // 
@@ -392,9 +392,10 @@
             // 
             this.SearchRBtn.AutoSize = true;
             this.SearchRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SearchRBtn.Location = new System.Drawing.Point(354, 136);
+            this.SearchRBtn.Location = new System.Drawing.Point(657, 290);
+            this.SearchRBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SearchRBtn.Name = "SearchRBtn";
-            this.SearchRBtn.Size = new System.Drawing.Size(60, 19);
+            this.SearchRBtn.Size = new System.Drawing.Size(116, 36);
             this.SearchRBtn.TabIndex = 148;
             this.SearchRBtn.TabStop = true;
             this.SearchRBtn.Text = "Search";
@@ -403,13 +404,11 @@
             // 
             // CarEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(620, 356);
+            this.ClientSize = new System.Drawing.Size(1151, 759);
             this.Controls.Add(this.SearchRBtn);
-            this.Controls.Add(this.currCarType);
-            this.Controls.Add(this.currBranch);
             this.Controls.Add(this.BranchPicker);
             this.Controls.Add(this.CarTypePicker);
             this.Controls.Add(this.RemoveRBtn);
@@ -438,6 +437,7 @@
             this.Controls.Add(this.VINL);
             this.Controls.Add(this.CarEntryTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "CarEntry";
             this.Text = "CarEntry";
             this.TopMost = true;
@@ -447,9 +447,6 @@
         }
 
         #endregion
-
-        private Label currCarType;
-        private Label currBranch;
         private ComboBox BranchPicker;
         private ComboBox CarTypePicker;
         private RadioButton RemoveRBtn;
