@@ -82,10 +82,9 @@ namespace CMPT291_Project
 
                 try
                 {
-                    myCommand.CommandText = "insert into Branch values ('" + descentry.Text +
+                    newCommand = "insert into Branch values ('" + descentry.Text +
                         "','" + addL1entry.Text + "','" + addL2Entry.Text + "','" + cityentry.Text + "','"
                         + proventry.Text + "','" + postalentry.Text + "'," + phoneNumber + ")";
-                    myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
                 {
@@ -101,11 +100,10 @@ namespace CMPT291_Project
 
                 try
                 {
-                    myCommand.CommandText = "update Branch set Description = " + descentry.Text +
+                    newCommand = "update Branch set Description = " + descentry.Text +
                         ", StreetAddress1 = " + addL1entry.Text + ", StreetAddress2 = " + addL2Entry.Text +
                         ", City = " + cityentry.Text + ", Province = " + proventry.Text + ", PostalCode = " + postalentry.Text +
                         ", Phone = " + phoneNumber + " where BranchID = " + BranchIdBx.Text;
-                    myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
                 {
@@ -119,8 +117,7 @@ namespace CMPT291_Project
             {
                 try
                 {
-                    myCommand.CommandText = "delete from Branch where BranchId = " + BranchIdBx.Text;
-                    myCommand.ExecuteNonQuery();
+                    newCommand = "delete from Branch where BranchId = " + BranchIdBx.Text;
                 }
                 catch (Exception e2)
                 {

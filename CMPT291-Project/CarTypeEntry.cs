@@ -74,9 +74,8 @@ namespace CMPT291_Project
 
                 try
                 {
-                    myCommand.CommandText = "insert into CarType values ('" + descentry.Text +
+                    newCommand = "insert into CarType values ('" + descentry.Text +
                         "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", Level = " + LevelBx.Text + ")";
-                    myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
                 {
@@ -96,10 +95,9 @@ namespace CMPT291_Project
 
                 try
                 {
-                    myCommand.CommandText = "update CarType Set Description = '" + descentry.Text +
+                    newCommand = "update CarType Set Description = '" + descentry.Text +
                         "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
                         ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
-                    myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
                 {
@@ -113,8 +111,7 @@ namespace CMPT291_Project
             {
                 try
                 {
-                    myCommand.CommandText = "delete from CarType where CarTypeId = " + CarTypeIdBx.Text;
-                    myCommand.ExecuteNonQuery();
+                    newCommand = "delete from CarType where CarTypeId = " + CarTypeIdBx.Text;
                 }
                 catch (Exception e2)
                 {

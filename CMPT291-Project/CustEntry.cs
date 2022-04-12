@@ -231,12 +231,11 @@ namespace CMPT291_Project
                 {
                     dobStr = DOBEntry.Value.ToString();
 
-                    myCommand.CommandText = "insert into Customer values ('" + fnameentry.Text +
+                    newCommand = "insert into Customer values ('" + fnameentry.Text +
                         "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
                         "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
                         postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
                         + "','" + dlentry.Text + "'," + mbr + ")";
-                    myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
                 {
@@ -253,12 +252,11 @@ namespace CMPT291_Project
                     string phoneNumber = parsePhone(phoneentry.Text);
                     dobStr = DOBEntry.Value.ToString();
 
-                    myCommand.CommandText = "update Customer set FirstName = '" + fnameentry.Text +
+                    newCommand = "update Customer set FirstName = '" + fnameentry.Text +
                         "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
                         "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
                         postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
                         + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
-                    myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e2)
                 {
@@ -272,8 +270,7 @@ namespace CMPT291_Project
             {
                 try
                 {
-                    myCommand.CommandText = "delete from Customer where CustomerId = " + CustIdBx.Text;
-                    myCommand.ExecuteNonQuery();
+                    newCommand = "delete from Customer where CustomerId = " + CustIdBx.Text;
                 }
                 catch (Exception e2)
                 {
