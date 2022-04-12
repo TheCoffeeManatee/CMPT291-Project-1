@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace CMPT291_Project
 {
@@ -160,21 +161,36 @@ namespace CMPT291_Project
         {
             if (AddRBtn.Checked == true)
             {
+                
                 state = 1;
-                newCommand = "insert into Car values ('" + vinentry.Text +
-                    "'," + carTypeId + ",'" + makeentry.Text + "','" + modelentry.Text + "'," + yearentry.Text + ","
-                    + seatsentry.Text + ",'" + colourentry.Text + "','" + insentry.Text + "'," + mileentry.Text + ","
+
+                if (int.TryParse(seatsentry.Text, out int checkNum) && int.TryParse(mileentry.Text, out checkNum) && int.TryParse(yearentry.Text, out checkNum))
+                {
+                    newCommand = "insert into Car values ('" + vinentry.Text +
+                    "'," + carTypeId + ",'" + toCase(makeentry.Text) + "','" + toCase(modelentry.Text) + "'," + yearentry.Text + ","
+                    + seatsentry.Text + ",'" + toCase(colourentry.Text) + "','" + insentry.Text + "'," + mileentry.Text + ","
                     + branchId + ")";
-                this.Close();
+                    this.Close();
+                }
+
+                else
+                    MessageBox.Show("Ensure Year, Seats, & Mileage are numeric.", "Error");
             }
 
             else if (EditRBtn.Checked == true)
             {
                 state = 1;
-                newCommand = "update Car set CarTypeId = " + carTypeId + ", Make = '" + makeentry.Text + "', Model = '" + modelentry.Text + "', Year = "
-                    + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + colourentry.Text + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
+
+                if (int.TryParse(seatsentry.Text, out int checkNum) && int.TryParse(mileentry.Text, out checkNum) && int.TryParse(yearentry.Text, out checkNum))
+                {
+                    newCommand = "update Car set CarTypeId = " + carTypeId + ", Make = '" + toCase(makeentry.Text) + "', Model = '" + toCase(modelentry.Text) + "', Year = "
+                    + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + toCase(colourentry.Text) + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
                     + branchId + "where VIN = '" + vinentry.Text + "'";
-                this.Close();
+                    this.Close();
+                }
+
+               else
+                    MessageBox.Show("Ensure Year, Seats, & Mileage are numeric.", "Error");
             }
 
             else if (RemoveRBtn.Checked == true)
@@ -443,6 +459,12 @@ namespace CMPT291_Project
             }
             myReader.Close();
 
+        }
+
+        string toCase(string theString)
+        {
+            theString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(theString.ToLower());
+            return theString;
         }
     }
 }
