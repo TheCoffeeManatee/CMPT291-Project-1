@@ -458,7 +458,7 @@ namespace CMPT291_Project
             return theString;
         }
 
-        void getBranchDes(int branchType)
+        void getBranchDes()
         {
             try
             {
