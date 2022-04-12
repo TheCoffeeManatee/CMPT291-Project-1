@@ -19,10 +19,8 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         public int carTypeId, branchId, state = 0;
-        public string newCommand;
+        public string newCommand, carTypeDes, branchDes;
 
-        
-       
         public CarEntry()
         {
             InitializeComponent();
@@ -125,32 +123,6 @@ namespace CMPT291_Project
             mileentry.Text = String.Empty;
         }
 
-        void getCarType()
-        {
-            try
-            {
-                myCommand.CommandText = "select Description from CarType where CarTypeId = " + carTypeId;
-                myReader = myCommand.ExecuteReader();
-
-                while (myReader.Read())
-                {
-                    if (myReader.HasRows)
-                    {
-                        currCarType.Text = "Current: " + (string)myReader["Description"];
-                    }
-                }
-            }
-
-            catch (Exception e2)
-            {
-                MessageBox.Show(e2.ToString(), "Error");
-            }
-            
-            myReader.Close();
-
-               
-        }
-
         private void carentrycancel_Click(object sender, EventArgs e)
         {
             state = 0;
@@ -163,14 +135,26 @@ namespace CMPT291_Project
             {
                 
                 state = 1;
+                if (vinentry.Text.Length == 0)
+                {
+                    MessageBox.Show("Please enter a VIN.", "Error");
+                    return;
+                }
 
                 if (int.TryParse(seatsentry.Text, out int checkNum) && int.TryParse(mileentry.Text, out checkNum) && int.TryParse(yearentry.Text, out checkNum))
                 {
-                    newCommand = "insert into Car values ('" + vinentry.Text +
-                    "'," + carTypeId + ",'" + toCase(makeentry.Text) + "','" + toCase(modelentry.Text) + "'," + yearentry.Text + ","
-                    + seatsentry.Text + ",'" + toCase(colourentry.Text) + "','" + insentry.Text + "'," + mileentry.Text + ","
-                    + branchId + ")";
-                    this.Close();
+                    if (BranchPicker.Text.Length > 0 && CarTypePicker.Text.Length > 0)
+                    {
+
+                        newCommand = "insert into Car values ('" + vinentry.Text +
+                        "'," + carTypeId + ",'" + toCase(makeentry.Text) + "','" + toCase(modelentry.Text) + "'," + yearentry.Text + ","
+                        + seatsentry.Text + ",'" + toCase(colourentry.Text) + "','" + insentry.Text + "'," + mileentry.Text + ","
+                        + branchId + ")";
+                        this.Close();
+                    }
+
+                    else //one or both branch and carType are empty
+                        MessageBox.Show("Ensure Branch and Car Type have been chosen.", "Error");
                 }
 
                 else
@@ -181,12 +165,24 @@ namespace CMPT291_Project
             {
                 state = 1;
 
+                if (vinentry.Text.Length == 0)
+                {
+                    MessageBox.Show("Please enter a VIN.", "Error");
+                    return;
+                }
+
                 if (int.TryParse(seatsentry.Text, out int checkNum) && int.TryParse(mileentry.Text, out checkNum) && int.TryParse(yearentry.Text, out checkNum))
                 {
-                    newCommand = "update Car set CarTypeId = " + carTypeId + ", Make = '" + toCase(makeentry.Text) + "', Model = '" + toCase(modelentry.Text) + "', Year = "
-                    + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + toCase(colourentry.Text) + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
-                    + branchId + "where VIN = '" + vinentry.Text + "'";
-                    this.Close();
+                    if (BranchPicker.Text.Length > 0 && CarTypePicker.Text.Length > 0)
+                    {
+                            newCommand = "update Car set CarTypeId = " + carTypeId + ", Make = '" + toCase(makeentry.Text) + "', Model = '" + toCase(modelentry.Text) + "', Year = "
+                        + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + toCase(colourentry.Text) + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
+                        + branchId + "where VIN = '" + vinentry.Text + "'";
+                            this.Close();
+                    }
+
+                    else //one or both branch and carType are empty
+                        MessageBox.Show("Ensure Branch and Car Type have been chosen.", "Error");
                 }
 
                else
@@ -196,6 +192,13 @@ namespace CMPT291_Project
             else if (RemoveRBtn.Checked == true)
             {
                 state = 1;
+
+                if (vinentry.Text.Length == 0)
+                {
+                    MessageBox.Show("Please enter a VIN.", "Error");
+                    return;
+                }
+
                 newCommand = "delete from Car where VIN = '" + vinentry.Text + "'";
                 this.Close();
             }
@@ -354,6 +357,14 @@ namespace CMPT291_Project
                         insentry.Text = ins.ToString();
                         mileentry.Text = miles.ToString();
 
+                        myReader.Close();
+
+                        getCarTypeDes();
+                        CarTypePicker.SelectedIndex = CarTypePicker.FindString(carTypeDes);
+
+                        getBranchDes();
+                        BranchPicker.SelectedIndex = BranchPicker.FindString(branchDes);
+
                     }
                 }
 
@@ -363,26 +374,6 @@ namespace CMPT291_Project
 
                     MessageBox.Show("Invalid VIN", "Error");
                 }
-                myReader.Close();
-
-                try
-                {
-                    myCommand.CommandText = "select Description from Branch where BranchId = " + branchId;
-                    myReader = myCommand.ExecuteReader();
-
-                    while (myReader.Read())
-                    {
-                        currBranch.Text = "Current: " + (string)myReader["Description"];
-                    }
-                }
-
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-                myReader.Close();
-                getBranch();
-                getCarType();
 
             }
             catch (Exception e2)
@@ -440,7 +431,34 @@ namespace CMPT291_Project
             myReader.Close();
         }
 
-        void getBranch()
+        void getCarTypeDes()
+        {
+            try
+            {
+                myCommand.CommandText = "select Description from CarType where CarTypeId = " + carTypeId;
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    if (myReader.HasRows)
+                        carTypeDes = (string)myReader["Description"];
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            myReader.Close();
+        }
+        string toCase(string theString)
+        {
+            theString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(theString.ToLower());
+            return theString;
+        }
+
+        void getBranchDes(int branchType)
         {
             try
             {
@@ -449,7 +467,10 @@ namespace CMPT291_Project
 
                 while (myReader.Read())
                 {
-                    currBranch.Text = "Current: " + (string)myReader["Description"];
+                    if (myReader.HasRows)
+                    {
+                        branchDes = (string)myReader["Description"];
+                    }
                 }
             }
 
@@ -457,14 +478,8 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e2.ToString(), "Error");
             }
+
             myReader.Close();
-
-        }
-
-        string toCase(string theString)
-        {
-            theString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(theString.ToLower());
-            return theString;
         }
     }
 }
