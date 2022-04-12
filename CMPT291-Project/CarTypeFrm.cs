@@ -68,16 +68,22 @@ namespace CMPT291_Project
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             DataTable dt = new DataTable();
             myAdapter.Fill(dt);
-
-            //change column names
-            dt.Columns["CarTypeId"].ColumnName = "ID";
-            dt.Columns["DailyRate"].ColumnName = "Daily Rate";
-            dt.Columns["WeeklyRate"].ColumnName = "Weekly Rate";
-            dt.Columns["MonthlyRate"].ColumnName = "Monthly Rate";
-            //formats cells
-            CarTypeData.Columns["Daily Rate"].DefaultCellStyle.Format = "N2";
-            CarTypeData.Columns["Weekly Rate"].DefaultCellStyle.Format = "N2";
-            CarTypeData.Columns["Monthly Rate"].DefaultCellStyle.Format = "N2";
+            try
+            {
+                //change column names
+                dt.Columns["CarTypeId"].ColumnName = "ID";
+                dt.Columns["DailyRate"].ColumnName = "Daily Rate";
+                dt.Columns["WeeklyRate"].ColumnName = "Weekly Rate";
+                dt.Columns["MonthlyRate"].ColumnName = "Monthly Rate";
+                //formats cells
+                //CarTypeData.Columns["DailyRate"].DefaultCellStyle.Format = "N2";
+                //CarTypeData.Columns["WeeklyRate"].DefaultCellStyle.Format = "N2";
+                //CarTypeData.Columns["MonthlyRate"].DefaultCellStyle.Format = "N2";
+            }
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
 
             CarTypeData.DataSource = dt;
         }

@@ -62,6 +62,7 @@
             this.mnameL = new System.Windows.Forms.Label();
             this.fnameL = new System.Windows.Forms.Label();
             this.custentrytitle = new System.Windows.Forms.Label();
+            this.SearchRBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // mementry
@@ -445,12 +446,26 @@
             this.custentrytitle.TabIndex = 112;
             this.custentrytitle.Text = "Customer";
             // 
+            // SearchRBtn
+            // 
+            this.SearchRBtn.AutoSize = true;
+            this.SearchRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.SearchRBtn.Location = new System.Drawing.Point(337, 276);
+            this.SearchRBtn.Name = "SearchRBtn";
+            this.SearchRBtn.Size = new System.Drawing.Size(60, 19);
+            this.SearchRBtn.TabIndex = 146;
+            this.SearchRBtn.TabStop = true;
+            this.SearchRBtn.Text = "Search";
+            this.SearchRBtn.UseVisualStyleBackColor = true;
+            this.SearchRBtn.CheckedChanged += new System.EventHandler(this.SearchRBtn_CheckedChanged);
+            // 
             // CustEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
+            this.Controls.Add(this.SearchRBtn);
             this.Controls.Add(this.mementry);
             this.Controls.Add(this.DOBEntry);
             this.Controls.Add(this.FindID);
@@ -529,5 +544,6 @@
         private Label mnameL;
         private Label fnameL;
         private Label custentrytitle;
+        private RadioButton SearchRBtn;
     }
 }

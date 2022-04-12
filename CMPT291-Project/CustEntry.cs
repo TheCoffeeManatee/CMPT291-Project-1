@@ -64,6 +64,40 @@ namespace CMPT291_Project
             mementry.Visible = false;
         }
 
+        private void resetAddSearch()
+        {
+            FindID.Visible = false;
+            CustIdBx.Visible = false;
+
+            //ensures the text boxes are visible and empty
+            fnameentry.Visible = true;
+            mnameentry.Visible = true;
+            lnameentry.Visible = true;
+            add1entry.Visible = true;
+            add2entry.Visible = true;
+            cityentry.Visible = true;
+            proventry.Visible = true;
+            postalentry.Visible = true;
+            DOBEntry.Visible = true;
+            phoneentry.Visible = true;
+            cinsentry.Visible = true;
+            dlentry.Visible = true;
+            mementry.Visible = true;
+
+            fnameentry.Text = String.Empty;
+            mnameentry.Text = String.Empty;
+            lnameentry.Text = String.Empty;
+            add1entry.Text = String.Empty;
+            add2entry.Text = String.Empty;
+            cityentry.Text = String.Empty;
+            proventry.Text = String.Empty;
+            postalentry.Text = String.Empty;
+            phoneentry.Text = String.Empty;
+            cinsentry.Text = String.Empty;
+            dlentry.Text = String.Empty;
+            mementry.Checked = false;
+        }
+
 
         private void mementry_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -189,36 +223,12 @@ namespace CMPT291_Project
 
         private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
-            FindID.Visible = false;
-            CustIdBx.Visible = false;
+            resetAddSearch();
+        }
 
-            //ensures the text boxes are visible and empty
-            fnameentry.Visible = true;
-            mnameentry.Visible = true;
-            lnameentry.Visible = true;
-            add1entry.Visible = true;
-            add2entry.Visible = true;
-            cityentry.Visible = true;
-            proventry.Visible = true;
-            postalentry.Visible = true;
-            DOBEntry.Visible = true;
-            phoneentry.Visible = true;
-            cinsentry.Visible = true;
-            dlentry.Visible = true;
-            mementry.Visible = true;
-
-            fnameentry.Text = String.Empty;
-            mnameentry.Text = String.Empty;
-            lnameentry.Text = String.Empty;
-            add1entry.Text = String.Empty;
-            add2entry.Text = String.Empty;
-            cityentry.Text = String.Empty;
-            proventry.Text = String.Empty;
-            postalentry.Text = String.Empty;
-            phoneentry.Text = String.Empty;
-            cinsentry.Text = String.Empty;
-            dlentry.Text = String.Empty;
-            mementry.Checked = false;
+        private void SearchRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            resetAddSearch();
         }
 
         private void custentryacc_Click_1(object sender, EventArgs e)
@@ -226,7 +236,7 @@ namespace CMPT291_Project
             if (AddRBtn.Checked == true)
             {
                 string phoneNumber = parsePhone(phoneentry.Text);
-
+                state = 1;
                 try
                 {
                     dobStr = DOBEntry.Value.ToString();
@@ -247,6 +257,7 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true)
             {
+                state = 1;
                 try
                 {
                     string phoneNumber = parsePhone(phoneentry.Text);
@@ -268,6 +279,7 @@ namespace CMPT291_Project
 
             else if (RemoveRBtn.Checked == true)
             {
+                state = 1;
                 try
                 {
                     newCommand = "delete from Customer where CustomerId = " + CustIdBx.Text;
@@ -279,6 +291,11 @@ namespace CMPT291_Project
 
                 this.Close();
             }
+
+            else if (SearchRBtn.Checked == true)
+            {
+                state = 2;
+            }
         }
 
         private void custentrycancel_Click_1(object sender, EventArgs e)
@@ -286,6 +303,7 @@ namespace CMPT291_Project
             state = 0;
             this.Close();
         }
+
 
         string parsePhone(string phone)
         {

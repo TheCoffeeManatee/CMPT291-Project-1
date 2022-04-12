@@ -56,73 +56,7 @@ namespace CMPT291_Project
             LevelBx.Visible = false;
         }
 
-        private void ctentrycancel_Click_1(object sender, EventArgs e)
-        {
-            state = 0;
-            this.Close();
-        }
-
-        private void ctentryacc_Click_1(object sender, EventArgs e)
-        {
-            if (AddRBtn.Checked == true) //adds car type to the database
-            {
-                if (!checkLevel())
-                {
-                    MessageBox.Show("Level must be a number.", "Error");
-                    return;
-                }
-
-                try
-                {
-                    newCommand = "insert into CarType values ('" + descentry.Text +
-                        "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", Level = " + LevelBx.Text + ")";
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.Close();
-            }
-
-            else if (EditRBtn.Checked == true) //edits car type entry
-            {
-                if (!checkLevel())
-                {
-                    MessageBox.Show("Level must be a number.", "Error");
-                    return;
-                }
-
-                try
-                {
-                    newCommand = "update CarType Set Description = '" + descentry.Text +
-                        "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
-                        ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.Close();
-            }
-
-            else if (RemoveRBtn.Checked == true) //deletes car type entry
-            {
-                try
-                {
-                    newCommand = "delete from CarType where CarTypeId = " + CarTypeIdBx.Text;
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.Close();
-            }
-        }
-
-        private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
+        private void resetAddSearch()
         {
             FindID.Visible = false;
             CarTypeIdBx.Visible = false;
@@ -141,6 +75,99 @@ namespace CMPT291_Project
             LevelBx.Text = String.Empty;
         }
 
+        private void ctentrycancel_Click_1(object sender, EventArgs e)
+        {
+            state = 0;
+            this.Close();
+        }
+
+        private void ctentryacc_Click_1(object sender, EventArgs e)
+        {
+            if (AddRBtn.Checked == true) //adds car type to the database
+            {
+                if (!checkLevel())
+                {
+                    MessageBox.Show("Level must be a number.", "Error");
+                    return;
+                }
+                state = 1;
+
+                newCommand = "insert into CarType values ('" + descentry.Text +
+                    "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", " + LevelBx.Text + ")";
+                this.Close();
+            }
+
+            else if (EditRBtn.Checked == true) //edits car type entry
+            {
+                if (!checkLevel())
+                {
+                    MessageBox.Show("Level must be a number.", "Error");
+                    return;
+                }
+                state = 1;
+
+                newCommand = "update CarType Set Description = '" + descentry.Text +
+                    "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
+                    ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
+                this.Close();
+            }
+
+            else if (RemoveRBtn.Checked == true) //deletes car type entry
+            {
+                state = 1;
+                newCommand = "delete from CarType where CarTypeId = " + CarTypeIdBx.Text;
+                this.Close();
+            }
+
+            else if (SearchRBtn.Checked == true)
+            {
+                int first = 1;
+                state = 2;
+                newCommand = "select * from CarType where ";
+                //if (CarTypeIdBx.Text != null)
+                //{
+                 //   first = 0;
+                  //  newCommand += "CarTypeId = " + CarTypeIdBx.Text;
+                //}
+                if (descentry.Text != null)
+                {
+                    first = 0;
+                    newCommand += "Description like '%" + descentry.Text + "%'";
+                }
+                if (drateentry.Text != null)
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "DailyRate < " + drateentry.Text;
+                }
+                if (wrateentry.Text != null)
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "WeeklyRate < "+ wrateentry.Text;
+                }
+                if (mrateentry.Text != null)
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "MonthlyRate < " + mrateentry.Text;
+                }
+                this.Close();
+                
+            }
+        }
+
+        private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+            resetAddSearch();
+        }
+
         private void EditRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetEditRemove();
@@ -149,6 +176,11 @@ namespace CMPT291_Project
         private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetEditRemove();
+        }
+
+        private void SearchRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            resetAddSearch();
         }
 
         private void FindID_Click_1(object sender, EventArgs e)
@@ -221,7 +253,6 @@ namespace CMPT291_Project
 
             return success;
         }
-
 
     }
 }
