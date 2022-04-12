@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.carData = new System.Windows.Forms.DataGridView();
             this.CustomersLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.carData)).BeginInit();
@@ -52,20 +51,6 @@
             this.button3.Text = "Manage";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Location = new System.Drawing.Point(135, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 30);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // carData
             // 
@@ -126,7 +111,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.carData);
             this.Controls.Add(this.CustomersLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -141,7 +125,6 @@
         #endregion
 
         private Button button3;
-        private Button button2;
         private DataGridView carData;
         private Label CustomersLbl;
     }
