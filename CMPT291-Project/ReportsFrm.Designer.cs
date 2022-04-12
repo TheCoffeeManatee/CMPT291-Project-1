@@ -31,6 +31,7 @@
             this.ReportsLbl = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabControl();
             this.Report1 = new System.Windows.Forms.TabPage();
+            this.Info1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +43,7 @@
             this.DatePick1 = new System.Windows.Forms.DateTimePicker();
             this.DatePick2 = new System.Windows.Forms.DateTimePicker();
             this.Report2 = new System.Windows.Forms.TabPage();
+            this.Info2 = new System.Windows.Forms.Button();
             this.YearBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.BranchID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +52,7 @@
             this.TotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateReport2 = new System.Windows.Forms.Button();
             this.Report3 = new System.Windows.Forms.TabPage();
+            this.info3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.BranchID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BranchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +60,7 @@
             this.UpdateButton3 = new System.Windows.Forms.Button();
             this.MonthBox3 = new System.Windows.Forms.ComboBox();
             this.Report4 = new System.Windows.Forms.TabPage();
+            this.info4 = new System.Windows.Forms.Button();
             this.UpdateButton4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +69,9 @@
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfRentals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Report5 = new System.Windows.Forms.TabPage();
+            this.info5 = new System.Windows.Forms.Button();
+            this.UpdateReport5 = new System.Windows.Forms.Button();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,13 +81,11 @@
             this.CarModel5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarType5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarInsurance5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.VINReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarModelReprot5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarTypeReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InsuranceReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalMoneyReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UpdateReport5 = new System.Windows.Forms.Button();
             this.Reports.SuspendLayout();
             this.Report1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -123,6 +128,7 @@
             // 
             this.Report1.BackColor = System.Drawing.Color.DimGray;
             this.Report1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Report1.Controls.Add(this.Info1);
             this.Report1.Controls.Add(this.dataGridView1);
             this.Report1.Controls.Add(this.ReportUpdate1);
             this.Report1.Controls.Add(this.DatePick1);
@@ -134,6 +140,16 @@
             this.Report1.Size = new System.Drawing.Size(624, 394);
             this.Report1.TabIndex = 0;
             this.Report1.Text = "Report 1";
+            // 
+            // Info1
+            // 
+            this.Info1.Location = new System.Drawing.Point(526, 358);
+            this.Info1.Name = "Info1";
+            this.Info1.Size = new System.Drawing.Size(90, 32);
+            this.Info1.TabIndex = 6;
+            this.Info1.Text = "Info";
+            this.Info1.UseVisualStyleBackColor = true;
+            this.Info1.Click += new System.EventHandler(this.Info1_Click);
             // 
             // dataGridView1
             // 
@@ -211,6 +227,7 @@
             // Report2
             // 
             this.Report2.BackColor = System.Drawing.Color.DimGray;
+            this.Report2.Controls.Add(this.Info2);
             this.Report2.Controls.Add(this.YearBox2);
             this.Report2.Controls.Add(this.dataGridView2);
             this.Report2.Controls.Add(this.UpdateReport2);
@@ -221,8 +238,19 @@
             this.Report2.TabIndex = 1;
             this.Report2.Text = "Report 2";
             // 
+            // Info2
+            // 
+            this.Info2.Location = new System.Drawing.Point(526, 358);
+            this.Info2.Name = "Info2";
+            this.Info2.Size = new System.Drawing.Size(90, 32);
+            this.Info2.TabIndex = 10;
+            this.Info2.Text = "Info";
+            this.Info2.UseVisualStyleBackColor = true;
+            this.Info2.Click += new System.EventHandler(this.Info2_Click);
+            // 
             // YearBox2
             // 
+            this.YearBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.YearBox2.FormattingEnabled = true;
             this.YearBox2.Items.AddRange(new object[] {
             "2000",
@@ -320,6 +348,7 @@
             // Report3
             // 
             this.Report3.BackColor = System.Drawing.Color.DimGray;
+            this.Report3.Controls.Add(this.info3);
             this.Report3.Controls.Add(this.dataGridView3);
             this.Report3.Controls.Add(this.YearBox1);
             this.Report3.Controls.Add(this.UpdateButton3);
@@ -330,6 +359,16 @@
             this.Report3.Size = new System.Drawing.Size(624, 394);
             this.Report3.TabIndex = 2;
             this.Report3.Text = "Report 3";
+            // 
+            // info3
+            // 
+            this.info3.Location = new System.Drawing.Point(526, 358);
+            this.info3.Name = "info3";
+            this.info3.Size = new System.Drawing.Size(90, 32);
+            this.info3.TabIndex = 11;
+            this.info3.Text = "Info";
+            this.info3.UseVisualStyleBackColor = true;
+            this.info3.Click += new System.EventHandler(this.info3_Click);
             // 
             // dataGridView3
             // 
@@ -357,6 +396,7 @@
             // 
             // YearBox1
             // 
+            this.YearBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.YearBox1.FormattingEnabled = true;
             this.YearBox1.Items.AddRange(new object[] {
             "2000",
@@ -412,6 +452,7 @@
             // 
             // MonthBox3
             // 
+            this.MonthBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MonthBox3.FormattingEnabled = true;
             this.MonthBox3.Items.AddRange(new object[] {
             "January",
@@ -434,6 +475,7 @@
             // Report4
             // 
             this.Report4.BackColor = System.Drawing.Color.DimGray;
+            this.Report4.Controls.Add(this.info4);
             this.Report4.Controls.Add(this.UpdateButton4);
             this.Report4.Controls.Add(this.dataGridView4);
             this.Report4.Location = new System.Drawing.Point(4, 25);
@@ -442,6 +484,16 @@
             this.Report4.Size = new System.Drawing.Size(624, 394);
             this.Report4.TabIndex = 3;
             this.Report4.Text = "Report 4";
+            // 
+            // info4
+            // 
+            this.info4.Location = new System.Drawing.Point(6, 344);
+            this.info4.Name = "info4";
+            this.info4.Size = new System.Drawing.Size(98, 44);
+            this.info4.TabIndex = 12;
+            this.info4.Text = "Info";
+            this.info4.UseVisualStyleBackColor = true;
+            this.info4.Click += new System.EventHandler(this.info4_Click);
             // 
             // UpdateButton4
             // 
@@ -500,6 +552,7 @@
             // Report5
             // 
             this.Report5.BackColor = System.Drawing.Color.DimGray;
+            this.Report5.Controls.Add(this.info5);
             this.Report5.Controls.Add(this.UpdateReport5);
             this.Report5.Controls.Add(this.dataGridView5);
             this.Report5.Location = new System.Drawing.Point(4, 25);
@@ -508,6 +561,45 @@
             this.Report5.Size = new System.Drawing.Size(624, 394);
             this.Report5.TabIndex = 4;
             this.Report5.Text = "Report 5";
+            // 
+            // info5
+            // 
+            this.info5.Location = new System.Drawing.Point(6, 344);
+            this.info5.Name = "info5";
+            this.info5.Size = new System.Drawing.Size(98, 44);
+            this.info5.TabIndex = 13;
+            this.info5.Text = "Info";
+            this.info5.UseVisualStyleBackColor = true;
+            this.info5.Click += new System.EventHandler(this.info5_Click);
+            // 
+            // UpdateReport5
+            // 
+            this.UpdateReport5.BackColor = System.Drawing.Color.Silver;
+            this.UpdateReport5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UpdateReport5.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.UpdateReport5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UpdateReport5.Location = new System.Drawing.Point(396, 344);
+            this.UpdateReport5.Name = "UpdateReport5";
+            this.UpdateReport5.Size = new System.Drawing.Size(221, 44);
+            this.UpdateReport5.TabIndex = 9;
+            this.UpdateReport5.Text = "Update Report";
+            this.UpdateReport5.UseVisualStyleBackColor = false;
+            this.UpdateReport5.Click += new System.EventHandler(this.UpdateReport5_Click);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VINReport5,
+            this.CarModelReprot5,
+            this.CarTypeReport5,
+            this.InsuranceReport5,
+            this.TotalMoneyReport5});
+            this.dataGridView5.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowTemplate.Height = 25;
+            this.dataGridView5.Size = new System.Drawing.Size(614, 335);
+            this.dataGridView5.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -557,21 +649,6 @@
             this.CarInsurance5.Name = "CarInsurance5";
             this.CarInsurance5.Width = 150;
             // 
-            // dataGridView5
-            // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.VINReport5,
-            this.CarModelReprot5,
-            this.CarTypeReport5,
-            this.InsuranceReport5,
-            this.TotalMoneyReport5});
-            this.dataGridView5.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 25;
-            this.dataGridView5.Size = new System.Drawing.Size(614, 335);
-            this.dataGridView5.TabIndex = 8;
-            // 
             // VINReport5
             // 
             this.VINReport5.HeaderText = "VIN";
@@ -589,27 +666,13 @@
             // 
             // InsuranceReport5
             // 
-            this.InsuranceReport5.HeaderText = "Car Insurance";
+            this.InsuranceReport5.HeaderText = "Car Odometer";
             this.InsuranceReport5.Name = "InsuranceReport5";
             // 
             // TotalMoneyReport5
             // 
             this.TotalMoneyReport5.HeaderText = "All Time Money Made";
             this.TotalMoneyReport5.Name = "TotalMoneyReport5";
-            // 
-            // UpdateReport5
-            // 
-            this.UpdateReport5.BackColor = System.Drawing.Color.Silver;
-            this.UpdateReport5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UpdateReport5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.UpdateReport5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.UpdateReport5.Location = new System.Drawing.Point(396, 344);
-            this.UpdateReport5.Name = "UpdateReport5";
-            this.UpdateReport5.Size = new System.Drawing.Size(221, 44);
-            this.UpdateReport5.TabIndex = 9;
-            this.UpdateReport5.Text = "Update Report";
-            this.UpdateReport5.UseVisualStyleBackColor = false;
-            this.UpdateReport5.Click += new System.EventHandler(this.UpdateReport5_Click);
             // 
             // ReportsFrm
             // 
@@ -688,6 +751,11 @@
         private DataGridViewTextBoxColumn CarInsurance5;
         private Button UpdateReport5;
         private DataGridView dataGridView5;
+        private Button Info1;
+        private Button Info2;
+        private Button info3;
+        private Button info4;
+        private Button info5;
         private DataGridViewTextBoxColumn VINReport5;
         private DataGridViewTextBoxColumn CarModelReprot5;
         private DataGridViewTextBoxColumn CarTypeReport5;
