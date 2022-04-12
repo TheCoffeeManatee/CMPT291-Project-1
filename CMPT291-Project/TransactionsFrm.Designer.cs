@@ -59,7 +59,7 @@
             this.AddTransBtn.Name = "AddTransBtn";
             this.AddTransBtn.Size = new System.Drawing.Size(169, 64);
             this.AddTransBtn.TabIndex = 28;
-            this.AddTransBtn.Text = "Add";
+            this.AddTransBtn.Text = "Manage";
             this.AddTransBtn.UseVisualStyleBackColor = false;
             this.AddTransBtn.Click += new System.EventHandler(this.AddTransBtn_Click);
             // 
