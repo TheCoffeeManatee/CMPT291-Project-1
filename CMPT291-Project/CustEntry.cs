@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace CMPT291_Project
 {
@@ -140,9 +141,6 @@ namespace CMPT291_Project
                             string dl = (string)myReader["DrivingLicense"];
                             int mem = (int)myReader["Membership"];
 
-
-
-
                             fnameentry.Visible = true;
                             mnameentry.Visible = true;
                             lnameentry.Visible = true;
@@ -239,9 +237,9 @@ namespace CMPT291_Project
                 state = 1;
                 dobStr = DOBEntry.Value.ToString();
 
-                newCommand = "insert into Customer values ('" + fnameentry.Text +
-                    "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
-                    "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
+                newCommand = "insert into Customer values ('" + toCase(fnameentry.Text) +
+                    "','" + toCase(mnameentry.Text) + "','" + toCase(lnameentry.Text) + "','" + toCase(add1entry.Text) +
+                    "','" + toCase(add2entry.Text) + "','" + toCase(cityentry.Text) + "','" + toCase(proventry.Text) + "','" +
                     postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
                     + "','" + dlentry.Text + "'," + mbr + ")";
                 this.Close();
@@ -253,9 +251,9 @@ namespace CMPT291_Project
                 string phoneNumber = parsePhone(phoneentry.Text);
                 dobStr = DOBEntry.Value.ToString();
 
-                newCommand = "update Customer set FirstName = '" + fnameentry.Text +
-                    "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
-                    "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
+                newCommand = "update Customer set FirstName = '" + toCase(fnameentry.Text) +
+                    "', MiddleName = '" + toCase(mnameentry.Text) + "', LastName = '" + toCase(lnameentry.Text) + "', StreetAddress1 = '" + add1entry.Text +
+                    "', StreetAddress2 = '" + toCase(add2entry.Text) + "', City = '" + toCase(cityentry.Text) + "', Province = '" + toCase(proventry.Text) + "', PostalCode = '" +
                     postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
                     + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
                 this.Close();
@@ -401,6 +399,12 @@ namespace CMPT291_Project
                     newPhone += phone[i];
 
             return newPhone;
+        }
+
+        string toCase(string theString)
+        {
+            theString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(theString.ToLower());
+            return theString;
         }
     }
 }
