@@ -92,7 +92,6 @@ namespace CMPT291_Project
                     return;
                 }
                 state = 1;
-
                 newCommand = "insert into CarType values ('" + descentry.Text +
                     "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", " + LevelBx.Text + ")";
                 this.Close();
@@ -106,7 +105,6 @@ namespace CMPT291_Project
                     return;
                 }
                 state = 1;
-
                 newCommand = "update CarType Set Description = '" + descentry.Text +
                     "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
                     ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
@@ -125,40 +123,37 @@ namespace CMPT291_Project
                 int first = 1;
                 state = 2;
                 newCommand = "select * from CarType where ";
-                //if (CarTypeIdBx.Text != null)
-                //{
-                 //   first = 0;
-                  //  newCommand += "CarTypeId = " + CarTypeIdBx.Text;
-                //}
-                if (descentry.Text != null)
+                if (descentry.Text != "")
                 {
                     first = 0;
-                    newCommand += "Description like '%" + descentry.Text + "%'";
+                    newCommand += "(Description like '%" + descentry.Text + "' or description like '" + descentry.Text + "%')";
                 }
-                if (drateentry.Text != null)
+                if (drateentry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "DailyRate < " + drateentry.Text;
+                    newCommand += "DailyRate <= " + drateentry.Text;
                 }
-                if (wrateentry.Text != null)
+                if (wrateentry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "WeeklyRate < "+ wrateentry.Text;
+                    newCommand += "WeeklyRate <= "+ wrateentry.Text;
                 }
-                if (mrateentry.Text != null)
+                if (mrateentry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "MonthlyRate < " + mrateentry.Text;
+                    newCommand += "MonthlyRate <= " + mrateentry.Text;
                 }
+                if (first == 1)
+                    newCommand = "select * from CarType";
                 this.Close();
                 
             }

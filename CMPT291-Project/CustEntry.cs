@@ -237,64 +237,146 @@ namespace CMPT291_Project
             {
                 string phoneNumber = parsePhone(phoneentry.Text);
                 state = 1;
-                try
-                {
-                    dobStr = DOBEntry.Value.ToString();
+                dobStr = DOBEntry.Value.ToString();
 
-                    newCommand = "insert into Customer values ('" + fnameentry.Text +
-                        "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
-                        "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
-                        postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
-                        + "','" + dlentry.Text + "'," + mbr + ")";
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
+                newCommand = "insert into Customer values ('" + fnameentry.Text +
+                    "','" + mnameentry.Text + "','" + lnameentry.Text + "','" + add1entry.Text +
+                    "','" + add2entry.Text + "','" + cityentry.Text + "','" + proventry.Text + "','" +
+                    postalentry.Text + "','" + dobStr + "'," + phoneNumber + ",'" + cinsentry.Text
+                    + "','" + dlentry.Text + "'," + mbr + ")";
                 this.Close();
             }
 
             else if (EditRBtn.Checked == true)
             {
                 state = 1;
-                try
-                {
-                    string phoneNumber = parsePhone(phoneentry.Text);
-                    dobStr = DOBEntry.Value.ToString();
+                string phoneNumber = parsePhone(phoneentry.Text);
+                dobStr = DOBEntry.Value.ToString();
 
-                    newCommand = "update Customer set FirstName = '" + fnameentry.Text +
-                        "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
-                        "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
-                        postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
-                        + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
+                newCommand = "update Customer set FirstName = '" + fnameentry.Text +
+                    "', MIddleName = '" + mnameentry.Text + "', LastName = '" + lnameentry.Text + "', StreetAddress1 = '" + add1entry.Text +
+                    "', StreetAddress2 = '" + add2entry.Text + "', City = '" + cityentry.Text + "', Province = '" + proventry.Text + "', PostalCode = '" +
+                    postalentry.Text + "', DOB = '" + dobStr + "', Phone = '" + phoneNumber + "', Insurance = '" + cinsentry.Text
+                    + "', DrivingLicense = '" + dlentry.Text + "', Membership = " + mbr + "where CustomerId = " + CustIdBx.Text;
                 this.Close();
             }
 
             else if (RemoveRBtn.Checked == true)
             {
                 state = 1;
-                try
-                {
-                    newCommand = "delete from Customer where CustomerId = " + CustIdBx.Text;
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
+                newCommand = "delete from Customer where CustomerId = " + CustIdBx.Text;
                 this.Close();
             }
 
             else if (SearchRBtn.Checked == true)
             {
+                int first = 1;
                 state = 2;
+                newCommand = "select * from Customer where ";
+                if (fnameentry.Text != "")
+                {
+                    first = 0;
+                    newCommand += "(FirstName like '%" + fnameentry.Text + "' or FirstName like '" + fnameentry.Text + "%')";
+                }
+                if (mnameentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(MiddleName like '%" + mnameentry.Text + "' or MiddleName like '" + mnameentry.Text + "%')";
+                }
+                if (lnameentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(LastName like '%" + lnameentry.Text + "' or LastName like '" + lnameentry.Text + "%')";
+                }
+                if (add1entry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(StreetAddress1 like '%" + add1entry.Text + "' or StreetAddress1 like '" + add1entry.Text + "%')";
+                }
+                if (add2entry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(StreetAddress2 like '%" + add2entry.Text + "' or StreetAddress2 like '" + add2entry.Text + "%')";
+                }
+                if (cityentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(City like '%" + cityentry.Text + "' or City like '" + cityentry.Text + "%')";
+                }
+                if (proventry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Province like '%" + proventry.Text + "' or Province like '" + proventry.Text + "%')";
+                }
+                if (postalentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(PostalCode like '%" + postalentry.Text + "' or PostalCode like '" + postalentry.Text + "%')";
+                }
+                if (DOBEntry.Value.Date < DateTime.Today)
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "DOB like '" + DOBEntry.Value.Year + "-" + DOBEntry.Value.Month + "-" + DOBEntry.Value.Day + "'";
+                }
+                if (phoneentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Phone like '%" + phoneentry.Text + "' or Phone like '" + phoneentry.Text + "%')";
+                }
+                if (cinsentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Insurance like '%" + cinsentry.Text + "' or Insurance like '" + cinsentry.Text + "%')";
+                }
+                if (dlentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(DrivingLicense like '%" + dlentry.Text + "' or DrivingLicense like '" + dlentry.Text + "%')";
+                }
+                if (mementry.Checked)
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Membership = 1";
+                }
+                if (first == 1)
+                    newCommand = "select * from Customer";
+                this.Close();
             }
         }
 

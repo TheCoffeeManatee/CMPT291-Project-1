@@ -161,39 +161,114 @@ namespace CMPT291_Project
             if (AddRBtn.Checked == true)
             {
                 state = 1;
-
                 newCommand = "insert into Car values ('" + vinentry.Text +
                     "'," + carTypeId + ",'" + makeentry.Text + "','" + modelentry.Text + "'," + yearentry.Text + ","
                     + seatsentry.Text + ",'" + colourentry.Text + "','" + insentry.Text + "'," + mileentry.Text + ","
                     + branchId + ")";
-;
-
                 this.Close();
             }
 
             else if (EditRBtn.Checked == true)
             {
                 state = 1;
-
                 newCommand = "update Car set CarTypeId = " + carTypeId + ", Make = '" + makeentry.Text + "', Model = '" + modelentry.Text + "', Year = "
                     + yearentry.Text + ", Seats = " + seatsentry.Text + ", Colour = '" + colourentry.Text + "', Insurance = '" + insentry.Text + "', Odometer = " + mileentry.Text + ", BranchId = "
                     + branchId + "where VIN = '" + vinentry.Text + "'";
-
                 this.Close();
             }
 
             else if (RemoveRBtn.Checked == true)
             {
                 state = 1;
-                
                 newCommand = "delete from Car where VIN = '" + vinentry.Text + "'";
-
                 this.Close();
             }
 
             else if (SearchRBtn.Checked == true)
             {
+                int first = 1;
                 state = 2;
+                newCommand = "select * from Car where ";
+                if(vinentry.Text != "")
+                {
+                    first = 0;
+                    newCommand += "(VIN like '%" + vinentry.Text + "' or VIN like '" + vinentry.Text + "%')";
+                }
+                if(makeentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Make like '%" + makeentry.Text + "' or Make like '" + makeentry.Text + "%')";
+                }
+                if (modelentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Model like '%" + modelentry.Text + "' or Model like '" + modelentry.Text + "%')";
+                }
+                if (yearentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Year = " + yearentry.Text;
+                }
+                if (seatsentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Seats = " + seatsentry.Text;
+                }
+                if (colourentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Colour like '%" + colourentry.Text + "' or Colour like '" + colourentry.Text + "%')";
+                }
+                if (insentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "(Insurance like '%" + insentry.Text + "' or Insurance like '" + insentry.Text + "%')";
+                }
+                if (mileentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "Odometer = " + mileentry.Text;
+                }
+                if (BranchPicker.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "BranchId = " + BranchPicker.Text;
+                }
+                if (CarTypePicker.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += " and ";
+                    else
+                        first = 0;
+                    newCommand += "CarTypeId = " + CarTypePicker.Text;
+                }
+                if (first == 1)
+                    newCommand = "select * from Car";
+                this.Close();
             }
         }
 
