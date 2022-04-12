@@ -62,6 +62,13 @@ namespace CMPT291_Project
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             DataTable dt = new DataTable();
             myAdapter.Fill(dt);
+
+            //change heading names
+            dt.Columns["BranchId"].ColumnName = "Branch ID";
+            dt.Columns["StreetAddress1"].ColumnName = "Address Line 1";
+            dt.Columns["StreetAddress2"].ColumnName = "Address Line 2";
+            dt.Columns["PostalCode"].ColumnName = "Postal Code";
+
             BranchTable.DataSource = dt;
         }
 
