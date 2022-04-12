@@ -72,6 +72,11 @@
             this.info5 = new System.Windows.Forms.Button();
             this.UpdateReport5 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.VINReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarModelReprot5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarTypeReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InsuranceReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalMoneyReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,11 +86,6 @@
             this.CarModel5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarType5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarInsurance5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VINReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CarModelReprot5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CarTypeReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InsuranceReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalMoneyReport5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reports.SuspendLayout();
             this.Report1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -163,6 +163,7 @@
             this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(614, 335);
             this.dataGridView1.TabIndex = 5;
@@ -171,32 +172,38 @@
             // 
             this.VIN.HeaderText = "VIN";
             this.VIN.Name = "VIN";
+            this.VIN.ReadOnly = true;
             this.VIN.Width = 55;
             // 
             // Description
             // 
             this.Description.HeaderText = "CarType";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // DailyRate
             // 
             this.DailyRate.HeaderText = "PricePerDay";
             this.DailyRate.Name = "DailyRate";
+            this.DailyRate.ReadOnly = true;
             // 
             // PricePerWeek
             // 
             this.PricePerWeek.HeaderText = "PricePerWeek";
             this.PricePerWeek.Name = "PricePerWeek";
+            this.PricePerWeek.ReadOnly = true;
             // 
             // MonthlyRate
             // 
             this.MonthlyRate.HeaderText = "PricePerMonth";
             this.MonthlyRate.Name = "MonthlyRate";
+            this.MonthlyRate.ReadOnly = true;
             // 
             // Price
             // 
             this.Price.HeaderText = "TotalAmount";
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // ReportUpdate1
             // 
@@ -304,6 +311,7 @@
             this.TotalMoney});
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(614, 335);
             this.dataGridView2.TabIndex = 6;
@@ -312,23 +320,27 @@
             // 
             this.BranchID2.HeaderText = "Branch ID";
             this.BranchID2.Name = "BranchID2";
+            this.BranchID2.ReadOnly = true;
             // 
             // BranchName2
             // 
             this.BranchName2.HeaderText = "Branch Name";
             this.BranchName2.Name = "BranchName2";
+            this.BranchName2.ReadOnly = true;
             this.BranchName2.Width = 125;
             // 
             // TotalRentYear
             // 
             this.TotalRentYear.HeaderText = "Amount Of Rents";
             this.TotalRentYear.Name = "TotalRentYear";
+            this.TotalRentYear.ReadOnly = true;
             this.TotalRentYear.Width = 135;
             // 
             // TotalMoney
             // 
             this.TotalMoney.HeaderText = "Total Money Made";
             this.TotalMoney.Name = "TotalMoney";
+            this.TotalMoney.ReadOnly = true;
             this.TotalMoney.Width = 150;
             // 
             // UpdateReport2
@@ -378,6 +390,7 @@
             this.BranchName});
             this.dataGridView3.Location = new System.Drawing.Point(4, 3);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowTemplate.Height = 25;
             this.dataGridView3.Size = new System.Drawing.Size(614, 335);
             this.dataGridView3.TabIndex = 9;
@@ -386,12 +399,14 @@
             // 
             this.BranchID.HeaderText = "Branch ID";
             this.BranchID.Name = "BranchID";
+            this.BranchID.ReadOnly = true;
             this.BranchID.Width = 70;
             // 
             // BranchName
             // 
             this.BranchName.HeaderText = "Branch Name";
             this.BranchName.Name = "BranchName";
+            this.BranchName.ReadOnly = true;
             this.BranchName.Width = 200;
             // 
             // YearBox1
@@ -520,6 +535,7 @@
             this.NumberOfRentals});
             this.dataGridView4.Location = new System.Drawing.Point(3, 3);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowTemplate.Height = 25;
             this.dataGridView4.Size = new System.Drawing.Size(614, 335);
             this.dataGridView4.TabIndex = 7;
@@ -528,26 +544,31 @@
             // 
             this.CustomerID.HeaderText = "Customer ID";
             this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
             // 
             // FirstName
             // 
             this.FirstName.HeaderText = "First Name";
             this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
             // 
             // MiddleName
             // 
             this.MiddleName.HeaderText = "Middle Name";
             this.MiddleName.Name = "MiddleName";
+            this.MiddleName.ReadOnly = true;
             // 
             // LastName
             // 
             this.LastName.HeaderText = "Last Name";
             this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
             // 
             // NumberOfRentals
             // 
             this.NumberOfRentals.HeaderText = "Number Of Rentals";
             this.NumberOfRentals.Name = "NumberOfRentals";
+            this.NumberOfRentals.ReadOnly = true;
             // 
             // Report5
             // 
@@ -597,9 +618,40 @@
             this.TotalMoneyReport5});
             this.dataGridView5.Location = new System.Drawing.Point(3, 3);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
             this.dataGridView5.RowTemplate.Height = 25;
             this.dataGridView5.Size = new System.Drawing.Size(614, 335);
             this.dataGridView5.TabIndex = 8;
+            // 
+            // VINReport5
+            // 
+            this.VINReport5.HeaderText = "VIN";
+            this.VINReport5.Name = "VINReport5";
+            this.VINReport5.ReadOnly = true;
+            // 
+            // CarModelReprot5
+            // 
+            this.CarModelReprot5.HeaderText = "Car Model";
+            this.CarModelReprot5.Name = "CarModelReprot5";
+            this.CarModelReprot5.ReadOnly = true;
+            // 
+            // CarTypeReport5
+            // 
+            this.CarTypeReport5.HeaderText = "Car Type";
+            this.CarTypeReport5.Name = "CarTypeReport5";
+            this.CarTypeReport5.ReadOnly = true;
+            // 
+            // InsuranceReport5
+            // 
+            this.InsuranceReport5.HeaderText = "Car Odometer";
+            this.InsuranceReport5.Name = "InsuranceReport5";
+            this.InsuranceReport5.ReadOnly = true;
+            // 
+            // TotalMoneyReport5
+            // 
+            this.TotalMoneyReport5.HeaderText = "All Time Money Made";
+            this.TotalMoneyReport5.Name = "TotalMoneyReport5";
+            this.TotalMoneyReport5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -648,31 +700,6 @@
             this.CarInsurance5.HeaderText = "Car Insurance";
             this.CarInsurance5.Name = "CarInsurance5";
             this.CarInsurance5.Width = 150;
-            // 
-            // VINReport5
-            // 
-            this.VINReport5.HeaderText = "VIN";
-            this.VINReport5.Name = "VINReport5";
-            // 
-            // CarModelReprot5
-            // 
-            this.CarModelReprot5.HeaderText = "Car Model";
-            this.CarModelReprot5.Name = "CarModelReprot5";
-            // 
-            // CarTypeReport5
-            // 
-            this.CarTypeReport5.HeaderText = "Car Type";
-            this.CarTypeReport5.Name = "CarTypeReport5";
-            // 
-            // InsuranceReport5
-            // 
-            this.InsuranceReport5.HeaderText = "Car Odometer";
-            this.InsuranceReport5.Name = "InsuranceReport5";
-            // 
-            // TotalMoneyReport5
-            // 
-            this.TotalMoneyReport5.HeaderText = "All Time Money Made";
-            this.TotalMoneyReport5.Name = "TotalMoneyReport5";
             // 
             // ReportsFrm
             // 
