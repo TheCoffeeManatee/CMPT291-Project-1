@@ -18,16 +18,18 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         public int carTypeId, pickbranchId, rtnBranchId;
-        public string vin;
+        public int goldFlag = 0, upgradeCTId = 0; //used to mark if requested carType was not availible for free upgrade on gold members
+        public string vin, pBranchDes, rBranchDes, carTypeDes;
         public decimal diffBranchCost = 10;
         public decimal price = 0;
+        public DateTime oldReturn;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
 
         public TransNew()
         {
             InitializeComponent();
+            AddRBtn.Checked = true;
 
             FullName.Visible = false;
             Add1.Visible = false;
@@ -162,10 +164,25 @@ namespace CMPT291_Project
                 SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
                 DataTable dt = new DataTable();
                 myAdapter.Fill(dt);
+
+                //rename columns
+                dt.Columns["CarTypeId"].ColumnName = "Type ID";
+                dt.Columns["BranchId"].ColumnName = "Branch ID";
+
                 CarTable.DataSource = dt;
 
-                if (dt.Rows.Count == 0)
-                    MessageBox.Show("No cars available in this date range.", "Error");
+                if (CarTable.Rows.Count == 0)
+                {
+                    if (Mbrship.Text == "Gold") //current carTypeId is saved to be used in calculating price
+                    {
+                        goldFlag = 1;
+                        MessageBox.Show("No cars available in this date range.\n\nFree upgrade applied", "Error");
+                    }
+
+                    else
+                        MessageBox.Show("No cars available in this date range.", "Error");
+
+                }
             }
 
             catch (Exception e2)
@@ -189,29 +206,101 @@ namespace CMPT291_Project
             bool carTypeOkay = checkCarType();
             bool datesOkay = checkDates();
             bool branchesOkay = checkBranches();
-            bool VINSuccess = updateVIN();
             bool custOkay = checkCust();
 
-            if (VINSuccess && carTypeOkay && datesOkay && branchesOkay && custOkay)
+            if (AddRBtn.Checked)
             {
-                DialogResult priceCheck = MessageBox.Show("Is the price up to date?", "Price Check", MessageBoxButtons.YesNo);
+                if (carTypeOkay && datesOkay && branchesOkay && custOkay)
+                {
+                    DialogResult priceCheck = MessageBox.Show("Is the price up to date?", "Price Check", MessageBoxButtons.YesNo);
 
-                if (priceCheck == DialogResult.Yes)
+                    if (priceCheck == DialogResult.Yes)
+                    {
+
+                        try
+                        {
+                            myCommand.CommandText = "insert into Rentals values (" + pickbranchId + ",'" + PickDate.Value.ToShortDateString() + "',"
+                                + rtnBranchId + ",'" + RtnDate.Value.Date.ToShortDateString() + "'," + carTypeId + "," + CustIdBx.Text + "," + vin + "," +
+                                price + ", 0)";
+                            myCommand.ExecuteNonQuery();
+                        }
+                        catch (Exception e2)
+                        {
+                            MessageBox.Show(e2.ToString(), "Error");
+                        }
+
+                        updateMbr();
+
+                        this.NewTransPnl.Controls.Clear();
+                        TransNew NewTrans_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                        NewTrans_Vrb.FormBorderStyle = FormBorderStyle.None;
+                        this.NewTransPnl.Controls.Add(NewTrans_Vrb);
+                        NewTrans_Vrb.Show();
+                    }
+
+                    else if (priceCheck == DialogResult.No)
+                        return;
+                }
+            }
+
+            else if (EditRBtn.Checked || completeRBtn.Checked)
+            {
+                int late = 0;
+
+                if (completeRBtn.Checked)
+                {
+                    if (LateCheck.Checked)
+                        late = 1;
+                }
+
+                if (carTypeOkay && datesOkay && branchesOkay && custOkay)
+                {
+                    DialogResult priceCheck = MessageBox.Show("Is the price up to date?", "Price Check", MessageBoxButtons.YesNo);
+
+                    if (priceCheck == DialogResult.Yes)
+                    {
+
+                        try
+                        {
+                            myCommand.CommandText = "update Rentals set PickupBranch = " + pickbranchId + ", PickupDate = '"
+                                + PickDate.Value.ToShortDateString() + "', ReturnBranch = " + rtnBranchId + ", ReturnDate = '"
+                                + RtnDate.Value.Date.ToShortDateString() + "', CarTypeID = " + carTypeId + ", CustomerId = "
+                                + CustIdBx.Text + ", VIN = " + vin + ", Price = " + price + ", Late = " + late + "where RentalId = " + TransIdBx.Text;
+                            myCommand.ExecuteNonQuery();
+                        }
+                        catch (Exception e2)
+                        {
+                            MessageBox.Show(e2.ToString(), "Error");
+                        }
+
+                        this.NewTransPnl.Controls.Clear();
+                        TransNew NewTrans_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                        NewTrans_Vrb.FormBorderStyle = FormBorderStyle.None;
+                        this.NewTransPnl.Controls.Add(NewTrans_Vrb);
+                        NewTrans_Vrb.Show();
+                    }
+
+                    else if (priceCheck == DialogResult.No)
+                        return;
+                }
+            }
+
+            else if (RemoveRBtn.Checked)
+            {
+                DialogResult removeCheck = MessageBox.Show("Are you sure you want to delete?", "Delete", MessageBoxButtons.YesNo);
+
+                if (removeCheck == DialogResult.Yes)
                 {
 
                     try
                     {
-                        myCommand.CommandText = "insert into Rentals values (" + pickbranchId + ",'" + PickDate.Value.ToShortDateString() + "',"
-                            + rtnBranchId + ",'" + RtnDate.Value.Date.ToShortDateString() + "'," + carTypeId + "," + CustIdBx.Text + "," + vin + "," +
-                            price + ")";
+                        myCommand.CommandText = "delete from Rentals where RentalID = " + TransIdBx.Text;
                         myCommand.ExecuteNonQuery();
                     }
                     catch (Exception e2)
                     {
                         MessageBox.Show(e2.ToString(), "Error");
                     }
-
-                    updateMbr();
 
                     this.NewTransPnl.Controls.Clear();
                     TransNew NewTrans_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -220,14 +309,11 @@ namespace CMPT291_Project
                     NewTrans_Vrb.Show();
                 }
 
-                else if (priceCheck == DialogResult.No)
+                else if (removeCheck == DialogResult.No)
                     return;
             }
 
-            else if (!VINSuccess || !carTypeOkay || !datesOkay || !custOkay || !branchesOkay)
-            {
-                MessageBox.Show("Please ensure all fields are filled correctly.", "Error");
-            }
+            return;
         }
 
         private void PickupBranchID_SelectedIndexChanged(object sender, EventArgs e)
@@ -283,18 +369,83 @@ namespace CMPT291_Project
             myReader.Close();
         }
 
-        private void CarTypePicker_SelectedIndexChanged(object sender, EventArgs e)
+        void getBranchDes(int branchType)
         {
             try
             {
-                myCommand.CommandText = "select CarTypeId from CarType where Description = '" + CarTypePicker.Text + "'";
+                if (branchType == 0)
+                    myCommand.CommandText = "select Description from Branch where BranchId = " + PickupBranchID;
+
+                else if (branchType == 1)
+                    myCommand.CommandText = "select Description from Branch where BranchId = " + rtnBranchId;
+
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
                     if (myReader.HasRows)
                     {
-                        carTypeId = (int)myReader["CarTypeId"];
+                        if (branchType == 0)
+                            pBranchDes = (string)myReader["Description"];
+                        else if (branchType == 1)
+                            rBranchDes = (string)myReader["Description"];
+                    }
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            myReader.Close();
+        }
+
+        void getCarTypeDes()
+        {
+            try
+            {
+                myCommand.CommandText = "select Description from CarType where CarTypeId = " + carTypeId;
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    if (myReader.HasRows)
+                        carTypeDes = (string)myReader["Description"];
+                }
+            }
+
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            myReader.Close();
+        }
+
+
+        private void CarTypePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                myCommand.CommandText = "select CarTypeId, Level from CarType where Description = '" + CarTypePicker.Text + "'";
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    if (myReader.HasRows)
+                    {
+                        if (goldFlag == 0) //ensure upgradeCarID stays the same as carTypeID until flag is thrown
+                        {
+                            carTypeId = (int)myReader["CarTypeId"];
+                            upgradeCTId = carTypeId;
+                        }
+
+                        else
+                            carTypeId = (int)myReader["CarTypeId"];
+
+                        int lvl = (int)myReader["Level"];
+                        level.Text = lvl.ToString();
                     }
                 }
             }
@@ -305,7 +456,7 @@ namespace CMPT291_Project
             }
             myReader.Close();
 
-            if (price != 0)
+            if (price != 0) //price has been previously calculated
             {
                 calcPriceBtn.Text = "Re-Calculate";
             }
@@ -357,17 +508,6 @@ namespace CMPT291_Project
             myReader.Close();
         }
 
-        bool updateVIN()
-        {
-            if (CarTable.SelectedCells.Count == 1)
-            {
-                vin = (string)CarTable.SelectedCells[0].Value;
-                return true;
-            }
-
-            return false;
-        }
-
         //if >3 transactions, update selected customer to gold status
         void updateMbr()
         {
@@ -405,7 +545,10 @@ namespace CMPT291_Project
         bool checkCarType()
         {
             if (CarTypePicker.Text.Length == 0)
+            {
+                MessageBox.Show("Invalid CarType", "Error");
                 return false;
+            }
             else
                 return true;
         }
@@ -413,45 +556,166 @@ namespace CMPT291_Project
         bool checkBranches()
         {
 
-            if ((PickupBranchID.Text.Length == 0) || (RtnBranch.Text.Length == 0) || (RtnDate.Value.Date < PickDate.Value.Date))
+            if ((PickupBranchID.Text.Length == 0) || (RtnBranch.Text.Length == 0))
+            {
+                MessageBox.Show("Invalid Branch", "Error");
                 return false;
+            }
 
-            else 
+            else
                 return true;
         }
 
         bool checkDates()
         {
-            if (RtnDate.Value.Date < PickDate.Value.Date)
+            if (RtnDate.Value.Date < PickDate.Value.Date || PickDate.Value.Date < DateTime.Today.Date)
+            {
+                MessageBox.Show("Invalid Pickup Date", "Error");
                 return false;
+            }
             else
                 return true;
         }
 
         private void calcPriceBtn_Click(object sender, EventArgs e)
         {
+            int totalDays;
             bool carTypeOkay = checkCarType();
             bool datesOkay = checkDates();
             bool branchesOkay = checkBranches();
             bool custOkay = checkCust();
 
+            if (PickDate.Value.Date == RtnDate.Value.Date)
+            {
+                totalDays = 1;
+            }
+
+            else
+                totalDays = (RtnDate.Value.Date - PickDate.Value.Date).Days;
+
             if (carTypeOkay && datesOkay && branchesOkay && custOkay)
             {
-                calculatePrice((RtnDate.Value.Date - PickDate.Value.Date).Days);
+                calculatePrice(totalDays);
                 priceBx.Visible = true;
                 priceBx.Text = price.ToString("N2");
                 calcPriceBtn.Text = "Calculate";
             }
-
-            else
-            {
-                MessageBox.Show("Please ensure all fields are filled correctly.", "Error");
-            }
-
         }
 
         private void PickDate_ValueChanged(object sender, EventArgs e)
         {
+            if (price != 0)
+            {
+                calcPriceBtn.Text = "Re-Calculate";
+            }
+
+        }
+        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            LateCheck.Visible = false;
+            FindTransBtn.Visible = false;
+            TransIdBx.Visible = false;
+        }
+            
+        private void EditRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            LateCheck.Visible = false;
+
+            FindTransBtn.Visible = true;
+            TransIdBx.Visible = true;
+        }
+
+        private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            LateCheck.Visible = false;
+
+            FindTransBtn.Visible = true;
+            TransIdBx.Visible = true;
+        }
+
+        private void completeRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            LateCheck.Visible = true;
+            FindTransBtn.Visible = true;
+            TransIdBx.Visible = true;
+        }
+
+        private void LateCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            oldReturn = RtnDate.Value;
+            MessageBox.Show("Update return date and re-calculate price", "Reminder");
+        }
+
+        private void FindTransBtn_Click(object sender, EventArgs e)
+        {
+            //converts string to integer 
+            int displayID;
+            bool success = int.TryParse(TransIdBx.Text, out displayID);
+
+            if (success)
+            {
+                try
+                {
+                    myCommand.CommandText = "select * from Rentals where RentalId  = " + displayID;
+                    myReader = myCommand.ExecuteReader();
+
+                    if (myReader.HasRows)
+                    {
+                        //saves variables read and displays them in the appropriate fields
+                        while (myReader.Read())
+                        {
+
+                            pickbranchId = (int)myReader["PickupBranch"];
+                            DateTime pB = (DateTime)myReader["PickupDate"];
+                            rtnBranchId = (int)myReader["ReturnBranch"];
+                            DateTime rB = (DateTime)myReader["ReturnDate"];
+                            string vin = (string)myReader["VIN"];
+                            carTypeId = (int)myReader["CarTypeId"];
+                            int custID = (int)myReader["CustomerID"];
+                            decimal pr = (decimal)myReader["Price"];
+                            int lt = (int)myReader["Late"];
+
+                            PickDate.Value = pB;
+                            RtnDate.Value = rB;
+                            CustIdBx.Text = custID.ToString();
+                            priceBx.Text = pr.ToString();
+                        }
+
+                        myReader.Close();
+
+                        FindID_Click(sender, e);
+
+                        //change comboboxes to the correct descriptions
+                        getBranchDes(0);
+                        PickupBranchID.SelectedIndex = PickupBranchID.FindString(pBranchDes);
+
+                        getBranchDes(1);
+                        RtnBranch.SelectedIndex = RtnBranch.FindString(rBranchDes);
+
+                        getCarTypeDes();
+                        CarTypePicker.SelectedIndex = CarTypePicker.FindString(carTypeDes);
+
+
+
+                    }
+
+                    else
+                    {
+                        CustIdBx.Text = string.Empty;
+
+                        MessageBox.Show("Invalid Customer ID", "Error");
+                    }
+
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+
+                myReader.Close();
+
+            }
+
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
@@ -473,26 +737,60 @@ namespace CMPT291_Project
 
             if (cust > 0)
                 return true;
-            else
-                return false;
-                
+            MessageBox.Show("Invalid Customer", "Error");
+            return false;
+
         }
 
         void calculatePrice(int totalDays)
         {
             decimal monthly = 0, weekly = 0, daily = 0;
 
+            if (LateCheck.Checked)
+            {
+                int overDueDays = (RtnDate.Value.Date - oldReturn.Date).Days;
+
+                try
+                {
+                    myCommand.CommandText = "select * from CarType where CarTypeId = " + upgradeCTId;
+                    myReader = myCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        if (myReader.HasRows)
+                            daily = (decimal)myReader["DailyRate"];
+                    }
+                }
+
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+
+                price += (daily * overDueDays);
+
+                return;
+
+            }
+
+
             int months = totalDays/30;
-            totalDays -= months;
+            totalDays -= months * 30;
 
             int weeks = (totalDays/7);
-            totalDays -= weeks;
+            totalDays -= weeks * 7;
 
             int days = totalDays;
 
             try
             {
-                myCommand.CommandText = "select * from CarType where CarTypeId = " + carTypeId;
+                if (goldFlag == 0)
+                    myCommand.CommandText = "select * from CarType where CarTypeId = " + carTypeId;
+
+                else if (goldFlag == 1)
+                {
+                    myCommand.CommandText = "select * from CarType where CarTypeId = " + upgradeCTId;
+                }
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
@@ -521,16 +819,46 @@ namespace CMPT291_Project
 
             return;
         }
-
-        string parsePhone(string phone)
+        private void CarTable_SelectionChanged(object sender, EventArgs e)
         {
-            string newPhone = "";
+            if (CarTable.SelectedCells.Count == 1)
+            {
+                try
+                {
+                    vin = (string)CarTable.SelectedCells[0].Value;
+                }
 
-            for (int i = 0; i < phone.Length; i++)
-                if (Char.IsDigit(phone[i]))
-                    newPhone += phone[i];
+                catch
+                {
+                    MessageBox.Show("Please select a VIN from the list of cars", "Error");
+                }
 
-            return newPhone;
+                try
+                {
+
+                    myCommand.CommandText = "select Make, Model, Year from Car where VIN = '" + vin + "'";
+                    myReader = myCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        if (myReader.HasRows)
+                        {
+                            string mk = (string)myReader["Make"];
+                            string md = (string)myReader["Model"];
+                            int yr = (int)myReader["Year"];
+
+                            selCarInfo.Text = yr.ToString() + " " + mk + " " + md + " VIN: " + vin;
+                        }
+                    }
+                }
+
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            myReader.Close();
         }
+
     }
 }

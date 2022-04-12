@@ -44,6 +44,8 @@
             this.drateL = new System.Windows.Forms.Label();
             this.descriptionL = new System.Windows.Forms.Label();
             this.cartypeentrytitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LevelBx = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // FindID
@@ -238,12 +240,35 @@
             this.cartypeentrytitle.TabIndex = 105;
             this.cartypeentrytitle.Text = "Car Type";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label1.Location = new System.Drawing.Point(23, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 15);
+            this.label1.TabIndex = 121;
+            this.label1.Text = "LevelLbl";
+            // 
+            // LevelBx
+            // 
+            this.LevelBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LevelBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LevelBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LevelBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.LevelBx.Location = new System.Drawing.Point(115, 164);
+            this.LevelBx.Name = "LevelBx";
+            this.LevelBx.Size = new System.Drawing.Size(181, 22);
+            this.LevelBx.TabIndex = 122;
+            // 
             // CarTypeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
+            this.Controls.Add(this.LevelBx);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.FindID);
             this.Controls.Add(this.RemoveRBtn);
             this.Controls.Add(this.EditRBtn);
@@ -286,5 +311,7 @@
         private Label drateL;
         private Label descriptionL;
         private Label cartypeentrytitle;
+        private Label label1;
+        private TextBox LevelBx;
     }
 }
