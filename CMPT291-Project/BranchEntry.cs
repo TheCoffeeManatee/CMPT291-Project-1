@@ -144,51 +144,53 @@ namespace CMPT291_Project
                 if (addL1entry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "StreetAddress1 like '" + addL1entry.Text + "'";
+                    newCommand += "(StreetAddress1 like '%" + addL1entry.Text + "' or StreetAddress1 like '" + addL1entry.Text + "%')";
                 }
                 if (addL2Entry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "StreetAddress2 like '" + addL2Entry.Text + "'";
+                    newCommand += "(StreetAddress2 like '%" + addL2Entry.Text + "' or StreetAddress2 like '" + addL2Entry.Text + "%')";
                 }
                 if (cityentry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "City like '" + cityentry.Text + "'";
+                    newCommand += "(City like '%" + cityentry.Text + "' or City like '" + cityentry.Text + "%')";
                 }
                 if (proventry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "Province like '" + proventry.Text + "'";
+                    newCommand += "(Province like '%" + proventry.Text + "' or Province like '" + proventry.Text + "%')";
                 }
                 if (postalentry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "PostalCode like '" + postalentry.Text + "'";
+                    newCommand += "(PostalCode like '%" + postalentry.Text + "' or PostalCode like '" + postalentry.Text + "%')";
                 }
                 if (phoneentry.Text != "")
                 {
                     if (first != 1)
-                        newCommand += ", ";
+                        newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "Phone like '" + phoneentry.Text + "'";
+                    newCommand += "(Phone like '%" + phoneentry.Text + "' or Phone like '" + phoneentry.Text + "%')";
                 }
+                if (first == 1)
+                    newCommand = "select * from Branch";
                 this.Close();
             }
         }

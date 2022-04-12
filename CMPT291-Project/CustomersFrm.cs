@@ -24,9 +24,6 @@ namespace CMPT291_Project
         //changes if the order of columns in customers changes
         public int mbrRow = 13;
 
-        //used to identify membership column to change ints to strings according to value
-        //changes if the order of columns in customers changes
-        public int mbrRow = 13;
 
         public CustomersFrm()
         {
@@ -57,7 +54,6 @@ namespace CMPT291_Project
                 fillTable();
             }
             myConnection.Close();
-
         }
 
         private void fillTable()
