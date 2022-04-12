@@ -69,20 +69,20 @@ namespace CMPT291_Project
             DataTable dt = new DataTable();
             myAdapter.Fill(dt);
 
+
             //change column names
             dt.Columns["CarTypeId"].ColumnName = "ID";
             dt.Columns["DailyRate"].ColumnName = "Daily Rate";
             dt.Columns["WeeklyRate"].ColumnName = "Weekly Rate";
             dt.Columns["MonthlyRate"].ColumnName = "Monthly Rate";
 
-
             CarTypeData.DataSource = dt;
-
 
             //formats cells
             CarTypeData.Columns["Daily Rate"].DefaultCellStyle.Format = "N2";
             CarTypeData.Columns["Weekly Rate"].DefaultCellStyle.Format = "N2";
             CarTypeData.Columns["Monthly Rate"].DefaultCellStyle.Format = "N2";
+
         }
 
         private void CarTypeAdd_Click_1(object sender, EventArgs e)

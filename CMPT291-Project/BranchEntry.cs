@@ -57,78 +57,7 @@ namespace CMPT291_Project
             phoneentry.Visible = false;
         }
 
-        string parsePhone(string phone)
-        {
-            string newPhone = "";
-
-            for (int i = 0; i < phone.Length; i++)
-                if (Char.IsDigit(phone[i]))
-                    newPhone += phone[i];
-
-            return newPhone;
-        }
-
-        private void branchcancel_Click_1(object sender, EventArgs e)
-        {
-            state = 0;
-            this.Close();
-        }
-
-        private void Branchaccept_Click(object sender, EventArgs e)
-        {
-            if (AddRBtn.Checked == true) //adds branch
-            {
-                string phoneNumber = parsePhone(phoneentry.Text);
-
-                try
-                {
-                    newCommand = "insert into Branch values ('" + descentry.Text +
-                        "','" + addL1entry.Text + "','" + addL2Entry.Text + "','" + cityentry.Text + "','"
-                        + proventry.Text + "','" + postalentry.Text + "'," + phoneNumber + ")";
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.Close();
-            }
-
-            else if (EditRBtn.Checked == true) //edits branch
-            {
-                string phoneNumber = parsePhone(phoneentry.Text);
-
-                try
-                {
-                    newCommand = "update Branch set Description = " + descentry.Text +
-                        ", StreetAddress1 = " + addL1entry.Text + ", StreetAddress2 = " + addL2Entry.Text +
-                        ", City = " + cityentry.Text + ", Province = " + proventry.Text + ", PostalCode = " + postalentry.Text +
-                        ", Phone = " + phoneNumber + " where BranchID = " + BranchIdBx.Text;
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.Close();
-            }
-
-            else if (RemoveRBtn.Checked == true) //deletes branch
-            {
-                try
-                {
-                    newCommand = "delete from Branch where BranchId = " + BranchIdBx.Text;
-                }
-                catch (Exception e2)
-                {
-                    MessageBox.Show(e2.ToString(), "Error");
-                }
-
-                this.Close();
-            }
-        }
-
-        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
+        private void resetAddSearch()
         {
             FindID.Visible = false;
             BranchIdBx.Visible = false;
@@ -151,6 +80,124 @@ namespace CMPT291_Project
             phoneentry.Text = String.Empty;
         }
 
+        string parsePhone(string phone)
+        {
+            string newPhone = "";
+
+            for (int i = 0; i < phone.Length; i++)
+                if (Char.IsDigit(phone[i]))
+                    newPhone += phone[i];
+
+            return newPhone;
+        }
+
+        private void branchcancel_Click_1(object sender, EventArgs e)
+        {
+            state = 0;
+            this.Close();
+        }
+
+        private void Branchaccept_Click(object sender, EventArgs e)
+        {
+            if (AddRBtn.Checked == true) //adds branch
+            {
+                state = 1;
+                string phoneNumber = parsePhone(phoneentry.Text);
+
+                newCommand = "insert into Branch values ('" + descentry.Text +
+                    "','" + addL1entry.Text + "','" + addL2Entry.Text + "','" + cityentry.Text + "','"
+                    + proventry.Text + "','" + postalentry.Text + "'," + phoneNumber + ")";
+
+                this.Close();
+            }
+
+            else if (EditRBtn.Checked == true) //edits branch
+            {
+                state = 1;
+                string phoneNumber = parsePhone(phoneentry.Text);
+
+                newCommand = "update Branch set Description = " + descentry.Text +
+                    ", StreetAddress1 = " + addL1entry.Text + ", StreetAddress2 = " + addL2Entry.Text +
+                    ", City = " + cityentry.Text + ", Province = " + proventry.Text + ", PostalCode = " + postalentry.Text +
+                    ", Phone = " + phoneNumber + " where BranchID = " + BranchIdBx.Text;
+
+                this.Close();
+            }
+
+            else if (RemoveRBtn.Checked == true) //deletes branch
+            {
+                state = 1;
+                newCommand = "delete from Branch where BranchId = " + BranchIdBx.Text;
+                this.Close();
+            }
+
+            else if (SearchRBtn.Checked == true)
+            {
+                int first = 1;
+                state = 2;
+                newCommand = "select * from Branch where ";
+                if (BranchIdBx.Text != "")
+                {
+                    first = 0;
+                    newCommand += "BranchId = " + BranchIdBx.Text;
+                }
+                if (addL1entry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "StreetAddress1 like '" + addL1entry.Text + "'";
+                }
+                if (addL2Entry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "StreetAddress2 like '" + addL2Entry.Text + "'";
+                }
+                if (cityentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "City like '" + cityentry.Text + "'";
+                }
+                if (proventry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "Province like '" + proventry.Text + "'";
+                }
+                if (postalentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "PostalCode like '" + postalentry.Text + "'";
+                }
+                if (phoneentry.Text != "")
+                {
+                    if (first != 1)
+                        newCommand += ", ";
+                    else
+                        first = 0;
+                    newCommand += "Phone like '" + phoneentry.Text + "'";
+                }
+                this.Close();
+            }
+        }
+
+        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            resetAddSearch();
+        }
+
         private void EditRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetRemoveEdit();
@@ -159,6 +206,10 @@ namespace CMPT291_Project
         private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
         {
             resetRemoveEdit();
+        }
+        private void SearchRBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            resetAddSearch();
         }
 
         private void FindID_Click(object sender, EventArgs e)
@@ -232,5 +283,7 @@ namespace CMPT291_Project
                 }
             }
         }
+
+
     }
 }

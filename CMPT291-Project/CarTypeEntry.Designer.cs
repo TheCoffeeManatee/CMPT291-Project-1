@@ -47,6 +47,7 @@
             this.cartypeentrytitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LevelBx = new System.Windows.Forms.TextBox();
+            this.SearchRBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // FindID
@@ -262,12 +263,26 @@
             this.LevelBx.Size = new System.Drawing.Size(181, 22);
             this.LevelBx.TabIndex = 122;
             // 
+            // SearchRBtn
+            // 
+            this.SearchRBtn.AutoSize = true;
+            this.SearchRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.SearchRBtn.Location = new System.Drawing.Point(365, 137);
+            this.SearchRBtn.Name = "SearchRBtn";
+            this.SearchRBtn.Size = new System.Drawing.Size(60, 19);
+            this.SearchRBtn.TabIndex = 123;
+            this.SearchRBtn.TabStop = true;
+            this.SearchRBtn.Text = "Search";
+            this.SearchRBtn.UseVisualStyleBackColor = true;
+            this.SearchRBtn.CheckedChanged += new System.EventHandler(this.SearchRBtn_CheckedChanged);
+            // 
             // CarTypeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
+            this.Controls.Add(this.SearchRBtn);
             this.Controls.Add(this.LevelBx);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FindID);
@@ -314,5 +329,6 @@
         private Label cartypeentrytitle;
         private Label label1;
         private TextBox LevelBx;
+        private RadioButton SearchRBtn;
     }
 }

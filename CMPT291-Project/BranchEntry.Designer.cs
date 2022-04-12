@@ -50,6 +50,7 @@
             this.addL1L = new System.Windows.Forms.Label();
             this.descL = new System.Windows.Forms.Label();
             this.CarEntryTitle = new System.Windows.Forms.Label();
+            this.SearchRBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // RemoveRBtn
@@ -307,12 +308,26 @@
             this.CarEntryTitle.TabIndex = 132;
             this.CarEntryTitle.Text = "Branch";
             // 
+            // SearchRBtn
+            // 
+            this.SearchRBtn.AutoSize = true;
+            this.SearchRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.SearchRBtn.Location = new System.Drawing.Point(334, 128);
+            this.SearchRBtn.Name = "SearchRBtn";
+            this.SearchRBtn.Size = new System.Drawing.Size(60, 19);
+            this.SearchRBtn.TabIndex = 154;
+            this.SearchRBtn.TabStop = true;
+            this.SearchRBtn.Text = "Search";
+            this.SearchRBtn.UseVisualStyleBackColor = true;
+            this.SearchRBtn.CheckedChanged += new System.EventHandler(this.SearchRBtn_CheckedChanged);
+            // 
             // BranchEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 492);
+            this.Controls.Add(this.SearchRBtn);
             this.Controls.Add(this.RemoveRBtn);
             this.Controls.Add(this.EditRBtn);
             this.Controls.Add(this.AddRBtn);
@@ -367,5 +382,6 @@
         private Label addL1L;
         private Label descL;
         private Label CarEntryTitle;
+        private RadioButton SearchRBtn;
     }
 }
