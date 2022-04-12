@@ -261,12 +261,17 @@ namespace CMPT291_Project
                     {
 
                         try
-                        {
+                        {   //update rental
                             myCommand.CommandText = "update Rentals set PickupBranch = " + pickbranchId + ", PickupDate = '"
                                 + PickDate.Value.ToShortDateString() + "', ReturnBranch = " + rtnBranchId + ", ReturnDate = '"
                                 + RtnDate.Value.Date.ToShortDateString() + "', CarTypeID = " + carTypeId + ", CustomerId = " 
                                 + CustIdBx.Text + ", VIN = " + vin + ", Price = " + price + ", Late = " + late + "where RentalId = " + TransIdBx.Text;
                             myCommand.ExecuteNonQuery();
+
+                            //update branch of car
+                            myCommand.CommandText = "update Car set BranchId = " + rtnBranchId + " where VIN = '" + vin + "'";
+                            myCommand.ExecuteNonQuery();
+
                         }
                         catch (Exception e2)
                         {
@@ -375,7 +380,7 @@ namespace CMPT291_Project
             try
             {
                 if (branchType == 0)
-                    myCommand.CommandText = "select Description from Branch where BranchId = " + PickupBranchID;
+                    myCommand.CommandText = "select Description from Branch where BranchId = " + pickbranchId;
 
                 else if (branchType == 1)
                     myCommand.CommandText = "select Description from Branch where BranchId = " + rtnBranchId;
@@ -449,6 +454,7 @@ namespace CMPT291_Project
                         level.Text = lvl.ToString();
                     }
                 }
+                myReader.Close();
             }
 
             catch (Exception e2)
@@ -461,6 +467,7 @@ namespace CMPT291_Project
             {
                 calcPriceBtn.Text = "Re-Calculate";
             }
+            myReader.Close();
         }
 
         //fill cartype dropdown
@@ -569,7 +576,7 @@ namespace CMPT291_Project
 
         bool checkDates()
         {
-            if (RtnDate.Value.Date < PickDate.Value.Date || PickDate.Value.Date < DateTime.Today.Date)
+            if (RtnDate.Value.Date < PickDate.Value.Date)
             {
                 MessageBox.Show("Invalid Pickup Date", "Error");
                 return false;
@@ -611,12 +618,6 @@ namespace CMPT291_Project
             }
         }
 
-        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            LateCheck.Visible = false;
-            FindTransBtn.Visible = false;
-            TransIdBx.Visible = false;
-        }
         private void AddRBtn_CheckedChanged(object sender, EventArgs e)
         {
             LateCheck.Visible = false;
@@ -676,22 +677,27 @@ namespace CMPT291_Project
                             DateTime pB = (DateTime)myReader["PickupDate"];
                             rtnBranchId = (int)myReader["ReturnBranch"];
                             DateTime rB = (DateTime)myReader["ReturnDate"];
-                            string vin = (string)myReader["VIN"];
+                            vin = (string)myReader["VIN"];
                             carTypeId = (int)myReader["CarTypeId"];
                             int custID = (int)myReader["CustomerID"];
-                            decimal pr = (decimal)myReader["Price"];
-                            int lt = (int)myReader["Late"];
+                            price = (decimal)myReader["Price"];
+                            int lt = 0;
+
+                            if (!myReader.IsDBNull("Late"))
+                                lt = (int)myReader["Late"];
 
                             PickDate.Value = pB;
                             RtnDate.Value = rB;
                             CustIdBx.Text = custID.ToString();
-                            priceBx.Text = pr.ToString();  
+                            priceBx.Text = price.ToString("N2");
 
+                            priceBx.Visible = true;
                         }
 
                         myReader.Close();
 
-                        FindID_Click(sender, e);
+                        FindID.PerformClick();
+
                         //change comboboxes to the correct descriptions
                         getBranchDes(0);
                         PickupBranchID.SelectedIndex = PickupBranchID.FindString(pBranchDes);
@@ -703,14 +709,31 @@ namespace CMPT291_Project
                         CarTypePicker.SelectedIndex = CarTypePicker.FindString(carTypeDes);
 
 
+                        try
+                        {
 
-                    }
+                            myCommand.CommandText = "select Make, Model, Year from Car where VIN = '" + vin + "'";
+                            myReader = myCommand.ExecuteReader();
 
-                    else
-                    {
-                        CustIdBx.Text = string.Empty;
+                            while (myReader.Read())
+                            {
+                                if (myReader.HasRows)
+                                {
+                                    string mk = (string)myReader["Make"];
+                                    string md = (string)myReader["Model"];
+                                    int yr = (int)myReader["Year"];
 
-                        MessageBox.Show("Invalid Customer ID", "Error");
+                                    selCarInfo.Text = yr.ToString() + " " + mk + " " + md + " VIN: " + vin;
+                                }
+                            }
+                            myReader.Close();
+                        }
+
+                        catch (Exception e2)
+                        {
+                            MessageBox.Show(e2.ToString(), "Error");
+                        }
+
                     }
 
                 }
@@ -768,6 +791,7 @@ namespace CMPT291_Project
                         if (myReader.HasRows)
                             daily = (decimal)myReader["DailyRate"];
                     }
+                    myReader.Close();
                 }
 
                 catch (Exception e2)
@@ -776,6 +800,7 @@ namespace CMPT291_Project
                 }
 
                 price += (daily * overDueDays);
+                myReader.Close();
 
                 return;
 
