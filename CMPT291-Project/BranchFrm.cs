@@ -18,50 +18,68 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
 
         public BranchFrm()
         {
             InitializeComponent();
+            myCommand = new SqlCommand("select * from Branch");
+            state = 2;
+            execute(); //fills datatable upon loading screen
+            state = 0;
+        }
 
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
+        private void execute()
+        {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand.Connection = myConnection;
+            if (state == 1)
             {
-                myConnection.Open(); // Open connection
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection; // Link the command stream to the connection
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
             }
-            catch (Exception e)
+            else if (state == 2)
             {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
+                fillTable();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            myConnection.Close();
 
         }
 
-        private void HomeFormPanel1_Paint(object sender, PaintEventArgs e)
+        private void fillTable()
         {
+            myCommand.CommandType = CommandType.Text;
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
 
+            //change heading names
+            dt.Columns["BranchId"].ColumnName = "Branch ID";
+            dt.Columns["StreetAddress1"].ColumnName = "Address Line 1";
+            dt.Columns["StreetAddress2"].ColumnName = "Address Line 2";
+            dt.Columns["PostalCode"].ColumnName = "Postal Code";
+
+            BranchTable.DataSource = dt;
         }
 
-        private void CustomersLbl_Click(object sender, EventArgs e)
+        private void BranchManage_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void BranchAdd_Click(object sender, EventArgs e)
-        {
-            this.BranchPanel.Controls.Clear();
-            BranchEntry BranchEntry_Vrb = new BranchEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            BranchEntry BranchEntry_Vrb = new BranchEntry() { TopLevel = true, TopMost = true };
             BranchEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.BranchPanel.Controls.Add(BranchEntry_Vrb);
-            BranchEntry_Vrb.Show();
+            BranchEntry_Vrb.ShowDialog();
+            myCommand.CommandText = BranchEntry_Vrb.newCommand;
+            state = BranchEntry_Vrb.state;
+            execute();
         }
     }
 }

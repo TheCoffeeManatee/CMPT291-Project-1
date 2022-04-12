@@ -17,41 +17,97 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+        //used to identify membership column to change ints to strings according to value
+        //changes if the order of columns in customers changes
+        public int mbrRow = 13;
+
+        //used to identify membership column to change ints to strings according to value
+        //changes if the order of columns in customers changes
+        public int mbrRow = 13;
 
         public CustomersFrm()
         {
             InitializeComponent();
-
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
+            myCommand = new SqlCommand("select * from Customer");
+            state = 2;
+            execute();
+            state = 0;
+        }
+        private void execute()
+        {
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand.Connection = myConnection;
+            if (state == 1)
             {
-                myConnection.Open(); // Open connection
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection; // Link the command stream to the connection
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
             }
-            catch (Exception e)
+            else if (state == 2)
             {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
+                fillTable();
             }
+            myConnection.Close();
+
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void fillTable()
         {
+            myCommand.CommandType = CommandType.Text;
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
+
+            dt.Columns["CustomerId"].ColumnName = "ID";
+            dt.Columns["FirstName"].ColumnName = "First Name";
+            dt.Columns["MiddleName"].ColumnName = "Middle Name";
+            dt.Columns["LastName"].ColumnName = "Last Name";
+            dt.Columns["StreetAddress1"].ColumnName = "Address Line 1";
+            dt.Columns["StreetAddress2"].ColumnName = "Address Line 2";
+            dt.Columns["PostalCode"].ColumnName = "Postal Code";
+            dt.Columns["DrivingLicense"].ColumnName = "License Number";
+
+
+            //change membership name depending on value from database involves cloning data
+            DataTable dtCloned = dt.Clone();
+
+            dtCloned.Columns[mbrRow].DataType = typeof(string);
+
+            for (int i=0; i<dt.Rows.Count; i ++)
+
+            {
+                dtCloned.ImportRow(dt.Rows[i]);
+            }
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dtCloned.Rows[i][mbrRow].ToString() == "0")
+                    dtCloned.Rows[i][mbrRow] = "Standard";
+                else if (dtCloned.Rows[i][mbrRow].ToString() == "1")
+                    dtCloned.Rows[i][mbrRow] = "Gold";
+            }
+
+            CustData.DataSource = dtCloned;
 
         }
 
-
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.CustomerPanel.Controls.Clear();
-            CustEntry CustEntry_Vrb = new CustEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            CustEntry CustEntry_Vrb = new CustEntry() { TopLevel = true, TopMost = true };
             CustEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CustomerPanel.Controls.Add(CustEntry_Vrb);
-            CustEntry_Vrb.Show();
+            CustEntry_Vrb.ShowDialog();
+            myCommand.CommandText = CustEntry_Vrb.newCommand;
+            state = CustEntry_Vrb.state;
+            execute();
         }
     }
 }

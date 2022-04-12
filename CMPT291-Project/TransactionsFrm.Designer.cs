@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.TransactionsFrmLbl = new System.Windows.Forms.Label();
-            this.TransPnl = new System.Windows.Forms.Panel();
             this.AddTransBtn = new System.Windows.Forms.Button();
             this.SearchBtn = new System.Windows.Forms.Button();
+            this.TransPnl = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // TransactionsFrmLbl
@@ -47,15 +47,6 @@
             this.TransactionsFrmLbl.TabIndex = 5;
             this.TransactionsFrmLbl.Text = "Transactions";
             // 
-            // TransPnl
-            // 
-            this.TransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.TransPnl.Location = new System.Drawing.Point(35, 342);
-            this.TransPnl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.TransPnl.Name = "TransPnl";
-            this.TransPnl.Size = new System.Drawing.Size(1155, 670);
-            this.TransPnl.TabIndex = 6;
-            // 
             // AddTransBtn
             // 
             this.AddTransBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -68,7 +59,7 @@
             this.AddTransBtn.Name = "AddTransBtn";
             this.AddTransBtn.Size = new System.Drawing.Size(169, 64);
             this.AddTransBtn.TabIndex = 28;
-            this.AddTransBtn.Text = "Add";
+            this.AddTransBtn.Text = "Manage";
             this.AddTransBtn.UseVisualStyleBackColor = false;
             this.AddTransBtn.Click += new System.EventHandler(this.AddTransBtn_Click);
             // 
@@ -88,6 +79,15 @@
             this.SearchBtn.UseVisualStyleBackColor = false;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click_1);
             // 
+            // TransPnl
+            // 
+            this.TransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.TransPnl.Location = new System.Drawing.Point(0, 0);
+            this.TransPnl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.TransPnl.Name = "TransPnl";
+            this.TransPnl.Size = new System.Drawing.Size(1233, 1050);
+            this.TransPnl.TabIndex = 6;
+            // 
             // TransactionsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -96,8 +96,8 @@
             this.ClientSize = new System.Drawing.Size(1233, 1050);
             this.Controls.Add(this.AddTransBtn);
             this.Controls.Add(this.SearchBtn);
-            this.Controls.Add(this.TransPnl);
             this.Controls.Add(this.TransactionsFrmLbl);
+            this.Controls.Add(this.TransPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "TransactionsFrm";
@@ -110,8 +110,8 @@
 
         #endregion
         private Label TransactionsFrmLbl;
-        private Panel TransPnl;
         private Button AddTransBtn;
         private Button SearchBtn;
+        private Panel TransPnl;
     }
 }

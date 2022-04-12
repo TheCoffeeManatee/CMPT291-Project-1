@@ -51,6 +51,9 @@ namespace CMPT291_Project
             TransNew_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.TransPnl.Controls.Add(TransNew_Vrb);
             TransNew_Vrb.Show();
+            TransactionsFrmLbl.Visible = false;
+            AddTransBtn.Visible = false;
+            SearchBtn.Visible = false;
         }
 
         private void SearchBtn_Click_1(object sender, EventArgs e)

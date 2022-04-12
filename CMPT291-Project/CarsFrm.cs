@@ -17,35 +17,68 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
+
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
         public CarsFrm()
         {
             InitializeComponent();
-
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
-            {
-                myConnection.Open(); // Open connection
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection; // Link the command stream to the connection
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
-            }
+            myCommand = new SqlCommand("select * from Car");
+            state = 2;
+            execute();
+            state = 0;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void execute()
         {
-            this.CarsPanel.Controls.Clear();
-            CarEntry CarEntry_Vrb = new CarEntry() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
+            myCommand.Connection = myConnection;
+            if(state == 1)
+            {
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                }   
+                catch(Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else if(state == 2)
+            {
+                fillTable();
+            }
+            myConnection.Close();
+
+        }
+
+        private void fillTable()
+        {
+            myCommand.CommandType = CommandType.Text;
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
+
+            //change column names
+            dt.Columns["CarTypeId"].ColumnName = "Type ID";
+            dt.Columns["BranchId"].ColumnName = "Branch ID";
+
+            carData.DataSource = dt;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            
+            CarEntry CarEntry_Vrb = new CarEntry() { TopLevel = true, TopMost = true };
             CarEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CarsPanel.Controls.Add(CarEntry_Vrb);
-            CarEntry_Vrb.Show();
+            CarEntry_Vrb.ShowDialog();
+            myCommand.CommandText = CarEntry_Vrb.newCommand;
+            state = CarEntry_Vrb.state;
+            execute();
+            
         }
     }
 }
