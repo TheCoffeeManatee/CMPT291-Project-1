@@ -336,11 +336,16 @@ namespace CMPT291_Project
                 }
                 if (DOBEntry.Value.Date < DateTime.Today)
                 {
+                    string phM = "", phD = "";
                     if (first != 1)
                         newCommand += " and ";
                     else
                         first = 0;
-                    newCommand += "DOB like '" + DOBEntry.Value.Year + "-" + DOBEntry.Value.Month + "-" + DOBEntry.Value.Day + "'";
+                    if (DOBEntry.Value.Month < 10)
+                        phM += "0";
+                    if (DOBEntry.Value.Day < 10)
+                        phD += "0";
+                    newCommand += "DOB like '" + DOBEntry.Value.Year + "-"+ phM + DOBEntry.Value.Month + "-" + phD + DOBEntry.Value.Day + "'";
                 }
                 if (phoneentry.Text != "")
                 {
