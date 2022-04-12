@@ -17,6 +17,8 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public int state = 0;
+        public string newCommand;
 
         public CarTypeEntry()
         {
@@ -41,16 +43,25 @@ namespace CMPT291_Project
 
         }
 
-        private void ctentrycancel_Click(object sender, EventArgs e)
+        private void resetEditRemove()
         {
-            this.CTEntryPanel.Controls.Clear();
-            CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-            CarTypeFrm_Vrb.Show();
+            FindID.Visible = true;
+            CarTypeIdBx.Visible = true;
+            CarTypeIdBx.Text = String.Empty;
+
+            descentry.Visible = false;
+            drateentry.Visible = false;
+            wrateentry.Visible = false;
+            mrateentry.Visible = false;
         }
 
-        private void ctentryacc_Click(object sender, EventArgs e)
+        private void ctentrycancel_Click_1(object sender, EventArgs e)
+        {
+            state = 0;
+            this.Close();
+        }
+
+        private void ctentryacc_Click_1(object sender, EventArgs e)
         {
             if (AddRBtn.Checked == true) //adds car type to the database
             {
@@ -65,11 +76,7 @@ namespace CMPT291_Project
                     MessageBox.Show(e2.ToString(), "Error");
                 }
 
-                this.CTEntryPanel.Controls.Clear();
-                CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-                CarTypeFrm_Vrb.Show();
+                this.Close();
             }
 
             else if (EditRBtn.Checked == true) //edits car type entry
@@ -77,7 +84,7 @@ namespace CMPT291_Project
                 try
                 {
                     myCommand.CommandText = "update CarType Set Description = '" + descentry.Text +
-                        "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text + 
+                        "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
                         ", MonthlyRate = " + mrateentry.Text + " where CarTypeID = " + CarTypeIdBx.Text;
                     myCommand.ExecuteNonQuery();
                 }
@@ -86,11 +93,7 @@ namespace CMPT291_Project
                     MessageBox.Show(e2.ToString(), "Error");
                 }
 
-                this.CTEntryPanel.Controls.Clear();
-                CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-                CarTypeFrm_Vrb.Show();
+                this.Close();
             }
 
             else if (RemoveRBtn.Checked == true) //deletes car type entry
@@ -105,17 +108,11 @@ namespace CMPT291_Project
                     MessageBox.Show(e2.ToString(), "Error");
                 }
 
-                this.CTEntryPanel.Controls.Clear();
-                CarTypeFrm CarTypeFrm_Vrb = new CarTypeFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                CarTypeFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
-                this.CTEntryPanel.Controls.Add(CarTypeFrm_Vrb);
-                CarTypeFrm_Vrb.Show();
+                this.Close();
             }
-
         }
 
-        //resets form for adding
-        private void AddRBtn_CheckedChanged(object sender, EventArgs e)
+        private void AddRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             FindID.Visible = false;
             CarTypeIdBx.Visible = false;
@@ -132,32 +129,17 @@ namespace CMPT291_Project
             mrateentry.Text = String.Empty;
         }
 
-        //resets form for editing
-        private void EditRBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            resetEditRemove();
-
-        }
-
-        //resets form for removing
-        private void RemoveRBtn_CheckedChanged(object sender, EventArgs e)
+        private void EditRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetEditRemove();
         }
 
-        private void resetEditRemove()
+        private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
-            FindID.Visible = true;
-            CarTypeIdBx.Visible = true;
-            CarTypeIdBx.Text = String.Empty;
-
-            descentry.Visible = false;
-            drateentry.Visible = false;
-            wrateentry.Visible = false;
-            mrateentry.Visible = false;
+            resetEditRemove();
         }
 
-        private void FindID_Click(object sender, EventArgs e) //find the ID entered and display the information
+        private void FindID_Click_1(object sender, EventArgs e)
         {
             //converts string to integer 
             int displayID;
@@ -192,7 +174,7 @@ namespace CMPT291_Project
                             mrateentry.Text = mr.ToString();
                         }
 
-                        
+
                     }
 
                     else
