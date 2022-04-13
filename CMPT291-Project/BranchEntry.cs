@@ -19,8 +19,6 @@ namespace CMPT291_Project
         public SqlDataReader myReader;
         public int state = 0;
         public string newCommand;
-        private bool mouseDown;
-        private Point lastLocation;
 
         public BranchEntry()
         {
@@ -288,51 +286,6 @@ namespace CMPT291_Project
             }
         }
 
-        private void MenuBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDown = true;
-            lastLocation = e.Location;
-        }
 
-        private void MenuBar_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown)
-            {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
-
-                this.Update();
-            }
-        }
-
-        private void MenuBar_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-        }
-
-        private void MinBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void MaxBtn_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-                MaxBtn.BackgroundImage = new Bitmap(CMPT291_Project.Properties.Resources.MIN);
-            }
-            else if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                MaxBtn.BackgroundImage = new Bitmap(CMPT291_Project.Properties.Resources.MAX);
-            }
-        }
-
-        private void ExtBtn_Click(object sender, EventArgs e)
-        {
-            state = 0;
-            this.Close();
-        }
     }
 }
