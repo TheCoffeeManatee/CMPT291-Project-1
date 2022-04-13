@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace CMPT291_Project
 {
@@ -86,26 +87,27 @@ namespace CMPT291_Project
             
             if (AddRBtn.Checked == true) //adds car type to the database
             {
-                if (!checkLevel())
+                if (!checkLevel() && int.TryParse(drateentry.Text, out int checkNum) && int.TryParse(wrateentry.Text, out checkNum) && int.TryParse(mrateentry.Text, out checkNum))
                 {
-                    MessageBox.Show("Level must be a number.", "Error");
+                    MessageBox.Show("Ensure that all Rates and Level are numeric.", "Error");
                     return;
                 }
                 state = 1;
-                newCommand = "insert into CarType values ('" + descentry.Text +
+                newCommand = "insert into CarType values ('" + toCase(descentry.Text) +
                     "'," + drateentry.Text + "," + wrateentry.Text + "," + mrateentry.Text + ", " + LevelBx.Text + ")";
                 this.Close();
             }
 
             else if (EditRBtn.Checked == true) //edits car type entry
             {
-                if (!checkLevel())
+                if (!checkLevel() && int.TryParse(drateentry.Text, out int checkNum) && int.TryParse(wrateentry.Text, out checkNum) && int.TryParse(mrateentry.Text, out checkNum))
                 {
-                    MessageBox.Show("Level must be a number.", "Error");
+                    MessageBox.Show("Ensure that all Rates and Level are numeric.", "Error");
                     return;
                 }
+
                 state = 1;
-                newCommand = "update CarType Set Description = '" + descentry.Text +
+                newCommand = "update CarType Set Description = '" + toCase(descentry.Text) +
                     "', DailyRate = " + drateentry.Text + ", WeeklyRate = " + wrateentry.Text +
                     ", MonthlyRate = " + mrateentry.Text + ", Level = " + LevelBx.Text + " where CarTypeID = " + CarTypeIdBx.Text;
                 this.Close();
@@ -245,6 +247,12 @@ namespace CMPT291_Project
             bool success = int.TryParse(LevelBx.Text, out level);
 
             return success;
+        }
+
+        string toCase(string theString)
+        {
+            theString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(theString.ToLower());
+            return theString;
         }
 
     }

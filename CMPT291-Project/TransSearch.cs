@@ -17,6 +17,8 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public string newCommand;
+        public int state = 0;
 
         public TransSearch()
         {
@@ -37,11 +39,119 @@ namespace CMPT291_Project
                 MessageBox.Show(e.ToString(), "Error");
                 this.Close();
             }
+            //fill branch combo boxes
+            myCommand.CommandText = "select BranchId from Branch";
+            myReader = myCommand.ExecuteReader();
+            if (myReader.HasRows)
+            {
+                while(myReader.Read())
+                {
+                    PBranchPicker.Items.Add(myReader[0]);
+                    RBranchPicker.Items.Add(myReader[0]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error Loading Branches", "Error");
+            }
+            myReader.Close();
+            //fill cartype combo box
+            myCommand.CommandText = "select CarTypeId from CarType";
+            myReader = myCommand.ExecuteReader();
+            if(myReader.HasRows)
+            {
+                while(myReader.Read())
+                {
+                    CarTypePicker.Items.Add(myReader[0]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error Loading Car Types", "Error");
+            }
+            myReader.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TSearchCancel_Click(object sender, EventArgs e)
         {
-
+            state = 0;
+            this.Close();
         }
+
+        private void TSearchAccept_Click(object sender, EventArgs e)
+        {
+            state = 1;
+            int first = 1;
+            newCommand = "select * from Rentals where ";
+            if (ridentry.Text != "")
+            {
+                first = 0;
+                newCommand += "RentalId = " + ridentry.Text;
+            }
+            if (PBranchPicker.Text != "")
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "PickupBranch = " + PBranchPicker.Text;
+            }
+            //PICKUP DATE
+
+            if (RBranchPicker.Text != "")
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "ReturnBranch = " + RBranchPicker.Text;
+            }
+            //RETURN DATE
+
+            if (CarTypePicker.Text != "")
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "CarTypeId = " + CarTypePicker.Text;
+            }
+            if (cidentry.Text != "")
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "CustomerId = " + cidentry.Text;
+            }
+            if (vinentry.Text != "")
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "(VIN like '%" + vinentry.Text + "' or VIN like '" + vinentry.Text + "%')";
+            }
+            if (priceentry.Text != "")
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "((Price - " + priceentry.Text + ") < 50 and (Price - " + priceentry.Text + ") > -50)";
+            }
+            if (latecheck.Checked)
+            {
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                newCommand += "Late = 1";
+            }
+            if (first == 1)
+                newCommand = "select * from Rentals";
+            this.Close();
+        }
+
     }
 }
