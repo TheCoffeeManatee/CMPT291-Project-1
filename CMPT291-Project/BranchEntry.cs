@@ -103,6 +103,10 @@ namespace CMPT291_Project
         {
             if (AddRBtn.Checked == true) //adds branch
             {
+                if (addL1entry.Text == "" || addL2Entry.Text == "" || cityentry.Text == "" || proventry.Text == "" || postalentry.Text == "" || phoneentry.Text == "")
+                {
+                    return;
+                }
                 state = 1;
                 string phoneNumber = parsePhone(phoneentry.Text);
 
@@ -115,6 +119,10 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true) //edits branch
             {
+                if (addL1entry.Text == "" || addL2Entry.Text == "" || cityentry.Text == "" || proventry.Text == "" || postalentry.Text == "" || phoneentry.Text == "")
+                {
+                    return;
+                }
                 state = 1;
                 string phoneNumber = parsePhone(phoneentry.Text);
 

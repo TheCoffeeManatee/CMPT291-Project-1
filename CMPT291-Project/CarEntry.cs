@@ -135,6 +135,11 @@ namespace CMPT291_Project
         {
             if (AddRBtn.Checked == true)
             {
+                if (vinentry.Text == "" || CarTypePicker.Text == "" || makeentry.Text == "" || modelentry.Text == "" || yearentry.Text == ""
+                    || seatsentry.Text == "" || colourentry.Text == "" || insentry.Text == "" || mileentry.Text == "" || BranchPicker.Text == "")
+                {
+                    return;
+                }    
                 
                 state = 1;
                 if (vinentry.Text.Length == 0)
@@ -165,6 +170,11 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true)
             {
+                if (vinentry.Text == "" || CarTypePicker.Text == "" || makeentry.Text == "" || modelentry.Text == "" || yearentry.Text == ""
+                    || seatsentry.Text == "" || colourentry.Text == "" || insentry.Text == "" || mileentry.Text == "" || BranchPicker.Text == "")
+                {
+                    return;
+                }
                 state = 1;
 
                 if (vinentry.Text.Length == 0)
