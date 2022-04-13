@@ -17,6 +17,7 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        // state corresponds to the transaction search public variable state that determines whether a search should be executed on search form closure
         public int state = 0;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
@@ -25,6 +26,7 @@ namespace CMPT291_Project
         {
             InitializeComponent();
             myCommand = new SqlCommand("select * from Rentals");
+            // the state is set to populate the view with all transactions, populated, then reset to allow no actions on form creation
             state = 1;
             execute();
             state = 0;
@@ -35,6 +37,7 @@ namespace CMPT291_Project
 
         }
 
+        // unlike the search, use of the transaction management screen will replace the data view with a management form
         private void AddTransBtn_Click(object sender, EventArgs e)
         {
             this.TransPnl.Controls.Clear();
@@ -47,6 +50,8 @@ namespace CMPT291_Project
             SearchBtn.Visible = false;
         }
 
+        // this function opens a dialog box for search management, retrieves the generated sql query from the form on closure, and the state, and executes the search
+        // dependent on that state
         private void SearchBtn_Click_1(object sender, EventArgs e)
         {
             TransSearch TransSearch_Vrb = new TransSearch() {TopLevel = true, TopMost = true };
@@ -57,6 +62,7 @@ namespace CMPT291_Project
             execute();
         }
 
+        // execute simply checks if the state allows searching, and populates the table based on the search form generated query if it does
         private void execute()
         {
             if (state == 1)
@@ -68,6 +74,8 @@ namespace CMPT291_Project
                 myConnection.Close();
             }
         }
+        
+        // this function performs the actual data retrieval for the data view
         private void fillTable()
         {
             myCommand.CommandType = CommandType.Text;
