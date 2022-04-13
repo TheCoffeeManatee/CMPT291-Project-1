@@ -268,7 +268,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 32);
             this.label1.TabIndex = 121;
-            this.label1.Text = "LevelLbl";
+            this.label1.Text = "Level";
             // 
             // LevelBx
             // 
