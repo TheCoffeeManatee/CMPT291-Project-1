@@ -96,7 +96,33 @@ namespace CMPT291_Project
                     first = 0;
                 newCommand += "PickupBranch = " + PBranchPicker.Text;
             }
-            //PICKUP DATE
+            if (PDateCheck.Checked)
+            {
+                string phM = "", phD = "";
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                if (PDateEntry.Value.Month < 10)
+                    phM += "0";
+                if (PDateEntry.Value.Day < 10)
+                    phD += "0";
+                newCommand += "PickupDate like '" + PDateEntry.Value.Year + "-" + phM + PDateEntry.Value.Month + "-" + phD + PDateEntry.Value.Day + "'";
+            }
+
+            if (RDateCheck.Checked)
+            {
+                string phM = "", phD = "";
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                if (RDateEntry.Value.Month < 10)
+                    phM += "0";
+                if (RDateEntry.Value.Day < 10)
+                    phD += "0";
+                newCommand += "PickupDate like '" + RDateEntry.Value.Year + "-" + phM + RDateEntry.Value.Month + "-" + phD + RDateEntry.Value.Day + "'";
+            }
 
             if (RBranchPicker.Text != "")
             {
@@ -106,7 +132,6 @@ namespace CMPT291_Project
                     first = 0;
                 newCommand += "ReturnBranch = " + RBranchPicker.Text;
             }
-            //RETURN DATE
 
             if (CarTypePicker.Text != "")
             {

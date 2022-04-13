@@ -195,10 +195,10 @@ namespace CMPT291_Project
         private void carentrycancel_Click(object sender, EventArgs e)
         {
             this.NewTransPnl.Controls.Clear();
-            TransNew NewTrans_Vrb = new TransNew() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            NewTrans_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.NewTransPnl.Controls.Add(NewTrans_Vrb);
-            NewTrans_Vrb.Show();
+            TransactionsFrm TransactionsFrm_Vrb = new TransactionsFrm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            TransactionsFrm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.NewTransPnl.Controls.Add(TransactionsFrm_Vrb);
+            TransactionsFrm_Vrb.Show();
         }
 
         private void carentrryaccept_Click(object sender, EventArgs e)
@@ -220,7 +220,7 @@ namespace CMPT291_Project
                         try
                         {
                             myCommand.CommandText = "insert into Rentals values (" + pickbranchId + ",'" + PickDate.Value.ToShortDateString() + "',"
-                                + rtnBranchId + ",'" + RtnDate.Value.Date.ToShortDateString() + "'," + carTypeId + "," + CustIdBx.Text + "," + vin + "," +
+                                + rtnBranchId + ",'" + RtnDate.Value.Date.ToShortDateString() + "'," + carTypeId + "," + CustIdBx.Text + ",'" + vin + "'," +
                                 price + ", 0)";
                             myCommand.ExecuteNonQuery();
                         }
@@ -265,7 +265,7 @@ namespace CMPT291_Project
                             myCommand.CommandText = "update Rentals set PickupBranch = " + pickbranchId + ", PickupDate = '"
                                 + PickDate.Value.ToShortDateString() + "', ReturnBranch = " + rtnBranchId + ", ReturnDate = '"
                                 + RtnDate.Value.Date.ToShortDateString() + "', CarTypeID = " + carTypeId + ", CustomerId = " 
-                                + CustIdBx.Text + ", VIN = " + vin + ", Price = " + price + ", Late = " + late + "where RentalId = " + TransIdBx.Text;
+                                + CustIdBx.Text + ", VIN = '" + vin + "', Price = " + price + ", Late = " + late + "where RentalId = " + TransIdBx.Text;
                             myCommand.ExecuteNonQuery();
 
                             //update branch of car
