@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TransactionsFrmLbl = new System.Windows.Forms.Label();
             this.AddTransBtn = new System.Windows.Forms.Button();
             this.SearchBtn = new System.Windows.Forms.Button();
@@ -43,13 +43,12 @@
             // TransactionsFrmLbl
             // 
             this.TransactionsFrmLbl.AutoSize = true;
-            this.TransactionsFrmLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.TransactionsFrmLbl.BackColor = System.Drawing.Color.Transparent;
             this.TransactionsFrmLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TransactionsFrmLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TransactionsFrmLbl.Location = new System.Drawing.Point(35, 41);
-            this.TransactionsFrmLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TransactionsFrmLbl.Location = new System.Drawing.Point(19, 19);
             this.TransactionsFrmLbl.Name = "TransactionsFrmLbl";
-            this.TransactionsFrmLbl.Size = new System.Drawing.Size(371, 67);
+            this.TransactionsFrmLbl.Size = new System.Drawing.Size(195, 33);
             this.TransactionsFrmLbl.TabIndex = 5;
             this.TransactionsFrmLbl.Text = "Transactions";
             // 
@@ -60,10 +59,9 @@
             this.AddTransBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddTransBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddTransBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddTransBtn.Location = new System.Drawing.Point(39, 173);
-            this.AddTransBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.AddTransBtn.Location = new System.Drawing.Point(21, 81);
             this.AddTransBtn.Name = "AddTransBtn";
-            this.AddTransBtn.Size = new System.Drawing.Size(169, 64);
+            this.AddTransBtn.Size = new System.Drawing.Size(91, 30);
             this.AddTransBtn.TabIndex = 28;
             this.AddTransBtn.Text = "Manage";
             this.AddTransBtn.UseVisualStyleBackColor = false;
@@ -76,10 +74,9 @@
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SearchBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SearchBtn.Location = new System.Drawing.Point(251, 173);
-            this.SearchBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.SearchBtn.Location = new System.Drawing.Point(135, 81);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(169, 64);
+            this.SearchBtn.Size = new System.Drawing.Size(91, 30);
             this.SearchBtn.TabIndex = 29;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = false;
@@ -87,68 +84,66 @@
             // 
             // TransPnl
             // 
-            this.TransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.TransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.TransPnl.Controls.Add(this.TransData);
             this.TransPnl.Location = new System.Drawing.Point(0, 0);
-            this.TransPnl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.TransPnl.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.TransPnl.Name = "TransPnl";
-            this.TransPnl.Size = new System.Drawing.Size(1233, 1050);
+            this.TransPnl.Size = new System.Drawing.Size(664, 492);
             this.TransPnl.TabIndex = 6;
             // 
             // TransData
             // 
             this.TransData.AllowUserToAddRows = false;
             this.TransData.AllowUserToDeleteRows = false;
-            this.TransData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(59)))), ((int)(((byte)(79)))));
+            this.TransData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.TransData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TransData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TransData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.TransData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TransData.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TransData.DefaultCellStyle = dataGridViewCellStyle5;
             this.TransData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.TransData.Location = new System.Drawing.Point(35, 307);
-            this.TransData.Margin = new System.Windows.Forms.Padding(6);
+            this.TransData.Location = new System.Drawing.Point(19, 144);
             this.TransData.Name = "TransData";
             this.TransData.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TransData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TransData.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.TransData.RowHeadersVisible = false;
             this.TransData.RowHeadersWidth = 82;
             this.TransData.RowTemplate.Height = 50;
-            this.TransData.Size = new System.Drawing.Size(1155, 689);
+            this.TransData.Size = new System.Drawing.Size(622, 323);
             this.TransData.TabIndex = 30;
             // 
             // TransactionsFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1233, 1050);
+            this.ClientSize = new System.Drawing.Size(664, 492);
             this.Controls.Add(this.AddTransBtn);
             this.Controls.Add(this.SearchBtn);
             this.Controls.Add(this.TransactionsFrmLbl);
             this.Controls.Add(this.TransPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "TransactionsFrm";
             this.Text = "TransactionsFrm";
             this.Load += new System.EventHandler(this.HomeFrm_Load);

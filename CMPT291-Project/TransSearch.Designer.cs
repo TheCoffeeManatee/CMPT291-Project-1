@@ -51,17 +51,15 @@
             this.PDateEntry = new System.Windows.Forms.DateTimePicker();
             this.RDateCheck = new System.Windows.Forms.CheckBox();
             this.PDateCheck = new System.Windows.Forms.CheckBox();
-
             this.SuspendLayout();
             // 
             // VINL
             // 
             this.VINL.AutoSize = true;
             this.VINL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.VINL.Location = new System.Drawing.Point(55, 573);
-            this.VINL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.VINL.Location = new System.Drawing.Point(30, 242);
             this.VINL.Name = "VINL";
-            this.VINL.Size = new System.Drawing.Size(53, 32);
+            this.VINL.Size = new System.Drawing.Size(26, 15);
             this.VINL.TabIndex = 151;
             this.VINL.Text = "VIN";
             // 
@@ -69,10 +67,9 @@
             // 
             this.custidL.AutoSize = true;
             this.custidL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.custidL.Location = new System.Drawing.Point(55, 511);
-            this.custidL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.custidL.Location = new System.Drawing.Point(30, 213);
             this.custidL.Name = "custidL";
-            this.custidL.Size = new System.Drawing.Size(147, 32);
+            this.custidL.Size = new System.Drawing.Size(73, 15);
             this.custidL.TabIndex = 150;
             this.custidL.Text = "Customer ID";
             // 
@@ -80,10 +77,9 @@
             // 
             this.CTIDL.AutoSize = true;
             this.CTIDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CTIDL.Location = new System.Drawing.Point(55, 450);
-            this.CTIDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CTIDL.Location = new System.Drawing.Point(30, 184);
             this.CTIDL.Name = "CTIDL";
-            this.CTIDL.Size = new System.Drawing.Size(137, 32);
+            this.CTIDL.Size = new System.Drawing.Size(66, 15);
             this.CTIDL.TabIndex = 149;
             this.CTIDL.Text = "Car Type ID";
             // 
@@ -91,69 +87,63 @@
             // 
             this.RDL.AutoSize = true;
             this.RDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RDL.Location = new System.Drawing.Point(55, 388);
-            this.RDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.RDL.Location = new System.Drawing.Point(30, 155);
             this.RDL.Name = "RDL";
-            this.RDL.Size = new System.Drawing.Size(141, 32);
+            this.RDL.Size = new System.Drawing.Size(69, 15);
             this.RDL.TabIndex = 148;
             this.RDL.Text = "Return Date";
             // 
             // vinentry
             // 
-            this.vinentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.vinentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.vinentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vinentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vinentry.ForeColor = System.Drawing.Color.Black;
-            this.vinentry.Location = new System.Drawing.Point(226, 563);
-            this.vinentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.vinentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.vinentry.Location = new System.Drawing.Point(122, 237);
             this.vinentry.Name = "vinentry";
-            this.vinentry.Size = new System.Drawing.Size(336, 43);
+            this.vinentry.Size = new System.Drawing.Size(181, 22);
             this.vinentry.TabIndex = 147;
             // 
             // cidentry
             // 
-            this.cidentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cidentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.cidentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cidentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cidentry.ForeColor = System.Drawing.Color.Black;
-            this.cidentry.Location = new System.Drawing.Point(226, 501);
-            this.cidentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cidentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.cidentry.Location = new System.Drawing.Point(122, 208);
             this.cidentry.Name = "cidentry";
-            this.cidentry.Size = new System.Drawing.Size(336, 43);
+            this.cidentry.Size = new System.Drawing.Size(181, 22);
             this.cidentry.TabIndex = 146;
             // 
             // priceentry
             // 
-            this.priceentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.priceentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.priceentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceentry.ForeColor = System.Drawing.Color.Black;
-            this.priceentry.Location = new System.Drawing.Point(226, 622);
-            this.priceentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.priceentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.priceentry.Location = new System.Drawing.Point(122, 265);
             this.priceentry.Name = "priceentry";
-            this.priceentry.Size = new System.Drawing.Size(336, 43);
+            this.priceentry.Size = new System.Drawing.Size(181, 22);
             this.priceentry.TabIndex = 145;
             // 
             // ridentry
             // 
-            this.ridentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ridentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ridentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ridentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ridentry.ForeColor = System.Drawing.Color.Black;
-            this.ridentry.Location = new System.Drawing.Point(226, 138);
-            this.ridentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ridentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.ridentry.Location = new System.Drawing.Point(122, 38);
             this.ridentry.Name = "ridentry";
-            this.ridentry.Size = new System.Drawing.Size(336, 43);
+            this.ridentry.Size = new System.Drawing.Size(181, 22);
             this.ridentry.TabIndex = 140;
             // 
             // RBL
             // 
             this.RBL.AutoSize = true;
             this.RBL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RBL.Location = new System.Drawing.Point(55, 326);
-            this.RBL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.RBL.Location = new System.Drawing.Point(30, 126);
             this.RBL.Name = "RBL";
-            this.RBL.Size = new System.Drawing.Size(164, 32);
+            this.RBL.Size = new System.Drawing.Size(82, 15);
             this.RBL.TabIndex = 139;
             this.RBL.Text = "Return Branch";
             // 
@@ -161,11 +151,9 @@
             // 
             this.PDL.AutoSize = true;
             this.PDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-
             this.PDL.Location = new System.Drawing.Point(30, 99);
-
             this.PDL.Name = "PDL";
-            this.PDL.Size = new System.Drawing.Size(141, 32);
+            this.PDL.Size = new System.Drawing.Size(70, 15);
             this.PDL.TabIndex = 138;
             this.PDL.Text = "Pickup Date";
             // 
@@ -173,10 +161,9 @@
             // 
             this.PBL.AutoSize = true;
             this.PBL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PBL.Location = new System.Drawing.Point(55, 200);
-            this.PBL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PBL.Location = new System.Drawing.Point(30, 67);
             this.PBL.Name = "PBL";
-            this.PBL.Size = new System.Drawing.Size(164, 32);
+            this.PBL.Size = new System.Drawing.Size(83, 15);
             this.PBL.TabIndex = 137;
             this.PBL.Text = "Pickup Branch";
             // 
@@ -184,10 +171,9 @@
             // 
             this.RIDL.AutoSize = true;
             this.RIDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RIDL.Location = new System.Drawing.Point(55, 144);
-            this.RIDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.RIDL.Location = new System.Drawing.Point(30, 41);
             this.RIDL.Name = "RIDL";
-            this.RIDL.Size = new System.Drawing.Size(110, 32);
+            this.RIDL.Size = new System.Drawing.Size(54, 15);
             this.RIDL.TabIndex = 136;
             this.RIDL.Text = "Rental ID";
             // 
@@ -196,10 +182,10 @@
             this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CarTypePicker.FormattingEnabled = true;
-            this.CarTypePicker.Location = new System.Drawing.Point(226, 443);
-            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CarTypePicker.Location = new System.Drawing.Point(122, 181);
+            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.CarTypePicker.Name = "CarTypePicker";
-            this.CarTypePicker.Size = new System.Drawing.Size(338, 40);
+            this.CarTypePicker.Size = new System.Drawing.Size(184, 23);
             this.CarTypePicker.TabIndex = 152;
             // 
             // RBranchPicker
@@ -207,10 +193,10 @@
             this.RBranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.RBranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RBranchPicker.FormattingEnabled = true;
-            this.RBranchPicker.Location = new System.Drawing.Point(226, 319);
-            this.RBranchPicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RBranchPicker.Location = new System.Drawing.Point(122, 123);
+            this.RBranchPicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RBranchPicker.Name = "RBranchPicker";
-            this.RBranchPicker.Size = new System.Drawing.Size(338, 40);
+            this.RBranchPicker.Size = new System.Drawing.Size(184, 23);
             this.RBranchPicker.TabIndex = 153;
             // 
             // PBranchPicker
@@ -218,20 +204,19 @@
             this.PBranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PBranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PBranchPicker.FormattingEnabled = true;
-            this.PBranchPicker.Location = new System.Drawing.Point(226, 194);
-            this.PBranchPicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.PBranchPicker.Location = new System.Drawing.Point(122, 64);
+            this.PBranchPicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PBranchPicker.Name = "PBranchPicker";
-            this.PBranchPicker.Size = new System.Drawing.Size(338, 40);
+            this.PBranchPicker.Size = new System.Drawing.Size(184, 23);
             this.PBranchPicker.TabIndex = 154;
             // 
             // PriceL
             // 
             this.PriceL.AutoSize = true;
             this.PriceL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PriceL.Location = new System.Drawing.Point(55, 633);
-            this.PriceL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PriceL.Location = new System.Drawing.Point(30, 270);
             this.PriceL.Name = "PriceL";
-            this.PriceL.Size = new System.Drawing.Size(65, 32);
+            this.PriceL.Size = new System.Drawing.Size(33, 15);
             this.PriceL.TabIndex = 155;
             this.PriceL.Text = "Price";
             // 
@@ -239,12 +224,9 @@
             // 
             this.latecheck.AutoSize = true;
             this.latecheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
-
-
             this.latecheck.Location = new System.Drawing.Point(122, 305);
-
             this.latecheck.Name = "latecheck";
-            this.latecheck.Size = new System.Drawing.Size(167, 36);
+            this.latecheck.Size = new System.Drawing.Size(86, 19);
             this.latecheck.TabIndex = 156;
             this.latecheck.Text = "Late Return";
             this.latecheck.UseVisualStyleBackColor = true;
@@ -256,10 +238,9 @@
             this.TSearchCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TSearchCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TSearchCancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TSearchCancel.Location = new System.Drawing.Point(920, 264);
-            this.TSearchCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TSearchCancel.Location = new System.Drawing.Point(496, 97);
             this.TSearchCancel.Name = "TSearchCancel";
-            this.TSearchCancel.Size = new System.Drawing.Size(184, 107);
+            this.TSearchCancel.Size = new System.Drawing.Size(99, 50);
             this.TSearchCancel.TabIndex = 158;
             this.TSearchCancel.Text = "Cancel";
             this.TSearchCancel.UseVisualStyleBackColor = false;
@@ -272,10 +253,9 @@
             this.TSearchAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TSearchAccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TSearchAccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TSearchAccept.Location = new System.Drawing.Point(920, 132);
-            this.TSearchAccept.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TSearchAccept.Location = new System.Drawing.Point(496, 35);
             this.TSearchAccept.Name = "TSearchAccept";
-            this.TSearchAccept.Size = new System.Drawing.Size(184, 107);
+            this.TSearchAccept.Size = new System.Drawing.Size(99, 50);
             this.TSearchAccept.TabIndex = 157;
             this.TSearchAccept.Text = "Accept";
             this.TSearchAccept.UseVisualStyleBackColor = false;
@@ -284,34 +264,28 @@
             // RDateEntry
             // 
             this.RDateEntry.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-
             this.RDateEntry.Location = new System.Drawing.Point(123, 153);
             this.RDateEntry.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RDateEntry.Name = "RDateEntry";
             this.RDateEntry.Size = new System.Drawing.Size(183, 23);
-
             this.RDateEntry.TabIndex = 159;
             // 
             // PDateEntry
             // 
             this.PDateEntry.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-
             this.PDateEntry.Location = new System.Drawing.Point(123, 93);
             this.PDateEntry.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PDateEntry.Name = "PDateEntry";
             this.PDateEntry.Size = new System.Drawing.Size(183, 23);
-
             this.PDateEntry.TabIndex = 160;
             // 
             // RDateCheck
             // 
             this.RDateCheck.AutoSize = true;
             this.RDateCheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
-
             this.RDateCheck.Location = new System.Drawing.Point(311, 155);
             this.RDateCheck.Name = "RDateCheck";
             this.RDateCheck.Size = new System.Drawing.Size(144, 19);
-
             this.RDateCheck.TabIndex = 161;
             this.RDateCheck.Text = "Search for Return Date";
             this.RDateCheck.UseVisualStyleBackColor = true;
@@ -320,24 +294,19 @@
             // 
             this.PDateCheck.AutoSize = true;
             this.PDateCheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
-
             this.PDateCheck.Location = new System.Drawing.Point(311, 95);
             this.PDateCheck.Name = "PDateCheck";
             this.PDateCheck.Size = new System.Drawing.Size(145, 19);
-
             this.PDateCheck.TabIndex = 162;
             this.PDateCheck.Text = "Search for Pickup Date";
             this.PDateCheck.UseVisualStyleBackColor = true;
             // 
-
             // TransSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(664, 422);
-
             this.Controls.Add(this.PDateCheck);
             this.Controls.Add(this.RDateCheck);
             this.Controls.Add(this.PDateEntry);
@@ -362,12 +331,9 @@
             this.Controls.Add(this.PBL);
             this.Controls.Add(this.RIDL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-
             this.Margin = new System.Windows.Forms.Padding(2);
-
             this.Name = "TransSearch";
             this.Text = "Form1";
-            this.MenuBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,6 +364,5 @@
         private DateTimePicker PDateEntry;
         private CheckBox RDateCheck;
         private CheckBox PDateCheck;
-
     }
 }
