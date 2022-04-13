@@ -167,13 +167,7 @@ namespace CMPT291_Project
                             DOBEntry.Value = Convert.ToDateTime(dob);
                             cinsentry.Text = ins;
                             dlentry.Text = dl;
-
-                            if (phone.Length == 10)
-                                phoneentry.Text = "(" + phone[0] + phone[1] + phone[2] + ") " + phone[3] + phone[4] + phone[5] + "-" + phone[6] + phone[7] + phone[8] + phone[9];
-
-                            else if (phone.Length == 11)
-                                phoneentry.Text = phone[0] + "(" + phone[1] + phone[2] + phone[3] + ") " + phone[4] + phone[5] + phone[6] + "-" + phone[7] + phone[8] + phone[9] + phone[10];
-
+                            phoneentry.Text = phone;
 
                             mementry.Visible = true;
                             if (mem == 1)
