@@ -86,7 +86,7 @@
             // 
             this.CarTable.AllowUserToAddRows = false;
             this.CarTable.AllowUserToDeleteRows = false;
-            this.CarTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.CarTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(59)))), ((int)(((byte)(79)))));
             this.CarTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -198,7 +198,7 @@
             // FindID
             // 
             this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindID.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.FindID.ForeColor = System.Drawing.Color.White;
             this.FindID.Location = new System.Drawing.Point(914, 33);
             this.FindID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.FindID.Name = "FindID";
@@ -210,10 +210,10 @@
             // 
             // CustIdBx
             // 
-            this.CustIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.CustIdBx.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CustIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CustIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CustIdBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.CustIdBx.ForeColor = System.Drawing.Color.Black;
             this.CustIdBx.Location = new System.Drawing.Point(1065, 39);
             this.CustIdBx.Margin = new System.Windows.Forms.Padding(6);
             this.CustIdBx.Name = "CustIdBx";
@@ -326,7 +326,7 @@
             // FindCarsBtn
             // 
             this.FindCarsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindCarsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.FindCarsBtn.ForeColor = System.Drawing.Color.White;
             this.FindCarsBtn.Location = new System.Drawing.Point(1045, 392);
             this.FindCarsBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.FindCarsBtn.Name = "FindCarsBtn";
@@ -383,7 +383,7 @@
             // 
             // NewTransPnl
             // 
-            this.NewTransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.NewTransPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.NewTransPnl.Controls.Add(this.selCarInfo);
             this.NewTransPnl.Controls.Add(this.CarLbl);
             this.NewTransPnl.Controls.Add(this.LateCheck);
@@ -528,10 +528,10 @@
             // 
             // TransIdBx
             // 
-            this.TransIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.TransIdBx.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.TransIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TransIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TransIdBx.ForeColor = System.Drawing.SystemColors.Window;
+            this.TransIdBx.ForeColor = System.Drawing.Color.Black;
             this.TransIdBx.Location = new System.Drawing.Point(469, 38);
             this.TransIdBx.Margin = new System.Windows.Forms.Padding(6);
             this.TransIdBx.Name = "TransIdBx";
@@ -568,7 +568,7 @@
             this.calcPriceBtn.AutoSize = true;
             this.calcPriceBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.calcPriceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.calcPriceBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.calcPriceBtn.ForeColor = System.Drawing.Color.White;
             this.calcPriceBtn.Location = new System.Drawing.Point(420, 959);
             this.calcPriceBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.calcPriceBtn.Name = "calcPriceBtn";
