@@ -56,11 +56,6 @@
             this.VINL = new System.Windows.Forms.Label();
             this.CarEntryTitle = new System.Windows.Forms.Label();
             this.SearchRBtn = new System.Windows.Forms.RadioButton();
-            this.MenuBar = new System.Windows.Forms.Panel();
-            this.ExtBtn = new System.Windows.Forms.Button();
-            this.MaxBtn = new System.Windows.Forms.Button();
-            this.MinBtn = new System.Windows.Forms.Button();
-            this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // BranchPicker
@@ -68,7 +63,7 @@
             this.BranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BranchPicker.FormattingEnabled = true;
-            this.BranchPicker.Location = new System.Drawing.Point(212, 635);
+            this.BranchPicker.Location = new System.Drawing.Point(212, 595);
             this.BranchPicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.BranchPicker.Name = "BranchPicker";
             this.BranchPicker.Size = new System.Drawing.Size(338, 40);
@@ -80,7 +75,7 @@
             this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CarTypePicker.FormattingEnabled = true;
-            this.CarTypePicker.Location = new System.Drawing.Point(214, 695);
+            this.CarTypePicker.Location = new System.Drawing.Point(214, 655);
             this.CarTypePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CarTypePicker.Name = "CarTypePicker";
             this.CarTypePicker.Size = new System.Drawing.Size(338, 40);
@@ -91,7 +86,7 @@
             // 
             this.RemoveRBtn.AutoSize = true;
             this.RemoveRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RemoveRBtn.Location = new System.Drawing.Point(657, 279);
+            this.RemoveRBtn.Location = new System.Drawing.Point(657, 239);
             this.RemoveRBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RemoveRBtn.Name = "RemoveRBtn";
             this.RemoveRBtn.Size = new System.Drawing.Size(131, 36);
@@ -105,7 +100,7 @@
             // 
             this.EditRBtn.AutoSize = true;
             this.EditRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.EditRBtn.Location = new System.Drawing.Point(657, 217);
+            this.EditRBtn.Location = new System.Drawing.Point(657, 177);
             this.EditRBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.EditRBtn.Name = "EditRBtn";
             this.EditRBtn.Size = new System.Drawing.Size(85, 36);
@@ -119,7 +114,7 @@
             // 
             this.AddRBtn.AutoSize = true;
             this.AddRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddRBtn.Location = new System.Drawing.Point(657, 151);
+            this.AddRBtn.Location = new System.Drawing.Point(657, 111);
             this.AddRBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddRBtn.Name = "AddRBtn";
             this.AddRBtn.Size = new System.Drawing.Size(88, 36);
@@ -133,8 +128,8 @@
             // 
             this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FindID.ForeColor = System.Drawing.Color.White;
-            this.FindID.Location = new System.Drawing.Point(412, 76);
-            this.FindID.Margin = new System.Windows.Forms.Padding(6);
+            this.FindID.Location = new System.Drawing.Point(412, 36);
+            this.FindID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.FindID.Name = "FindID";
             this.FindID.Size = new System.Drawing.Size(139, 49);
             this.FindID.TabIndex = 140;
@@ -150,8 +145,8 @@
             this.carentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.carentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrycancel.Location = new System.Drawing.Point(912, 264);
-            this.carentrycancel.Margin = new System.Windows.Forms.Padding(6);
+            this.carentrycancel.Location = new System.Drawing.Point(912, 224);
+            this.carentrycancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.carentrycancel.Name = "carentrycancel";
             this.carentrycancel.Size = new System.Drawing.Size(184, 107);
             this.carentrycancel.TabIndex = 139;
@@ -166,8 +161,8 @@
             this.carentrryaccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carentrryaccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.carentrryaccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrryaccept.Location = new System.Drawing.Point(912, 132);
-            this.carentrryaccept.Margin = new System.Windows.Forms.Padding(6);
+            this.carentrryaccept.Location = new System.Drawing.Point(912, 92);
+            this.carentrryaccept.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.carentrryaccept.Name = "carentrryaccept";
             this.carentrryaccept.Size = new System.Drawing.Size(184, 107);
             this.carentrryaccept.TabIndex = 138;
@@ -179,7 +174,7 @@
             // 
             this.cartypeL.AutoSize = true;
             this.cartypeL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.cartypeL.Location = new System.Drawing.Point(43, 695);
+            this.cartypeL.Location = new System.Drawing.Point(43, 655);
             this.cartypeL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.cartypeL.Name = "cartypeL";
             this.cartypeL.Size = new System.Drawing.Size(107, 32);
@@ -190,7 +185,7 @@
             // 
             this.branchL.AutoSize = true;
             this.branchL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.branchL.Location = new System.Drawing.Point(43, 635);
+            this.branchL.Location = new System.Drawing.Point(43, 595);
             this.branchL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.branchL.Name = "branchL";
             this.branchL.Size = new System.Drawing.Size(117, 32);
@@ -201,7 +196,7 @@
             // 
             this.MileageL.AutoSize = true;
             this.MileageL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.MileageL.Location = new System.Drawing.Point(43, 573);
+            this.MileageL.Location = new System.Drawing.Point(43, 533);
             this.MileageL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MileageL.Name = "MileageL";
             this.MileageL.Size = new System.Drawing.Size(100, 32);
@@ -212,7 +207,7 @@
             // 
             this.InsuranceL.AutoSize = true;
             this.InsuranceL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.InsuranceL.Location = new System.Drawing.Point(43, 511);
+            this.InsuranceL.Location = new System.Drawing.Point(43, 471);
             this.InsuranceL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.InsuranceL.Name = "InsuranceL";
             this.InsuranceL.Size = new System.Drawing.Size(116, 32);
@@ -223,7 +218,7 @@
             // 
             this.colourL.AutoSize = true;
             this.colourL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.colourL.Location = new System.Drawing.Point(43, 450);
+            this.colourL.Location = new System.Drawing.Point(43, 410);
             this.colourL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.colourL.Name = "colourL";
             this.colourL.Size = new System.Drawing.Size(85, 32);
@@ -234,7 +229,7 @@
             // 
             this.SeatsL.AutoSize = true;
             this.SeatsL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SeatsL.Location = new System.Drawing.Point(43, 388);
+            this.SeatsL.Location = new System.Drawing.Point(43, 348);
             this.SeatsL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SeatsL.Name = "SeatsL";
             this.SeatsL.Size = new System.Drawing.Size(70, 32);
@@ -243,96 +238,96 @@
             // 
             // mileentry
             // 
-            this.mileentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.mileentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.mileentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mileentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mileentry.ForeColor = System.Drawing.Color.Black;
-            this.mileentry.Location = new System.Drawing.Point(214, 567);
-            this.mileentry.Margin = new System.Windows.Forms.Padding(6);
+            this.mileentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.mileentry.Location = new System.Drawing.Point(214, 527);
+            this.mileentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mileentry.Name = "mileentry";
             this.mileentry.Size = new System.Drawing.Size(336, 43);
             this.mileentry.TabIndex = 131;
             // 
             // insentry
             // 
-            this.insentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.insentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.insentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.insentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.insentry.ForeColor = System.Drawing.Color.Black;
-            this.insentry.Location = new System.Drawing.Point(214, 503);
-            this.insentry.Margin = new System.Windows.Forms.Padding(6);
+            this.insentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.insentry.Location = new System.Drawing.Point(214, 463);
+            this.insentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.insentry.Name = "insentry";
             this.insentry.Size = new System.Drawing.Size(336, 43);
             this.insentry.TabIndex = 130;
             // 
             // colourentry
             // 
-            this.colourentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.colourentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.colourentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.colourentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colourentry.ForeColor = System.Drawing.Color.Black;
-            this.colourentry.Location = new System.Drawing.Point(214, 443);
-            this.colourentry.Margin = new System.Windows.Forms.Padding(6);
+            this.colourentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.colourentry.Location = new System.Drawing.Point(214, 403);
+            this.colourentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.colourentry.Name = "colourentry";
             this.colourentry.Size = new System.Drawing.Size(336, 43);
             this.colourentry.TabIndex = 129;
             // 
             // seatsentry
             // 
-            this.seatsentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.seatsentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.seatsentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.seatsentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.seatsentry.ForeColor = System.Drawing.Color.Black;
-            this.seatsentry.Location = new System.Drawing.Point(214, 381);
-            this.seatsentry.Margin = new System.Windows.Forms.Padding(6);
+            this.seatsentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.seatsentry.Location = new System.Drawing.Point(214, 341);
+            this.seatsentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.seatsentry.Name = "seatsentry";
             this.seatsentry.Size = new System.Drawing.Size(336, 43);
             this.seatsentry.TabIndex = 128;
             // 
             // yearentry
             // 
-            this.yearentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.yearentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.yearentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.yearentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearentry.ForeColor = System.Drawing.Color.Black;
-            this.yearentry.Location = new System.Drawing.Point(214, 319);
-            this.yearentry.Margin = new System.Windows.Forms.Padding(6);
+            this.yearentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.yearentry.Location = new System.Drawing.Point(214, 279);
+            this.yearentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.yearentry.Name = "yearentry";
             this.yearentry.Size = new System.Drawing.Size(336, 43);
             this.yearentry.TabIndex = 127;
             // 
             // modelentry
             // 
-            this.modelentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.modelentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.modelentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.modelentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.modelentry.ForeColor = System.Drawing.Color.Black;
-            this.modelentry.Location = new System.Drawing.Point(214, 258);
-            this.modelentry.Margin = new System.Windows.Forms.Padding(6);
+            this.modelentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.modelentry.Location = new System.Drawing.Point(214, 218);
+            this.modelentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.modelentry.Name = "modelentry";
             this.modelentry.Size = new System.Drawing.Size(336, 43);
             this.modelentry.TabIndex = 126;
             // 
             // makeentry
             // 
-            this.makeentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.makeentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.makeentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.makeentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.makeentry.ForeColor = System.Drawing.Color.Black;
-            this.makeentry.Location = new System.Drawing.Point(214, 196);
-            this.makeentry.Margin = new System.Windows.Forms.Padding(6);
+            this.makeentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.makeentry.Location = new System.Drawing.Point(214, 156);
+            this.makeentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.makeentry.Name = "makeentry";
             this.makeentry.Size = new System.Drawing.Size(336, 43);
             this.makeentry.TabIndex = 125;
             // 
             // vinentry
             // 
-            this.vinentry.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.vinentry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.vinentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vinentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vinentry.ForeColor = System.Drawing.Color.Black;
-            this.vinentry.Location = new System.Drawing.Point(214, 138);
-            this.vinentry.Margin = new System.Windows.Forms.Padding(6);
+            this.vinentry.ForeColor = System.Drawing.SystemColors.Window;
+            this.vinentry.Location = new System.Drawing.Point(214, 98);
+            this.vinentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.vinentry.Name = "vinentry";
             this.vinentry.Size = new System.Drawing.Size(336, 43);
             this.vinentry.TabIndex = 124;
@@ -341,7 +336,7 @@
             // 
             this.yearL.AutoSize = true;
             this.yearL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.yearL.Location = new System.Drawing.Point(43, 326);
+            this.yearL.Location = new System.Drawing.Point(43, 286);
             this.yearL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.yearL.Name = "yearL";
             this.yearL.Size = new System.Drawing.Size(58, 32);
@@ -352,7 +347,7 @@
             // 
             this.modelL.AutoSize = true;
             this.modelL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.modelL.Location = new System.Drawing.Point(43, 264);
+            this.modelL.Location = new System.Drawing.Point(43, 224);
             this.modelL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.modelL.Name = "modelL";
             this.modelL.Size = new System.Drawing.Size(83, 32);
@@ -363,7 +358,7 @@
             // 
             this.MakeL.AutoSize = true;
             this.MakeL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.MakeL.Location = new System.Drawing.Point(43, 200);
+            this.MakeL.Location = new System.Drawing.Point(43, 160);
             this.MakeL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MakeL.Name = "MakeL";
             this.MakeL.Size = new System.Drawing.Size(73, 32);
@@ -374,7 +369,7 @@
             // 
             this.VINL.AutoSize = true;
             this.VINL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.VINL.Location = new System.Drawing.Point(43, 145);
+            this.VINL.Location = new System.Drawing.Point(43, 105);
             this.VINL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.VINL.Name = "VINL";
             this.VINL.Size = new System.Drawing.Size(53, 32);
@@ -386,7 +381,7 @@
             this.CarEntryTitle.AutoSize = true;
             this.CarEntryTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CarEntryTitle.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarEntryTitle.Location = new System.Drawing.Point(35, 74);
+            this.CarEntryTitle.Location = new System.Drawing.Point(35, 34);
             this.CarEntryTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CarEntryTitle.Name = "CarEntryTitle";
             this.CarEntryTitle.Size = new System.Drawing.Size(94, 51);
@@ -397,8 +392,8 @@
             // 
             this.SearchRBtn.AutoSize = true;
             this.SearchRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SearchRBtn.Location = new System.Drawing.Point(657, 330);
-            this.SearchRBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.SearchRBtn.Location = new System.Drawing.Point(657, 290);
+            this.SearchRBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SearchRBtn.Name = "SearchRBtn";
             this.SearchRBtn.Size = new System.Drawing.Size(116, 36);
             this.SearchRBtn.TabIndex = 148;
@@ -407,74 +402,12 @@
             this.SearchRBtn.UseVisualStyleBackColor = true;
             this.SearchRBtn.CheckedChanged += new System.EventHandler(this.SearchRBtn_CheckedChanged);
             // 
-            // MenuBar
-            // 
-            this.MenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.MenuBar.Controls.Add(this.ExtBtn);
-            this.MenuBar.Controls.Add(this.MaxBtn);
-            this.MenuBar.Controls.Add(this.MinBtn);
-            this.MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuBar.Location = new System.Drawing.Point(0, 0);
-            this.MenuBar.Margin = new System.Windows.Forms.Padding(6);
-            this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(1151, 55);
-            this.MenuBar.TabIndex = 156;
-            this.MenuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseDown);
-            this.MenuBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseMove);
-            this.MenuBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseUp);
-            // 
-            // ExtBtn
-            // 
-            this.ExtBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExtBtn.BackgroundImage = global::CMPT291_Project.Properties.Resources.Cross3;
-            this.ExtBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ExtBtn.FlatAppearance.BorderSize = 0;
-            this.ExtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExtBtn.Location = new System.Drawing.Point(1099, 6);
-            this.ExtBtn.Margin = new System.Windows.Forms.Padding(6);
-            this.ExtBtn.Name = "ExtBtn";
-            this.ExtBtn.Size = new System.Drawing.Size(37, 43);
-            this.ExtBtn.TabIndex = 11;
-            this.ExtBtn.UseVisualStyleBackColor = true;
-            this.ExtBtn.Click += new System.EventHandler(this.ExtBtn_Click);
-            // 
-            // MaxBtn
-            // 
-            this.MaxBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaxBtn.BackgroundImage = global::CMPT291_Project.Properties.Resources.MAX;
-            this.MaxBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MaxBtn.FlatAppearance.BorderSize = 0;
-            this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaxBtn.Location = new System.Drawing.Point(1051, 6);
-            this.MaxBtn.Margin = new System.Windows.Forms.Padding(6);
-            this.MaxBtn.Name = "MaxBtn";
-            this.MaxBtn.Size = new System.Drawing.Size(37, 43);
-            this.MaxBtn.TabIndex = 13;
-            this.MaxBtn.UseVisualStyleBackColor = true;
-            this.MaxBtn.Click += new System.EventHandler(this.MaxBtn_Click);
-            // 
-            // MinBtn
-            // 
-            this.MinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinBtn.BackgroundImage = global::CMPT291_Project.Properties.Resources.Minus2;
-            this.MinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MinBtn.FlatAppearance.BorderSize = 0;
-            this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinBtn.Location = new System.Drawing.Point(1003, 6);
-            this.MinBtn.Margin = new System.Windows.Forms.Padding(6);
-            this.MinBtn.Name = "MinBtn";
-            this.MinBtn.Size = new System.Drawing.Size(37, 43);
-            this.MinBtn.TabIndex = 12;
-            this.MinBtn.UseVisualStyleBackColor = true;
-            this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
-            // 
             // CarEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1151, 786);
-            this.Controls.Add(this.MenuBar);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(1151, 759);
             this.Controls.Add(this.SearchRBtn);
             this.Controls.Add(this.BranchPicker);
             this.Controls.Add(this.CarTypePicker);
@@ -504,11 +437,10 @@
             this.Controls.Add(this.VINL);
             this.Controls.Add(this.CarEntryTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "CarEntry";
             this.Text = "CarEntry";
             this.TopMost = true;
-            this.MenuBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,9 +475,5 @@
         private Label VINL;
         private Label CarEntryTitle;
         private RadioButton SearchRBtn;
-        private Panel MenuBar;
-        private Button ExtBtn;
-        private Button MaxBtn;
-        private Button MinBtn;
     }
 }

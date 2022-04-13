@@ -44,10 +44,9 @@
             this.BranchManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BranchManage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BranchManage.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.BranchManage.Location = new System.Drawing.Point(39, 173);
-            this.BranchManage.Margin = new System.Windows.Forms.Padding(6);
+            this.BranchManage.Location = new System.Drawing.Point(21, 81);
             this.BranchManage.Name = "BranchManage";
-            this.BranchManage.Size = new System.Drawing.Size(169, 64);
+            this.BranchManage.Size = new System.Drawing.Size(91, 30);
             this.BranchManage.TabIndex = 45;
             this.BranchManage.Text = "Manage";
             this.BranchManage.UseVisualStyleBackColor = false;
@@ -57,7 +56,7 @@
             // 
             this.BranchTable.AllowUserToAddRows = false;
             this.BranchTable.AllowUserToDeleteRows = false;
-            this.BranchTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(59)))), ((int)(((byte)(79)))));
+            this.BranchTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BranchTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -77,8 +76,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.BranchTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.BranchTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.BranchTable.Location = new System.Drawing.Point(39, 311);
-            this.BranchTable.Margin = new System.Windows.Forms.Padding(6);
+            this.BranchTable.Location = new System.Drawing.Point(21, 146);
             this.BranchTable.Name = "BranchTable";
             this.BranchTable.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,7 +90,7 @@
             this.BranchTable.RowHeadersVisible = false;
             this.BranchTable.RowHeadersWidth = 82;
             this.BranchTable.RowTemplate.Height = 50;
-            this.BranchTable.Size = new System.Drawing.Size(1155, 689);
+            this.BranchTable.Size = new System.Drawing.Size(622, 323);
             this.BranchTable.TabIndex = 42;
             // 
             // CustomersLbl
@@ -100,24 +98,22 @@
             this.CustomersLbl.AutoSize = true;
             this.CustomersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CustomersLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustomersLbl.Location = new System.Drawing.Point(39, 49);
-            this.CustomersLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CustomersLbl.Location = new System.Drawing.Point(21, 23);
             this.CustomersLbl.Name = "CustomersLbl";
-            this.CustomersLbl.Size = new System.Drawing.Size(218, 67);
+            this.CustomersLbl.Size = new System.Drawing.Size(113, 33);
             this.CustomersLbl.TabIndex = 43;
             this.CustomersLbl.Text = "Branch";
             // 
             // BranchFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1233, 1050);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(664, 492);
             this.Controls.Add(this.BranchManage);
             this.Controls.Add(this.BranchTable);
             this.Controls.Add(this.CustomersLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BranchFrm";
             ((System.ComponentModel.ISupportInitialize)(this.BranchTable)).EndInit();
             this.ResumeLayout(false);
