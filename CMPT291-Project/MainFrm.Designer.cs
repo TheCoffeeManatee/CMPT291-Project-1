@@ -64,10 +64,10 @@
             this.panel1.Controls.Add(this.TransactionsBtn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 55);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(358, 1111);
+            this.panel1.Size = new System.Drawing.Size(358, 1056);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -78,7 +78,7 @@
             this.ReportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReportsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ReportsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.ReportsBtn.Location = new System.Drawing.Point(0, 804);
+            this.ReportsBtn.Location = new System.Drawing.Point(0, 744);
             this.ReportsBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ReportsBtn.Name = "ReportsBtn";
             this.ReportsBtn.Size = new System.Drawing.Size(358, 90);
@@ -94,7 +94,7 @@
             this.CustomerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CustomerBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CustomerBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustomerBtn.Location = new System.Drawing.Point(0, 714);
+            this.CustomerBtn.Location = new System.Drawing.Point(0, 654);
             this.CustomerBtn.Margin = new System.Windows.Forms.Padding(6);
             this.CustomerBtn.Name = "CustomerBtn";
             this.CustomerBtn.Size = new System.Drawing.Size(358, 90);
@@ -110,7 +110,7 @@
             this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SettingsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.SettingsBtn.Location = new System.Drawing.Point(0, 1021);
+            this.SettingsBtn.Location = new System.Drawing.Point(0, 966);
             this.SettingsBtn.Margin = new System.Windows.Forms.Padding(6);
             this.SettingsBtn.Name = "SettingsBtn";
             this.SettingsBtn.Size = new System.Drawing.Size(358, 90);
@@ -125,7 +125,7 @@
             this.CarTypeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CarTypeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CarTypeBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarTypeBtn.Location = new System.Drawing.Point(0, 624);
+            this.CarTypeBtn.Location = new System.Drawing.Point(0, 564);
             this.CarTypeBtn.Margin = new System.Windows.Forms.Padding(6);
             this.CarTypeBtn.Name = "CarTypeBtn";
             this.CarTypeBtn.Size = new System.Drawing.Size(358, 90);
@@ -141,7 +141,7 @@
             this.CarsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CarsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CarsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarsBtn.Location = new System.Drawing.Point(0, 534);
+            this.CarsBtn.Location = new System.Drawing.Point(0, 474);
             this.CarsBtn.Margin = new System.Windows.Forms.Padding(6);
             this.CarsBtn.Name = "CarsBtn";
             this.CarsBtn.Size = new System.Drawing.Size(358, 90);
@@ -157,7 +157,7 @@
             this.BranchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BranchBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BranchBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.BranchBtn.Location = new System.Drawing.Point(0, 444);
+            this.BranchBtn.Location = new System.Drawing.Point(0, 384);
             this.BranchBtn.Margin = new System.Windows.Forms.Padding(6);
             this.BranchBtn.Name = "BranchBtn";
             this.BranchBtn.Size = new System.Drawing.Size(358, 90);
@@ -173,7 +173,7 @@
             this.TransactionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransactionsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TransactionsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TransactionsBtn.Location = new System.Drawing.Point(0, 354);
+            this.TransactionsBtn.Location = new System.Drawing.Point(0, 294);
             this.TransactionsBtn.Margin = new System.Windows.Forms.Padding(6);
             this.TransactionsBtn.Name = "TransactionsBtn";
             this.TransactionsBtn.Size = new System.Drawing.Size(358, 90);
@@ -190,7 +190,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(358, 354);
+            this.panel2.Size = new System.Drawing.Size(358, 294);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -228,10 +228,10 @@
             this.MenuBar.Controls.Add(this.ResizeBtn);
             this.MenuBar.Controls.Add(this.MinBtn);
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuBar.Location = new System.Drawing.Point(358, 0);
+            this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(6);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(1234, 55);
+            this.MenuBar.Size = new System.Drawing.Size(1592, 55);
             this.MenuBar.TabIndex = 1;
             this.MenuBar.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuBar_Paint);
             this.MenuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseDown);
@@ -245,7 +245,7 @@
             this.ExitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitBtn.Location = new System.Drawing.Point(1191, 6);
+            this.ExitBtn.Location = new System.Drawing.Point(1549, 6);
             this.ExitBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(37, 43);
@@ -260,7 +260,7 @@
             this.ResizeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ResizeBtn.FlatAppearance.BorderSize = 0;
             this.ResizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResizeBtn.Location = new System.Drawing.Point(1143, 6);
+            this.ResizeBtn.Location = new System.Drawing.Point(1501, 6);
             this.ResizeBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ResizeBtn.Name = "ResizeBtn";
             this.ResizeBtn.Size = new System.Drawing.Size(37, 43);
@@ -275,7 +275,7 @@
             this.MinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MinBtn.FlatAppearance.BorderSize = 0;
             this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinBtn.Location = new System.Drawing.Point(1095, 6);
+            this.MinBtn.Location = new System.Drawing.Point(1453, 6);
             this.MinBtn.Margin = new System.Windows.Forms.Padding(6);
             this.MinBtn.Name = "MinBtn";
             this.MinBtn.Size = new System.Drawing.Size(37, 43);
@@ -303,8 +303,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1592, 1111);
             this.Controls.Add(this.HomePnl);
-            this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.MenuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainFrm";

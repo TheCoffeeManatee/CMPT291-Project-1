@@ -44,9 +44,10 @@
             this.CarTypeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CarTypeAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CarTypeAdd.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarTypeAdd.Location = new System.Drawing.Point(21, 81);
+            this.CarTypeAdd.Location = new System.Drawing.Point(39, 173);
+            this.CarTypeAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CarTypeAdd.Name = "CarTypeAdd";
-            this.CarTypeAdd.Size = new System.Drawing.Size(91, 30);
+            this.CarTypeAdd.Size = new System.Drawing.Size(169, 64);
             this.CarTypeAdd.TabIndex = 32;
             this.CarTypeAdd.Text = "Manage";
             this.CarTypeAdd.UseVisualStyleBackColor = false;
@@ -57,7 +58,7 @@
             this.CarTypeData.AllowUserToAddRows = false;
             this.CarTypeData.AllowUserToDeleteRows = false;
             this.CarTypeData.AllowUserToOrderColumns = true;
-            this.CarTypeData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.CarTypeData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(59)))), ((int)(((byte)(79)))));
             this.CarTypeData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
@@ -77,7 +78,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CarTypeData.DefaultCellStyle = dataGridViewCellStyle2;
             this.CarTypeData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.CarTypeData.Location = new System.Drawing.Point(21, 146);
+            this.CarTypeData.Location = new System.Drawing.Point(39, 311);
+            this.CarTypeData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CarTypeData.Name = "CarTypeData";
             this.CarTypeData.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -91,7 +93,7 @@
             this.CarTypeData.RowHeadersVisible = false;
             this.CarTypeData.RowHeadersWidth = 82;
             this.CarTypeData.RowTemplate.Height = 50;
-            this.CarTypeData.Size = new System.Drawing.Size(622, 323);
+            this.CarTypeData.Size = new System.Drawing.Size(1155, 689);
             this.CarTypeData.TabIndex = 25;
             // 
             // CarTypeLbl
@@ -99,22 +101,24 @@
             this.CarTypeLbl.AutoSize = true;
             this.CarTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CarTypeLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarTypeLbl.Location = new System.Drawing.Point(21, 23);
+            this.CarTypeLbl.Location = new System.Drawing.Point(39, 49);
+            this.CarTypeLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CarTypeLbl.Name = "CarTypeLbl";
-            this.CarTypeLbl.Size = new System.Drawing.Size(143, 33);
+            this.CarTypeLbl.Size = new System.Drawing.Size(273, 67);
             this.CarTypeLbl.TabIndex = 30;
             this.CarTypeLbl.Text = "Car Type";
             // 
             // CarTypeFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(664, 492);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.ClientSize = new System.Drawing.Size(1233, 1050);
             this.Controls.Add(this.CarTypeAdd);
             this.Controls.Add(this.CarTypeData);
             this.Controls.Add(this.CarTypeLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "CarTypeFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QueryFrm";
