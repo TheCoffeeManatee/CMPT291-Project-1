@@ -334,5 +334,10 @@ namespace CMPT291_Project
             state = 0;
             this.Close();
         }
+
+        private void descentry_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
