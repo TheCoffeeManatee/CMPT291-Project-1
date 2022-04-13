@@ -143,6 +143,7 @@ namespace CMPT291_Project
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
 
         }
@@ -329,6 +330,7 @@ namespace CMPT291_Project
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
         }
 
@@ -339,6 +341,7 @@ namespace CMPT291_Project
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
         }
 
@@ -466,6 +469,7 @@ namespace CMPT291_Project
             if (price != 0) //price has been previously calculated
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
             myReader.Close();
         }
@@ -607,6 +611,7 @@ namespace CMPT291_Project
                 priceBx.Visible = true;
                 priceBx.Text = price.ToString("N2");
                 calcPriceBtn.Text = "Calculate";
+                calcPriceBtn.Hide();
             }
         }
 
@@ -615,6 +620,7 @@ namespace CMPT291_Project
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
         }
 
@@ -749,6 +755,7 @@ namespace CMPT291_Project
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
         }
 
@@ -757,6 +764,7 @@ namespace CMPT291_Project
             if (price != 0)
             {
                 calcPriceBtn.Text = "Re-Calculate";
+                calcPriceBtn.Show();
             }
         }
 
@@ -798,6 +806,7 @@ namespace CMPT291_Project
                 {
                     MessageBox.Show(e2.ToString(), "Error");
                 }
+
 
                 price += (daily * overDueDays);
                 myReader.Close();

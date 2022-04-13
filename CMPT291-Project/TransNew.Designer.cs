@@ -75,10 +75,10 @@
             this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CarTypePicker.FormattingEnabled = true;
-            this.CarTypePicker.Location = new System.Drawing.Point(660, 402);
-            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CarTypePicker.Location = new System.Drawing.Point(355, 188);
+            this.CarTypePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.CarTypePicker.Name = "CarTypePicker";
-            this.CarTypePicker.Size = new System.Drawing.Size(286, 40);
+            this.CarTypePicker.Size = new System.Drawing.Size(156, 23);
             this.CarTypePicker.TabIndex = 104;
             this.CarTypePicker.SelectedIndexChanged += new System.EventHandler(this.CarTypePicker_SelectedIndexChanged);
             // 
@@ -106,8 +106,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CarTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.CarTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.CarTable.Location = new System.Drawing.Point(44, 463);
-            this.CarTable.Margin = new System.Windows.Forms.Padding(6);
+            this.CarTable.Location = new System.Drawing.Point(24, 217);
             this.CarTable.MultiSelect = false;
             this.CarTable.Name = "CarTable";
             this.CarTable.ReadOnly = true;
@@ -123,17 +122,17 @@
             this.CarTable.RowHeadersWidth = 82;
             this.CarTable.RowTemplate.Height = 50;
             this.CarTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.CarTable.Size = new System.Drawing.Size(1155, 373);
+            this.CarTable.Size = new System.Drawing.Size(622, 175);
             this.CarTable.TabIndex = 103;
             this.CarTable.SelectionChanged += new System.EventHandler(this.CarTable_SelectionChanged);
             // 
             // RtnDate
             // 
             this.RtnDate.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.RtnDate.Location = new System.Drawing.Point(219, 400);
-            this.RtnDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RtnDate.Location = new System.Drawing.Point(118, 188);
+            this.RtnDate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RtnDate.Name = "RtnDate";
-            this.RtnDate.Size = new System.Drawing.Size(386, 39);
+            this.RtnDate.Size = new System.Drawing.Size(210, 23);
             this.RtnDate.TabIndex = 102;
             this.RtnDate.ValueChanged += new System.EventHandler(this.RtnDate_ValueChanged);
             // 
@@ -142,10 +141,10 @@
             this.RtnBranch.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.RtnBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RtnBranch.FormattingEnabled = true;
-            this.RtnBranch.Location = new System.Drawing.Point(219, 345);
-            this.RtnBranch.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RtnBranch.Location = new System.Drawing.Point(118, 162);
+            this.RtnBranch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RtnBranch.Name = "RtnBranch";
-            this.RtnBranch.Size = new System.Drawing.Size(386, 40);
+            this.RtnBranch.Size = new System.Drawing.Size(210, 23);
             this.RtnBranch.TabIndex = 101;
             this.RtnBranch.SelectedIndexChanged += new System.EventHandler(this.RtnBranch_SelectedIndexChanged);
             // 
@@ -154,20 +153,19 @@
             this.RtnLbl.AutoSize = true;
             this.RtnLbl.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RtnLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RtnLbl.Location = new System.Drawing.Point(44, 366);
-            this.RtnLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.RtnLbl.Location = new System.Drawing.Point(24, 172);
             this.RtnLbl.Name = "RtnLbl";
-            this.RtnLbl.Size = new System.Drawing.Size(130, 50);
+            this.RtnLbl.Size = new System.Drawing.Size(67, 25);
             this.RtnLbl.TabIndex = 100;
             this.RtnLbl.Text = "Return";
             // 
             // PickDate
             // 
             this.PickDate.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.PickDate.Location = new System.Drawing.Point(219, 263);
-            this.PickDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.PickDate.Location = new System.Drawing.Point(118, 123);
+            this.PickDate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PickDate.Name = "PickDate";
-            this.PickDate.Size = new System.Drawing.Size(386, 39);
+            this.PickDate.Size = new System.Drawing.Size(210, 23);
             this.PickDate.TabIndex = 99;
             this.PickDate.ValueChanged += new System.EventHandler(this.PickDate_ValueChanged);
             // 
@@ -176,10 +174,10 @@
             this.PickupBranchID.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PickupBranchID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PickupBranchID.FormattingEnabled = true;
-            this.PickupBranchID.Location = new System.Drawing.Point(219, 212);
-            this.PickupBranchID.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.PickupBranchID.Location = new System.Drawing.Point(118, 99);
+            this.PickupBranchID.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PickupBranchID.Name = "PickupBranchID";
-            this.PickupBranchID.Size = new System.Drawing.Size(386, 40);
+            this.PickupBranchID.Size = new System.Drawing.Size(210, 23);
             this.PickupBranchID.TabIndex = 98;
             this.PickupBranchID.SelectedIndexChanged += new System.EventHandler(this.PickupBranchID_SelectedIndexChanged);
             // 
@@ -188,10 +186,9 @@
             this.PickupLbl.AutoSize = true;
             this.PickupLbl.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PickupLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PickupLbl.Location = new System.Drawing.Point(44, 236);
-            this.PickupLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PickupLbl.Location = new System.Drawing.Point(24, 111);
             this.PickupLbl.Name = "PickupLbl";
-            this.PickupLbl.Size = new System.Drawing.Size(130, 50);
+            this.PickupLbl.Size = new System.Drawing.Size(68, 25);
             this.PickupLbl.TabIndex = 97;
             this.PickupLbl.Text = "Pickup";
             // 
@@ -199,10 +196,9 @@
             // 
             this.FindID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FindID.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.FindID.Location = new System.Drawing.Point(914, 33);
-            this.FindID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindID.Location = new System.Drawing.Point(492, 15);
             this.FindID.Name = "FindID";
-            this.FindID.Size = new System.Drawing.Size(140, 49);
+            this.FindID.Size = new System.Drawing.Size(75, 23);
             this.FindID.TabIndex = 117;
             this.FindID.Text = "Find ID";
             this.FindID.UseVisualStyleBackColor = true;
@@ -214,10 +210,9 @@
             this.CustIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CustIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CustIdBx.ForeColor = System.Drawing.SystemColors.Window;
-            this.CustIdBx.Location = new System.Drawing.Point(1065, 39);
-            this.CustIdBx.Margin = new System.Windows.Forms.Padding(6);
+            this.CustIdBx.Location = new System.Drawing.Point(573, 18);
             this.CustIdBx.Name = "CustIdBx";
-            this.CustIdBx.Size = new System.Drawing.Size(134, 43);
+            this.CustIdBx.Size = new System.Drawing.Size(72, 22);
             this.CustIdBx.TabIndex = 116;
             // 
             // CustLbl
@@ -225,10 +220,9 @@
             this.CustLbl.AutoSize = true;
             this.CustLbl.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CustLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CustLbl.Location = new System.Drawing.Point(660, 33);
-            this.CustLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CustLbl.Location = new System.Drawing.Point(355, 15);
             this.CustLbl.Name = "CustLbl";
-            this.CustLbl.Size = new System.Drawing.Size(185, 51);
+            this.CustLbl.Size = new System.Drawing.Size(93, 25);
             this.CustLbl.TabIndex = 119;
             this.CustLbl.Text = "Customer";
             // 
@@ -237,10 +231,9 @@
             this.FullName.AutoSize = true;
             this.FullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FullName.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.FullName.Location = new System.Drawing.Point(660, 111);
-            this.FullName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.FullName.Location = new System.Drawing.Point(355, 52);
             this.FullName.Name = "FullName";
-            this.FullName.Size = new System.Drawing.Size(105, 45);
+            this.FullName.Size = new System.Drawing.Size(52, 21);
             this.FullName.TabIndex = 126;
             this.FullName.Text = "Name";
             this.FullName.Visible = false;
@@ -250,10 +243,9 @@
             this.Add1.AutoSize = true;
             this.Add1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Add1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Add1.Location = new System.Drawing.Point(660, 156);
-            this.Add1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Add1.Location = new System.Drawing.Point(355, 73);
             this.Add1.Name = "Add1";
-            this.Add1.Size = new System.Drawing.Size(228, 45);
+            this.Add1.Size = new System.Drawing.Size(112, 21);
             this.Add1.TabIndex = 127;
             this.Add1.Text = "Address Line 1";
             this.Add1.Visible = false;
@@ -263,10 +255,9 @@
             this.Add2.AutoSize = true;
             this.Add2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Add2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Add2.Location = new System.Drawing.Point(660, 201);
-            this.Add2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Add2.Location = new System.Drawing.Point(355, 94);
             this.Add2.Name = "Add2";
-            this.Add2.Size = new System.Drawing.Size(228, 45);
+            this.Add2.Size = new System.Drawing.Size(112, 21);
             this.Add2.TabIndex = 128;
             this.Add2.Text = "Address Line 2";
             this.Add2.Visible = false;
@@ -276,10 +267,9 @@
             this.CP.AutoSize = true;
             this.CP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CP.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CP.Location = new System.Drawing.Point(660, 246);
-            this.CP.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CP.Location = new System.Drawing.Point(355, 115);
             this.CP.Name = "CP";
-            this.CP.Size = new System.Drawing.Size(204, 45);
+            this.CP.Size = new System.Drawing.Size(101, 21);
             this.CP.TabIndex = 129;
             this.CP.Text = "City Province";
             this.CP.Visible = false;
@@ -289,10 +279,9 @@
             this.Phone.AutoSize = true;
             this.Phone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Phone.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Phone.Location = new System.Drawing.Point(660, 336);
-            this.Phone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Phone.Location = new System.Drawing.Point(355, 158);
             this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(110, 45);
+            this.Phone.Size = new System.Drawing.Size(54, 21);
             this.Phone.TabIndex = 130;
             this.Phone.Text = "Phone";
             this.Phone.Visible = false;
@@ -302,10 +291,9 @@
             this.Mbrship.AutoSize = true;
             this.Mbrship.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Mbrship.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Mbrship.Location = new System.Drawing.Point(999, 331);
-            this.Mbrship.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Mbrship.Location = new System.Drawing.Point(538, 155);
             this.Mbrship.Name = "Mbrship";
-            this.Mbrship.Size = new System.Drawing.Size(200, 45);
+            this.Mbrship.Size = new System.Drawing.Size(98, 21);
             this.Mbrship.TabIndex = 131;
             this.Mbrship.Text = "Membership";
             this.Mbrship.Visible = false;
@@ -315,10 +303,9 @@
             this.Postal.AutoSize = true;
             this.Postal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Postal.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Postal.Location = new System.Drawing.Point(660, 291);
-            this.Postal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Postal.Location = new System.Drawing.Point(355, 136);
             this.Postal.Name = "Postal";
-            this.Postal.Size = new System.Drawing.Size(189, 45);
+            this.Postal.Size = new System.Drawing.Size(91, 21);
             this.Postal.TabIndex = 132;
             this.Postal.Text = "Postal Code";
             this.Postal.Visible = false;
@@ -327,10 +314,9 @@
             // 
             this.FindCarsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FindCarsBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.FindCarsBtn.Location = new System.Drawing.Point(1045, 392);
-            this.FindCarsBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindCarsBtn.Location = new System.Drawing.Point(563, 184);
             this.FindCarsBtn.Name = "FindCarsBtn";
-            this.FindCarsBtn.Size = new System.Drawing.Size(140, 49);
+            this.FindCarsBtn.Size = new System.Drawing.Size(75, 23);
             this.FindCarsBtn.TabIndex = 134;
             this.FindCarsBtn.Text = "Find Cars";
             this.FindCarsBtn.UseVisualStyleBackColor = true;
@@ -343,10 +329,9 @@
             this.carentrycancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carentrycancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.carentrycancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrycancel.Location = new System.Drawing.Point(44, 926);
-            this.carentrycancel.Margin = new System.Windows.Forms.Padding(6);
+            this.carentrycancel.Location = new System.Drawing.Point(24, 434);
             this.carentrycancel.Name = "carentrycancel";
-            this.carentrycancel.Size = new System.Drawing.Size(184, 107);
+            this.carentrycancel.Size = new System.Drawing.Size(99, 50);
             this.carentrycancel.TabIndex = 135;
             this.carentrycancel.Text = "Cancel";
             this.carentrycancel.UseVisualStyleBackColor = false;
@@ -359,10 +344,9 @@
             this.carentrryaccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carentrryaccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.carentrryaccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.carentrryaccept.Location = new System.Drawing.Point(1015, 926);
-            this.carentrryaccept.Margin = new System.Windows.Forms.Padding(6);
+            this.carentrryaccept.Location = new System.Drawing.Point(547, 434);
             this.carentrryaccept.Name = "carentrryaccept";
-            this.carentrryaccept.Size = new System.Drawing.Size(184, 107);
+            this.carentrryaccept.Size = new System.Drawing.Size(99, 50);
             this.carentrryaccept.TabIndex = 136;
             this.carentrryaccept.Text = "Accept";
             this.carentrryaccept.UseVisualStyleBackColor = false;
@@ -373,10 +357,9 @@
             this.priceBx.AutoSize = true;
             this.priceBx.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceBx.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.priceBx.Location = new System.Drawing.Point(697, 949);
-            this.priceBx.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.priceBx.Location = new System.Drawing.Point(375, 445);
             this.priceBx.Name = "priceBx";
-            this.priceBx.Size = new System.Drawing.Size(48, 59);
+            this.priceBx.Size = new System.Drawing.Size(25, 30);
             this.priceBx.TabIndex = 137;
             this.priceBx.Text = "0";
             this.priceBx.Visible = false;
@@ -419,9 +402,8 @@
             this.NewTransPnl.Controls.Add(this.FullName);
             this.NewTransPnl.Controls.Add(this.CustLbl);
             this.NewTransPnl.Location = new System.Drawing.Point(0, 0);
-            this.NewTransPnl.Margin = new System.Windows.Forms.Padding(6);
             this.NewTransPnl.Name = "NewTransPnl";
-            this.NewTransPnl.Size = new System.Drawing.Size(1233, 1050);
+            this.NewTransPnl.Size = new System.Drawing.Size(664, 492);
             this.NewTransPnl.TabIndex = 138;
             // 
             // selCarInfo
@@ -429,10 +411,9 @@
             this.selCarInfo.AutoSize = true;
             this.selCarInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.selCarInfo.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.selCarInfo.Location = new System.Drawing.Point(253, 856);
-            this.selCarInfo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.selCarInfo.Location = new System.Drawing.Point(136, 401);
             this.selCarInfo.Name = "selCarInfo";
-            this.selCarInfo.Size = new System.Drawing.Size(76, 45);
+            this.selCarInfo.Size = new System.Drawing.Size(37, 21);
             this.selCarInfo.TabIndex = 149;
             this.selCarInfo.Text = "Info";
             // 
@@ -441,10 +422,9 @@
             this.CarLbl.AutoSize = true;
             this.CarLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CarLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CarLbl.Location = new System.Drawing.Point(44, 856);
-            this.CarLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CarLbl.Location = new System.Drawing.Point(24, 401);
             this.CarLbl.Name = "CarLbl";
-            this.CarLbl.Size = new System.Drawing.Size(204, 45);
+            this.CarLbl.Size = new System.Drawing.Size(99, 21);
             this.CarLbl.TabIndex = 148;
             this.CarLbl.Text = "Selected Car:";
             // 
@@ -452,9 +432,10 @@
             // 
             this.LateCheck.AutoSize = true;
             this.LateCheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.LateCheck.Location = new System.Drawing.Point(420, 148);
+            this.LateCheck.Location = new System.Drawing.Point(226, 69);
+            this.LateCheck.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.LateCheck.Name = "LateCheck";
-            this.LateCheck.Size = new System.Drawing.Size(90, 36);
+            this.LateCheck.Size = new System.Drawing.Size(48, 19);
             this.LateCheck.TabIndex = 147;
             this.LateCheck.Text = "Late";
             this.LateCheck.UseVisualStyleBackColor = true;
@@ -464,9 +445,10 @@
             // 
             this.completeRBtn.AutoSize = true;
             this.completeRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.completeRBtn.Location = new System.Drawing.Point(219, 148);
+            this.completeRBtn.Location = new System.Drawing.Point(118, 69);
+            this.completeRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.completeRBtn.Name = "completeRBtn";
-            this.completeRBtn.Size = new System.Drawing.Size(149, 36);
+            this.completeRBtn.Size = new System.Drawing.Size(77, 19);
             this.completeRBtn.TabIndex = 146;
             this.completeRBtn.TabStop = true;
             this.completeRBtn.Text = "Complete";
@@ -477,9 +459,10 @@
             // 
             this.RemoveRBtn.AutoSize = true;
             this.RemoveRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RemoveRBtn.Location = new System.Drawing.Point(219, 106);
+            this.RemoveRBtn.Location = new System.Drawing.Point(118, 50);
+            this.RemoveRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RemoveRBtn.Name = "RemoveRBtn";
-            this.RemoveRBtn.Size = new System.Drawing.Size(131, 36);
+            this.RemoveRBtn.Size = new System.Drawing.Size(68, 19);
             this.RemoveRBtn.TabIndex = 145;
             this.RemoveRBtn.TabStop = true;
             this.RemoveRBtn.Text = "Remove";
@@ -490,9 +473,10 @@
             // 
             this.EditRBtn.AutoSize = true;
             this.EditRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.EditRBtn.Location = new System.Drawing.Point(55, 148);
+            this.EditRBtn.Location = new System.Drawing.Point(30, 69);
+            this.EditRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.EditRBtn.Name = "EditRBtn";
-            this.EditRBtn.Size = new System.Drawing.Size(85, 36);
+            this.EditRBtn.Size = new System.Drawing.Size(45, 19);
             this.EditRBtn.TabIndex = 144;
             this.EditRBtn.TabStop = true;
             this.EditRBtn.Text = "Edit";
@@ -503,9 +487,10 @@
             // 
             this.AddRBtn.AutoSize = true;
             this.AddRBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddRBtn.Location = new System.Drawing.Point(55, 106);
+            this.AddRBtn.Location = new System.Drawing.Point(30, 50);
+            this.AddRBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.AddRBtn.Name = "AddRBtn";
-            this.AddRBtn.Size = new System.Drawing.Size(88, 36);
+            this.AddRBtn.Size = new System.Drawing.Size(47, 19);
             this.AddRBtn.TabIndex = 143;
             this.AddRBtn.TabStop = true;
             this.AddRBtn.Text = "Add";
@@ -516,10 +501,9 @@
             // 
             this.FindTransBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FindTransBtn.ForeColor = System.Drawing.Color.White;
-            this.FindTransBtn.Location = new System.Drawing.Point(318, 32);
-            this.FindTransBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.FindTransBtn.Location = new System.Drawing.Point(171, 15);
             this.FindTransBtn.Name = "FindTransBtn";
-            this.FindTransBtn.Size = new System.Drawing.Size(140, 49);
+            this.FindTransBtn.Size = new System.Drawing.Size(75, 23);
             this.FindTransBtn.TabIndex = 142;
             this.FindTransBtn.Text = "Find ID";
             this.FindTransBtn.UseVisualStyleBackColor = true;
@@ -532,10 +516,9 @@
             this.TransIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TransIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TransIdBx.ForeColor = System.Drawing.SystemColors.Window;
-            this.TransIdBx.Location = new System.Drawing.Point(469, 38);
-            this.TransIdBx.Margin = new System.Windows.Forms.Padding(6);
+            this.TransIdBx.Location = new System.Drawing.Point(253, 18);
             this.TransIdBx.Name = "TransIdBx";
-            this.TransIdBx.Size = new System.Drawing.Size(134, 43);
+            this.TransIdBx.Size = new System.Drawing.Size(72, 22);
             this.TransIdBx.TabIndex = 141;
             this.TransIdBx.Visible = false;
             // 
@@ -544,10 +527,9 @@
             this.TransLbl.AutoSize = true;
             this.TransLbl.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TransLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TransLbl.Location = new System.Drawing.Point(28, 19);
-            this.TransLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TransLbl.Location = new System.Drawing.Point(15, 9);
             this.TransLbl.Name = "TransLbl";
-            this.TransLbl.Size = new System.Drawing.Size(266, 65);
+            this.TransLbl.Size = new System.Drawing.Size(134, 32);
             this.TransLbl.TabIndex = 140;
             this.TransLbl.Text = "Transaction";
             // 
@@ -556,10 +538,9 @@
             this.level.AutoSize = true;
             this.level.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.level.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.level.Location = new System.Drawing.Point(956, 398);
-            this.level.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.level.Location = new System.Drawing.Point(515, 187);
             this.level.Name = "level";
-            this.level.Size = new System.Drawing.Size(78, 37);
+            this.level.Size = new System.Drawing.Size(40, 19);
             this.level.TabIndex = 139;
             this.level.Text = "Level";
             // 
@@ -569,23 +550,23 @@
             this.calcPriceBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.calcPriceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.calcPriceBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.calcPriceBtn.Location = new System.Drawing.Point(420, 959);
-            this.calcPriceBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.calcPriceBtn.Location = new System.Drawing.Point(226, 450);
             this.calcPriceBtn.Name = "calcPriceBtn";
-            this.calcPriceBtn.Size = new System.Drawing.Size(123, 44);
+            this.calcPriceBtn.Size = new System.Drawing.Size(68, 27);
             this.calcPriceBtn.TabIndex = 138;
-            this.calcPriceBtn.Text = "Caluclate";
+            this.calcPriceBtn.Text = "Calculate";
             this.calcPriceBtn.UseVisualStyleBackColor = true;
             this.calcPriceBtn.Click += new System.EventHandler(this.calcPriceBtn_Click);
             // 
             // TransNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1233, 1050);
+            this.ClientSize = new System.Drawing.Size(664, 492);
             this.Controls.Add(this.NewTransPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "TransNew";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.CarTable)).EndInit();
