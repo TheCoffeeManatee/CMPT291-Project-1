@@ -18,8 +18,13 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        // mbr tracks membership status
         int mbr = 0;
+        // state is used to track externally whether this object is being used to add/edit/remove
+        // and entry (1), search an entry (2), or whether no operation is being performed (0)
         public int state = 0;
+        // newCommand is used to consolidate the queries for the customers into the parent form
+        // such that the query is assembled here and accessed by the parent form
         public string dobStr, newCommand;
         private bool mouseDown;
         private Point lastLocation;
@@ -46,7 +51,9 @@ namespace CMPT291_Project
                 this.Close();
             }
         }
-
+        
+        // this changes the display to show only the id search when the appropriate radio
+        // button is selected
         private void resetEditRemove()
         {
             FindID.Visible = true;
@@ -67,6 +74,8 @@ namespace CMPT291_Project
             mementry.Visible = false;
         }
 
+        // this changes the display to show all of the entries and hide the id search box
+        // when the appropriate radio buttons are selected
         private void resetAddSearch()
         {
             FindID.Visible = false;
@@ -110,6 +119,8 @@ namespace CMPT291_Project
                 mbr = 0;
         }
 
+        // this function just gets the id entered into the field and populates the boxes with the
+        // appropriate values
         private void FindID_Click_1(object sender, EventArgs e)
         {
             //converts string to integer 
@@ -204,7 +215,7 @@ namespace CMPT291_Project
                 resetEditRemove();
             }
         }
-
+        // the following 4 functions change the display from the radio buttons
         private void RemoveRBtn_CheckedChanged_1(object sender, EventArgs e)
         {
             resetEditRemove();
@@ -224,11 +235,14 @@ namespace CMPT291_Project
         {
             resetAddSearch();
         }
-
+        
+        // this function has different functionality depending on the selected radio button at the time
+        // the user clicks accept
         private void custentryacc_Click_1(object sender, EventArgs e)
         {
             if (AddRBtn.Checked == true)
             {
+                // This check ensures that fields contain entries before a new item is added
                 if (fnameentry.Text == ""|| mnameentry.Text == "" || lnameentry.Text == ""||add1entry.Text == ""||add2entry.Text==""||
                     cityentry.Text == ""||proventry.Text==""||postalentry.Text == ""||cinsentry.Text == ""||dlentry.Text == "")
                 {
@@ -248,6 +262,7 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true)
             {
+                // This check ensures that fields contain entries before a new item is added
                 if (fnameentry.Text == "" || mnameentry.Text == "" || lnameentry.Text == "" || add1entry.Text == "" || add2entry.Text == "" ||
                     cityentry.Text == "" || proventry.Text == "" || postalentry.Text == "" || cinsentry.Text == "" || dlentry.Text == "")
                 {
@@ -274,9 +289,12 @@ namespace CMPT291_Project
 
             else if (SearchRBtn.Checked == true)
             {
+                // first tracks whether " and " should be appended before the respective search term
                 int first = 1;
                 state = 2;
                 newCommand = "select * from Customer where ";
+                // the following set of statements ensure that only fields containing values are added
+                // as search parameters
                 if (fnameentry.Text != "")
                 {
                     first = 0;
@@ -345,6 +363,7 @@ namespace CMPT291_Project
                         newCommand += " and ";
                     else
                         first = 0;
+                    // these next if statements ensure that lower digit date values compare correctly with their sql counterparts
                     if (DOBEntry.Value.Month < 10)
                         phM += "0";
                     if (DOBEntry.Value.Day < 10)
@@ -383,6 +402,7 @@ namespace CMPT291_Project
                         first = 0;
                     newCommand += "Membership = 1";
                 }
+                // if no search parameters are selected, this ensures that all customers are displayed
                 if (first == 1)
                     newCommand = "select * from Customer";
                 this.Close();
@@ -395,7 +415,7 @@ namespace CMPT291_Project
             this.Close();
         }
 
-
+        // this ensures that formatting for phone matches its sql counterpart
         string parsePhone(string phone)
         {
             string newPhone = "";
