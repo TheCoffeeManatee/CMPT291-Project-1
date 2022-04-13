@@ -17,6 +17,7 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        // state corresponds to a public variable in the cust entry form which determines actions taken by this form on entry form closure
         public int state = 0;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
@@ -29,6 +30,7 @@ namespace CMPT291_Project
         {
             InitializeComponent();
             myCommand = new SqlCommand("select * from Customer");
+            // state is modified to allow the data view to be populated with all customer entries, then executed, then the state is changed to allow no actions
             state = 2;
             execute();
             state = 0;
@@ -38,6 +40,7 @@ namespace CMPT291_Project
             myConnection = new SqlConnection(connectionString);
             myConnection.Open();
             myCommand.Connection = myConnection;
+            // this block determines whether, based on state, the generated entry form query is executed to fill the view or edit the tables
             if (state == 1)
             {
                 try
@@ -56,6 +59,7 @@ namespace CMPT291_Project
             myConnection.Close();
         }
 
+        // this function populates the data view when the form is opened or a search is performed and formats the columns appropriately
         private void fillTable()
         {
             myCommand.CommandType = CommandType.Text;
@@ -96,6 +100,8 @@ namespace CMPT291_Project
 
         }
 
+        // this opens the data management form as a dialog box, transfers the generated query depending on the state determined by the dialog box form
+        // and executes the new query dependent on that state
         private void button3_Click(object sender, EventArgs e)
         {
             CustEntry CustEntry_Vrb = new CustEntry() { TopLevel = true, TopMost = true };
