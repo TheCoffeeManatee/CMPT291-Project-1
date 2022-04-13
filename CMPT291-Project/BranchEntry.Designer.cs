@@ -116,11 +116,11 @@
             // 
             // BranchIdBx
             // 
-            this.BranchIdBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BranchIdBx.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BranchIdBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BranchIdBx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BranchIdBx.ForeColor = System.Drawing.SystemColors.Window;
-            this.BranchIdBx.Location = new System.Drawing.Point(448, 21);
+            this.BranchIdBx.Location = new System.Drawing.Point(484, 94);
             this.BranchIdBx.Margin = new System.Windows.Forms.Padding(6);
             this.BranchIdBx.Name = "BranchIdBx";
             this.BranchIdBx.Size = new System.Drawing.Size(84, 43);
@@ -369,7 +369,7 @@
             this.ExtBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ExtBtn.FlatAppearance.BorderSize = 0;
             this.ExtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExtBtn.Location = new System.Drawing.Point(1059, 6);
+            this.ExtBtn.Location = new System.Drawing.Point(1056, 6);
             this.ExtBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ExtBtn.Name = "ExtBtn";
             this.ExtBtn.Size = new System.Drawing.Size(37, 43);
@@ -384,7 +384,7 @@
             this.MaxBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MaxBtn.FlatAppearance.BorderSize = 0;
             this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaxBtn.Location = new System.Drawing.Point(1011, 6);
+            this.MaxBtn.Location = new System.Drawing.Point(1008, 6);
             this.MaxBtn.Margin = new System.Windows.Forms.Padding(6);
             this.MaxBtn.Name = "MaxBtn";
             this.MaxBtn.Size = new System.Drawing.Size(37, 43);
@@ -399,7 +399,7 @@
             this.MinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MinBtn.FlatAppearance.BorderSize = 0;
             this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinBtn.Location = new System.Drawing.Point(963, 6);
+            this.MinBtn.Location = new System.Drawing.Point(960, 6);
             this.MinBtn.Margin = new System.Windows.Forms.Padding(6);
             this.MinBtn.Name = "MinBtn";
             this.MinBtn.Size = new System.Drawing.Size(37, 43);
@@ -413,7 +413,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1102, 617);
-            this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.SearchRBtn);
             this.Controls.Add(this.RemoveRBtn);
             this.Controls.Add(this.EditRBtn);
@@ -437,6 +436,7 @@
             this.Controls.Add(this.addL1L);
             this.Controls.Add(this.descL);
             this.Controls.Add(this.CarEntryTitle);
+            this.Controls.Add(this.MenuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BranchEntry";
