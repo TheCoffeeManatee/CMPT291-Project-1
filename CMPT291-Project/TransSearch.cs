@@ -98,7 +98,33 @@ namespace CMPT291_Project
                     first = 0;
                 newCommand += "PickupBranch = " + PBranchPicker.Text;
             }
-            //PICKUP DATE
+            if (PDateCheck.Checked)
+            {
+                string phM = "", phD = "";
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                if (PDateEntry.Value.Month < 10)
+                    phM += "0";
+                if (PDateEntry.Value.Day < 10)
+                    phD += "0";
+                newCommand += "PickupDate like '" + PDateEntry.Value.Year + "-" + phM + PDateEntry.Value.Month + "-" + phD + PDateEntry.Value.Day + "'";
+            }
+
+            if (RDateCheck.Checked)
+            {
+                string phM = "", phD = "";
+                if (first != 1)
+                    newCommand += " and ";
+                else
+                    first = 0;
+                if (RDateEntry.Value.Month < 10)
+                    phM += "0";
+                if (RDateEntry.Value.Day < 10)
+                    phD += "0";
+                newCommand += "PickupDate like '" + RDateEntry.Value.Year + "-" + phM + RDateEntry.Value.Month + "-" + phD + RDateEntry.Value.Day + "'";
+            }
 
             if (RBranchPicker.Text != "")
             {
@@ -108,7 +134,6 @@ namespace CMPT291_Project
                     first = 0;
                 newCommand += "ReturnBranch = " + RBranchPicker.Text;
             }
-            //RETURN DATE
 
             if (CarTypePicker.Text != "")
             {
@@ -155,13 +180,13 @@ namespace CMPT291_Project
             this.Close();
         }
 
-        private void MenuBarTransSearch_MouseDown(object sender, MouseEventArgs e)
+        private void MenuBar_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
             lastLocation = e.Location;
         }
 
-        private void MenuBarTransSearch_MouseMove(object sender, MouseEventArgs e)
+        private void MenuBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
             {
@@ -172,7 +197,7 @@ namespace CMPT291_Project
             }
         }
 
-        private void MenuBarTransSearch_MouseUp(object sender, MouseEventArgs e)
+        private void MenuBar_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }

@@ -35,8 +35,6 @@
             this.vinentry = new System.Windows.Forms.TextBox();
             this.cidentry = new System.Windows.Forms.TextBox();
             this.priceentry = new System.Windows.Forms.TextBox();
-            this.rdentry = new System.Windows.Forms.TextBox();
-            this.pdentry = new System.Windows.Forms.TextBox();
             this.ridentry = new System.Windows.Forms.TextBox();
             this.RBL = new System.Windows.Forms.Label();
             this.PDL = new System.Windows.Forms.Label();
@@ -49,19 +47,23 @@
             this.latecheck = new System.Windows.Forms.CheckBox();
             this.TSearchCancel = new System.Windows.Forms.Button();
             this.TSearchAccept = new System.Windows.Forms.Button();
-            this.MenuBarTransSearch = new System.Windows.Forms.Panel();
+            this.RDateEntry = new System.Windows.Forms.DateTimePicker();
+            this.PDateEntry = new System.Windows.Forms.DateTimePicker();
+            this.RDateCheck = new System.Windows.Forms.CheckBox();
+            this.PDateCheck = new System.Windows.Forms.CheckBox();
+            this.TransSearchTitle = new System.Windows.Forms.Label();
+            this.MenuBar = new System.Windows.Forms.Panel();
             this.ExtBtn = new System.Windows.Forms.Button();
             this.MaxBtn = new System.Windows.Forms.Button();
             this.MinBtn = new System.Windows.Forms.Button();
-            this.TransEntryTitle = new System.Windows.Forms.Label();
-            this.MenuBarTransSearch.SuspendLayout();
+            this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // VINL
             // 
             this.VINL.AutoSize = true;
             this.VINL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.VINL.Location = new System.Drawing.Point(48, 589);
+            this.VINL.Location = new System.Drawing.Point(55, 573);
             this.VINL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.VINL.Name = "VINL";
             this.VINL.Size = new System.Drawing.Size(53, 32);
@@ -72,7 +74,7 @@
             // 
             this.custidL.AutoSize = true;
             this.custidL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.custidL.Location = new System.Drawing.Point(48, 527);
+            this.custidL.Location = new System.Drawing.Point(55, 511);
             this.custidL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.custidL.Name = "custidL";
             this.custidL.Size = new System.Drawing.Size(147, 32);
@@ -83,7 +85,7 @@
             // 
             this.CTIDL.AutoSize = true;
             this.CTIDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.CTIDL.Location = new System.Drawing.Point(48, 466);
+            this.CTIDL.Location = new System.Drawing.Point(55, 450);
             this.CTIDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CTIDL.Name = "CTIDL";
             this.CTIDL.Size = new System.Drawing.Size(137, 32);
@@ -94,7 +96,7 @@
             // 
             this.RDL.AutoSize = true;
             this.RDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RDL.Location = new System.Drawing.Point(48, 404);
+            this.RDL.Location = new System.Drawing.Point(55, 388);
             this.RDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.RDL.Name = "RDL";
             this.RDL.Size = new System.Drawing.Size(141, 32);
@@ -107,8 +109,8 @@
             this.vinentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vinentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.vinentry.ForeColor = System.Drawing.Color.Black;
-            this.vinentry.Location = new System.Drawing.Point(219, 579);
-            this.vinentry.Margin = new System.Windows.Forms.Padding(6);
+            this.vinentry.Location = new System.Drawing.Point(226, 563);
+            this.vinentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.vinentry.Name = "vinentry";
             this.vinentry.Size = new System.Drawing.Size(336, 43);
             this.vinentry.TabIndex = 147;
@@ -119,8 +121,8 @@
             this.cidentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cidentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cidentry.ForeColor = System.Drawing.Color.Black;
-            this.cidentry.Location = new System.Drawing.Point(219, 517);
-            this.cidentry.Margin = new System.Windows.Forms.Padding(6);
+            this.cidentry.Location = new System.Drawing.Point(226, 501);
+            this.cidentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cidentry.Name = "cidentry";
             this.cidentry.Size = new System.Drawing.Size(336, 43);
             this.cidentry.TabIndex = 146;
@@ -131,35 +133,11 @@
             this.priceentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceentry.ForeColor = System.Drawing.Color.Black;
-            this.priceentry.Location = new System.Drawing.Point(219, 638);
-            this.priceentry.Margin = new System.Windows.Forms.Padding(6);
+            this.priceentry.Location = new System.Drawing.Point(226, 622);
+            this.priceentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.priceentry.Name = "priceentry";
             this.priceentry.Size = new System.Drawing.Size(336, 43);
             this.priceentry.TabIndex = 145;
-            // 
-            // rdentry
-            // 
-            this.rdentry.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.rdentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rdentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdentry.ForeColor = System.Drawing.Color.Black;
-            this.rdentry.Location = new System.Drawing.Point(219, 397);
-            this.rdentry.Margin = new System.Windows.Forms.Padding(6);
-            this.rdentry.Name = "rdentry";
-            this.rdentry.Size = new System.Drawing.Size(336, 43);
-            this.rdentry.TabIndex = 144;
-            // 
-            // pdentry
-            // 
-            this.pdentry.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pdentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pdentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pdentry.ForeColor = System.Drawing.Color.Black;
-            this.pdentry.Location = new System.Drawing.Point(219, 274);
-            this.pdentry.Margin = new System.Windows.Forms.Padding(6);
-            this.pdentry.Name = "pdentry";
-            this.pdentry.Size = new System.Drawing.Size(336, 43);
-            this.pdentry.TabIndex = 142;
             // 
             // ridentry
             // 
@@ -167,8 +145,8 @@
             this.ridentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ridentry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ridentry.ForeColor = System.Drawing.Color.Black;
-            this.ridentry.Location = new System.Drawing.Point(219, 154);
-            this.ridentry.Margin = new System.Windows.Forms.Padding(6);
+            this.ridentry.Location = new System.Drawing.Point(226, 138);
+            this.ridentry.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ridentry.Name = "ridentry";
             this.ridentry.Size = new System.Drawing.Size(336, 43);
             this.ridentry.TabIndex = 140;
@@ -177,7 +155,7 @@
             // 
             this.RBL.AutoSize = true;
             this.RBL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RBL.Location = new System.Drawing.Point(48, 342);
+            this.RBL.Location = new System.Drawing.Point(55, 326);
             this.RBL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.RBL.Name = "RBL";
             this.RBL.Size = new System.Drawing.Size(164, 32);
@@ -188,7 +166,7 @@
             // 
             this.PDL.AutoSize = true;
             this.PDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PDL.Location = new System.Drawing.Point(48, 280);
+            this.PDL.Location = new System.Drawing.Point(55, 268);
             this.PDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PDL.Name = "PDL";
             this.PDL.Size = new System.Drawing.Size(141, 32);
@@ -199,7 +177,7 @@
             // 
             this.PBL.AutoSize = true;
             this.PBL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PBL.Location = new System.Drawing.Point(48, 216);
+            this.PBL.Location = new System.Drawing.Point(55, 200);
             this.PBL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PBL.Name = "PBL";
             this.PBL.Size = new System.Drawing.Size(164, 32);
@@ -210,7 +188,7 @@
             // 
             this.RIDL.AutoSize = true;
             this.RIDL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RIDL.Location = new System.Drawing.Point(48, 160);
+            this.RIDL.Location = new System.Drawing.Point(55, 144);
             this.RIDL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.RIDL.Name = "RIDL";
             this.RIDL.Size = new System.Drawing.Size(110, 32);
@@ -222,7 +200,7 @@
             this.CarTypePicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.CarTypePicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CarTypePicker.FormattingEnabled = true;
-            this.CarTypePicker.Location = new System.Drawing.Point(219, 459);
+            this.CarTypePicker.Location = new System.Drawing.Point(226, 443);
             this.CarTypePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CarTypePicker.Name = "CarTypePicker";
             this.CarTypePicker.Size = new System.Drawing.Size(338, 40);
@@ -233,7 +211,7 @@
             this.RBranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.RBranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RBranchPicker.FormattingEnabled = true;
-            this.RBranchPicker.Location = new System.Drawing.Point(219, 335);
+            this.RBranchPicker.Location = new System.Drawing.Point(226, 319);
             this.RBranchPicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RBranchPicker.Name = "RBranchPicker";
             this.RBranchPicker.Size = new System.Drawing.Size(338, 40);
@@ -243,9 +221,8 @@
             // 
             this.PBranchPicker.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PBranchPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PBranchPicker.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.PBranchPicker.FormattingEnabled = true;
-            this.PBranchPicker.Location = new System.Drawing.Point(219, 210);
+            this.PBranchPicker.Location = new System.Drawing.Point(226, 194);
             this.PBranchPicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PBranchPicker.Name = "PBranchPicker";
             this.PBranchPicker.Size = new System.Drawing.Size(338, 40);
@@ -255,7 +232,7 @@
             // 
             this.PriceL.AutoSize = true;
             this.PriceL.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.PriceL.Location = new System.Drawing.Point(48, 649);
+            this.PriceL.Location = new System.Drawing.Point(55, 633);
             this.PriceL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PriceL.Name = "PriceL";
             this.PriceL.Size = new System.Drawing.Size(65, 32);
@@ -266,8 +243,8 @@
             // 
             this.latecheck.AutoSize = true;
             this.latecheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.latecheck.Location = new System.Drawing.Point(670, 158);
-            this.latecheck.Margin = new System.Windows.Forms.Padding(6);
+            this.latecheck.Location = new System.Drawing.Point(226, 708);
+            this.latecheck.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.latecheck.Name = "latecheck";
             this.latecheck.Size = new System.Drawing.Size(167, 36);
             this.latecheck.TabIndex = 156;
@@ -281,8 +258,8 @@
             this.TSearchCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TSearchCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TSearchCancel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TSearchCancel.Location = new System.Drawing.Point(913, 280);
-            this.TSearchCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.TSearchCancel.Location = new System.Drawing.Point(920, 264);
+            this.TSearchCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TSearchCancel.Name = "TSearchCancel";
             this.TSearchCancel.Size = new System.Drawing.Size(184, 107);
             this.TSearchCancel.TabIndex = 158;
@@ -297,8 +274,8 @@
             this.TSearchAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TSearchAccept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TSearchAccept.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TSearchAccept.Location = new System.Drawing.Point(913, 148);
-            this.TSearchAccept.Margin = new System.Windows.Forms.Padding(6);
+            this.TSearchAccept.Location = new System.Drawing.Point(920, 132);
+            this.TSearchAccept.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TSearchAccept.Name = "TSearchAccept";
             this.TSearchAccept.Size = new System.Drawing.Size(184, 107);
             this.TSearchAccept.TabIndex = 157;
@@ -306,21 +283,75 @@
             this.TSearchAccept.UseVisualStyleBackColor = false;
             this.TSearchAccept.Click += new System.EventHandler(this.TSearchAccept_Click);
             // 
-            // MenuBarTransSearch
+            // RDateEntry
             // 
-            this.MenuBarTransSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.MenuBarTransSearch.Controls.Add(this.ExtBtn);
-            this.MenuBarTransSearch.Controls.Add(this.MaxBtn);
-            this.MenuBarTransSearch.Controls.Add(this.MinBtn);
-            this.MenuBarTransSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuBarTransSearch.Location = new System.Drawing.Point(0, 0);
-            this.MenuBarTransSearch.Margin = new System.Windows.Forms.Padding(6);
-            this.MenuBarTransSearch.Name = "MenuBarTransSearch";
-            this.MenuBarTransSearch.Size = new System.Drawing.Size(1158, 55);
-            this.MenuBarTransSearch.TabIndex = 159;
-            this.MenuBarTransSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBarTransSearch_MouseDown);
-            this.MenuBarTransSearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuBarTransSearch_MouseMove);
-            this.MenuBarTransSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MenuBarTransSearch_MouseUp);
+            this.RDateEntry.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.RDateEntry.Location = new System.Drawing.Point(227, 383);
+            this.RDateEntry.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RDateEntry.Name = "RDateEntry";
+            this.RDateEntry.Size = new System.Drawing.Size(336, 39);
+            this.RDateEntry.TabIndex = 159;
+            // 
+            // PDateEntry
+            // 
+            this.PDateEntry.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.PDateEntry.Location = new System.Drawing.Point(227, 255);
+            this.PDateEntry.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.PDateEntry.Name = "PDateEntry";
+            this.PDateEntry.Size = new System.Drawing.Size(336, 39);
+            this.PDateEntry.TabIndex = 160;
+            // 
+            // RDateCheck
+            // 
+            this.RDateCheck.AutoSize = true;
+            this.RDateCheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RDateCheck.Location = new System.Drawing.Point(577, 388);
+            this.RDateCheck.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RDateCheck.Name = "RDateCheck";
+            this.RDateCheck.Size = new System.Drawing.Size(288, 36);
+            this.RDateCheck.TabIndex = 161;
+            this.RDateCheck.Text = "Search for Return Date";
+            this.RDateCheck.UseVisualStyleBackColor = true;
+            // 
+            // PDateCheck
+            // 
+            this.PDateCheck.AutoSize = true;
+            this.PDateCheck.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.PDateCheck.Location = new System.Drawing.Point(577, 260);
+            this.PDateCheck.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PDateCheck.Name = "PDateCheck";
+            this.PDateCheck.Size = new System.Drawing.Size(288, 36);
+            this.PDateCheck.TabIndex = 162;
+            this.PDateCheck.Text = "Search for Pickup Date";
+            this.PDateCheck.UseVisualStyleBackColor = true;
+            // 
+            // TransSearchTitle
+            // 
+            this.TransSearchTitle.AutoSize = true;
+            this.TransSearchTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransSearchTitle.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TransSearchTitle.Location = new System.Drawing.Point(27, 71);
+            this.TransSearchTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TransSearchTitle.Name = "TransSearchTitle";
+            this.TransSearchTitle.Size = new System.Drawing.Size(350, 51);
+            this.TransSearchTitle.TabIndex = 163;
+            this.TransSearchTitle.Text = "Search Transactions";
+            // 
+            // MenuBar
+            // 
+            this.MenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.MenuBar.Controls.Add(this.ExtBtn);
+            this.MenuBar.Controls.Add(this.MaxBtn);
+            this.MenuBar.Controls.Add(this.MinBtn);
+            this.MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MenuBar.Location = new System.Drawing.Point(0, 0);
+            this.MenuBar.Margin = new System.Windows.Forms.Padding(6);
+            this.MenuBar.Name = "MenuBar";
+            this.MenuBar.Size = new System.Drawing.Size(1150, 55);
+            this.MenuBar.TabIndex = 164;
+            this.MenuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseDown);
+            this.MenuBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseMove);
+            this.MenuBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MenuBar_MouseUp);
             // 
             // ExtBtn
             // 
@@ -329,11 +360,11 @@
             this.ExtBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ExtBtn.FlatAppearance.BorderSize = 0;
             this.ExtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExtBtn.Location = new System.Drawing.Point(1106, 6);
+            this.ExtBtn.Location = new System.Drawing.Point(1107, 6);
             this.ExtBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ExtBtn.Name = "ExtBtn";
             this.ExtBtn.Size = new System.Drawing.Size(37, 43);
-            this.ExtBtn.TabIndex = 5;
+            this.ExtBtn.TabIndex = 11;
             this.ExtBtn.UseVisualStyleBackColor = true;
             this.ExtBtn.Click += new System.EventHandler(this.ExtBtn_Click);
             // 
@@ -344,11 +375,11 @@
             this.MaxBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MaxBtn.FlatAppearance.BorderSize = 0;
             this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaxBtn.Location = new System.Drawing.Point(1058, 6);
+            this.MaxBtn.Location = new System.Drawing.Point(1059, 6);
             this.MaxBtn.Margin = new System.Windows.Forms.Padding(6);
             this.MaxBtn.Name = "MaxBtn";
             this.MaxBtn.Size = new System.Drawing.Size(37, 43);
-            this.MaxBtn.TabIndex = 7;
+            this.MaxBtn.TabIndex = 13;
             this.MaxBtn.UseVisualStyleBackColor = true;
             this.MaxBtn.Click += new System.EventHandler(this.MaxBtn_Click);
             // 
@@ -359,34 +390,26 @@
             this.MinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MinBtn.FlatAppearance.BorderSize = 0;
             this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinBtn.Location = new System.Drawing.Point(1010, 6);
+            this.MinBtn.Location = new System.Drawing.Point(1011, 6);
             this.MinBtn.Margin = new System.Windows.Forms.Padding(6);
             this.MinBtn.Name = "MinBtn";
             this.MinBtn.Size = new System.Drawing.Size(37, 43);
-            this.MinBtn.TabIndex = 6;
+            this.MinBtn.TabIndex = 12;
             this.MinBtn.UseVisualStyleBackColor = true;
             this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
-            // 
-            // TransEntryTitle
-            // 
-            this.TransEntryTitle.AutoSize = true;
-            this.TransEntryTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TransEntryTitle.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TransEntryTitle.Location = new System.Drawing.Point(33, 80);
-            this.TransEntryTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.TransEntryTitle.Name = "TransEntryTitle";
-            this.TransEntryTitle.Size = new System.Drawing.Size(350, 51);
-            this.TransEntryTitle.TabIndex = 160;
-            this.TransEntryTitle.Text = "Search Transactions";
             // 
             // TransSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1158, 735);
-            this.Controls.Add(this.TransEntryTitle);
-            this.Controls.Add(this.MenuBarTransSearch);
+            this.ClientSize = new System.Drawing.Size(1150, 761);
+            this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.TransSearchTitle);
+            this.Controls.Add(this.PDateCheck);
+            this.Controls.Add(this.RDateCheck);
+            this.Controls.Add(this.PDateEntry);
+            this.Controls.Add(this.RDateEntry);
             this.Controls.Add(this.TSearchCancel);
             this.Controls.Add(this.TSearchAccept);
             this.Controls.Add(this.latecheck);
@@ -401,18 +424,16 @@
             this.Controls.Add(this.vinentry);
             this.Controls.Add(this.cidentry);
             this.Controls.Add(this.priceentry);
-            this.Controls.Add(this.rdentry);
-            this.Controls.Add(this.pdentry);
             this.Controls.Add(this.ridentry);
             this.Controls.Add(this.RBL);
             this.Controls.Add(this.PDL);
             this.Controls.Add(this.PBL);
             this.Controls.Add(this.RIDL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TransSearch";
             this.Text = "Form1";
-            this.MenuBarTransSearch.ResumeLayout(false);
+            this.MenuBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,8 +448,6 @@
         private TextBox vinentry;
         private TextBox cidentry;
         private TextBox priceentry;
-        private TextBox rdentry;
-        private TextBox pdentry;
         private TextBox ridentry;
         private Label RBL;
         private Label PDL;
@@ -441,10 +460,14 @@
         private CheckBox latecheck;
         private Button TSearchCancel;
         private Button TSearchAccept;
-        private Panel MenuBarTransSearch;
+        private DateTimePicker RDateEntry;
+        private DateTimePicker PDateEntry;
+        private CheckBox RDateCheck;
+        private CheckBox PDateCheck;
+        private Label TransSearchTitle;
+        private Panel MenuBar;
+        private Button ExtBtn;
         private Button MaxBtn;
         private Button MinBtn;
-        private Button ExtBtn;
-        private Label TransEntryTitle;
     }
 }
