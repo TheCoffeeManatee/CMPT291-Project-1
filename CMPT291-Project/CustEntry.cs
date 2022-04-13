@@ -229,6 +229,11 @@ namespace CMPT291_Project
         {
             if (AddRBtn.Checked == true)
             {
+                if (fnameentry.Text == ""|| mnameentry.Text == "" || lnameentry.Text == ""||add1entry.Text == ""||add2entry.Text==""||
+                    cityentry.Text == ""||proventry.Text==""||postalentry.Text == ""||cinsentry.Text == ""||dlentry.Text == "")
+                {
+                    return;
+                }
                 string phoneNumber = parsePhone(phoneentry.Text);
                 state = 1;
                 dobStr = DOBEntry.Value.ToString();
@@ -243,6 +248,11 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true)
             {
+                if (fnameentry.Text == "" || mnameentry.Text == "" || lnameentry.Text == "" || add1entry.Text == "" || add2entry.Text == "" ||
+                    cityentry.Text == "" || proventry.Text == "" || postalentry.Text == "" || cinsentry.Text == "" || dlentry.Text == "")
+                {
+                    return;
+                }
                 state = 1;
                 string phoneNumber = parsePhone(phoneentry.Text);
                 dobStr = DOBEntry.Value.ToString();

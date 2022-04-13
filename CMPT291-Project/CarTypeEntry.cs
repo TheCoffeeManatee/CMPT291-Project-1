@@ -89,6 +89,10 @@ namespace CMPT291_Project
             
             if (AddRBtn.Checked == true) //adds car type to the database
             {
+                if (descentry.Text == "" || drateentry.Text == "" || wrateentry.Text ==  "" || mrateentry.Text == "")
+                {
+                    return;
+                }
                 if (!checkLevel() && int.TryParse(drateentry.Text, out int checkNum) && int.TryParse(wrateentry.Text, out checkNum) && int.TryParse(mrateentry.Text, out checkNum))
                 {
                     MessageBox.Show("Ensure that all Rates and Level are numeric.", "Error");
@@ -102,6 +106,10 @@ namespace CMPT291_Project
 
             else if (EditRBtn.Checked == true) //edits car type entry
             {
+                if (descentry.Text == "" || drateentry.Text == "" || wrateentry.Text == "" || mrateentry.Text == "")
+                {
+                    return;
+                }
                 if (!checkLevel() && int.TryParse(drateentry.Text, out int checkNum) && int.TryParse(wrateentry.Text, out checkNum) && int.TryParse(mrateentry.Text, out checkNum))
                 {
                     MessageBox.Show("Ensure that all Rates and Level are numeric.", "Error");
